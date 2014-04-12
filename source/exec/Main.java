@@ -2,13 +2,13 @@ package exec;
 
 import exec.mods.*;
 import gui.*;
+import gui.factories.*;
 import javax.swing.*;
 
 
 public class Main
   {
-  public static CommonWindow modListWindow;
-
+  public static MainWindow mainWindow;
   public static ModWindow[] modWindows;
 
   private Main()
@@ -19,10 +19,19 @@ public class Main
     createModWindows();
     }
 
+  private void setOwnLookAndFeel()
+    {
+     try
+      {
+      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+      }
+    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except) {}
+    }
+
   private void createAndShowMainWindow()
     {
-    modListWindow = new ModListWindow();
-    modListWindow.setVisible(true);
+    mainWindow = new MainWindow();
+    mainWindow.setVisible(true);
     }
 
   private void createModWindows()
@@ -31,15 +40,14 @@ public class Main
 
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       modWindows[i] = new ModWindow(CommonMod.MOD_NAMES[i]);
+
+    createAndAddParameters();
     }
 
-  private void setOwnLookAndFeel()
+  private void createAndAddParameters()
     {
-     try
-      {
-      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-      }
-    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {}
+    AirFactory.fillWindowWithParameters(modWindows[CommonMod.AIR_WINDOW_ID]);
+    AnimalsFactory.fillWindowWithParameters(modWindows[CommonMod.ANIMALS_WINDOW_ID]);
     }
 
   public static void main(String[] args)

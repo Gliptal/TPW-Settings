@@ -4,22 +4,25 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class LabeledCheckBox extends JPanel
+public class LabeledCheckBox extends CommonLabeled
   {
-  private JLabel label;
   private JCheckBox checkBox;
 
   public LabeledCheckBox(String labelText)
     {
-    buildAndAttachElements(labelText);
+    super(labelText);
+    createAndAddCheckBox();
     }
 
-  private void buildAndAttachElements(String labelText)
+  public void setStatus(boolean isSelected)
     {
-    label = new JLabel(labelText);
+    checkBox.setSelected(isSelected);
+    }
+
+  private void createAndAddCheckBox()
+    {
     checkBox = new JCheckBox();
 
-    this.add(label, BorderLayout.WEST);
     this.add(checkBox, BorderLayout.CENTER);
     }
   }
