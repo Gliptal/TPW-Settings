@@ -1,12 +1,12 @@
 package gui;
 
 import exec.*;
-import exec.mods.*;
 import exec.userinterface.*;
 import gui.combinations.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import mods.*;
 
 
 public class MainWindow extends CommonWindow
@@ -14,12 +14,12 @@ public class MainWindow extends CommonWindow
   private JPanel presetsPanel;
   private JPanel modsPanel;
 
+  private JComboBox presetsComboBox;
+
   private JButton presetsDeleteButton;
   private JButton presetsSaveButton;
   private JButton presetsLoadButton;
   private LabeledButton[] modButtons;
-
-  private JComboBox presetsCombo;
 
   public MainWindow()
     {
@@ -30,21 +30,21 @@ public class MainWindow extends CommonWindow
     createAndAddCombos();
     createAndAddButtons();
 
-    registerButtons();
+    subscribeButtons();
     }
 
-  public LabeledButton getModButton(int whichButton)
+  public LabeledButton getModButton(int which)
     {
-    return modButtons[whichButton];
+    return modButtons[which];
     }
 
   private void createAndAddPanels()
     {
-    presetsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID_LAYOUT, Spacing.GRID_LAYOUT));
-    modsPanel = new JPanel(new GridLayout(4, 4, Spacing.GRID_LAYOUT, Spacing.GRID_LAYOUT));
+    presetsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID, Spacing.GRID));
+    modsPanel = new JPanel(new GridLayout(4, 4, Spacing.GRID, Spacing.GRID));
 
-    mainPanel.add(presetsPanel, BorderLayout.NORTH);
-    mainPanel.add(modsPanel, BorderLayout.CENTER);
+    addToMainPanel(presetsPanel, BorderLayout.NORTH);
+    addToMainPanel(modsPanel, BorderLayout.CENTER);
     }
 
   private void createAndAddCombos()
@@ -58,16 +58,16 @@ public class MainWindow extends CommonWindow
     createAndAddModButtons();
     }
 
-  private void registerButtons()
+  private void subscribeButtons()
     {
     registerModButtons();
     }
 
   private void createAndAddPresetsCombos()
     {
-    presetsCombo = new JComboBox();
+    presetsComboBox = new JComboBox();
 
-    presetsPanel.add(presetsCombo);
+    presetsPanel.add(presetsComboBox);
     }
 
   private void createAndAddPresetsButtons()

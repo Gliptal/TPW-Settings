@@ -9,16 +9,16 @@ public class LabeledField extends CommonLabeled
   {
   private JTextField textField;
 
-  public LabeledField(String labelText, String initialValue)
+  public LabeledField(String labelText, String defaultValue)
     {
     super(labelText);
-    createAndAddTextField(initialValue);
+    createAndAddTextField(defaultValue);
     tailorTextField();
     }
 
-  private void createAndAddTextField(String initialValue)
+  private void createAndAddTextField(String defaultValue)
     {
-    textField = new JTextField(initialValue, Spacing.TEXT_FIELD_WIDTH);
+    textField = new JTextField(defaultValue, Spacing.TEXT_FIELD_WIDTH);
 
     this.add(textField, BorderLayout.CENTER);
     }

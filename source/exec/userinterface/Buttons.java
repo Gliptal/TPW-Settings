@@ -8,5 +8,5 @@ public class Buttons
   public static final String PRESETS_DELETE = "DELETE";
   public static final String PRESETS_SAVE = "SAVE";
   public static final String PRESETS_LOAD = "LOAD";
-  public static final String BACK = "BACK";
+  public static final String MOD_BACK = "BACK";
   }

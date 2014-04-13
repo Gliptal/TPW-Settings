@@ -1,21 +1,21 @@
 package gui;
 
-import exec.mods.*;
 import exec.userinterface.*;
 import gui.combinations.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import mods.*;
 
 
 public class ModWindow extends CommonWindow
   {
-  private JPanel commonElementsPanel;
+  private JPanel generalPanel;
   private JPanel parametersPanel;
 
-  private JButton backButton;
+  private LabeledCheckBox isActiveCheckBox;
 
-  private LabeledCheckBox activeCheckBox;
+  private JButton backButton;
 
   public ModWindow(String title)
     {
@@ -23,7 +23,7 @@ public class ModWindow extends CommonWindow
     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
     createAndAddPanels();
-    createAndAddCommonElements();
+    createAndAddGeneralElements();
 
     registerButtons();
     }
@@ -38,34 +38,34 @@ public class ModWindow extends CommonWindow
     parametersPanel.add(Spacing.createPlaceholder());
     }
 
-  public void setIfModIsActive(boolean isActive)
-    {
-    activeCheckBox.setStatus(isActive);
-    }
-
   public LabeledCheckBox getCheckBox()
     {
-    return activeCheckBox;
+    return isActiveCheckBox;
+    }
+
+  public void setIfModIsActive(boolean isActive)
+    {
+    isActiveCheckBox.setStatus(isActive);
     }
 
   private void createAndAddPanels()
     {
-    commonElementsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID_LAYOUT, Spacing.GRID_LAYOUT));
-    parametersPanel = new JPanel(new GridLayout(6, 3, Spacing.GRID_LAYOUT, Spacing.GRID_LAYOUT));
+    generalPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID, Spacing.GRID));
+    parametersPanel = new JPanel(new GridLayout(6, 3, Spacing.GRID, Spacing.GRID));
 
-    mainPanel.add(commonElementsPanel, BorderLayout.NORTH);
-    mainPanel.add(parametersPanel, BorderLayout.CENTER);
+    addToMainPanel(generalPanel, BorderLayout.NORTH);
+    addToMainPanel(parametersPanel, BorderLayout.CENTER);
     }
 
-  private void createAndAddCommonElements()
+  private void createAndAddGeneralElements()
     {
-    activeCheckBox = new LabeledCheckBox(CommonMod.PARAMETERS_ACTIVE);
-    backButton = new JButton(Buttons.BACK);
+    isActiveCheckBox = new LabeledCheckBox(CommonMod.PARAMETERS_ACTIVE);
+    backButton = new JButton(Buttons.MOD_BACK);
 
-    commonElementsPanel.add(activeCheckBox, BorderLayout.NORTH);
+    generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
     for (int i = 0; i < 3; i += 1)
-      commonElementsPanel.add(Spacing.createPlaceholder(), BorderLayout.NORTH);
-    commonElementsPanel.add(backButton, BorderLayout.NORTH);
+      generalPanel.add(Spacing.createPlaceholder(), BorderLayout.NORTH);
+    generalPanel.add(backButton, BorderLayout.NORTH);
     }
 
   private void registerButtons()

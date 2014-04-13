@@ -27,7 +27,9 @@ Progress
 
 12/04/14 | [0.3.0](https://github.com/Gliptal/TPW-Settings/tree/0.3.0) | 2/16 skeleton done
 
-13/04/14 | [0.4.0](https://github.com/Gliptal/TPW-Settings/tree/0.3.0) | 4/16 skeleton done, expanded functionalities
+13/04/14 | [0.4.0](https://github.com/Gliptal/TPW-Settings/tree/0.4.0) | 4/16 skeleton done, expanded functionalities
+
+14/04/14 | [0.5.0](https://github.com/Gliptal/TPW-Settings/tree/0.5.0) | 11/16 skeleton done, refactoring
 
 Links
 ======

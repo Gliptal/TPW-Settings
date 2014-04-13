@@ -8,7 +8,7 @@ import javax.swing.border.*;
 
 public class CommonWindow extends JFrame
   {
-  protected JPanel mainPanel;
+  private JPanel mainPanel;
   private JPanel commitPanel;
 
   private JButton commitNegativeButton;
@@ -23,15 +23,20 @@ public class CommonWindow extends JFrame
     createAndAddCommitButtons();
     }
 
+  protected void addToMainPanel(JPanel panel, String positioning)
+    {
+    mainPanel.add(panel, positioning);
+    }
+
   private void createAndAddPanels()
     {
-    mainPanel = new JPanel(new BorderLayout(Spacing.WINDOW_SECTIONS, Spacing.WINDOW_SECTIONS));
-    commitPanel = new JPanel(new GridLayout(1, 3, Spacing.GRID_LAYOUT, Spacing.GRID_LAYOUT));
+    mainPanel = new JPanel(new BorderLayout(Spacing.WINDOW_INNER, Spacing.WINDOW_INNER));
+    commitPanel = new JPanel(new GridLayout(1, 3, Spacing.GRID, Spacing.GRID));
 
-    mainPanel.setBorder(new EmptyBorder(Spacing.WINDOW, Spacing.WINDOW, Spacing.WINDOW, Spacing.WINDOW));
+    mainPanel.setBorder(new EmptyBorder(Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER));
 
     this.add(mainPanel);
-    mainPanel.add(commitPanel, BorderLayout.SOUTH);
+    addToMainPanel(commitPanel, BorderLayout.SOUTH);
     }
 
   private void createAndAddCommitButtons()

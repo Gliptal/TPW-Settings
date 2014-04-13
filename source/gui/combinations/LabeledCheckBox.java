@@ -15,6 +15,12 @@ public class LabeledCheckBox extends CommonLabeled
     createAndAddCheckBox();
     }
 
+  public LabeledCheckBox(String labelText, String isSelected)
+    {
+    super(labelText);
+    createAndAddCheckBox(isSelected);
+    }
+
   public void setStatus(boolean isSelected)
     {
     checkBox.setSelected(isSelected);
@@ -37,6 +43,17 @@ public class LabeledCheckBox extends CommonLabeled
   private void createAndAddCheckBox()
     {
     checkBox = new JCheckBox();
+
+    this.add(checkBox, BorderLayout.CENTER);
+    }
+
+  private void createAndAddCheckBox(String isSelectedString)
+    {
+    Boolean isSelected = Boolean.valueOf(isSelectedString);
+
+    checkBox = new JCheckBox();
+
+    setStatus(isSelected);
 
     this.add(checkBox, BorderLayout.CENTER);
     }

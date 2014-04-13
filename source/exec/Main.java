@@ -1,9 +1,10 @@
 package exec;
 
-import exec.mods.*;
 import gui.*;
-import gui.factories.*;
+import gui.combinations.*;
 import javax.swing.*;
+import mods.*;
+import mods.factories.*;
 
 
 public class Main
@@ -11,22 +12,29 @@ public class Main
   public static MainWindow mainWindow;
   public static ModWindow[] modWindows;
 
+  public static void main(String[] args)
+    {
+    Main exec = new Main();
+    }
+
   private Main()
     {
-    setOwnLookAndFeel();
+    setSystemLookAndFeel();
 
     createAndShowMainWindow();
     createModWindows();
-    setUpConnections();
+    setUpSubscriptions();
     }
 
-  private void setOwnLookAndFeel()
+  private void setSystemLookAndFeel()
     {
-     try
+    try
       {
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
       }
-    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except) {}
+    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except)
+      {
+      }
     }
 
   private void createAndShowMainWindow()
@@ -45,27 +53,29 @@ public class Main
     createAndAddParameters();
     }
 
-  private void setUpConnections()
+  private void setUpSubscriptions()
     {
-    connectModButtonsAndCheckBoxes();
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      connectModButtonToCheckBox(mainWindow.getModButton(i), modWindows[i].getCheckBox());
     }
 
   private void createAndAddParameters()
     {
-    AirFactory.fillWindowWithParameters(modWindows[CommonMod.AIR_WINDOW_ID]);
-    AnimalsFactory.fillWindowWithParameters(modWindows[CommonMod.ANIMALS_WINDOW_ID]);
-    BleedoutFactory.fillWindowWithParameters(modWindows[CommonMod.BLEEDOUT_WINDOW_ID]);
-    BoatsFactory.fillWindowWithParameters(modWindows[CommonMod.BOATS_WINDOW_ID]);
+    AirFactory.addParametersToWindow(modWindows[CommonMod.AIR_WINDOW_ID]);
+    AnimalsFactory.addParametersToWindow(modWindows[CommonMod.ANIMALS_WINDOW_ID]);
+    BleedoutFactory.addParametersToWindow(modWindows[CommonMod.BLEEDOUT_WINDOW_ID]);
+    BoatsFactory.addParametersToWindow(modWindows[CommonMod.BOATS_WINDOW_ID]);
+    CarsFactory.addParametersToWindow(modWindows[CommonMod.CARS_WINDOW_ID]);
+    CivsFactory.addParametersToWindow(modWindows[CommonMod.CIVS_WINDOW_ID]);
+    EbsFactory.addParametersToWindow(modWindows[CommonMod.EBS_WINDOW_ID]);
+    FallFactory.addParametersToWindow(modWindows[CommonMod.FALL_WINDOW_ID]);
+    FogFactory.addParametersToWindow(modWindows[CommonMod.FOG_WINDOW_ID]);
+    HouselightsFactory.addParametersToWindow(modWindows[CommonMod.HOUSELIGHTS_WINDOW_ID]);
+    LosFactory.addParametersToWindow(modWindows[CommonMod.LOS_WINDOW_ID]);
     }
 
-  private void connectModButtonsAndCheckBoxes()
+  private void connectModButtonToCheckBox(LabeledButton button, LabeledCheckBox checkBox)
     {
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      mainWindow.getModButton(i).connectToCheckBox(modWindows[i].getCheckBox());
-    }
-
-  public static void main(String[] args)
-    {
-    Main exec = new Main();
+    button.connectToCheckBox(checkBox);
     }
   };

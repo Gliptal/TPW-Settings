@@ -1,6 +1,6 @@
 package gui.combinations;
 
-import exec.mods.*;
+import mods.CommonMod;
 import exec.userinterface.*;
 import java.awt.*;
 import java.awt.event.*;
