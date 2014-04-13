@@ -27,6 +27,8 @@ Progress
 
 12/04/14 | [0.3.0](https://github.com/Gliptal/TPW-Settings/tree/0.3.0) | 2/16 skeleton done
 
+13/04/14 | [0.4.0](https://github.com/Gliptal/TPW-Settings/tree/0.3.0) | 4/16 skeleton done, expanded functionalities
+
 Links
 ======
 - [TPW MODS @ BI Forums](http://forums.bistudio.com/showthread.php?164304-TPW-MODS-enhanced-realism-immersion-for-Arma-3-SP)

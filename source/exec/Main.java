@@ -17,6 +17,7 @@ public class Main
 
     createAndShowMainWindow();
     createModWindows();
+    setUpConnections();
     }
 
   private void setOwnLookAndFeel()
@@ -44,10 +45,23 @@ public class Main
     createAndAddParameters();
     }
 
+  private void setUpConnections()
+    {
+    connectModButtonsAndCheckBoxes();
+    }
+
   private void createAndAddParameters()
     {
     AirFactory.fillWindowWithParameters(modWindows[CommonMod.AIR_WINDOW_ID]);
     AnimalsFactory.fillWindowWithParameters(modWindows[CommonMod.ANIMALS_WINDOW_ID]);
+    BleedoutFactory.fillWindowWithParameters(modWindows[CommonMod.BLEEDOUT_WINDOW_ID]);
+    BoatsFactory.fillWindowWithParameters(modWindows[CommonMod.BOATS_WINDOW_ID]);
+    }
+
+  private void connectModButtonsAndCheckBoxes()
+    {
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      mainWindow.getModButton(i).connectToCheckBox(modWindows[i].getCheckBox());
     }
 
   public static void main(String[] args)

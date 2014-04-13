@@ -15,6 +15,11 @@ public class CommonLabeled extends JPanel
     createAndAddLabel(labelText);
     }
 
+  public void changeLabelColor(Color newColor)
+    {
+    label.setBackground(newColor);
+    }
+
   private void createElementsSeparation()
     {
     this.setLayout(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS));
@@ -23,6 +28,8 @@ public class CommonLabeled extends JPanel
   private void createAndAddLabel(String labelText)
     {
     label = new JLabel(labelText);
+
+    label.setOpaque(true);
 
     this.add(label, BorderLayout.WEST);
     }

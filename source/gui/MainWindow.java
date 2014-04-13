@@ -3,6 +3,7 @@ package gui;
 import exec.*;
 import exec.mods.*;
 import exec.userinterface.*;
+import gui.combinations.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -16,7 +17,7 @@ public class MainWindow extends CommonWindow
   private JButton presetsDeleteButton;
   private JButton presetsSaveButton;
   private JButton presetsLoadButton;
-  private JButton[] modButtons;
+  private LabeledButton[] modButtons;
 
   private JComboBox presetsCombo;
 
@@ -30,6 +31,11 @@ public class MainWindow extends CommonWindow
     createAndAddButtons();
 
     registerButtons();
+    }
+
+  public LabeledButton getModButton(int whichButton)
+    {
+    return modButtons[whichButton];
     }
 
   private void createAndAddPanels()
@@ -78,11 +84,11 @@ public class MainWindow extends CommonWindow
 
   private void createAndAddModButtons()
     {
-    modButtons = new JButton[CommonMod.NUMBER_OF_MODS];
+    modButtons = new LabeledButton[CommonMod.NUMBER_OF_MODS];
 
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       {
-      modButtons[i] = new JButton(CommonMod.MOD_NAMES[i]);
+      modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i], CommonMod.MOD_STATUSES[i]);
       modsPanel.add(modButtons[i]);
       }
     }

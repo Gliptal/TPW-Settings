@@ -43,6 +43,11 @@ public class ModWindow extends CommonWindow
     activeCheckBox.setStatus(isActive);
     }
 
+  public LabeledCheckBox getCheckBox()
+    {
+    return activeCheckBox;
+    }
+
   private void createAndAddPanels()
     {
     commonElementsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID_LAYOUT, Spacing.GRID_LAYOUT));
