@@ -11,19 +11,14 @@ public class LabeledButton extends CommonLabeled
   {
   private JButton button;
 
-  public LabeledButton(String buttonText, boolean isActive)
+  public LabeledButton(String buttonText, boolean modIsActive)
     {
     super(Spacing.BUTTON_LABEL_WIDTH);
-    createAndAddButton(buttonText);
-    setIfRelativeModIsActive(isActive);
-    }
 
-  public void setIfRelativeModIsActive(boolean isActive)
-    {
-    if (isActive)
-      changeLabelColor(CommonMod.ACTIVE_COLOR);
-    else
-      changeLabelColor(CommonMod.INACTIVE_COLOR);
+    changeLayout(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS));
+    moveLabel(BorderLayout.WEST);
+    createAndAddButton(buttonText);
+    setIfRelativeModIsActive(modIsActive);
     }
 
   public void connectToCheckBox(LabeledCheckBox checkBoxToBeConnected)
@@ -34,6 +29,20 @@ public class LabeledButton extends CommonLabeled
   public void addActionListener(ActionListener listener)
     {
     button.addActionListener(listener);
+    }
+
+  public void setToolTip(String toolTipText)
+    {
+    setLabelToolTip(toolTipText);
+    button.setToolTipText(toolTipText);
+    }
+
+  protected void setIfRelativeModIsActive(boolean modIsActive)
+    {
+    if (modIsActive)
+      changeLabelColor(CommonMod.ACTIVE_COLOR);
+    else
+      changeLabelColor(CommonMod.INACTIVE_COLOR);
     }
 
   private void createAndAddButton(String buttonText)

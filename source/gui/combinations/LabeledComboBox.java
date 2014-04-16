@@ -1,6 +1,5 @@
 package gui.combinations;
 
-import java.awt.*;
 import javax.swing.*;
 
 
@@ -14,12 +13,18 @@ public class LabeledComboBox extends CommonLabeled
     createAndAddComboBox(defaultChoice, choices);
     }
 
+  public void setToolTip(String toolTipText)
+    {
+    setLabelToolTip(toolTipText);
+    comboBox.setToolTipText(toolTipText);
+    }
+
   private void createAndAddComboBox(String defaultChoice, String[] choices)
     {
     comboBox = new JComboBox<String>(choices);
 
     comboBox.setSelectedIndex(Integer.parseInt(defaultChoice));
 
-    this.add(comboBox, BorderLayout.CENTER);
+    this.add(comboBox);
     }
   }

@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersFall
+public class FallParameters
   {
   public static final String[] PARAMETER_NAMES = {"SENSITIVITY",
                                                   "THRESHOLD",

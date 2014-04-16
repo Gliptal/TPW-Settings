@@ -7,10 +7,17 @@ import mods.*;
 
 public class Spacing
   {
-  public static final int WINDOW_OUTER = 24;
-  public static final int WINDOW_INNER = 36;
-  public static final int GRID = 24;
-  public static final int COMBINATIONS = 12;
+  private static final int BASE_SPACING = 12;
+
+  public static final int WINDOW_OUTER = 2*BASE_SPACING;
+  public static final int WINDOW_INNER = 4*BASE_SPACING;
+  public static final int GRID_BUTTONS = 2*BASE_SPACING;
+  public static final int COMBINATIONS = 1*BASE_SPACING;
+  public static final int GRID_PARAMETERS_X = 5*BASE_SPACING;
+  public static final int GRID_PARAMETERS_Y = 2*BASE_SPACING;
+
+  public static final int PARAMETERS_ROWS = 5;
+  public static final int PARAMETERS_COLUMNS = 2;
 
   public static final String BUTTON_LABEL_WIDTH = "      ";
   public static final int TEXT_FIELD_WIDTH = 12;

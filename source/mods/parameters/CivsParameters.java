@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersCivs
+public class CivsParameters
   {
   public static final String[] PARAMETER_NAMES = {"DELAY",
                                                   "RADIUS",

@@ -23,15 +23,15 @@ public class CommonWindow extends JFrame
     createAndAddCommitButtons();
     }
 
-  protected void addToMainPanel(JPanel panel, String positioning)
+  protected void addToMainPanel(JPanel panel, String position)
     {
-    mainPanel.add(panel, positioning);
+    mainPanel.add(panel, position);
     }
 
   private void createAndAddPanels()
     {
     mainPanel = new JPanel(new BorderLayout(Spacing.WINDOW_INNER, Spacing.WINDOW_INNER));
-    commitPanel = new JPanel(new GridLayout(1, 3, Spacing.GRID, Spacing.GRID));
+    commitPanel = new JPanel(new GridLayout(1, 3, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
 
     mainPanel.setBorder(new EmptyBorder(Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER));
 

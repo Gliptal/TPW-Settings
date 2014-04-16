@@ -1,7 +1,5 @@
 package gui.combinations;
 
-import exec.userinterface.*;
-import java.awt.*;
 import javax.swing.*;
 
 
@@ -16,11 +14,17 @@ public class LabeledField extends CommonLabeled
     tailorTextField();
     }
 
+  public void setToolTip(String toolTipText)
+    {
+    setLabelToolTip(toolTipText);
+    textField.setToolTipText(toolTipText);
+    }
+
   private void createAndAddTextField(String defaultValue)
     {
-    textField = new JTextField(defaultValue, Spacing.TEXT_FIELD_WIDTH);
+    textField = new JTextField(defaultValue);
 
-    this.add(textField, BorderLayout.CENTER);
+    this.add(textField);
     }
 
   private void tailorTextField()

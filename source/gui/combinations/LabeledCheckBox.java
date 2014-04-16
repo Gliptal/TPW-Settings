@@ -26,6 +26,12 @@ public class LabeledCheckBox extends CommonLabeled
     checkBox.setSelected(isSelected);
     }
 
+  public void setToolTip(String toolTipText)
+    {
+    setLabelToolTip(toolTipText);
+    checkBox.setToolTipText(toolTipText);
+    }
+
   public void connectWith(final LabeledButton labeledButtonToBeRegistered)
     {
     checkBox.addActionListener
@@ -44,17 +50,15 @@ public class LabeledCheckBox extends CommonLabeled
     {
     checkBox = new JCheckBox();
 
-    this.add(checkBox, BorderLayout.CENTER);
+    this.add(checkBox);
     }
 
   private void createAndAddCheckBox(String isSelectedString)
     {
-    Boolean isSelected = Boolean.valueOf(isSelectedString);
-
     checkBox = new JCheckBox();
 
-    setStatus(isSelected);
+    setStatus(Boolean.valueOf(isSelectedString));
 
-    this.add(checkBox, BorderLayout.CENTER);
+    this.add(checkBox);
     }
   }

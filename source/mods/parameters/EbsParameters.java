@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersEbs
+public class EbsParameters
   {
   public static final String[] PARAMETER_NAMES = {"THRESH",
                                                   "DELAY",

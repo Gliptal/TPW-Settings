@@ -1,5 +1,6 @@
 package mods;
 
+import exec.userinterface.*;
 import java.awt.*;
 import mods.parameters.*;
 
@@ -22,22 +23,22 @@ public class CommonMod
                                             "RADIO",
                                             "RAIN_FX",
                                             "STREETLIGHTS"};
-  public static boolean[] MOD_STATUSES = {ParametersAir.IS_ACTIVE,
-                                          ParametersAnimals.IS_ACTIVE,
-                                          ParametersBleedout.IS_ACTIVE,
-                                          ParametersBoats.IS_ACTIVE,
-                                          ParametersCars.IS_ACTIVE,
-                                          ParametersCivs.IS_ACTIVE,
-                                          ParametersEbs.IS_ACTIVE,
-                                          ParametersFall.IS_ACTIVE,
-                                          ParametersFog.IS_ACTIVE,
-                                          ParametersHouselights.IS_ACTIVE,
+  public static boolean[] MOD_STATUSES = {AirParameters.IS_ACTIVE,
+                                          AnimalsParameters.IS_ACTIVE,
+                                          BleedoutParameters.IS_ACTIVE,
+                                          BoatsParameters.IS_ACTIVE,
+                                          CarsParameters.IS_ACTIVE,
+                                          CivsParameters.IS_ACTIVE,
+                                          EbsParameters.IS_ACTIVE,
+                                          FallParameters.IS_ACTIVE,
+                                          FogParameters.IS_ACTIVE,
+                                          HouselightsParameters.IS_ACTIVE,
                                           false,
-                                          ParametersLos.IS_ACTIVE,
-                                          false,
-                                          false,
-                                          false,
-                                          false};
+                                          LosParameters.IS_ACTIVE,
+                                          ParkParameters.IS_ACTIVE,
+                                          RadioParameters.IS_ACTIVE,
+                                          RainFxParameters.IS_ACTIVE,
+                                          StreetlightsParameters.IS_ACTIVE};
   public static final int NUMBER_OF_MODS = MOD_NAMES.length;
 
   public static int AIR_WINDOW_ID = lookForModWindowId("AIR");
@@ -51,8 +52,12 @@ public class CommonMod
   public static int FOG_WINDOW_ID = lookForModWindowId("FOG");
   public static int HOUSELIGHTS_WINDOW_ID = lookForModWindowId("HOUSELIGHTS");
   public static int LOS_WINDOW_ID = lookForModWindowId("LOS");
+  public static int PARK_WINDOW_ID = lookForModWindowId("PARK");
+  public static int RADIO_WINDOW_ID = lookForModWindowId("RADIO");
+  public static int RAINFX_WINDOW_ID = lookForModWindowId("RAIN_FX");
+  public static int STREETLIGHTS_WINDOW_ID = lookForModWindowId("STREETLIGHTS");
 
-  public static final int MAXIMUM_PARAMETERS = 16;
+  public static final int MAXIMUM_PARAMETERS = Spacing.PARAMETERS_ROWS*Spacing.PARAMETERS_COLUMNS;
   public static final String PARAMETERS_ACTIVE = "ACTIVE";
   public static final Color ACTIVE_COLOR = Color.GREEN;
   public static final Color INACTIVE_COLOR = Color.RED;

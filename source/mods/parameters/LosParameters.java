@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersLos
+public class LosParameters
   {
   public static final String[] PARAMETER_NAMES = {"DEBUG",
                                                   "MAX DIST",

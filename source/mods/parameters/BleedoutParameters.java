@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersBleedout
+public class BleedoutParameters
   {
   public static final String[] PARAMETER_NAMES = {"INCREASE",
                                                  "C THRESH",

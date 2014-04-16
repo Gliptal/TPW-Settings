@@ -9,20 +9,36 @@ public class CommonLabeled extends JPanel
   {
   private JLabel label;
 
-  public CommonLabeled(String labelText)
+  protected CommonLabeled(String labelText)
     {
     createElementsSeparation();
     createAndAddLabel(labelText);
     }
 
-  public void changeLabelColor(Color newColor)
+  protected void setLabelToolTip(String toolTipText)
+    {
+    setToolTipText(toolTipText);
+    }
+
+  protected void changeLayout(LayoutManager layout)
+    {
+    this.setLayout(layout);
+    }
+
+  protected void moveLabel(String position)
+    {
+    this.remove(label);
+    this.add(label, position);
+    }
+
+  protected void changeLabelColor(Color newColor)
     {
     label.setBackground(newColor);
     }
 
   private void createElementsSeparation()
     {
-    this.setLayout(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS));
+    this.setLayout(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS));
     }
 
   private void createAndAddLabel(String labelText)
@@ -30,7 +46,8 @@ public class CommonLabeled extends JPanel
     label = new JLabel(labelText);
 
     label.setOpaque(true);
+    label.setHorizontalAlignment(JLabel.RIGHT);
 
-    this.add(label, BorderLayout.WEST);
+    this.add(label);
     }
   }

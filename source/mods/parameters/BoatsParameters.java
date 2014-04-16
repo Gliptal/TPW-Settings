@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersBoats
+public class BoatsParameters
   {
   public static final String[] PARAMETER_NAMES = {"DELAY",
                                                   "RADIUS",

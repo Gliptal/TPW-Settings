@@ -40,8 +40,8 @@ public class MainWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    presetsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID, Spacing.GRID));
-    modsPanel = new JPanel(new GridLayout(4, 4, Spacing.GRID, Spacing.GRID));
+    presetsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
+    modsPanel = new JPanel(new GridLayout(4, 4, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
 
     addToMainPanel(presetsPanel, BorderLayout.NORTH);
     addToMainPanel(modsPanel, BorderLayout.CENTER);
@@ -89,6 +89,7 @@ public class MainWindow extends CommonWindow
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       {
       modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i], CommonMod.MOD_STATUSES[i]);
+      modButtons[i].setToolTip(ToolTips.MODS[i]);
       modsPanel.add(modButtons[i]);
       }
     }

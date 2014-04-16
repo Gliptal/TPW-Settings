@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersFog
+public class FogParameters
   {
   public static final String[] PARAMETER_NAMES = {"RADIUS",
                                                   "DELAY",

@@ -50,8 +50,8 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    generalPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID, Spacing.GRID));
-    parametersPanel = new JPanel(new GridLayout(6, 3, Spacing.GRID, Spacing.GRID));
+    generalPanel = new JPanel(new GridLayout(1, 4, Spacing.GRID_PARAMETERS_X, Spacing.GRID_PARAMETERS_Y));
+    parametersPanel = new JPanel(new GridLayout(Spacing.PARAMETERS_ROWS, Spacing.PARAMETERS_COLUMNS, Spacing.GRID_PARAMETERS_X, Spacing.GRID_PARAMETERS_Y));
 
     addToMainPanel(generalPanel, BorderLayout.NORTH);
     addToMainPanel(parametersPanel, BorderLayout.CENTER);
@@ -63,7 +63,7 @@ public class ModWindow extends CommonWindow
     backButton = new JButton(Buttons.MOD_BACK);
 
     generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
-    for (int i = 0; i < 3; i += 1)
+    for (int i = 0; i < 2; i += 1)
       generalPanel.add(Spacing.createPlaceholder(), BorderLayout.NORTH);
     generalPanel.add(backButton, BorderLayout.NORTH);
     }

@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersAir
+public class AirParameters
   {
   public static final String[] PARAMETER_NAMES = {"DELAY",
                                                   "TIME",

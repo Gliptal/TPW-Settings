@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersAnimals
+public class AnimalsParameters
   {
   public static final String[] PARAMETER_NAMES = {"DELAY",
                                                   "MAX",

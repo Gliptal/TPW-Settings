@@ -72,6 +72,10 @@ public class Main
     FogFactory.addParametersToWindow(modWindows[CommonMod.FOG_WINDOW_ID]);
     HouselightsFactory.addParametersToWindow(modWindows[CommonMod.HOUSELIGHTS_WINDOW_ID]);
     LosFactory.addParametersToWindow(modWindows[CommonMod.LOS_WINDOW_ID]);
+    ParkFactory.addParametersToWindow(modWindows[CommonMod.PARK_WINDOW_ID]);
+    RadioFactory.addParametersToWindow(modWindows[CommonMod.RADIO_WINDOW_ID]);
+    RainFxFactory.addParametersToWindow(modWindows[CommonMod.RAINFX_WINDOW_ID]);
+    StreetlightsFactory.addParametersToWindow(modWindows[CommonMod.STREETLIGHTS_WINDOW_ID]);
     }
 
   private void connectModButtonToCheckBox(LabeledButton button, LabeledCheckBox checkBox)

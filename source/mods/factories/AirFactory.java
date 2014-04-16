@@ -3,6 +3,7 @@ package mods.factories;
 import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
+import mods.*;
 import mods.parameters.*;
 
 
@@ -14,14 +15,18 @@ public class AirFactory
 
   public static void addParametersToWindow(ModWindow airWindow)
     {
-    airWindow.setIfModIsActive(ParametersAir.IS_ACTIVE);
-    delayParameter = new LabeledField(ParametersAir.PARAMETER_NAMES[0], ParametersAir.PARAMETERS[0]);
-    timeParameter = new LabeledField(ParametersAir.PARAMETER_NAMES[1], ParametersAir.PARAMETERS[1]);
-    maxParameter = new LabeledField(ParametersAir.PARAMETER_NAMES[2], ParametersAir.PARAMETERS[2]);
+    airWindow.setIfModIsActive(AirParameters.IS_ACTIVE);
+    delayParameter = new LabeledField(AirParameters.PARAMETER_NAMES[0], AirParameters.PARAMETERS[0]);
+    timeParameter = new LabeledField(AirParameters.PARAMETER_NAMES[1], AirParameters.PARAMETERS[1]);
+    maxParameter = new LabeledField(AirParameters.PARAMETER_NAMES[2], AirParameters.PARAMETERS[2]);
+
+    delayParameter.setToolTip(ToolTips.AIR[0]);
+    timeParameter.setToolTip(ToolTips.AIR[1]);
+    maxParameter.setToolTip(ToolTips.AIR[2]);
 
     airWindow.addParameter(delayParameter);
     airWindow.addParameter(timeParameter);
     airWindow.addParameter(maxParameter);
-    Spacing.addPlaceholdersToModWindow(airWindow, ParametersAir.PARAMETERS);
+    Spacing.addPlaceholdersToModWindow(airWindow, AirParameters.PARAMETERS);
     }
   }

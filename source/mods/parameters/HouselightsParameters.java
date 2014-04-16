@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersHouselights
+public class HouselightsParameters
   {
   public static final String[] PARAMETER_NAMES = {"DELAY"};
 

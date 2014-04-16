@@ -1,7 +1,7 @@
 package mods.parameters;
 
 
-public class ParametersCars
+public class CarsParameters
   {
   public static final String[] PARAMETER_NAMES = {"DELAY",
                                                   "WAYPOINTS",
