@@ -35,7 +35,9 @@ Progress
 
 17/04/14 | [0.7.0](https://github.com/Gliptal/TPW-Settings/tree/0.7.0) | basic file I/O set up
 
-17/04/14 | [0.7.1](https://github.com/Gliptal/TPW-Settings/tree/0.7.0) | fixed .gitignore
+17/04/14 | [0.7.1](https://github.com/Gliptal/TPW-Settings/tree/0.7.1) | fixed .gitignore
+
+17/04/14 | [0.7.2](https://github.com/Gliptal/TPW-Settings/tree/0.7.2) | fixed README.md
 
 Links
 ======
