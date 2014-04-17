@@ -35,6 +35,8 @@ Progress
 
 17/04/14 | [0.7.0](https://github.com/Gliptal/TPW-Settings/tree/0.7.0) | basic file I/O set up
 
+17/04/14 | [0.7.1](https://github.com/Gliptal/TPW-Settings/tree/0.7.0) | fixed .gitignore
+
 Links
 ======
 - [TPW MODS @ BI Forums](http://forums.bistudio.com/showthread.php?164304-TPW-MODS-enhanced-realism-immersion-for-Arma-3-SP)
