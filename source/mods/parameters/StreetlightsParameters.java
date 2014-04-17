@@ -1,18 +1,17 @@
 package mods.parameters;
 
+import exec.userinterface.*;
+
 
 public class StreetlightsParameters
   {
-  public static final String[] PARAMETER_NAMES = {"FACTOR",
+  public static final String[] PARAMETER_NAMES = {Spacing.ACTIVE_PLACEHOLDER,
+                                                  "FACTOR",
                                                   "RANGE",
                                                   "COLOUR",
                                                   "MOTHS"};
 
-  public static boolean IS_ACTIVE = true;
-  public static String[] PARAMETERS = {"10",
-                                       "1000",
-                                       "0",
-                                       "true"};
+  public static String[] PARAMETERS = new String[PARAMETER_NAMES.length];
   public static String[] COLOUR = {"WHITE INCANDESCENT",
                                         "YELLOW SODIUM",
                                         "BLUE FLUORESCENT"};

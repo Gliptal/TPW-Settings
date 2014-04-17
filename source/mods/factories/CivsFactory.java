@@ -22,28 +22,28 @@ public class CivsFactory
 
   public static void addParametersToWindow(ModWindow civsWindow)
     {
-    civsWindow.setIfModIsActive(CivsParameters.IS_ACTIVE);
-    delayParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[0], CivsParameters.PARAMETERS[0]);
-    radiusParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[1], CivsParameters.PARAMETERS[1]);
-    waypointsParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[2], CivsParameters.PARAMETERS[2]);
-    densityParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[3], CivsParameters.PARAMETERS[3]);
-    maxSquadCasParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[4], CivsParameters.PARAMETERS[4]);
-    maxAllCasParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[5], CivsParameters.PARAMETERS[5]);
-    casDisplayParameter = new LabeledComboBox(CivsParameters.PARAMETER_NAMES[6], CivsParameters.PARAMETERS[6], CivsParameters.CAS_DISPLAY);
-    maxCivParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[7], CivsParameters.PARAMETERS[7]);
-    interactParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[8], CivsParameters.PARAMETERS[8]);
-    noCombatSpawnCheckBox = new LabeledCheckBox(CivsParameters.PARAMETER_NAMES[9], CivsParameters.PARAMETERS[9]);
+    civsWindow.setIfModIsActive(CivsParameters.PARAMETERS[0]);
+    delayParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[1], CivsParameters.PARAMETERS[1]);
+    radiusParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[2], CivsParameters.PARAMETERS[2]);
+    waypointsParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[3], CivsParameters.PARAMETERS[3]);
+    densityParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[4], CivsParameters.PARAMETERS[4]);
+    maxSquadCasParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[5], CivsParameters.PARAMETERS[5]);
+    maxAllCasParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[6], CivsParameters.PARAMETERS[6]);
+    casDisplayParameter = new LabeledComboBox(CivsParameters.PARAMETER_NAMES[7], CivsParameters.PARAMETERS[7], CivsParameters.CAS_DISPLAY);
+    maxCivParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[8], CivsParameters.PARAMETERS[8]);
+    interactParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[9], CivsParameters.PARAMETERS[9]);
+    noCombatSpawnCheckBox = new LabeledCheckBox(CivsParameters.PARAMETER_NAMES[10], CivsParameters.PARAMETERS[10]);
 
-    delayParameter.setToolTip(ToolTips.CIVS[0]);
-    radiusParameter.setToolTip(ToolTips.CIVS[1]);
-    waypointsParameter.setToolTip(ToolTips.CIVS[2]);
-    densityParameter.setToolTip(ToolTips.CIVS[3]);
-    maxSquadCasParameter.setToolTip(ToolTips.CIVS[4]);
-    maxAllCasParameter.setToolTip(ToolTips.CIVS[5]);
-    casDisplayParameter.setToolTip(ToolTips.CIVS[6]);
-    maxCivParameter.setToolTip(ToolTips.CIVS[7]);
-    interactParameter.setToolTip(ToolTips.CIVS[8]);
-    noCombatSpawnCheckBox.setToolTip(ToolTips.CIVS[9]);
+    delayParameter.setToolTip(ToolTips.CIVS[1]);
+    radiusParameter.setToolTip(ToolTips.CIVS[2]);
+    waypointsParameter.setToolTip(ToolTips.CIVS[3]);
+    densityParameter.setToolTip(ToolTips.CIVS[4]);
+    maxSquadCasParameter.setToolTip(ToolTips.CIVS[5]);
+    maxAllCasParameter.setToolTip(ToolTips.CIVS[6]);
+    casDisplayParameter.setToolTip(ToolTips.CIVS[7]);
+    maxCivParameter.setToolTip(ToolTips.CIVS[8]);
+    interactParameter.setToolTip(ToolTips.CIVS[9]);
+    noCombatSpawnCheckBox.setToolTip(ToolTips.CIVS[10]);
 
     civsWindow.addParameter(delayParameter);
     civsWindow.addParameter(radiusParameter);

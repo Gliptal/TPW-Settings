@@ -13,10 +13,10 @@ public class HouselightsFactory
 
   public static void addParametersToWindow(ModWindow houselightsWindow)
     {
-    houselightsWindow.setIfModIsActive(HouselightsParameters.IS_ACTIVE);
-    delayParameter = new LabeledField(HouselightsParameters.PARAMETER_NAMES[0], HouselightsParameters.PARAMETERS[0]);
+    houselightsWindow.setIfModIsActive(HouselightsParameters.PARAMETERS[0]);
+    delayParameter = new LabeledField(HouselightsParameters.PARAMETER_NAMES[1], HouselightsParameters.PARAMETERS[1]);
 
-    delayParameter.setToolTip(ToolTips.HOUSELIGHTS[0]);
+    delayParameter.setToolTip(ToolTips.HOUSELIGHTS[1]);
 
     houselightsWindow.addParameter(delayParameter);
     Spacing.addPlaceholdersToModWindow(houselightsWindow, HouselightsParameters.PARAMETERS);

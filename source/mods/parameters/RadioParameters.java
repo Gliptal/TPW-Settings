@@ -1,14 +1,14 @@
 package mods.parameters;
 
+import exec.userinterface.*;
+
 
 public class RadioParameters
   {
-  public static final String[] PARAMETER_NAMES = {"HOUSE",
+  public static final String[] PARAMETER_NAMES = {Spacing.ACTIVE_PLACEHOLDER,
+                                                  "HOUSE",
                                                   "CAR",
                                                   "TIME"};
 
-  public static boolean IS_ACTIVE = true;
-  public static String[] PARAMETERS = {"true",
-                                       "true",
-                                       "60"};
+  public static String[] PARAMETERS = new String[PARAMETER_NAMES.length];
   }

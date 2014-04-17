@@ -1,18 +1,16 @@
 package mods.parameters;
 
+import exec.userinterface.*;
+
 
 public class CarsParameters
   {
-  public static final String[] PARAMETER_NAMES = {"DELAY",
+  public static final String[] PARAMETER_NAMES = {Spacing.ACTIVE_PLACEHOLDER,
+                                                  "DELAY",
                                                   "WAYPOINTS",
                                                   "NUM",
                                                   "RADIUS",
                                                   "NO COMBAT SPAWN"};
 
-  public static boolean IS_ACTIVE = true;
-  public static String[] PARAMETERS = {"10",
-                                       "15",
-                                       "3",
-                                       "1000",
-                                       "true"};
+  public static String[] PARAMETERS = new String[PARAMETER_NAMES.length];
   }

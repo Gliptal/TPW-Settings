@@ -1,7 +1,9 @@
 package gui;
 
 import exec.userinterface.*;
+import fileio.*;
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -21,6 +23,8 @@ public class CommonWindow extends JFrame
 
     createAndAddPanels();
     createAndAddCommitButtons();
+
+    subscribeButtons();
     }
 
   protected void addToMainPanel(JPanel panel, String position)
@@ -47,5 +51,24 @@ public class CommonWindow extends JFrame
     commitPanel.add(Spacing.createPlaceholder());
     commitPanel.add(commitNegativeButton);
     commitPanel.add(commitPositiveButton);
+    }
+
+  private void subscribeButtons()
+    {
+    subscribeCommitButtons();
+    }
+
+  private void subscribeCommitButtons()
+    {
+    commitPositiveButton.addActionListener
+        (
+        new ActionListener()
+          {
+          public void actionPerformed(ActionEvent event)
+            {
+            ActionBuffer.writeWholeFile();
+            }
+          }
+        );
     }
   }

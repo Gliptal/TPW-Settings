@@ -16,16 +16,16 @@ public class BoatsFactory
 
   public static void addParametersToWindow(ModWindow boatsWindow)
     {
-    boatsWindow.setIfModIsActive(BoatsParameters.IS_ACTIVE);
-    delayParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[0], BoatsParameters.PARAMETERS[0]);
-    radiusParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[1], BoatsParameters.PARAMETERS[1]);
-    waypointsParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[2], BoatsParameters.PARAMETERS[2]);
-    numParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[3], BoatsParameters.PARAMETERS[3]);
+    boatsWindow.setIfModIsActive(BoatsParameters.PARAMETERS[0]);
+    delayParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[1], BoatsParameters.PARAMETERS[1]);
+    radiusParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[2], BoatsParameters.PARAMETERS[2]);
+    waypointsParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[3], BoatsParameters.PARAMETERS[3]);
+    numParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[4], BoatsParameters.PARAMETERS[4]);
 
-    delayParameter.setToolTip(ToolTips.BOATS[0]);
-    radiusParameter.setToolTip(ToolTips.BOATS[1]);
-    waypointsParameter.setToolTip(ToolTips.BOATS[2]);
-    numParameter.setToolTip(ToolTips.BOATS[3]);
+    delayParameter.setToolTip(ToolTips.BOATS[1]);
+    radiusParameter.setToolTip(ToolTips.BOATS[2]);
+    waypointsParameter.setToolTip(ToolTips.BOATS[3]);
+    numParameter.setToolTip(ToolTips.BOATS[4]);
 
     boatsWindow.addParameter(delayParameter);
     boatsWindow.addParameter(radiusParameter);

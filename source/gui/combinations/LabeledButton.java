@@ -1,24 +1,25 @@
 package gui.combinations;
 
-import mods.CommonMod;
+import exec.*;
 import exec.userinterface.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import mods.*;
 
 
 public class LabeledButton extends CommonLabeled
   {
   private JButton button;
 
-  public LabeledButton(String buttonText, boolean modIsActive)
+  public LabeledButton(String buttonText, String modIsActive)
     {
     super(Spacing.BUTTON_LABEL_WIDTH);
 
     changeLayout(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS));
     moveLabel(BorderLayout.WEST);
     createAndAddButton(buttonText);
-    setIfRelativeModIsActive(modIsActive);
+    setIfRelativeModIsActive(Utils.stringToBoolean(modIsActive));
     }
 
   public void connectToCheckBox(LabeledCheckBox checkBoxToBeConnected)

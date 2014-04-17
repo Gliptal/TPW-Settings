@@ -74,7 +74,7 @@ public class MainWindow extends CommonWindow
     {
     presetsDeleteButton = new JButton(Buttons.PRESETS_DELETE);
     presetsSaveButton = new JButton(Buttons.PRESETS_SAVE);
-    presetsLoadButton = new JButton(Buttons.PRESETS_LOAD);
+    presetsLoadButton = new JButton(Buttons.PRESETS_RENAME);
 
     presetsPanel.add(presetsDeleteButton);
     presetsPanel.add(Spacing.createPlaceholder());

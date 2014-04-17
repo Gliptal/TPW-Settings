@@ -23,22 +23,22 @@ public class CommonMod
                                             "RADIO",
                                             "RAIN_FX",
                                             "STREETLIGHTS"};
-  public static boolean[] MOD_STATUSES = {AirParameters.IS_ACTIVE,
-                                          AnimalsParameters.IS_ACTIVE,
-                                          BleedoutParameters.IS_ACTIVE,
-                                          BoatsParameters.IS_ACTIVE,
-                                          CarsParameters.IS_ACTIVE,
-                                          CivsParameters.IS_ACTIVE,
-                                          EbsParameters.IS_ACTIVE,
-                                          FallParameters.IS_ACTIVE,
-                                          FogParameters.IS_ACTIVE,
-                                          HouselightsParameters.IS_ACTIVE,
-                                          false,
-                                          LosParameters.IS_ACTIVE,
-                                          ParkParameters.IS_ACTIVE,
-                                          RadioParameters.IS_ACTIVE,
-                                          RainFxParameters.IS_ACTIVE,
-                                          StreetlightsParameters.IS_ACTIVE};
+  public static String[] MOD_STATUSES = {AirParameters.PARAMETERS[0],
+                                         AnimalsParameters.PARAMETERS[0],
+                                         BleedoutParameters.PARAMETERS[0],
+                                         BoatsParameters.PARAMETERS[0],
+                                         CarsParameters.PARAMETERS[0],
+                                         CivsParameters.PARAMETERS[0],
+                                         EbsParameters.PARAMETERS[0],
+                                         FallParameters.PARAMETERS[0],
+                                         FogParameters.PARAMETERS[0],
+                                         HouselightsParameters.PARAMETERS[0],
+                                         "0",
+                                         LosParameters.PARAMETERS[0],
+                                         ParkParameters.PARAMETERS[0],
+                                         RadioParameters.PARAMETERS[0],
+                                         RainFxParameters.PARAMETERS[0],
+                                         StreetlightsParameters.PARAMETERS[0]};
   public static final int NUMBER_OF_MODS = MOD_NAMES.length;
 
   public static int AIR_WINDOW_ID = lookForModWindowId("AIR");

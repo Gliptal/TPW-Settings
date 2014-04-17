@@ -1,9 +1,12 @@
 package mods.parameters;
 
+import exec.userinterface.*;
+
 
 public class EbsParameters
   {
-  public static final String[] PARAMETER_NAMES = {"THRESH",
+  public static final String[] PARAMETER_NAMES = {Spacing.ACTIVE_PLACEHOLDER,
+                                                  "THRESH",
                                                   "DELAY",
                                                   "DEBUG",
                                                   "RADIUS",
@@ -11,12 +14,5 @@ public class EbsParameters
                                                   "AI SUP",
                                                   "FIND COVER"};
 
-  public static boolean IS_ACTIVE = true;
-  public static String[] PARAMETERS = {"5",
-                                       "1",
-                                       "false",
-                                       "500",
-                                       "true",
-                                       "true",
-                                       "true"};
+  public static String[] PARAMETERS = new String[PARAMETER_NAMES.length];
   }

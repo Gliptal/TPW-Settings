@@ -1,6 +1,6 @@
 package gui.combinations;
 
-import java.awt.*;
+import exec.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -21,9 +21,9 @@ public class LabeledCheckBox extends CommonLabeled
     createAndAddCheckBox(isSelected);
     }
 
-  public void setStatus(boolean isSelected)
+  public void setStatus(String isSelected)
     {
-    checkBox.setSelected(isSelected);
+    checkBox.setSelected(Utils.stringToBoolean(isSelected));
     }
 
   public void setToolTip(String toolTipText)
@@ -53,11 +53,11 @@ public class LabeledCheckBox extends CommonLabeled
     this.add(checkBox);
     }
 
-  private void createAndAddCheckBox(String isSelectedString)
+  private void createAndAddCheckBox(String isSelected)
     {
     checkBox = new JCheckBox();
 
-    setStatus(Boolean.valueOf(isSelectedString));
+    setStatus(isSelected);
 
     this.add(checkBox);
     }

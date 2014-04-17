@@ -5,6 +5,7 @@ import gui.combinations.*;
 import javax.swing.*;
 import mods.*;
 import mods.factories.*;
+import fileio.*;
 
 
 public class Main
@@ -21,6 +22,8 @@ public class Main
     {
     setSystemLookAndFeel();
 
+    getParametersFromFile();
+
     createAndShowMainWindow();
     createModWindows();
     setUpSubscriptions();
@@ -32,9 +35,12 @@ public class Main
       {
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
       }
-    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except)
-      {
-      }
+    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except) {}
+    }
+
+  private void getParametersFromFile()
+    {
+    ActionBuffer.readWholeFile();
     }
 
   private void createAndShowMainWindow()

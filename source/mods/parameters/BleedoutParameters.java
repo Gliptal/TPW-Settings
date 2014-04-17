@@ -1,16 +1,15 @@
 package mods.parameters;
 
+import exec.userinterface.*;
+
 
 public class BleedoutParameters
   {
-  public static final String[] PARAMETER_NAMES = {"INCREASE",
-                                                 "C THRESH",
-                                                 "P THRESH",
-                                                 "I THRESH"};
+  public static final String[] PARAMETER_NAMES = {Spacing.ACTIVE_PLACEHOLDER,
+                                                  "INCREASE",
+                                                  "C THRESH",
+                                                  "P THRESH",
+                                                  "I THRESH"};
 
-  public static boolean IS_ACTIVE = true;
-  public static String[] PARAMETERS = {"5",
-                                       "0.5",
-                                       "0.7",
-                                       "0.85"};
+  public static String[] PARAMETERS = new String[PARAMETER_NAMES.length];
   }

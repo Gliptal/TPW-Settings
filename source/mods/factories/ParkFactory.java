@@ -17,18 +17,18 @@ public class ParkFactory
 
   public static void addParametersToWindow(ModWindow parkWindow)
     {
-    parkWindow.setIfModIsActive(ParkParameters.IS_ACTIVE);
-    percParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[0], ParkParameters.PARAMETERS[0]);
-    createDistParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[1], ParkParameters.PARAMETERS[1]);
-    hideDistParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[2], ParkParameters.PARAMETERS[2]);
-    simDistParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[3], ParkParameters.PARAMETERS[3]);
-    maxParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[4], ParkParameters.PARAMETERS[4]);
+    parkWindow.setIfModIsActive(ParkParameters.PARAMETERS[0]);
+    percParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[1], ParkParameters.PARAMETERS[1]);
+    createDistParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[2], ParkParameters.PARAMETERS[2]);
+    hideDistParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[3], ParkParameters.PARAMETERS[3]);
+    simDistParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[4], ParkParameters.PARAMETERS[4]);
+    maxParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[5], ParkParameters.PARAMETERS[5]);
 
-    percParameter.setToolTip(ToolTips.PARK[0]);
-    createDistParameter.setToolTip(ToolTips.PARK[1]);
-    hideDistParameter.setToolTip(ToolTips.PARK[2]);
-    simDistParameter.setToolTip(ToolTips.PARK[3]);
-    maxParameter.setToolTip(ToolTips.PARK[4]);
+    percParameter.setToolTip(ToolTips.PARK[1]);
+    createDistParameter.setToolTip(ToolTips.PARK[2]);
+    hideDistParameter.setToolTip(ToolTips.PARK[3]);
+    simDistParameter.setToolTip(ToolTips.PARK[4]);
+    maxParameter.setToolTip(ToolTips.PARK[5]);
 
     parkWindow.addParameter(percParameter);
     parkWindow.addParameter(createDistParameter);

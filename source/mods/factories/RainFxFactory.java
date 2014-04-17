@@ -11,7 +11,7 @@ public class RainFxFactory
   {
   public static void addParametersToWindow(ModWindow radioWindow)
     {
-    radioWindow.setIfModIsActive(RadioParameters.IS_ACTIVE);
+    radioWindow.setIfModIsActive(RadioParameters.PARAMETERS[0]);
 
     Spacing.addPlaceholdersToModWindow(radioWindow, RadioParameters.PARAMETERS);
     }

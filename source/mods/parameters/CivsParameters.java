@@ -1,9 +1,12 @@
 package mods.parameters;
 
+import exec.userinterface.*;
+
 
 public class CivsParameters
   {
-  public static final String[] PARAMETER_NAMES = {"DELAY",
+  public static final String[] PARAMETER_NAMES = {Spacing.ACTIVE_PLACEHOLDER,
+                                                  "DELAY",
                                                   "RADIUS",
                                                   "WAYPOINTS",
                                                   "DENSITY",
@@ -14,17 +17,7 @@ public class CivsParameters
                                                   "INTERACT",
                                                   "NO COMBAT SPAWN"};
 
-  public static boolean IS_ACTIVE = true;
-  public static String[] PARAMETERS = {"5",
-                                       "150",
-                                       "15",
-                                       "5",
-                                       "4",
-                                       "50",
-                                       "0",
-                                       "20",
-                                       "15",
-                                       "true"};
+  public static String[] PARAMETERS = new String[PARAMETER_NAMES.length];
   public static String[] CAS_DISPLAY = {"NOTHING",
                                         "POP UP MESSAGE",
                                         "END MISSION"};

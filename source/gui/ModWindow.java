@@ -43,7 +43,7 @@ public class ModWindow extends CommonWindow
     return isActiveCheckBox;
     }
 
-  public void setIfModIsActive(boolean isActive)
+  public void setIfModIsActive(String isActive)
     {
     isActiveCheckBox.setStatus(isActive);
     }

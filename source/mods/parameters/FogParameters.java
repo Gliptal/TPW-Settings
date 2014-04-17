@@ -1,9 +1,12 @@
 package mods.parameters;
 
+import exec.userinterface.*;
+
 
 public class FogParameters
   {
-  public static final String[] PARAMETER_NAMES = {"RADIUS",
+  public static final String[] PARAMETER_NAMES = {Spacing.ACTIVE_PLACEHOLDER,
+                                                  "RADIUS",
                                                   "DELAY",
                                                   "BREATH",
                                                   "GROUND FOG",
@@ -11,12 +14,5 @@ public class FogParameters
                                                   "HEAT HAZE",
                                                   "CAN SNOW"};
 
-  public static boolean IS_ACTIVE = true;
-  public static String[] PARAMETERS = {"250",
-                                       "5",
-                                       "true",
-                                       "true",
-                                       "true",
-                                       "true",
-                                       "true"};
+  public static String[] PARAMETERS = new String[PARAMETER_NAMES.length];
   }

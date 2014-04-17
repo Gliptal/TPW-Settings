@@ -15,14 +15,14 @@ public class AirFactory
 
   public static void addParametersToWindow(ModWindow airWindow)
     {
-    airWindow.setIfModIsActive(AirParameters.IS_ACTIVE);
-    delayParameter = new LabeledField(AirParameters.PARAMETER_NAMES[0], AirParameters.PARAMETERS[0]);
-    timeParameter = new LabeledField(AirParameters.PARAMETER_NAMES[1], AirParameters.PARAMETERS[1]);
-    maxParameter = new LabeledField(AirParameters.PARAMETER_NAMES[2], AirParameters.PARAMETERS[2]);
+    airWindow.setIfModIsActive(AirParameters.PARAMETERS[0]);
+    delayParameter = new LabeledField(AirParameters.PARAMETER_NAMES[1], AirParameters.PARAMETERS[1]);
+    timeParameter = new LabeledField(AirParameters.PARAMETER_NAMES[2], AirParameters.PARAMETERS[2]);
+    maxParameter = new LabeledField(AirParameters.PARAMETER_NAMES[3], AirParameters.PARAMETERS[3]);
 
-    delayParameter.setToolTip(ToolTips.AIR[0]);
-    timeParameter.setToolTip(ToolTips.AIR[1]);
-    maxParameter.setToolTip(ToolTips.AIR[2]);
+    delayParameter.setToolTip(ToolTips.AIR[1]);
+    timeParameter.setToolTip(ToolTips.AIR[2]);
+    maxParameter.setToolTip(ToolTips.AIR[3]);
 
     airWindow.addParameter(delayParameter);
     airWindow.addParameter(timeParameter);

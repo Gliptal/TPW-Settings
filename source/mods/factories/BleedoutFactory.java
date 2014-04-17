@@ -16,16 +16,16 @@ public class BleedoutFactory
 
   public static void addParametersToWindow(ModWindow bleedoutWindow)
     {
-    bleedoutWindow.setIfModIsActive(BleedoutParameters.IS_ACTIVE);
-    incParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[0], BleedoutParameters.PARAMETERS[0]);
-    cThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[1], BleedoutParameters.PARAMETERS[1]);
-    pThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[2], BleedoutParameters.PARAMETERS[2]);
-    iThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[3], BleedoutParameters.PARAMETERS[3]);
+    bleedoutWindow.setIfModIsActive(BleedoutParameters.PARAMETERS[0]);
+    incParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[1], BleedoutParameters.PARAMETERS[1]);
+    cThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[2], BleedoutParameters.PARAMETERS[2]);
+    pThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[3], BleedoutParameters.PARAMETERS[3]);
+    iThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[4], BleedoutParameters.PARAMETERS[4]);
 
-    incParameter.setToolTip(ToolTips.BLEEDOUT[0]);
-    cThreshParameter.setToolTip(ToolTips.BLEEDOUT[1]);
-    pThreshParameter.setToolTip(ToolTips.BLEEDOUT[2]);
-    iThreshParameter.setToolTip(ToolTips.BLEEDOUT[3]);
+    incParameter.setToolTip(ToolTips.BLEEDOUT[1]);
+    cThreshParameter.setToolTip(ToolTips.BLEEDOUT[2]);
+    pThreshParameter.setToolTip(ToolTips.BLEEDOUT[3]);
+    iThreshParameter.setToolTip(ToolTips.BLEEDOUT[4]);
 
     bleedoutWindow.addParameter(incParameter);
     bleedoutWindow.addParameter(cThreshParameter);

@@ -16,17 +16,16 @@ public class StreetlightsFactory
 
   public static void addParametersToWindow(ModWindow streetlightsWindow)
     {
+    streetlightsWindow.setIfModIsActive(StreetlightsParameters.PARAMETERS[0]);
+    factorParameter = new LabeledField(StreetlightsParameters.PARAMETER_NAMES[1], StreetlightsParameters.PARAMETERS[1]);
+    rangeParameter = new LabeledField(StreetlightsParameters.PARAMETER_NAMES[2], StreetlightsParameters.PARAMETERS[2]);
+    colourParameter = new LabeledComboBox(StreetlightsParameters.PARAMETER_NAMES[3], StreetlightsParameters.PARAMETERS[3], StreetlightsParameters.COLOUR);
+    mothsParameter = new LabeledCheckBox(StreetlightsParameters.PARAMETER_NAMES[4], StreetlightsParameters.PARAMETERS[4]);
 
-    streetlightsWindow.setIfModIsActive(StreetlightsParameters.IS_ACTIVE);
-    factorParameter = new LabeledField(StreetlightsParameters.PARAMETER_NAMES[0], StreetlightsParameters.PARAMETERS[0]);
-    rangeParameter = new LabeledField(StreetlightsParameters.PARAMETER_NAMES[1], StreetlightsParameters.PARAMETERS[1]);
-    colourParameter = new LabeledComboBox(StreetlightsParameters.PARAMETER_NAMES[2], StreetlightsParameters.PARAMETERS[2], StreetlightsParameters.COLOUR);
-    mothsParameter = new LabeledCheckBox(StreetlightsParameters.PARAMETER_NAMES[3], StreetlightsParameters.PARAMETERS[3]);
-
-    factorParameter.setToolTip(ToolTips.STREETLIGHTS[0]);
-    rangeParameter.setToolTip(ToolTips.STREETLIGHTS[1]);
-    colourParameter.setToolTip(ToolTips.STREETLIGHTS[2]);
-    mothsParameter.setToolTip(ToolTips.STREETLIGHTS[3]);
+    factorParameter.setToolTip(ToolTips.STREETLIGHTS[1]);
+    rangeParameter.setToolTip(ToolTips.STREETLIGHTS[2]);
+    colourParameter.setToolTip(ToolTips.STREETLIGHTS[3]);
+    mothsParameter.setToolTip(ToolTips.STREETLIGHTS[4]);
 
     streetlightsWindow.addParameter(factorParameter);
     streetlightsWindow.addParameter(rangeParameter);

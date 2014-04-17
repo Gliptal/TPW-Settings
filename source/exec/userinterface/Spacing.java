@@ -18,6 +18,7 @@ public class Spacing
 
   public static final int PARAMETERS_ROWS = 5;
   public static final int PARAMETERS_COLUMNS = 2;
+  public static final String ACTIVE_PLACEHOLDER = "";
 
   public static final String BUTTON_LABEL_WIDTH = "      ";
   public static final int TEXT_FIELD_WIDTH = 12;
@@ -29,7 +30,7 @@ public class Spacing
 
   public static void addPlaceholdersToModWindow(ModWindow modWindow, String[] parameters)
     {
-    for (int i = 0; i < CommonMod.MAXIMUM_PARAMETERS-parameters.length; i += 1)
+    for (int i = 0; i < CommonMod.MAXIMUM_PARAMETERS-parameters.length-1; i += 1)
       modWindow.addPlaceHolder();
     }
   }
