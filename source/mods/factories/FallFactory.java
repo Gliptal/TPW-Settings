@@ -15,7 +15,7 @@ public class FallFactory
   public static LabeledCheckBox ragdollParameter;
   public static LabeledField fallTimeSupParameter;
 
-  public static void addParametersToWindow(ModWindow fallWindow)
+  public static void createAndAddParametersToModWindow(ModWindow fallWindow)
     {
     fallWindow.setIfModIsActive(FallParameters.PARAMETERS[0]);
     sensitivityParameter = new LabeledField(FallParameters.PARAMETER_NAMES[1], FallParameters.PARAMETERS[1]);
@@ -36,5 +36,15 @@ public class FallFactory
     fallWindow.addParameter(ragdollParameter);
     fallWindow.addParameter(fallTimeSupParameter);
     Spacing.addPlaceholdersToModWindow(fallWindow, FallParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow fallWindow)
+    {
+    fallWindow.getIsActiveCheckBox().linkToArray(FallParameters.PARAMETERS, 0);
+    sensitivityParameter.linkToArray(FallParameters.PARAMETERS, 1);
+    thresholdParameter.linkToArray(FallParameters.PARAMETERS, 2);
+    delayParameter.linkToArray(FallParameters.PARAMETERS, 3);
+    ragdollParameter.linkToArray(FallParameters.PARAMETERS, 4);
+    fallTimeSupParameter.linkToArray(FallParameters.PARAMETERS, 5);
     }
   }

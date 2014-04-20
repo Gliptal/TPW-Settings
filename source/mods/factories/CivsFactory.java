@@ -20,7 +20,7 @@ public class CivsFactory
   public static LabeledField interactParameter;
   public static LabeledCheckBox noCombatSpawnCheckBox;
 
-  public static void addParametersToWindow(ModWindow civsWindow)
+  public static void createAndAddParametersToModWindow(ModWindow civsWindow)
     {
     civsWindow.setIfModIsActive(CivsParameters.PARAMETERS[0]);
     delayParameter = new LabeledField(CivsParameters.PARAMETER_NAMES[1], CivsParameters.PARAMETERS[1]);
@@ -56,5 +56,20 @@ public class CivsFactory
     civsWindow.addParameter(interactParameter);
     civsWindow.addParameter(noCombatSpawnCheckBox);
     Spacing.addPlaceholdersToModWindow(civsWindow, CivsParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow civsWindow)
+    {
+    civsWindow.getIsActiveCheckBox().linkToArray(CivsParameters.PARAMETERS, 0);
+    delayParameter.linkToArray(CivsParameters.PARAMETERS, 1);
+    radiusParameter.linkToArray(CivsParameters.PARAMETERS, 2);
+    waypointsParameter.linkToArray(CivsParameters.PARAMETERS, 3);
+    densityParameter.linkToArray(CivsParameters.PARAMETERS, 4);
+    maxSquadCasParameter.linkToArray(CivsParameters.PARAMETERS, 5);
+    maxAllCasParameter.linkToArray(CivsParameters.PARAMETERS, 6);
+    casDisplayParameter.linkToArray(CivsParameters.PARAMETERS, 7);
+    maxCivParameter.linkToArray(CivsParameters.PARAMETERS, 8);
+    interactParameter.linkToArray(CivsParameters.PARAMETERS, 9);
+    noCombatSpawnCheckBox.linkToArray(CivsParameters.PARAMETERS, 10);
     }
   }

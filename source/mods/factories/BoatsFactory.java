@@ -14,7 +14,7 @@ public class BoatsFactory
   public static LabeledField waypointsParameter;
   public static LabeledField numParameter;
 
-  public static void addParametersToWindow(ModWindow boatsWindow)
+  public static void createAndAddParametersToModWindow(ModWindow boatsWindow)
     {
     boatsWindow.setIfModIsActive(BoatsParameters.PARAMETERS[0]);
     delayParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[1], BoatsParameters.PARAMETERS[1]);
@@ -32,5 +32,14 @@ public class BoatsFactory
     boatsWindow.addParameter(waypointsParameter);
     boatsWindow.addParameter(numParameter);
     Spacing.addPlaceholdersToModWindow(boatsWindow, BoatsParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow boatsWindow)
+    {
+    boatsWindow.getIsActiveCheckBox().linkToArray(BoatsParameters.PARAMETERS, 0);
+    delayParameter.linkToArray(BoatsParameters.PARAMETERS, 1);
+    radiusParameter.linkToArray(BoatsParameters.PARAMETERS, 2);
+    waypointsParameter.linkToArray(BoatsParameters.PARAMETERS, 3);
+    numParameter.linkToArray(BoatsParameters.PARAMETERS, 4);
     }
   }

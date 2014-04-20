@@ -14,7 +14,7 @@ public class StreetlightsFactory
   public static LabeledComboBox colourParameter;
   public static LabeledCheckBox mothsParameter;
 
-  public static void addParametersToWindow(ModWindow streetlightsWindow)
+  public static void createAndAddParametersToModWindow(ModWindow streetlightsWindow)
     {
     streetlightsWindow.setIfModIsActive(StreetlightsParameters.PARAMETERS[0]);
     factorParameter = new LabeledField(StreetlightsParameters.PARAMETER_NAMES[1], StreetlightsParameters.PARAMETERS[1]);
@@ -32,5 +32,14 @@ public class StreetlightsFactory
     streetlightsWindow.addParameter(colourParameter);
     streetlightsWindow.addParameter(mothsParameter);
     Spacing.addPlaceholdersToModWindow(streetlightsWindow, StreetlightsParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow streetlightsWindow)
+    {
+    streetlightsWindow.getIsActiveCheckBox().linkToArray(StreetlightsParameters.PARAMETERS, 0);
+    factorParameter.linkToArray(StreetlightsParameters.PARAMETERS, 1);
+    rangeParameter.linkToArray(StreetlightsParameters.PARAMETERS, 2);
+    colourParameter.linkToArray(StreetlightsParameters.PARAMETERS, 3);
+    mothsParameter.linkToArray(StreetlightsParameters.PARAMETERS, 4);
     }
   }

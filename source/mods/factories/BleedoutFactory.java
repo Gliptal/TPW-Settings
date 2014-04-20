@@ -14,7 +14,7 @@ public class BleedoutFactory
   public static LabeledField pThreshParameter;
   public static LabeledField iThreshParameter;
 
-  public static void addParametersToWindow(ModWindow bleedoutWindow)
+  public static void createAndAddParametersToModWindow(ModWindow bleedoutWindow)
     {
     bleedoutWindow.setIfModIsActive(BleedoutParameters.PARAMETERS[0]);
     incParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[1], BleedoutParameters.PARAMETERS[1]);
@@ -32,5 +32,14 @@ public class BleedoutFactory
     bleedoutWindow.addParameter(pThreshParameter);
     bleedoutWindow.addParameter(iThreshParameter);
     Spacing.addPlaceholdersToModWindow(bleedoutWindow, BleedoutParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow bleedoutWindow)
+    {
+    bleedoutWindow.getIsActiveCheckBox().linkToArray(BleedoutParameters.PARAMETERS, 0);
+    incParameter.linkToArray(BleedoutParameters.PARAMETERS, 1);
+    cThreshParameter.linkToArray(BleedoutParameters.PARAMETERS, 2);
+    pThreshParameter.linkToArray(BleedoutParameters.PARAMETERS, 3);
+    iThreshParameter.linkToArray(BleedoutParameters.PARAMETERS, 4);
     }
   }

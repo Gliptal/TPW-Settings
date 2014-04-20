@@ -6,17 +6,17 @@ import mods.parameters.*;
 
 public class ActionBuffer
   {
-  private static final String FILE_NAME = "TPW_MODS.hpp";
+  public static final String CONFIG_FILE_NAME = "TPW_MODS.hpp";
   private static final String SEPARATOR = "//><";
 
   private static PrintWriter writer;
   private static BufferedReader reader;
 
-  public static void writeWholeFile()
+  public static void writeWholeFile(String fileName)
     {
-    createWriter();
+    openWriter(fileName);
 
-    writeNonParameters(FileTemplate.HEADER);
+    plainWrite(FileTemplate.HEADER);
     separateSections();
     writeSection(FileTemplate.AIR, AirParameters.PARAMETERS);
     separateSections();
@@ -38,7 +38,7 @@ public class ActionBuffer
     separateSections();
     writeSection(FileTemplate.HOUSELIGHTS, HouselightsParameters.PARAMETERS);
     separateSections();
-    writeNonParameters(FileTemplate.HUD);
+    writeSection(FileTemplate.HUD, HudParameters.PARAMETERS);
     separateSections();
     writeSection(FileTemplate.LOS, LosParameters.PARAMETERS);
     separateSections();
@@ -54,11 +54,12 @@ public class ActionBuffer
     closeWriter();
     }
 
-  public static void readWholeFile()
+  public static void readWholeFile(String fileName)
     {
-    createReader();
+    openReader(fileName);
 
-    readNonParameters();
+    plainRead();
+    plainRead();
     readSection(AirParameters.PARAMETERS);
     readSection(AnimalsParameters.PARAMETERS);
     readSection(BleedoutParameters.PARAMETERS);
@@ -69,7 +70,7 @@ public class ActionBuffer
     readSection(FallParameters.PARAMETERS);
     readSection(FogParameters.PARAMETERS);
     readSection(HouselightsParameters.PARAMETERS);
-    readNonParameters();
+    readSection(HudParameters.PARAMETERS);
     readSection(LosParameters.PARAMETERS);
     readSection(ParkParameters.PARAMETERS);
     readSection(RadioParameters.PARAMETERS);
@@ -79,55 +80,11 @@ public class ActionBuffer
     closeReader();
     }
 
-  protected static void writeNonParameters(String[] lines)
-    {
-    for (int i = 1; i < lines.length; i += 1)
-      writeLine(lines[i]);
-    }
-
-  protected static void writeSection(String[] lines, String[] parameters)
-    {
-    for (int i = 0; i < lines.length; i += 1)
-      writeLine(lines[i]+parameters[i]+";");
-    }
-
-  protected static void readNonParameters()
-    {
-    String line;
-
-    do
-      {
-      line = readLine();
-      }
-    while (!line.equals(SEPARATOR));
-    }
-
-  protected static void readSection(String[] parameters)
-    {
-    String line;
-    int parameterCounter = 0;
-
-    do
-      {
-      line = readLine();
-
-      int firstChar = line.indexOf("=")+2;
-      int lastChar = line.indexOf(";");
-
-      if (line.indexOf("=") != -1 && line.indexOf(";") != -1)
-        {
-        parameters[parameterCounter] = line.substring(firstChar, lastChar);
-        parameterCounter += 1;
-        }
-      }
-    while (!line.equals(SEPARATOR));
-    }
-
-  private static void createWriter()
+  private static void openWriter(String fileName)
     {
     try
       {
-      writer = new PrintWriter(FILE_NAME, "UTF-8");
+      writer = new PrintWriter(fileName, "UTF-8");
       }
     catch (FileNotFoundException | UnsupportedEncodingException except) {}
     }
@@ -137,11 +94,11 @@ public class ActionBuffer
     writer.close();
     }
 
-  private static void createReader()
+  private static void openReader(String fileName)
     {
     try
       {
-      reader = new BufferedReader(new FileReader(FILE_NAME));
+      reader = new BufferedReader(new FileReader(fileName));
       }
     catch (FileNotFoundException except) {}
     }
@@ -153,6 +110,55 @@ public class ActionBuffer
       reader.close();
       }
     catch (IOException except) {}
+    }
+
+  private static void plainWrite(String[] lines)
+    {
+    for (int i = 1; i < lines.length; i += 1)
+      writeLine(lines[i]);
+    }
+
+  private static void writeSection(String[] lines, String[] parameters)
+    {
+    for (int i = 0; i < lines.length; i += 1)
+      writeLine(lines[i]+parameters[i]+";");
+    }
+
+  private static void plainRead()
+    {
+    String line;
+
+    do
+      {
+      line = readLine();
+      }
+    while (!line.equals(SEPARATOR));
+    }
+
+  private static void readSection(String[] parameters)
+    {
+    String line;
+    int parameterCounter = 0;
+
+    do
+      {
+      line = readLine();
+
+      int equalsChar = line.indexOf("=");
+      int semicolonChar = line.lastIndexOf(";");
+
+      if (equalsChar != -1 && semicolonChar != -1)
+        {
+        parameters[parameterCounter] = line.substring(equalsChar+2, semicolonChar);
+        parameterCounter += 1;
+        }
+      }
+    while (!line.equals(SEPARATOR));
+    }
+
+  private static void separateSections()
+    {
+    writeLine(SEPARATOR);
     }
 
   private static void writeLine(String line)
@@ -168,12 +174,7 @@ public class ActionBuffer
       }
     catch (IOException except)
       {
-      return "0";
+      return "ERR";
       }
-    }
-
-  private static void separateSections()
-    {
-    writer.println(SEPARATOR);
     }
   }

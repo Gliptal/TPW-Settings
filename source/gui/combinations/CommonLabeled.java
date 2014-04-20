@@ -1,6 +1,6 @@
 package gui.combinations;
 
-import exec.userinterface.*;
+import exec.*;
 import java.awt.*;
 import javax.swing.*;
 
@@ -9,26 +9,10 @@ public class CommonLabeled extends JPanel
   {
   private JLabel label;
 
-  protected CommonLabeled(String labelText)
+  protected CommonLabeled(LayoutManager layout, String labelText)
     {
-    createElementsSeparation();
+    setLayout(layout);
     createAndAddLabel(labelText);
-    }
-
-  protected void setLabelToolTip(String toolTipText)
-    {
-    setToolTipText(toolTipText);
-    }
-
-  protected void changeLayout(LayoutManager layout)
-    {
-    this.setLayout(layout);
-    }
-
-  protected void moveLabel(String position)
-    {
-    this.remove(label);
-    this.add(label, position);
     }
 
   protected void changeLabelColor(Color newColor)
@@ -36,9 +20,9 @@ public class CommonLabeled extends JPanel
     label.setBackground(newColor);
     }
 
-  private void createElementsSeparation()
+  protected void setPanelToolTip(String toolTipText)
     {
-    this.setLayout(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS));
+    setToolTipText(toolTipText);
     }
 
   private void createAndAddLabel(String labelText)
@@ -48,6 +32,9 @@ public class CommonLabeled extends JPanel
     label.setOpaque(true);
     label.setHorizontalAlignment(JLabel.RIGHT);
 
-    this.add(label);
+    if (Utils.compareClass(getLayout(), "java.awt.BorderLayout"))
+      add(label, BorderLayout.WEST);
+    else
+      add(label);
     }
   }

@@ -2,17 +2,20 @@ package mods.factories;
 
 import exec.userinterface.*;
 import gui.*;
-import gui.combinations.*;
-import mods.*;
 import mods.parameters.*;
 
 
 public class RainFxFactory
   {
-  public static void addParametersToWindow(ModWindow radioWindow)
+  public static void createAndAddParametersToModWindow(ModWindow rainFxWindow)
     {
-    radioWindow.setIfModIsActive(RadioParameters.PARAMETERS[0]);
+    rainFxWindow.setIfModIsActive(RainFxParameters.PARAMETERS[0]);
 
-    Spacing.addPlaceholdersToModWindow(radioWindow, RadioParameters.PARAMETERS);
+    Spacing.addPlaceholdersToModWindow(rainFxWindow, RainFxParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow rainFxWindow)
+    {
+    rainFxWindow.getIsActiveCheckBox().linkToArray(RainFxParameters.PARAMETERS, 0);
     }
   }

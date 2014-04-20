@@ -9,11 +9,11 @@ import mods.parameters.*;
 
 public class AirFactory
   {
-  public static LabeledField delayParameter;
-  public static LabeledField timeParameter;
-  public static LabeledField maxParameter;
+  private static LabeledField delayParameter;
+  private static LabeledField timeParameter;
+  private static LabeledField maxParameter;
 
-  public static void addParametersToWindow(ModWindow airWindow)
+  public static void createAndAddParametersToModWindow(ModWindow airWindow)
     {
     airWindow.setIfModIsActive(AirParameters.PARAMETERS[0]);
     delayParameter = new LabeledField(AirParameters.PARAMETER_NAMES[1], AirParameters.PARAMETERS[1]);
@@ -28,5 +28,13 @@ public class AirFactory
     airWindow.addParameter(timeParameter);
     airWindow.addParameter(maxParameter);
     Spacing.addPlaceholdersToModWindow(airWindow, AirParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow airWindow)
+    {
+    airWindow.getIsActiveCheckBox().linkToArray(AirParameters.PARAMETERS, 0);
+    delayParameter.linkToArray(AirParameters.PARAMETERS, 1);
+    timeParameter.linkToArray(AirParameters.PARAMETERS, 2);
+    maxParameter.linkToArray(AirParameters.PARAMETERS, 3);
     }
   }

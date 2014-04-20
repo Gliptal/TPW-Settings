@@ -15,7 +15,7 @@ public class AnimalsFactory
   public static LabeledField minRadiusParameter;
   public static LabeledField noiseTimeParameter;
 
-  public static void addParametersToWindow(ModWindow animalsWindow)
+  public static void createAndAddParametersToModWindow(ModWindow animalsWindow)
     {
     animalsWindow.setIfModIsActive(AnimalsParameters.PARAMETERS[0]);
     delayParameter = new LabeledField(AnimalsParameters.PARAMETER_NAMES[1], AnimalsParameters.PARAMETERS[1]);
@@ -36,5 +36,15 @@ public class AnimalsFactory
     animalsWindow.addParameter(minRadiusParameter);
     animalsWindow.addParameter(noiseTimeParameter);
     Spacing.addPlaceholdersToModWindow(animalsWindow, AnimalsParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow animalsWindow)
+    {
+    animalsWindow.getIsActiveCheckBox().linkToArray(AnimalsParameters.PARAMETERS, 0);
+    delayParameter.linkToArray(AnimalsParameters.PARAMETERS, 1);
+    maxParameter.linkToArray(AnimalsParameters.PARAMETERS, 2);
+    maxRadiusParameter.linkToArray(AnimalsParameters.PARAMETERS, 3);
+    minRadiusParameter.linkToArray(AnimalsParameters.PARAMETERS, 4);
+    noiseTimeParameter.linkToArray(AnimalsParameters.PARAMETERS, 5);
     }
   }

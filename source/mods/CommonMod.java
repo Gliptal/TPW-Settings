@@ -59,8 +59,6 @@ public class CommonMod
 
   public static final int MAXIMUM_PARAMETERS = Spacing.PARAMETERS_ROWS*Spacing.PARAMETERS_COLUMNS;
   public static final String PARAMETERS_ACTIVE = "ACTIVE";
-  public static final Color ACTIVE_COLOR = Color.GREEN;
-  public static final Color INACTIVE_COLOR = Color.RED;
 
   private static int lookForModWindowId(String modName)
     {

@@ -11,7 +11,7 @@ public class HouselightsFactory
   {
   public static LabeledField delayParameter;
 
-  public static void addParametersToWindow(ModWindow houselightsWindow)
+  public static void createAndAddParametersToModWindow(ModWindow houselightsWindow)
     {
     houselightsWindow.setIfModIsActive(HouselightsParameters.PARAMETERS[0]);
     delayParameter = new LabeledField(HouselightsParameters.PARAMETER_NAMES[1], HouselightsParameters.PARAMETERS[1]);
@@ -20,5 +20,11 @@ public class HouselightsFactory
 
     houselightsWindow.addParameter(delayParameter);
     Spacing.addPlaceholdersToModWindow(houselightsWindow, HouselightsParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow houselightsWindow)
+    {
+    houselightsWindow.getIsActiveCheckBox().linkToArray(HouselightsParameters.PARAMETERS, 0);
+    delayParameter.linkToArray(HouselightsParameters.PARAMETERS, 1);
     }
   }

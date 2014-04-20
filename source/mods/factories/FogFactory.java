@@ -17,7 +17,7 @@ public class FogFactory
   public static LabeledCheckBox heatHazeParameter;
   public static LabeledCheckBox canSnowParameter;
 
-  public static void addParametersToWindow(ModWindow fogWindow)
+  public static void createAndAddParametersToModWindow(ModWindow fogWindow)
     {
     fogWindow.setIfModIsActive(FogParameters.PARAMETERS[0]);
     radiusParameter = new LabeledField(FogParameters.PARAMETER_NAMES[1], FogParameters.PARAMETERS[1]);
@@ -44,5 +44,17 @@ public class FogFactory
     fogWindow.addParameter(heatHazeParameter);
     fogWindow.addParameter(canSnowParameter);
     Spacing.addPlaceholdersToModWindow(fogWindow, FogParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow fogWindow)
+    {
+    fogWindow.getIsActiveCheckBox().linkToArray(FogParameters.PARAMETERS, 0);
+    radiusParameter.linkToArray(FogParameters.PARAMETERS, 1);
+    delayParameter.linkToArray(FogParameters.PARAMETERS, 2);
+    breathParameter.linkToArray(FogParameters.PARAMETERS, 3);
+    groundFogParameter.linkToArray(FogParameters.PARAMETERS, 4);
+    rainFogSupParameter.linkToArray(FogParameters.PARAMETERS, 5);
+    heatHazeParameter.linkToArray(FogParameters.PARAMETERS, 6);
+    canSnowParameter.linkToArray(FogParameters.PARAMETERS, 7);
     }
   }

@@ -3,8 +3,8 @@ package gui;
 import exec.*;
 import exec.userinterface.*;
 import gui.combinations.*;
+import gui.listeners.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import mods.*;
 
@@ -18,7 +18,7 @@ public class MainWindow extends CommonWindow
 
   private JButton presetsDeleteButton;
   private JButton presetsSaveButton;
-  private JButton presetsLoadButton;
+  private JButton presetsRenameButton;
   private LabeledButton[] modButtons;
 
   public MainWindow()
@@ -30,7 +30,7 @@ public class MainWindow extends CommonWindow
     createAndAddCombos();
     createAndAddButtons();
 
-    subscribeButtons();
+    setButtonListeners();
     }
 
   public LabeledButton getModButton(int which)
@@ -43,8 +43,8 @@ public class MainWindow extends CommonWindow
     presetsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
     modsPanel = new JPanel(new GridLayout(4, 4, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
 
-    addToMainPanel(presetsPanel, BorderLayout.NORTH);
-    addToMainPanel(modsPanel, BorderLayout.CENTER);
+    mainPanel.add(presetsPanel, BorderLayout.NORTH);
+    mainPanel.add(modsPanel, BorderLayout.CENTER);
     }
 
   private void createAndAddCombos()
@@ -58,9 +58,9 @@ public class MainWindow extends CommonWindow
     createAndAddModButtons();
     }
 
-  private void subscribeButtons()
+  private void setButtonListeners()
     {
-    registerModButtons();
+    setModButtonsListeners();
     }
 
   private void createAndAddPresetsCombos()
@@ -74,12 +74,12 @@ public class MainWindow extends CommonWindow
     {
     presetsDeleteButton = new JButton(Buttons.PRESETS_DELETE);
     presetsSaveButton = new JButton(Buttons.PRESETS_SAVE);
-    presetsLoadButton = new JButton(Buttons.PRESETS_RENAME);
+    presetsRenameButton = new JButton(Buttons.PRESETS_RENAME);
 
     presetsPanel.add(presetsDeleteButton);
     presetsPanel.add(Spacing.createPlaceholder());
     presetsPanel.add(presetsSaveButton);
-    presetsPanel.add(presetsLoadButton);
+    presetsPanel.add(presetsRenameButton);
     }
 
   private void createAndAddModButtons()
@@ -94,22 +94,9 @@ public class MainWindow extends CommonWindow
       }
     }
 
-  private void registerModButtons()
+  private void setModButtonsListeners()
     {
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      {
-      final int windowToBeOpened = i;
-
-      modButtons[i].addActionListener
-        (
-        new ActionListener()
-          {
-          public void actionPerformed(ActionEvent event)
-            {
-            Main.modWindows[windowToBeOpened].setVisible(true);
-            }
-          }
-        );
-      }
+      modButtons[i].addActionListener(new WindowVisibilityListener(Main.modWindows[i], true));
     }
   }

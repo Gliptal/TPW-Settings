@@ -15,7 +15,7 @@ public class ParkFactory
   public static LabeledField simDistParameter;
   public static LabeledField maxParameter;
 
-  public static void addParametersToWindow(ModWindow parkWindow)
+  public static void createAndAddParametersToModWindow(ModWindow parkWindow)
     {
     parkWindow.setIfModIsActive(ParkParameters.PARAMETERS[0]);
     percParameter = new LabeledField(ParkParameters.PARAMETER_NAMES[1], ParkParameters.PARAMETERS[1]);
@@ -36,5 +36,15 @@ public class ParkFactory
     parkWindow.addParameter(simDistParameter);
     parkWindow.addParameter(maxParameter);
     Spacing.addPlaceholdersToModWindow(parkWindow, ParkParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow parkWindow)
+    {
+    parkWindow.getIsActiveCheckBox().linkToArray(ParkParameters.PARAMETERS, 0);
+    percParameter.linkToArray(ParkParameters.PARAMETERS, 1);
+    createDistParameter.linkToArray(ParkParameters.PARAMETERS, 2);
+    hideDistParameter.linkToArray(ParkParameters.PARAMETERS, 3);
+    simDistParameter.linkToArray(ParkParameters.PARAMETERS, 4);
+    maxParameter.linkToArray(ParkParameters.PARAMETERS, 5);
     }
   }

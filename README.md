@@ -3,20 +3,35 @@ TPW Settings
 
 This small program should provide an easy and efficient graphical interface to configure the TPW MODS package, that has proven essential for a thorough enjoyement of [ArmA III](http://www.arma3.com/).
 
-Everything is coded in Java, and simply acts as a graphical version of the TPW_CONFIG.hpp file that tpw himself has already set up to configure his mod package.
+Everything is coded in Java, and simply acts as a graphical version of `TPW_MODS.hpp` that tpw himself has already set up to configure his mod package.
+
+Changelog
+======
+
+[1.0.0]
+First working release
 
 Usage
 ======
 
-- Main window will have a button for each available mod in the package
-- Multiple presets will be savable and loadable
-- Clicking on one of the buttons will open a second mod related window
-  - HUD mod will have a live preview of the HUD itself, updating at every change
-  - Tooltips will show the description of every parameter
-  - Parameters will be modifiable by editing
-    - Number fields
-    - Text fields
-    - Checkboxes
+The main window shows the collection of all available TPW Mods. The colored column to the left of every button acts as a quick reference to the state of the mod (green: enabled | red: disabled). Clicking on a button will open the relevant mod page, where changes to every value can be easily made. **ENTER** must be pressed after every change or the value will not register: this rule applies only on text fields, checkboxes and dropdowns do not require an **ENTER** press.
+
+Tooltips are available on mouse hover, describing the whole mod (in the main window) or the single parameter (in the relevant mod window).
+
+Next Steps
+======
+
+1. Working 'REVERT' button
+2. Working presets
+3. HUD section
+4. HUD live preview
+
+Limitations
+======
+
+- `TPW_MODS.hpp` must be in the same folder with `TPW Settings.java` for the program to work.
+- **ENTER** must be pressed every time a change is made in the text fields for it to register in the file. This is due to Java limitations, and will hopefully be addressed in the future.
+- HUD is still not implemented: you will have to edit those values manually.
 
 Progress
 ======
@@ -38,6 +53,8 @@ Progress
 17/04/14 | [0.7.1](https://github.com/Gliptal/TPW-Settings/tree/0.7.1) | fixed .gitignore
 
 17/04/14 | [0.7.2](https://github.com/Gliptal/TPW-Settings/tree/0.7.2) | fixed README.md
+
+20/04/14 | [1.0.0](https://github.com/Gliptal/TPW-Settings/tree/1.0.0) | first working release, refactoring
 
 Links
 ======

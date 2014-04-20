@@ -5,7 +5,6 @@ import exec.userinterface.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import mods.*;
 
 
 public class LabeledButton extends CommonLabeled
@@ -14,17 +13,9 @@ public class LabeledButton extends CommonLabeled
 
   public LabeledButton(String buttonText, String modIsActive)
     {
-    super(Spacing.BUTTON_LABEL_WIDTH);
-
-    changeLayout(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS));
-    moveLabel(BorderLayout.WEST);
+    super(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS), Spacing.BUTTON_LABEL_WIDTH);
     createAndAddButton(buttonText);
-    setIfRelativeModIsActive(Utils.stringToBoolean(modIsActive));
-    }
-
-  public void connectToCheckBox(LabeledCheckBox checkBoxToBeConnected)
-    {
-    checkBoxToBeConnected.connectWith(this);
+    setCorrespondingColor(Utils.stringToBoolean(modIsActive));
     }
 
   public void addActionListener(ActionListener listener)
@@ -34,22 +25,22 @@ public class LabeledButton extends CommonLabeled
 
   public void setToolTip(String toolTipText)
     {
-    setLabelToolTip(toolTipText);
+    setPanelToolTip(toolTipText);
     button.setToolTipText(toolTipText);
     }
 
-  protected void setIfRelativeModIsActive(boolean modIsActive)
+  public void setCorrespondingColor(boolean modIsActive)
     {
     if (modIsActive)
-      changeLabelColor(CommonMod.ACTIVE_COLOR);
+      changeLabelColor(Buttons.ACTIVE_MOD_COLOR);
     else
-      changeLabelColor(CommonMod.INACTIVE_COLOR);
+      changeLabelColor(Buttons.INACTIVE_MOD_COLOR);
     }
 
   private void createAndAddButton(String buttonText)
     {
     button = new JButton(buttonText);
 
-    this.add(button, BorderLayout.CENTER);
+    add(button, BorderLayout.CENTER);
     }
   }

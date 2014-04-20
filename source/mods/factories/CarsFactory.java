@@ -15,7 +15,7 @@ public class CarsFactory
   public static LabeledField radiusParameter;
   public static LabeledCheckBox noCombatSpawnParameter;
 
-  public static void addParametersToWindow(ModWindow carsWindow)
+  public static void createAndAddParametersToModWindow(ModWindow carsWindow)
     {
     carsWindow.setIfModIsActive(CarsParameters.PARAMETERS[0]);
     delayParameter = new LabeledField(CarsParameters.PARAMETER_NAMES[1], CarsParameters.PARAMETERS[1]);
@@ -36,5 +36,15 @@ public class CarsFactory
     carsWindow.addParameter(radiusParameter);
     carsWindow.addParameter(noCombatSpawnParameter);
     Spacing.addPlaceholdersToModWindow(carsWindow, CarsParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow carsWindow)
+    {
+    carsWindow.getIsActiveCheckBox().linkToArray(CarsParameters.PARAMETERS, 0);
+    delayParameter.linkToArray(CarsParameters.PARAMETERS, 1);
+    waypointsParameter.linkToArray(CarsParameters.PARAMETERS, 2);
+    numParameter.linkToArray(CarsParameters.PARAMETERS, 3);
+    radiusParameter.linkToArray(CarsParameters.PARAMETERS, 4);
+    noCombatSpawnParameter.linkToArray(CarsParameters.PARAMETERS, 5);
     }
   }

@@ -2,15 +2,15 @@ package gui;
 
 import exec.userinterface.*;
 import fileio.*;
+import gui.listeners.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
 
 public class CommonWindow extends JFrame
   {
-  private JPanel mainPanel;
+  protected JPanel mainPanel;
   private JPanel commitPanel;
 
   private JButton commitNegativeButton;
@@ -24,12 +24,7 @@ public class CommonWindow extends JFrame
     createAndAddPanels();
     createAndAddCommitButtons();
 
-    subscribeButtons();
-    }
-
-  protected void addToMainPanel(JPanel panel, String position)
-    {
-    mainPanel.add(panel, position);
+    setButtonListeners();
     }
 
   private void createAndAddPanels()
@@ -40,7 +35,7 @@ public class CommonWindow extends JFrame
     mainPanel.setBorder(new EmptyBorder(Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER));
 
     this.add(mainPanel);
-    addToMainPanel(commitPanel, BorderLayout.SOUTH);
+    mainPanel.add(commitPanel, BorderLayout.SOUTH);
     }
 
   private void createAndAddCommitButtons()
@@ -53,22 +48,13 @@ public class CommonWindow extends JFrame
     commitPanel.add(commitPositiveButton);
     }
 
-  private void subscribeButtons()
+  private void setButtonListeners()
     {
-    subscribeCommitButtons();
+    setCommitButtonListeners();
     }
 
-  private void subscribeCommitButtons()
+  private void setCommitButtonListeners()
     {
-    commitPositiveButton.addActionListener
-        (
-        new ActionListener()
-          {
-          public void actionPerformed(ActionEvent event)
-            {
-            ActionBuffer.writeWholeFile();
-            }
-          }
-        );
+    commitPositiveButton.addActionListener(new WriteFileListener(ActionBuffer.CONFIG_FILE_NAME));
     }
   }

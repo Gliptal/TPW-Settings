@@ -17,7 +17,7 @@ public class EbsFactory
   public static LabeledCheckBox aiSupParameter;
   public static LabeledCheckBox findCoverParameter;
 
-  public static void addParametersToWindow(ModWindow ebsWindow)
+  public static void createAndAddParametersToModWindow(ModWindow ebsWindow)
     {
     ebsWindow.setIfModIsActive(EbsParameters.PARAMETERS[0]);
     threshParameter = new LabeledField(EbsParameters.PARAMETER_NAMES[1], EbsParameters.PARAMETERS[1]);
@@ -44,5 +44,17 @@ public class EbsFactory
     ebsWindow.addParameter(aiSupParameter);
     ebsWindow.addParameter(findCoverParameter);
     Spacing.addPlaceholdersToModWindow(ebsWindow, EbsParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow ebsWindow)
+    {
+    ebsWindow.getIsActiveCheckBox().linkToArray(EbsParameters.PARAMETERS, 0);
+    threshParameter.linkToArray(EbsParameters.PARAMETERS, 1);
+    delayParameter.linkToArray(EbsParameters.PARAMETERS, 2);
+    debugParameter.linkToArray(EbsParameters.PARAMETERS, 3);
+    radiusParameter.linkToArray(EbsParameters.PARAMETERS, 4);
+    playerSupParameter.linkToArray(EbsParameters.PARAMETERS, 5);
+    aiSupParameter.linkToArray(EbsParameters.PARAMETERS, 6);
+    findCoverParameter.linkToArray(EbsParameters.PARAMETERS, 7);
     }
   }

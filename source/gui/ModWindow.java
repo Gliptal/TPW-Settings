@@ -2,8 +2,8 @@ package gui;
 
 import exec.userinterface.*;
 import gui.combinations.*;
+import gui.listeners.*;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import mods.*;
 
@@ -14,7 +14,7 @@ public class ModWindow extends CommonWindow
   private JPanel parametersPanel;
 
   private LabeledCheckBox isActiveCheckBox;
-
+  private JLabel noteLabel;
   private JButton backButton;
 
   public ModWindow(String title)
@@ -25,7 +25,7 @@ public class ModWindow extends CommonWindow
     createAndAddPanels();
     createAndAddGeneralElements();
 
-    registerButtons();
+    setButtonListeners();
     }
 
   public void addParameter(JPanel parameter)
@@ -38,7 +38,7 @@ public class ModWindow extends CommonWindow
     parametersPanel.add(Spacing.createPlaceholder());
     }
 
-  public LabeledCheckBox getCheckBox()
+  public LabeledCheckBox getIsActiveCheckBox()
     {
     return isActiveCheckBox;
     }
@@ -50,35 +50,26 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    generalPanel = new JPanel(new GridLayout(1, 4, Spacing.GRID_PARAMETERS_X, Spacing.GRID_PARAMETERS_Y));
+    generalPanel = new JPanel(new GridLayout(1, 3, Spacing.GRID_PARAMETERS_X, Spacing.GRID_PARAMETERS_Y));
     parametersPanel = new JPanel(new GridLayout(Spacing.PARAMETERS_ROWS, Spacing.PARAMETERS_COLUMNS, Spacing.GRID_PARAMETERS_X, Spacing.GRID_PARAMETERS_Y));
 
-    addToMainPanel(generalPanel, BorderLayout.NORTH);
-    addToMainPanel(parametersPanel, BorderLayout.CENTER);
+    mainPanel.add(generalPanel, BorderLayout.NORTH);
+    mainPanel.add(parametersPanel, BorderLayout.CENTER);
     }
 
   private void createAndAddGeneralElements()
     {
     isActiveCheckBox = new LabeledCheckBox(CommonMod.PARAMETERS_ACTIVE);
+    noteLabel = new JLabel(Windows.MOD_WINDOW_NOTE);
     backButton = new JButton(Buttons.MOD_BACK);
 
     generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
-    for (int i = 0; i < 2; i += 1)
-      generalPanel.add(Spacing.createPlaceholder(), BorderLayout.NORTH);
+    generalPanel.add(noteLabel);
     generalPanel.add(backButton, BorderLayout.NORTH);
     }
 
-  private void registerButtons()
+  private void setButtonListeners()
     {
-    backButton.addActionListener
-      (
-      new ActionListener()
-        {
-        public void actionPerformed(ActionEvent event)
-          {
-          setVisible(false);
-          }
-        }
-      );
+    backButton.addActionListener(new WindowVisibilityListener(this, false));
     }
   }

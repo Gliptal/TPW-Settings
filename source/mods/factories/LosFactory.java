@@ -14,7 +14,7 @@ public class LosFactory
   public static LabeledField minDistParameter;
   public static LabeledField delayParameter;
 
-  public static void addParametersToWindow(ModWindow losWindow)
+  public static void createAndAddParametersToModWindow(ModWindow losWindow)
     {
     losWindow.setIfModIsActive(LosParameters.PARAMETERS[0]);
     debugParameter = new LabeledCheckBox(LosParameters.PARAMETER_NAMES[1], LosParameters.PARAMETERS[1]);
@@ -32,5 +32,14 @@ public class LosFactory
     losWindow.addParameter(minDistParameter);
     losWindow.addParameter(delayParameter);
     Spacing.addPlaceholdersToModWindow(losWindow, LosParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow losWindow)
+    {
+    losWindow.getIsActiveCheckBox().linkToArray(LosParameters.PARAMETERS, 0);
+    debugParameter.linkToArray(LosParameters.PARAMETERS, 1);
+    maxDistParameter.linkToArray(LosParameters.PARAMETERS, 2);
+    minDistParameter.linkToArray(LosParameters.PARAMETERS, 3);
+    delayParameter.linkToArray(LosParameters.PARAMETERS, 4);
     }
   }

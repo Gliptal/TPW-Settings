@@ -13,7 +13,7 @@ public class RadioFactory
   public static LabeledCheckBox carParameter;
   public static LabeledField timeParameter;
 
-  public static void addParametersToWindow(ModWindow radioWindow)
+  public static void createAndAddParametersToModWindow(ModWindow radioWindow)
     {
     radioWindow.setIfModIsActive(RadioParameters.PARAMETERS[0]);
     houseParameter = new LabeledCheckBox(RadioParameters.PARAMETER_NAMES[1], RadioParameters.PARAMETERS[1]);
@@ -28,5 +28,13 @@ public class RadioFactory
     radioWindow.addParameter(carParameter);
     radioWindow.addParameter(timeParameter);
     Spacing.addPlaceholdersToModWindow(radioWindow, RadioParameters.PARAMETERS);
+    }
+
+  public static void linkComponentsToArray(ModWindow radioWindow)
+    {
+    radioWindow.getIsActiveCheckBox().linkToArray(RadioParameters.PARAMETERS, 0);
+    houseParameter.linkToArray(RadioParameters.PARAMETERS, 1);
+    carParameter.linkToArray(RadioParameters.PARAMETERS, 2);
+    timeParameter.linkToArray(RadioParameters.PARAMETERS, 3);
     }
   }

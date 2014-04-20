@@ -1,7 +1,9 @@
 package gui.combinations;
 
 import exec.*;
-import java.awt.event.*;
+import exec.userinterface.*;
+import gui.listeners.*;
+import java.awt.*;
 import javax.swing.*;
 
 
@@ -11,13 +13,13 @@ public class LabeledCheckBox extends CommonLabeled
 
   public LabeledCheckBox(String labelText)
     {
-    super(labelText);
+    super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
     createAndAddCheckBox();
     }
 
   public LabeledCheckBox(String labelText, String isSelected)
     {
-    super(labelText);
+    super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
     createAndAddCheckBox(isSelected);
     }
 
@@ -28,22 +30,18 @@ public class LabeledCheckBox extends CommonLabeled
 
   public void setToolTip(String toolTipText)
     {
-    setLabelToolTip(toolTipText);
+    setPanelToolTip(toolTipText);
     checkBox.setToolTipText(toolTipText);
     }
 
-  public void connectWith(final LabeledButton labeledButtonToBeRegistered)
+  public void linkToButton(LabeledButton button)
     {
-    checkBox.addActionListener
-        (
-        new ActionListener()
-          {
-          public void actionPerformed(ActionEvent event)
-            {
-            labeledButtonToBeRegistered.setIfRelativeModIsActive(checkBox.isSelected());
-            }
-          }
-        );
+    checkBox.addActionListener(new ActiveModListener(checkBox, button));
+    }
+
+  public void linkToArray(String[] parameterArray, int parameterIndex)
+    {
+    checkBox.addActionListener(new ParameterUpdateListener(checkBox, parameterArray, parameterIndex));
     }
 
   private void createAndAddCheckBox()

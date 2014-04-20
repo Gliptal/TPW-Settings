@@ -7,4 +7,14 @@ public class Utils
     {
     return stringInt.equals("1") ? true : false;
     }
+
+  public static String booleanToString(boolean bool)
+    {
+    return bool ? "1" : "0";
+    }
+
+  public static boolean compareClass(Object comparedClass, String comparedName)
+    {
+    return (comparedClass.getClass().getName()).equals(comparedName);
+    }
   }
