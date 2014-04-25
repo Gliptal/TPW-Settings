@@ -1,50 +1,28 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
-import mods.parameters.*;
 
 
-public class AnimalsFactory
+public class AnimalsFactory extends ModFactory
   {
-  public static LabeledField delayParameter;
-  public static LabeledField maxParameter;
-  public static LabeledField maxRadiusParameter;
-  public static LabeledField minRadiusParameter;
-  public static LabeledField noiseTimeParameter;
+  private LabeledTextField delay = new LabeledTextField(ModParameters.ANIMALS[1]);
+  private LabeledTextField max = new LabeledTextField(ModParameters.ANIMALS[2]);
+  private LabeledTextField maxRadius = new LabeledTextField(ModParameters.ANIMALS[3]);
+  private LabeledTextField minRadius = new LabeledTextField(ModParameters.ANIMALS[4]);
+  private LabeledTextField noiseTime = new LabeledTextField(ModParameters.ANIMALS[5]);
 
-  public static void createAndAddParametersToModWindow(ModWindow animalsWindow)
+  public AnimalsFactory(ModWindow animalsWindow)
     {
-    animalsWindow.setIfModIsActive(AnimalsParameters.PARAMETERS[0]);
-    delayParameter = new LabeledField(AnimalsParameters.PARAMETER_NAMES[1], AnimalsParameters.PARAMETERS[1]);
-    maxParameter = new LabeledField(AnimalsParameters.PARAMETER_NAMES[2], AnimalsParameters.PARAMETERS[2]);
-    maxRadiusParameter = new LabeledField(AnimalsParameters.PARAMETER_NAMES[3], AnimalsParameters.PARAMETERS[3]);
-    minRadiusParameter = new LabeledField(AnimalsParameters.PARAMETER_NAMES[4], AnimalsParameters.PARAMETERS[4]);
-    noiseTimeParameter = new LabeledField(AnimalsParameters.PARAMETER_NAMES[5], AnimalsParameters.PARAMETERS[5]);
+    super(animalsWindow);
 
-    delayParameter.setToolTip(ToolTips.ANIMALS[1]);
-    maxParameter.setToolTip(ToolTips.ANIMALS[2]);
-    maxRadiusParameter.setToolTip(ToolTips.ANIMALS[3]);
-    minRadiusParameter.setToolTip(ToolTips.ANIMALS[4]);
-    noiseTimeParameter.setToolTip(ToolTips.ANIMALS[5]);
-
-    animalsWindow.addParameter(delayParameter);
-    animalsWindow.addParameter(maxParameter);
-    animalsWindow.addParameter(maxRadiusParameter);
-    animalsWindow.addParameter(minRadiusParameter);
-    animalsWindow.addParameter(noiseTimeParameter);
-    Spacing.addPlaceholdersToModWindow(animalsWindow, AnimalsParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {delay, max, maxRadius, minRadius, noiseTime};
     }
 
-  public static void linkComponentsToArray(ModWindow animalsWindow)
+  protected void addToolTips()
     {
-    animalsWindow.getIsActiveCheckBox().linkToArray(AnimalsParameters.PARAMETERS, 0);
-    delayParameter.linkToArray(AnimalsParameters.PARAMETERS, 1);
-    maxParameter.linkToArray(AnimalsParameters.PARAMETERS, 2);
-    maxRadiusParameter.linkToArray(AnimalsParameters.PARAMETERS, 3);
-    minRadiusParameter.linkToArray(AnimalsParameters.PARAMETERS, 4);
-    noiseTimeParameter.linkToArray(AnimalsParameters.PARAMETERS, 5);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.ANIMALS[i]);
     }
   }

@@ -1,40 +1,26 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
-import mods.parameters.*;
 
 
-public class RadioFactory
+public class RadioFactory extends ModFactory
   {
-  public static LabeledCheckBox houseParameter;
-  public static LabeledCheckBox carParameter;
-  public static LabeledField timeParameter;
+  private LabeledCheckBox house = new LabeledCheckBox(ModParameters.RADIO[1]);
+  private LabeledCheckBox car = new LabeledCheckBox(ModParameters.RADIO[2]);
+  private LabeledTextField time = new LabeledTextField(ModParameters.RADIO[3]);
 
-  public static void createAndAddParametersToModWindow(ModWindow radioWindow)
+  public RadioFactory(ModWindow radioFactory)
     {
-    radioWindow.setIfModIsActive(RadioParameters.PARAMETERS[0]);
-    houseParameter = new LabeledCheckBox(RadioParameters.PARAMETER_NAMES[1], RadioParameters.PARAMETERS[1]);
-    carParameter = new LabeledCheckBox(RadioParameters.PARAMETER_NAMES[2], RadioParameters.PARAMETERS[2]);
-    timeParameter = new LabeledField(RadioParameters.PARAMETER_NAMES[3], RadioParameters.PARAMETERS[3]);
+    super(radioFactory);
 
-    houseParameter.setToolTip(ToolTips.RADIO[1]);
-    carParameter.setToolTip(ToolTips.RADIO[2]);
-    timeParameter.setToolTip(ToolTips.RADIO[3]);
-
-    radioWindow.addParameter(houseParameter);
-    radioWindow.addParameter(carParameter);
-    radioWindow.addParameter(timeParameter);
-    Spacing.addPlaceholdersToModWindow(radioWindow, RadioParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {house, car, time};
     }
 
-  public static void linkComponentsToArray(ModWindow radioWindow)
+  protected void addToolTips()
     {
-    radioWindow.getIsActiveCheckBox().linkToArray(RadioParameters.PARAMETERS, 0);
-    houseParameter.linkToArray(RadioParameters.PARAMETERS, 1);
-    carParameter.linkToArray(RadioParameters.PARAMETERS, 2);
-    timeParameter.linkToArray(RadioParameters.PARAMETERS, 3);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.RADIO[i]);
     }
   }

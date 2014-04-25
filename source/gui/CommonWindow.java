@@ -55,6 +55,7 @@ public class CommonWindow extends JFrame
 
   private void setCommitButtonListeners()
     {
+    commitNegativeButton.addActionListener(new WriteFromRevertFileListener(ActionBuffer.CONFIG_FILE_NAME));
     commitPositiveButton.addActionListener(new WriteFileListener(ActionBuffer.CONFIG_FILE_NAME));
     }
   }

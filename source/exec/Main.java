@@ -12,20 +12,24 @@ public class Main
   {
   public static MainWindow mainWindow;
   public static ModWindow[] modWindows;
+  public static ModFactory[] modFactories;
 
   public static void main(String[] args)
     {
-    Main exec = new Main();
+    new Main();
     }
 
   private Main()
     {
     setSystemLookAndFeel();
 
-    loadParametersFromConfigFile();
-
     createModWindows();
+    createModFactories();
+    fillModWindowsWithParameters();
     createAndShowMainWindow();
+
+    setParametersFromConfig();
+    setRevertFile();
 
     setListeners();
     }
@@ -39,79 +43,76 @@ public class Main
     catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except) {}
     }
 
-  private void loadParametersFromConfigFile()
+  private void createModWindows()
     {
-    ActionBuffer.readWholeFile(ActionBuffer.CONFIG_FILE_NAME);
+    modWindows = new ModWindow[CommonMod.NUMBER_OF_MODS];
+
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      {
+      modWindows[i] = new ModWindow(CommonMod.MOD_NAMES[i]);
+      modWindows[i].setLocationRelativeTo(null);
+      }
+    }
+
+  private void createModFactories()
+    {
+    modFactories = new ModFactory[CommonMod.NUMBER_OF_MODS];
+
+    modFactories[0] = new AirFactory(modWindows[0]);
+    modFactories[1] = new AnimalsFactory(modWindows[1]);
+    modFactories[2] = new BleedoutFactory(modWindows[2]);
+    modFactories[3] = new BoatsFactory(modWindows[3]);
+    modFactories[4] = new CarsFactory(modWindows[4]);
+    modFactories[5] = new CivsFactory(modWindows[5]);
+    modFactories[6] = new EbsFactory(modWindows[6]);
+    modFactories[7] = new FallFactory(modWindows[7]);
+    modFactories[8] = new FogFactory(modWindows[8]);
+    modFactories[9] = new HouselightsFactory(modWindows[9]);
+    modFactories[10] = new HudFactory(modWindows[10]);
+    modFactories[11] = new LosFactory(modWindows[11]);
+    modFactories[12] = new ParkFactory(modWindows[12]);
+    modFactories[13] = new RadioFactory(modWindows[13]);
+    modFactories[14] = new RainFxFactory(modWindows[14]);
+    modFactories[15] = new StreetlightsFactory(modWindows[15]);
+    }
+
+  private void fillModWindowsWithParameters()
+    {
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      modFactories[i].fillModWindow();
     }
 
   private void createAndShowMainWindow()
     {
     mainWindow = new MainWindow();
     mainWindow.setVisible(true);
-    }
-
-  private void createModWindows()
-    {
-    modWindows = new ModWindow[CommonMod.NUMBER_OF_MODS];
-
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      modWindows[i] = new ModWindow(CommonMod.MOD_NAMES[i]);
-
-    fillModWindowsWithParameters();
+    mainWindow.setLocationRelativeTo(null);
     }
 
   private void setListeners()
     {
     linkCheckBoxesToButtons();
-    linkGuiToFile();
     }
 
-  private void fillModWindowsWithParameters()
+  private void setParametersFromConfig()
     {
-    AirFactory.createAndAddParametersToModWindow(modWindows[CommonMod.AIR_WINDOW_ID]);
-    AnimalsFactory.createAndAddParametersToModWindow(modWindows[CommonMod.ANIMALS_WINDOW_ID]);
-    BleedoutFactory.createAndAddParametersToModWindow(modWindows[CommonMod.BLEEDOUT_WINDOW_ID]);
-    BoatsFactory.createAndAddParametersToModWindow(modWindows[CommonMod.BOATS_WINDOW_ID]);
-    CarsFactory.createAndAddParametersToModWindow(modWindows[CommonMod.CARS_WINDOW_ID]);
-    CivsFactory.createAndAddParametersToModWindow(modWindows[CommonMod.CIVS_WINDOW_ID]);
-    EbsFactory.createAndAddParametersToModWindow(modWindows[CommonMod.EBS_WINDOW_ID]);
-    FallFactory.createAndAddParametersToModWindow(modWindows[CommonMod.FALL_WINDOW_ID]);
-    FogFactory.createAndAddParametersToModWindow(modWindows[CommonMod.FOG_WINDOW_ID]);
-    HouselightsFactory.createAndAddParametersToModWindow(modWindows[CommonMod.HOUSELIGHTS_WINDOW_ID]);
-    LosFactory.createAndAddParametersToModWindow(modWindows[CommonMod.LOS_WINDOW_ID]);
-    ParkFactory.createAndAddParametersToModWindow(modWindows[CommonMod.PARK_WINDOW_ID]);
-    RadioFactory.createAndAddParametersToModWindow(modWindows[CommonMod.RADIO_WINDOW_ID]);
-    RainFxFactory.createAndAddParametersToModWindow(modWindows[CommonMod.RAINFX_WINDOW_ID]);
-    StreetlightsFactory.createAndAddParametersToModWindow(modWindows[CommonMod.STREETLIGHTS_WINDOW_ID]);
+    ActionBuffer.readWholeFile(ActionBuffer.CONFIG_FILE_NAME);
+    }
+
+  private void setRevertFile()
+    {
+    ActionBuffer.writeWholeFile(ActionBuffer.REVERT_FILE_NAME);
     }
 
   private void linkCheckBoxesToButtons()
     {
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       {
-      LabeledCheckBox checkBox = modWindows[i].getIsActiveCheckBox();
+      LabeledCheckBox checkBox = modWindows[i].getIsActiveLabeledCheckBox();
       LabeledButton button = mainWindow.getModButton(i);
 
+      button.setCorrespondingColor(checkBox.isActive());
       checkBox.linkToButton(button);
       }
-    }
-
-  private void linkGuiToFile()
-    {
-    AirFactory.linkComponentsToArray(modWindows[CommonMod.AIR_WINDOW_ID]);
-    AnimalsFactory.linkComponentsToArray(modWindows[CommonMod.ANIMALS_WINDOW_ID]);
-    BleedoutFactory.linkComponentsToArray(modWindows[CommonMod.BLEEDOUT_WINDOW_ID]);
-    BoatsFactory.linkComponentsToArray(modWindows[CommonMod.BOATS_WINDOW_ID]);
-    CarsFactory.linkComponentsToArray(modWindows[CommonMod.CARS_WINDOW_ID]);
-    CivsFactory.linkComponentsToArray(modWindows[CommonMod.CIVS_WINDOW_ID]);
-    EbsFactory.linkComponentsToArray(modWindows[CommonMod.EBS_WINDOW_ID]);
-    FallFactory.linkComponentsToArray(modWindows[CommonMod.FALL_WINDOW_ID]);
-    FogFactory.linkComponentsToArray(modWindows[CommonMod.FOG_WINDOW_ID]);
-    HouselightsFactory.linkComponentsToArray(modWindows[CommonMod.HOUSELIGHTS_WINDOW_ID]);
-    LosFactory.linkComponentsToArray(modWindows[CommonMod.LOS_WINDOW_ID]);
-    ParkFactory.linkComponentsToArray(modWindows[CommonMod.PARK_WINDOW_ID]);
-    RadioFactory.linkComponentsToArray(modWindows[CommonMod.RADIO_WINDOW_ID]);
-    RainFxFactory.linkComponentsToArray(modWindows[CommonMod.RAINFX_WINDOW_ID]);
-    StreetlightsFactory.linkComponentsToArray(modWindows[CommonMod.STREETLIGHTS_WINDOW_ID]);
     }
   };

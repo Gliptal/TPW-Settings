@@ -1,37 +1,47 @@
 TPW Settings
 ======
 
-This small program should provide an easy and efficient graphical interface to configure the TPW MODS package, that has proven essential for a thorough enjoyement of [ArmA III](http://www.arma3.com/).
+This small program provides an easy-to-use and efficient graphical interface to configure the TPW MODS package, that has proven essential for a thorough enjoyement of [ArmA III](http://www.arma3.com/).
 
-Everything is coded in Java, and simply acts as a graphical version of `TPW_MODS.hpp` that tpw himself has already set up to configure his mod package.
+It is coded in Java so the JVM is required (although 95% of PCs and Laptops will already have it installed by default), and simply acts as a graphical version of `TPW_MODS.hpp` that [tpw](http://forums.bistudio.com/member.php?62814-tpw) himself has already set up to configure his mod package.
 
 Changelog
 ======
 
+[1.1.0]
+
+- program now opens in the center of the screen
+- **ENTER** key press is no longer required
+- added HUD section
+- working 'REVERT' button
+
 [1.0.0]
-First working release
+
+- first working release
 
 Usage
 ======
 
-The main window shows the collection of all available TPW Mods. The colored column to the left of every button acts as a quick reference to the state of the mod (green: enabled | red: disabled). Clicking on a button will open the relevant mod page, where changes to every value can be easily made. **ENTER** must be pressed after every change or the value will not register: this rule applies only on text fields, checkboxes and dropdowns do not require an **ENTER** press.
+The main window shows the collection of all available TPW Mods. The colored column to the left of every button is as a quick reference to the state of the mod (green: enabled | red: disabled). Clicking on a button will open the relevant mod page, where changes to every value can be easily made by either editing a value directly or by selecting an appropriate one via checkboxes or comboboxes.
 
-Tooltips are available on mouse hover, describing the whole mod (in the main window) or the single parameter (in the relevant mod window).
+'APPLY': saves any changes you made by writing them in the config file.
+'REVERT': cancels any changes you made by reloading the values that were set just before the program was run.
+
+Tooltips are available on mouse hover, describing either an whole mod (in the main window) or a single parameter (in the relevant mod window).
 
 Next Steps
 ======
 
-1. Working 'REVERT' button
-2. Working presets
-3. HUD section
-4. HUD live preview
+1. Working presets
+2. Expanded HUD section
+3. HUD live preview
 
 Limitations
 ======
 
 - `TPW_MODS.hpp` must be in the same folder with `TPW Settings.java` for the program to work.
-- **ENTER** must be pressed every time a change is made in the text fields for it to register in the file. This is due to Java limitations, and will hopefully be addressed in the future.
-- HUD is still not implemented: you will have to edit those values manually.
+- HUD is only partially implemented: you still have to insert all values as strings (no checkboxes and comboboxes yet).
+- HUD tooltips missing.
 
 Progress
 ======
@@ -55,6 +65,8 @@ Progress
 17/04/14 | [0.7.2](https://github.com/Gliptal/TPW-Settings/tree/0.7.2) | fixed README.md
 
 20/04/14 | [1.0.0](https://github.com/Gliptal/TPW-Settings/tree/1.0.0) | first working release, refactoring
+
+25/04/14 | [1.1.0](https://github.com/Gliptal/TPW-Settings/tree/1.1.0) | total reimplementation, added feautures
 
 Links
 ======

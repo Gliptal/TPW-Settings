@@ -1,38 +1,26 @@
 package gui.combinations;
 
 import exec.userinterface.*;
-import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
 
 
-public class LabeledComboBox extends CommonLabeled
+public class LabeledComboBox extends LabeledComponent
   {
-  private JComboBox<String> comboBox;
-
-  public LabeledComboBox(String labelText, String defaultChoice, String[] choices)
+  public LabeledComboBox(String labelText, String[] choices)
     {
     super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
-    createAndAddComboBox(choices, defaultChoice);
+
+    addComponent(new JComboBox<String>(choices));
     }
 
-  public void setToolTip(String toolTipText)
+  public String getParameter()
     {
-    setPanelToolTip(toolTipText);
-    comboBox.setToolTipText(toolTipText);
+    return Integer.toString((((JComboBox)component).getSelectedIndex()));
     }
 
-  public void linkToArray(String[] parameterArray, int parameterIndex)
+  public void setParameter(String value)
     {
-    comboBox.addActionListener(new ParameterUpdateListener(comboBox, parameterArray, parameterIndex));
-    }
-
-  private void createAndAddComboBox(String[] choices, String defaultChoice)
-    {
-    comboBox = new JComboBox<String>(choices);
-
-    comboBox.setSelectedIndex(Integer.parseInt(defaultChoice));
-
-    this.add(comboBox);
+    ((JComboBox)component).setSelectedIndex(Integer.parseInt(value));
     }
   }

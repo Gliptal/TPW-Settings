@@ -1,45 +1,27 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
-import mods.parameters.*;
 
 
-public class LosFactory
+public class LosFactory extends ModFactory
   {
-  public static LabeledCheckBox debugParameter;
-  public static LabeledField maxDistParameter;
-  public static LabeledField minDistParameter;
-  public static LabeledField delayParameter;
+  private LabeledCheckBox debug = new LabeledCheckBox(ModParameters.LOS[1]);
+  private LabeledTextField maxDist = new LabeledTextField(ModParameters.LOS[2]);
+  private LabeledTextField minDist = new LabeledTextField(ModParameters.LOS[3]);
+  private LabeledTextField delay = new LabeledTextField(ModParameters.LOS[4]);
 
-  public static void createAndAddParametersToModWindow(ModWindow losWindow)
+  public LosFactory(ModWindow losWindow)
     {
-    losWindow.setIfModIsActive(LosParameters.PARAMETERS[0]);
-    debugParameter = new LabeledCheckBox(LosParameters.PARAMETER_NAMES[1], LosParameters.PARAMETERS[1]);
-    maxDistParameter = new LabeledField(LosParameters.PARAMETER_NAMES[2], LosParameters.PARAMETERS[2]);
-    minDistParameter = new LabeledField(LosParameters.PARAMETER_NAMES[3], LosParameters.PARAMETERS[3]);
-    delayParameter = new LabeledField(LosParameters.PARAMETER_NAMES[4], LosParameters.PARAMETERS[4]);
+    super(losWindow);
 
-    debugParameter.setToolTip(ToolTips.LOS[1]);
-    maxDistParameter.setToolTip(ToolTips.LOS[2]);
-    minDistParameter.setToolTip(ToolTips.LOS[3]);
-    delayParameter.setToolTip(ToolTips.LOS[4]);
-
-    losWindow.addParameter(debugParameter);
-    losWindow.addParameter(maxDistParameter);
-    losWindow.addParameter(minDistParameter);
-    losWindow.addParameter(delayParameter);
-    Spacing.addPlaceholdersToModWindow(losWindow, LosParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {debug, maxDist, minDist, delay};
     }
 
-  public static void linkComponentsToArray(ModWindow losWindow)
+  protected void addToolTips()
     {
-    losWindow.getIsActiveCheckBox().linkToArray(LosParameters.PARAMETERS, 0);
-    debugParameter.linkToArray(LosParameters.PARAMETERS, 1);
-    maxDistParameter.linkToArray(LosParameters.PARAMETERS, 2);
-    minDistParameter.linkToArray(LosParameters.PARAMETERS, 3);
-    delayParameter.linkToArray(LosParameters.PARAMETERS, 4);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.LOS[i]);
     }
   }

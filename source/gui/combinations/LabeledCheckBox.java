@@ -7,56 +7,32 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class LabeledCheckBox extends CommonLabeled
+public class LabeledCheckBox extends LabeledComponent
   {
-  private JCheckBox checkBox;
-
   public LabeledCheckBox(String labelText)
     {
     super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
-    createAndAddCheckBox();
+
+    addComponent(new JCheckBox());
     }
 
-  public LabeledCheckBox(String labelText, String isSelected)
+  public String getParameter()
     {
-    super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
-    createAndAddCheckBox(isSelected);
+    return Utils.booleanToString(((JCheckBox)component).isSelected());
     }
 
-  public void setStatus(String isSelected)
+  public void setParameter(String value)
     {
-    checkBox.setSelected(Utils.stringToBoolean(isSelected));
-    }
-
-  public void setToolTip(String toolTipText)
-    {
-    setPanelToolTip(toolTipText);
-    checkBox.setToolTipText(toolTipText);
+    ((JCheckBox)component).setSelected(Utils.stringToBoolean(value));
     }
 
   public void linkToButton(LabeledButton button)
     {
-    checkBox.addActionListener(new ActiveModListener(checkBox, button));
+    ((JCheckBox)component).addActionListener(new ActiveModListener(((JCheckBox)component), button));
     }
 
-  public void linkToArray(String[] parameterArray, int parameterIndex)
+  public boolean isActive()
     {
-    checkBox.addActionListener(new ParameterUpdateListener(checkBox, parameterArray, parameterIndex));
-    }
-
-  private void createAndAddCheckBox()
-    {
-    checkBox = new JCheckBox();
-
-    this.add(checkBox);
-    }
-
-  private void createAndAddCheckBox(String isSelected)
-    {
-    checkBox = new JCheckBox();
-
-    setStatus(isSelected);
-
-    this.add(checkBox);
+    return ((JCheckBox)component).isSelected();
     }
   }

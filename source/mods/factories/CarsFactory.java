@@ -1,50 +1,28 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
-import mods.parameters.*;
 
 
-public class CarsFactory
+public class CarsFactory extends ModFactory
   {
-  public static LabeledField delayParameter;
-  public static LabeledField waypointsParameter;
-  public static LabeledField numParameter;
-  public static LabeledField radiusParameter;
-  public static LabeledCheckBox noCombatSpawnParameter;
+  private LabeledTextField delay = new LabeledTextField(ModParameters.CARS[1]);
+  private LabeledTextField waypoints = new LabeledTextField(ModParameters.CARS[2]);
+  private LabeledTextField num = new LabeledTextField(ModParameters.CARS[3]);
+  private LabeledTextField radius = new LabeledTextField(ModParameters.CARS[4]);
+  private LabeledCheckBox noCombatSpawn = new LabeledCheckBox(ModParameters.CARS[5]);
 
-  public static void createAndAddParametersToModWindow(ModWindow carsWindow)
+  public CarsFactory(ModWindow carsWindow)
     {
-    carsWindow.setIfModIsActive(CarsParameters.PARAMETERS[0]);
-    delayParameter = new LabeledField(CarsParameters.PARAMETER_NAMES[1], CarsParameters.PARAMETERS[1]);
-    waypointsParameter = new LabeledField(CarsParameters.PARAMETER_NAMES[2], CarsParameters.PARAMETERS[2]);
-    numParameter = new LabeledField(CarsParameters.PARAMETER_NAMES[3], CarsParameters.PARAMETERS[3]);
-    radiusParameter = new LabeledField(CarsParameters.PARAMETER_NAMES[4], CarsParameters.PARAMETERS[4]);
-    noCombatSpawnParameter = new LabeledCheckBox(CarsParameters.PARAMETER_NAMES[5], CarsParameters.PARAMETERS[5]);
+    super(carsWindow);
 
-    delayParameter.setToolTip(ToolTips.CARS[1]);
-    waypointsParameter.setToolTip(ToolTips.CARS[2]);
-    numParameter.setToolTip(ToolTips.CARS[3]);
-    radiusParameter.setToolTip(ToolTips.CARS[4]);
-    noCombatSpawnParameter.setToolTip(ToolTips.CARS[5]);
-
-    carsWindow.addParameter(delayParameter);
-    carsWindow.addParameter(waypointsParameter);
-    carsWindow.addParameter(numParameter);
-    carsWindow.addParameter(radiusParameter);
-    carsWindow.addParameter(noCombatSpawnParameter);
-    Spacing.addPlaceholdersToModWindow(carsWindow, CarsParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {delay, waypoints, num, radius, noCombatSpawn};
     }
 
-  public static void linkComponentsToArray(ModWindow carsWindow)
+  protected void addToolTips()
     {
-    carsWindow.getIsActiveCheckBox().linkToArray(CarsParameters.PARAMETERS, 0);
-    delayParameter.linkToArray(CarsParameters.PARAMETERS, 1);
-    waypointsParameter.linkToArray(CarsParameters.PARAMETERS, 2);
-    numParameter.linkToArray(CarsParameters.PARAMETERS, 3);
-    radiusParameter.linkToArray(CarsParameters.PARAMETERS, 4);
-    noCombatSpawnParameter.linkToArray(CarsParameters.PARAMETERS, 5);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.CARS[i]);
     }
   }

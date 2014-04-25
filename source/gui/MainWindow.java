@@ -88,7 +88,7 @@ public class MainWindow extends CommonWindow
 
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       {
-      modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i], CommonMod.MOD_STATUSES[i]);
+      modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i]);
       modButtons[i].setToolTip(ToolTips.MODS[i]);
       modsPanel.add(modButtons[i]);
       }
@@ -97,6 +97,6 @@ public class MainWindow extends CommonWindow
   private void setModButtonsListeners()
     {
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      modButtons[i].addActionListener(new WindowVisibilityListener(Main.modWindows[i], true));
+      modButtons[i].addButtonListener(new WindowVisibilityListener(Main.modWindows[i], true));
     }
   }

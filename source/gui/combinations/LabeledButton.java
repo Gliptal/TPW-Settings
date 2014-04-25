@@ -1,46 +1,34 @@
 package gui.combinations;
 
-import exec.*;
 import exec.userinterface.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 
-public class LabeledButton extends CommonLabeled
+public class LabeledButton extends LabeledComponent
   {
-  private JButton button;
-
-  public LabeledButton(String buttonText, String modIsActive)
+  public LabeledButton(String buttonText)
     {
     super(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS), Spacing.BUTTON_LABEL_WIDTH);
-    createAndAddButton(buttonText);
-    setCorrespondingColor(Utils.stringToBoolean(modIsActive));
+
+    addComponent(new JButton(buttonText));
     }
 
-  public void addActionListener(ActionListener listener)
+  public void addButtonListener(ActionListener listener)
     {
-    button.addActionListener(listener);
+    ((JButton)component).addActionListener(listener);
     }
 
-  public void setToolTip(String toolTipText)
+  public void setCorrespondingColor(boolean linkedIsActive)
     {
-    setPanelToolTip(toolTipText);
-    button.setToolTipText(toolTipText);
-    }
-
-  public void setCorrespondingColor(boolean modIsActive)
-    {
-    if (modIsActive)
+    if (linkedIsActive)
       changeLabelColor(Buttons.ACTIVE_MOD_COLOR);
     else
       changeLabelColor(Buttons.INACTIVE_MOD_COLOR);
     }
 
-  private void createAndAddButton(String buttonText)
-    {
-    button = new JButton(buttonText);
+  public String getParameter() {return "";}  // Dummy function
 
-    add(button, BorderLayout.CENTER);
-    }
+  public void setParameter(String value) {}  // Dummy function
   }

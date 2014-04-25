@@ -1,13 +1,15 @@
 package fileio;
 
+import exec.*;
 import java.io.*;
-import mods.parameters.*;
+import mods.factories.*;
+import mods.*;
 
 
 public class ActionBuffer
   {
   public static final String CONFIG_FILE_NAME = "TPW_MODS.hpp";
-  private static final String SEPARATOR = "//><";
+  public static final String REVERT_FILE_NAME = "REVERT";
 
   private static PrintWriter writer;
   private static BufferedReader reader;
@@ -18,38 +20,11 @@ public class ActionBuffer
 
     plainWrite(FileTemplate.HEADER);
     separateSections();
-    writeSection(FileTemplate.AIR, AirParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.ANIMALS, AnimalsParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.BLEEDOUT, BleedoutParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.BOATS, BoatsParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.CARS, CarsParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.CIVS, CivsParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.EBS, EbsParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.FALL, FallParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.FOG, FogParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.HOUSELIGHTS, HouselightsParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.HUD, HudParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.LOS, LosParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.PARK, ParkParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.RADIO, RadioParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.RAIN_FX, RainFxParameters.PARAMETERS);
-    separateSections();
-    writeSection(FileTemplate.STREETLIGHTS, StreetlightsParameters.PARAMETERS);
-    separateSections();
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      {
+      writeSection(FileTemplate.MOD_SECTIONS[i], Main.modFactories[i]);
+      separateSections();
+      }
 
     closeWriter();
     }
@@ -60,22 +35,8 @@ public class ActionBuffer
 
     plainRead();
     plainRead();
-    readSection(AirParameters.PARAMETERS);
-    readSection(AnimalsParameters.PARAMETERS);
-    readSection(BleedoutParameters.PARAMETERS);
-    readSection(BoatsParameters.PARAMETERS);
-    readSection(CarsParameters.PARAMETERS);
-    readSection(CivsParameters.PARAMETERS);
-    readSection(EbsParameters.PARAMETERS);
-    readSection(FallParameters.PARAMETERS);
-    readSection(FogParameters.PARAMETERS);
-    readSection(HouselightsParameters.PARAMETERS);
-    readSection(HudParameters.PARAMETERS);
-    readSection(LosParameters.PARAMETERS);
-    readSection(ParkParameters.PARAMETERS);
-    readSection(RadioParameters.PARAMETERS);
-    readSection(RainFxParameters.PARAMETERS);
-    readSection(StreetlightsParameters.PARAMETERS);
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      readSection(Main.modFactories[i]);
 
     closeReader();
     }
@@ -118,10 +79,10 @@ public class ActionBuffer
       writeLine(lines[i]);
     }
 
-  private static void writeSection(String[] lines, String[] parameters)
+  private static void writeSection(String[] lines, ModFactory modFactory)
     {
     for (int i = 0; i < lines.length; i += 1)
-      writeLine(lines[i]+parameters[i]+";");
+      writeLine(lines[i]+modFactory.getParameterValue(i)+";");
     }
 
   private static void plainRead()
@@ -132,13 +93,13 @@ public class ActionBuffer
       {
       line = readLine();
       }
-    while (!line.equals(SEPARATOR));
+    while (!line.equals(FileTemplate.SEPARATOR));
     }
 
-  private static void readSection(String[] parameters)
+  private static void readSection(ModFactory modFactory)
     {
     String line;
-    int parameterCounter = 0;
+    int parameter = 0;
 
     do
       {
@@ -149,16 +110,16 @@ public class ActionBuffer
 
       if (equalsChar != -1 && semicolonChar != -1)
         {
-        parameters[parameterCounter] = line.substring(equalsChar+2, semicolonChar);
-        parameterCounter += 1;
+        modFactory.setValueToParameter(line.substring(equalsChar+2, semicolonChar), parameter);
+        parameter += 1;
         }
       }
-    while (!line.equals(SEPARATOR));
+    while (!line.equals(FileTemplate.SEPARATOR));
     }
 
   private static void separateSections()
     {
-    writeLine(SEPARATOR);
+    writeLine(FileTemplate.SEPARATOR);
     }
 
   private static void writeLine(String line)
@@ -174,7 +135,7 @@ public class ActionBuffer
       }
     catch (IOException except)
       {
-      return "ERR";
+      return FileTemplate.ERROR;
       }
     }
   }

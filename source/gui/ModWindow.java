@@ -14,7 +14,6 @@ public class ModWindow extends CommonWindow
   private JPanel parametersPanel;
 
   private LabeledCheckBox isActiveCheckBox;
-  private JLabel noteLabel;
   private JButton backButton;
 
   public ModWindow(String title)
@@ -38,14 +37,14 @@ public class ModWindow extends CommonWindow
     parametersPanel.add(Spacing.createPlaceholder());
     }
 
-  public LabeledCheckBox getIsActiveCheckBox()
+  public LabeledCheckBox getIsActiveLabeledCheckBox()
     {
     return isActiveCheckBox;
     }
 
   public void setIfModIsActive(String isActive)
     {
-    isActiveCheckBox.setStatus(isActive);
+    isActiveCheckBox.setParameter(isActive);
     }
 
   private void createAndAddPanels()
@@ -59,12 +58,11 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddGeneralElements()
     {
-    isActiveCheckBox = new LabeledCheckBox(CommonMod.PARAMETERS_ACTIVE);
-    noteLabel = new JLabel(Windows.MOD_WINDOW_NOTE);
+    isActiveCheckBox = new LabeledCheckBox(ModParameters.ACTIVE);
     backButton = new JButton(Buttons.MOD_BACK);
 
     generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
-    generalPanel.add(noteLabel);
+    generalPanel.add(Spacing.createPlaceholder());
     generalPanel.add(backButton, BorderLayout.NORTH);
     }
 

@@ -1,45 +1,27 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
-import mods.parameters.*;
 
 
-public class BleedoutFactory
+public class BleedoutFactory extends ModFactory
   {
-  public static LabeledField incParameter;
-  public static LabeledField cThreshParameter;
-  public static LabeledField pThreshParameter;
-  public static LabeledField iThreshParameter;
+  private LabeledTextField inc = new LabeledTextField(ModParameters.BLEEDOUT[1]);
+  private LabeledTextField cThresh = new LabeledTextField(ModParameters.BLEEDOUT[2]);
+  private LabeledTextField pThresh = new LabeledTextField(ModParameters.BLEEDOUT[3]);
+  private LabeledTextField iThresh = new LabeledTextField(ModParameters.BLEEDOUT[4]);
 
-  public static void createAndAddParametersToModWindow(ModWindow bleedoutWindow)
+  public BleedoutFactory(ModWindow bleedoutWindow)
     {
-    bleedoutWindow.setIfModIsActive(BleedoutParameters.PARAMETERS[0]);
-    incParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[1], BleedoutParameters.PARAMETERS[1]);
-    cThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[2], BleedoutParameters.PARAMETERS[2]);
-    pThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[3], BleedoutParameters.PARAMETERS[3]);
-    iThreshParameter = new LabeledField(BleedoutParameters.PARAMETER_NAMES[4], BleedoutParameters.PARAMETERS[4]);
+    super(bleedoutWindow);
 
-    incParameter.setToolTip(ToolTips.BLEEDOUT[1]);
-    cThreshParameter.setToolTip(ToolTips.BLEEDOUT[2]);
-    pThreshParameter.setToolTip(ToolTips.BLEEDOUT[3]);
-    iThreshParameter.setToolTip(ToolTips.BLEEDOUT[4]);
-
-    bleedoutWindow.addParameter(incParameter);
-    bleedoutWindow.addParameter(cThreshParameter);
-    bleedoutWindow.addParameter(pThreshParameter);
-    bleedoutWindow.addParameter(iThreshParameter);
-    Spacing.addPlaceholdersToModWindow(bleedoutWindow, BleedoutParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {inc, cThresh, pThresh, iThresh};
     }
 
-  public static void linkComponentsToArray(ModWindow bleedoutWindow)
+  protected void addToolTips()
     {
-    bleedoutWindow.getIsActiveCheckBox().linkToArray(BleedoutParameters.PARAMETERS, 0);
-    incParameter.linkToArray(BleedoutParameters.PARAMETERS, 1);
-    cThreshParameter.linkToArray(BleedoutParameters.PARAMETERS, 2);
-    pThreshParameter.linkToArray(BleedoutParameters.PARAMETERS, 3);
-    iThreshParameter.linkToArray(BleedoutParameters.PARAMETERS, 4);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.BLEEDOUT[i]);
     }
   }

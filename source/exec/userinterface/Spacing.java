@@ -16,8 +16,8 @@ public class Spacing
   public static final int GRID_PARAMETERS_X = 5*BASE_SPACING;
   public static final int GRID_PARAMETERS_Y = 2*BASE_SPACING;
 
-  public static final int PARAMETERS_ROWS = 5;
-  public static final int PARAMETERS_COLUMNS = 2;
+  public static final int PARAMETERS_ROWS = 6;
+  public static final int PARAMETERS_COLUMNS = 5;
   public static final String ACTIVE_PLACEHOLDER = "";
 
   public static final String BUTTON_LABEL_WIDTH = "        ";
@@ -27,9 +27,9 @@ public class Spacing
     return new JPanel();
     }
 
-  public static void addPlaceholdersToModWindow(ModWindow modWindow, String[] parameters)
+  public static void addPlaceholdersToModWindow(ModWindow modWindow, Object[] parameters)
     {
-    for (int i = 0; i < CommonMod.MAXIMUM_PARAMETERS-parameters.length-1; i += 1)
+    for (int i = 0; i < PARAMETERS_ROWS*PARAMETERS_COLUMNS-parameters.length-1; i += 1)
       modWindow.addPlaceHolder();
     }
   }

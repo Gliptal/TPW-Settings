@@ -76,7 +76,7 @@ tpw_fog_cansnow = 1;
 tpw_houselights_active = 1;
 tpw_houselights_delay = 10;
 //><
-tpw_hud_active = 0;
+tpw_hud_active = 1;
 tpw_hud_range[] = {25,500};
 tpw_hud_colour[] = {1,1,1};
 tpw_hud_enemycolour[] = {1,0.5,0};

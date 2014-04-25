@@ -1,21 +1,22 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
-import mods.parameters.*;
+import gui.combinations.*;
+import mods.*;
 
 
-public class RainFxFactory
+public class RainFxFactory extends ModFactory
   {
-  public static void createAndAddParametersToModWindow(ModWindow rainFxWindow)
+  public RainFxFactory(ModWindow rainFxWindow)
     {
-    rainFxWindow.setIfModIsActive(RainFxParameters.PARAMETERS[0]);
+    super(rainFxWindow);
 
-    Spacing.addPlaceholdersToModWindow(rainFxWindow, RainFxParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {};
     }
 
-  public static void linkComponentsToArray(ModWindow rainFxWindow)
+  protected void addToolTips()
     {
-    rainFxWindow.getIsActiveCheckBox().linkToArray(RainFxParameters.PARAMETERS, 0);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.RAIN_FX[i]);
     }
   }

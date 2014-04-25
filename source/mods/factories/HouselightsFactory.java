@@ -1,30 +1,24 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
-import mods.parameters.*;
 
 
-public class HouselightsFactory
+public class HouselightsFactory extends ModFactory
   {
-  public static LabeledField delayParameter;
+  private LabeledTextField delay = new LabeledTextField(ModParameters.HOUSELIGHTS[1]);
 
-  public static void createAndAddParametersToModWindow(ModWindow houselightsWindow)
+  public HouselightsFactory(ModWindow houselightsWindow)
     {
-    houselightsWindow.setIfModIsActive(HouselightsParameters.PARAMETERS[0]);
-    delayParameter = new LabeledField(HouselightsParameters.PARAMETER_NAMES[1], HouselightsParameters.PARAMETERS[1]);
+    super(houselightsWindow);
 
-    delayParameter.setToolTip(ToolTips.HOUSELIGHTS[1]);
-
-    houselightsWindow.addParameter(delayParameter);
-    Spacing.addPlaceholdersToModWindow(houselightsWindow, HouselightsParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {delay};
     }
 
-  public static void linkComponentsToArray(ModWindow houselightsWindow)
+  protected void addToolTips()
     {
-    houselightsWindow.getIsActiveCheckBox().linkToArray(HouselightsParameters.PARAMETERS, 0);
-    delayParameter.linkToArray(HouselightsParameters.PARAMETERS, 1);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.HOUSELIGHTS[i]);
     }
   }

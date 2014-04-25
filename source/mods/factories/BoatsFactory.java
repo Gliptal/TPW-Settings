@@ -1,45 +1,27 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
-import mods.parameters.*;
 
 
-public class BoatsFactory
+public class BoatsFactory extends ModFactory
   {
-  public static LabeledField delayParameter;
-  public static LabeledField radiusParameter;
-  public static LabeledField waypointsParameter;
-  public static LabeledField numParameter;
+  private LabeledTextField delay = new LabeledTextField(ModParameters.BOATS[1]);
+  private LabeledTextField radius = new LabeledTextField(ModParameters.BOATS[2]);
+  private LabeledTextField waypoints = new LabeledTextField(ModParameters.BOATS[3]);
+  private LabeledTextField num = new LabeledTextField(ModParameters.BOATS[4]);
 
-  public static void createAndAddParametersToModWindow(ModWindow boatsWindow)
+  public BoatsFactory(ModWindow boatsWindow)
     {
-    boatsWindow.setIfModIsActive(BoatsParameters.PARAMETERS[0]);
-    delayParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[1], BoatsParameters.PARAMETERS[1]);
-    radiusParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[2], BoatsParameters.PARAMETERS[2]);
-    waypointsParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[3], BoatsParameters.PARAMETERS[3]);
-    numParameter = new LabeledField(BoatsParameters.PARAMETER_NAMES[4], BoatsParameters.PARAMETERS[4]);
+    super(boatsWindow);
 
-    delayParameter.setToolTip(ToolTips.BOATS[1]);
-    radiusParameter.setToolTip(ToolTips.BOATS[2]);
-    waypointsParameter.setToolTip(ToolTips.BOATS[3]);
-    numParameter.setToolTip(ToolTips.BOATS[4]);
-
-    boatsWindow.addParameter(delayParameter);
-    boatsWindow.addParameter(radiusParameter);
-    boatsWindow.addParameter(waypointsParameter);
-    boatsWindow.addParameter(numParameter);
-    Spacing.addPlaceholdersToModWindow(boatsWindow, BoatsParameters.PARAMETERS);
+    parameters = new LabeledComponent[] {delay, radius, waypoints, num};
     }
 
-  public static void linkComponentsToArray(ModWindow boatsWindow)
+  protected void addToolTips()
     {
-    boatsWindow.getIsActiveCheckBox().linkToArray(BoatsParameters.PARAMETERS, 0);
-    delayParameter.linkToArray(BoatsParameters.PARAMETERS, 1);
-    radiusParameter.linkToArray(BoatsParameters.PARAMETERS, 2);
-    waypointsParameter.linkToArray(BoatsParameters.PARAMETERS, 3);
-    numParameter.linkToArray(BoatsParameters.PARAMETERS, 4);
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.BOATS[i]);
     }
   }
