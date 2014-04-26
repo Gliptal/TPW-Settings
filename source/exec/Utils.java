@@ -12,9 +12,4 @@ public class Utils
     {
     return bool ? "1" : "0";
     }
-
-  public static boolean compareClass(Object comparedClass, String comparedName)
-    {
-    return (comparedClass.getClass().getName()).equals(comparedName);
-    }
   }

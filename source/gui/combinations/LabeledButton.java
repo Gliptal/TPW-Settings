@@ -8,27 +8,30 @@ import javax.swing.*;
 
 public class LabeledButton extends LabeledComponent
   {
+  private JButton button;
+
   public LabeledButton(String buttonText)
     {
     super(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS), Spacing.BUTTON_LABEL_WIDTH);
 
     addComponent(new JButton(buttonText));
+    button = (JButton)component;
     }
 
   public void addButtonListener(ActionListener listener)
     {
-    ((JButton)component).addActionListener(listener);
+    button.addActionListener(listener);
     }
 
   public void setCorrespondingColor(boolean linkedIsActive)
     {
     if (linkedIsActive)
-      changeLabelColor(Buttons.ACTIVE_MOD_COLOR);
+      setLabelColor(Buttons.ACTIVE_MOD_COLOR);
     else
-      changeLabelColor(Buttons.INACTIVE_MOD_COLOR);
+      setLabelColor(Buttons.INACTIVE_MOD_COLOR);
     }
 
-  public String getParameter() {return "";}  // Dummy function
+  public String getValue() {return "";}  // Dummy function
 
-  public void setParameter(String value) {}  // Dummy function
+  public void setValue(String value) {}  // Dummy function
   }

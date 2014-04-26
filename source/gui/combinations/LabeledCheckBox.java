@@ -9,30 +9,37 @@ import javax.swing.*;
 
 public class LabeledCheckBox extends LabeledComponent
   {
+  private JCheckBox checkBox;
+
   public LabeledCheckBox(String labelText)
     {
     super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
 
     addComponent(new JCheckBox());
+    checkBox = (JCheckBox)component;
     }
 
-  public String getParameter()
+  public String getValue()
     {
-    return Utils.booleanToString(((JCheckBox)component).isSelected());
+    boolean valueAsBoolean = checkBox.isSelected();
+
+    return Utils.booleanToString(valueAsBoolean);
     }
 
-  public void setParameter(String value)
+  public void setValue(String value)
     {
-    ((JCheckBox)component).setSelected(Utils.stringToBoolean(value));
+    boolean valueAsBoolean = Utils.stringToBoolean(value);
+
+    checkBox.setSelected(valueAsBoolean);
     }
 
   public void linkToButton(LabeledButton button)
     {
-    ((JCheckBox)component).addActionListener(new ActiveModListener(((JCheckBox)component), button));
+    checkBox.addActionListener(new ModSemaphoreListener(checkBox, button));
     }
 
   public boolean isActive()
     {
-    return ((JCheckBox)component).isSelected();
+    return checkBox.isSelected();
     }
   }

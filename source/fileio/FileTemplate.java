@@ -7,7 +7,6 @@ public class FileTemplate
   public static final String LOADING = "LOADING";
   protected static final String SEPARATOR = "//><";
 
-
   protected static final String[] HEADER = {"//",
                                             "// File created with TPW Settings. All comments are missing.",
                                             "//",

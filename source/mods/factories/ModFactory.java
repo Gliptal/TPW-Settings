@@ -15,26 +15,26 @@ abstract public class ModFactory
     this.modWindow = modWindow;
     }
 
-  public void fillModWindow()
+  public void addParametersAndTooltips()
     {
     addParameters();
     addToolTips();
     }
 
-  public String getParameterValue(int which)
+  public String getValueValue(int which)
     {
     if (which == 0)
-      return modWindow.getIsActiveLabeledCheckBox().getParameter();
+      return modWindow.getIsActiveLabeledCheckBox().getValue();
     else
-      return parameters[which-1].getParameter();
+      return parameters[which-1].getValue();
     }
 
   public void setValueToParameter(String value, int which)
     {
     if (which == 0)
-      modWindow.getIsActiveLabeledCheckBox().setParameter(value);
+      modWindow.getIsActiveLabeledCheckBox().setValue(value);
     else
-      parameters[which-1].setParameter(value);
+      parameters[which-1].setValue(value);
     }
 
   protected abstract void addToolTips();

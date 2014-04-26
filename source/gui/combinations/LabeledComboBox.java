@@ -7,20 +7,29 @@ import javax.swing.*;
 
 public class LabeledComboBox extends LabeledComponent
   {
+  public static final int COMBO_BOX_TOP = 0;
+
+  private JComboBox comboBox;
+
   public LabeledComboBox(String labelText, String[] choices)
     {
     super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
 
     addComponent(new JComboBox<String>(choices));
+    comboBox = (JComboBox)component;
     }
 
-  public String getParameter()
+  public String getValue()
     {
-    return Integer.toString((((JComboBox)component).getSelectedIndex()));
+    int valueAsInt = comboBox.getSelectedIndex();
+
+    return Integer.toString(valueAsInt);
     }
 
-  public void setParameter(String value)
+  public void setValue(String value)
     {
-    ((JComboBox)component).setSelectedIndex(Integer.parseInt(value));
+    int valueAsInt = Integer.parseInt(value);
+
+    comboBox.setSelectedIndex(valueAsInt);
     }
   }

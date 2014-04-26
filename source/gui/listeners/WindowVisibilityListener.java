@@ -6,8 +6,8 @@ import java.awt.event.*;
 
 public class WindowVisibilityListener implements ActionListener
   {
-  ModWindow modWindow;
-  boolean isVisible;
+  private ModWindow modWindow;
+  private boolean isVisible;
 
   public WindowVisibilityListener(ModWindow modWindow, boolean isVisible)
     {

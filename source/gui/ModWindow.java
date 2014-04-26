@@ -27,6 +27,18 @@ public class ModWindow extends CommonWindow
     setButtonListeners();
     }
 
+  public void overrideSize(int width, int height)
+    {
+    setSize(width, height);
+    }
+
+  public void overrideParametersPanelLayout(LayoutManager layout)
+    {
+    parametersPanel = new JPanel(layout);
+
+    mainPanel.add(parametersPanel, BorderLayout.CENTER);
+    }
+
   public void addParameter(JPanel parameter)
     {
     parametersPanel.add(parameter);
@@ -44,7 +56,7 @@ public class ModWindow extends CommonWindow
 
   public void setIfModIsActive(String isActive)
     {
-    isActiveCheckBox.setParameter(isActive);
+    isActiveCheckBox.setValue(isActive);
     }
 
   private void createAndAddPanels()

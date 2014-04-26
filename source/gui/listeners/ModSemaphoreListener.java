@@ -5,12 +5,12 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class ActiveModListener implements ActionListener
+public class ModSemaphoreListener implements ActionListener
   {
-  JCheckBox checkBox;
-  LabeledButton labeledButton;
+  private JCheckBox checkBox;
+  private LabeledButton labeledButton;
 
-  public ActiveModListener(JCheckBox checkBox, LabeledButton labeledButton)
+  public ModSemaphoreListener(JCheckBox checkBox, LabeledButton labeledButton)
     {
     this.checkBox = checkBox;
     this.labeledButton = labeledButton;

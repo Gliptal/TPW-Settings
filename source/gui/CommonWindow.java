@@ -1,8 +1,9 @@
 package gui;
 
+import gui.listeners.fileio.*;
+import gui.listeners.presets.*;
 import exec.userinterface.*;
 import fileio.*;
-import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
@@ -55,7 +56,7 @@ public class CommonWindow extends JFrame
 
   private void setCommitButtonListeners()
     {
-    commitNegativeButton.addActionListener(new WriteFromRevertFileListener(ActionBuffer.CONFIG_FILE_NAME));
-    commitPositiveButton.addActionListener(new WriteFileListener(ActionBuffer.CONFIG_FILE_NAME));
+    commitNegativeButton.addActionListener(new RevertListener());
+    commitPositiveButton.addActionListener(new WriteFromParametersListener(ActionBuffer.CONFIG_FILE_NAME));
     }
   }

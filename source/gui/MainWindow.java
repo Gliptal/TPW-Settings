@@ -2,9 +2,12 @@ package gui;
 
 import exec.*;
 import exec.userinterface.*;
+import fileio.*;
 import gui.combinations.*;
 import gui.listeners.*;
+import gui.listeners.presets.*;
 import java.awt.*;
+import java.io.*;
 import javax.swing.*;
 import mods.*;
 
@@ -14,11 +17,10 @@ public class MainWindow extends CommonWindow
   private JPanel presetsPanel;
   private JPanel modsPanel;
 
-  private JComboBox presetsComboBox;
-
+  private JComboBox<String> presetsComboBox;
   private JButton presetsDeleteButton;
   private JButton presetsSaveButton;
-  private JButton presetsRenameButton;
+
   private LabeledButton[] modButtons;
 
   public MainWindow()
@@ -27,15 +29,40 @@ public class MainWindow extends CommonWindow
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     createAndAddPanels();
-    createAndAddCombos();
+    createAndAddComboBoxes();
     createAndAddButtons();
 
-    setButtonListeners();
+    setListeners();
+    }
+
+  public JComboBox<String> getComboBox()
+    {
+    return presetsComboBox;
     }
 
   public LabeledButton getModButton(int which)
     {
     return modButtons[which];
+    }
+
+  public void savePresetsToComboBox()
+    {
+    File directory = new File(".");
+    //System.out.println(System.getProperty("user.dir"));
+    String[] presetFiles = directory.list(new FilenameFilter()
+                                            {
+                                            public boolean accept(File directory, String name)
+                                              {
+                                              return name.endsWith(ActionBuffer.PRESET_EXTENSION);
+                                              }
+                                            }
+                                          );
+
+    for (int i = 0; i < presetFiles.length; i += 1)
+      presetsComboBox.addItem(presetFiles[i].replaceFirst(ActionBuffer.PRESET_EXTENSION, ""));
+
+    presetsComboBox.insertItemAt(ActionBuffer.REVERT_FILE_NAME, LabeledComboBox.COMBO_BOX_TOP);
+    presetsComboBox.setSelectedIndex(LabeledComboBox.COMBO_BOX_TOP);
     }
 
   private void createAndAddPanels()
@@ -47,9 +74,9 @@ public class MainWindow extends CommonWindow
     mainPanel.add(modsPanel, BorderLayout.CENTER);
     }
 
-  private void createAndAddCombos()
+  private void createAndAddComboBoxes()
     {
-    createAndAddPresetsCombos();
+    createAndAddPresetComboBoxes();
     }
 
   private void createAndAddButtons()
@@ -58,14 +85,15 @@ public class MainWindow extends CommonWindow
     createAndAddModButtons();
     }
 
-  private void setButtonListeners()
+  private void setListeners()
     {
+    setPresetsListeners();
     setModButtonsListeners();
     }
 
-  private void createAndAddPresetsCombos()
+  private void createAndAddPresetComboBoxes()
     {
-    presetsComboBox = new JComboBox();
+    presetsComboBox = new JComboBox<String>();
 
     presetsPanel.add(presetsComboBox);
     }
@@ -74,12 +102,11 @@ public class MainWindow extends CommonWindow
     {
     presetsDeleteButton = new JButton(Buttons.PRESETS_DELETE);
     presetsSaveButton = new JButton(Buttons.PRESETS_SAVE);
-    presetsRenameButton = new JButton(Buttons.PRESETS_RENAME);
 
-    presetsPanel.add(presetsDeleteButton);
     presetsPanel.add(Spacing.createPlaceholder());
+    presetsPanel.add(presetsDeleteButton);
     presetsPanel.add(presetsSaveButton);
-    presetsPanel.add(presetsRenameButton);
+    presetsPanel.add(Spacing.createPlaceholder());
     }
 
   private void createAndAddModButtons()
@@ -92,6 +119,15 @@ public class MainWindow extends CommonWindow
       modButtons[i].setToolTip(ToolTips.MODS[i]);
       modsPanel.add(modButtons[i]);
       }
+    }
+
+  private void setPresetsListeners()
+    {
+    presetsComboBox.addActionListener(new PresetInsertEntryListener(presetsComboBox));
+    presetsComboBox.addItemListener(new PresetLoadListener(presetsComboBox));
+
+    presetsDeleteButton.addActionListener(new PresetDeleteListener(presetsComboBox));
+    presetsSaveButton.addActionListener(new PresetSaveListener(presetsComboBox));
     }
 
   private void setModButtonsListeners()

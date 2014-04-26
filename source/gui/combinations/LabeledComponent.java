@@ -1,7 +1,5 @@
 package gui.combinations;
 
-import exec.*;
-import fileio.*;
 import java.awt.*;
 import javax.swing.*;
 
@@ -21,9 +19,9 @@ public abstract class LabeledComponent extends JPanel
     createAndAddLabel();
     }
 
-  public abstract String getParameter();
+  public abstract String getValue();
 
-  public abstract void setParameter(String value);
+  public abstract void setValue(String value);
 
   public void setToolTip(String toolTipText)
     {
@@ -41,7 +39,7 @@ public abstract class LabeledComponent extends JPanel
       add(component);
     }
 
-  protected void changeLabelColor(Color color)
+  protected void setLabelColor(Color color)
     {
     label.setBackground(color);
     }
@@ -59,8 +57,10 @@ public abstract class LabeledComponent extends JPanel
       add(label);
     }
 
-  private boolean layoutIs(String comparedClass)
+  private boolean layoutIs(String className)
     {
-    return Utils.compareClass(getLayout(), comparedClass);
+    String layoutClass = getLayout().getClass().getName();
+
+    return layoutClass.equals(className);
     }
   }

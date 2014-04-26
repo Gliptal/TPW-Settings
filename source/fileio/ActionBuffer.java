@@ -2,14 +2,15 @@ package fileio;
 
 import exec.*;
 import java.io.*;
-import mods.factories.*;
 import mods.*;
+import mods.factories.*;
 
 
 public class ActionBuffer
   {
   public static final String CONFIG_FILE_NAME = "TPW_MODS.hpp";
   public static final String REVERT_FILE_NAME = "REVERT";
+  public static final String PRESET_EXTENSION = ".PRST";
 
   private static PrintWriter writer;
   private static BufferedReader reader;
@@ -19,11 +20,11 @@ public class ActionBuffer
     openWriter(fileName);
 
     plainWrite(FileTemplate.HEADER);
-    separateSections();
+    separateSection();
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       {
       writeSection(FileTemplate.MOD_SECTIONS[i], Main.modFactories[i]);
-      separateSections();
+      separateSection();
       }
 
     closeWriter();
@@ -82,7 +83,7 @@ public class ActionBuffer
   private static void writeSection(String[] lines, ModFactory modFactory)
     {
     for (int i = 0; i < lines.length; i += 1)
-      writeLine(lines[i]+modFactory.getParameterValue(i)+";");
+      writeLine(lines[i]+modFactory.getValueValue(i)+";");
     }
 
   private static void plainRead()
@@ -117,7 +118,7 @@ public class ActionBuffer
     while (!line.equals(FileTemplate.SEPARATOR));
     }
 
-  private static void separateSections()
+  private static void separateSection()
     {
     writeLine(FileTemplate.SEPARATOR);
     }

@@ -10,7 +10,6 @@ public class Buttons
 
   public static final String PRESETS_DELETE = "DELETE";
   public static final String PRESETS_SAVE = "SAVE";
-  public static final String PRESETS_RENAME = "RENAME";
 
   public static final String MOD_BACK = "BACK";
 

@@ -2,7 +2,6 @@ package exec.userinterface;
 
 import gui.*;
 import javax.swing.*;
-import mods.*;
 
 
 public class Spacing
@@ -15,12 +14,12 @@ public class Spacing
   public static final int COMBINATIONS = 1*BASE_SPACING;
   public static final int GRID_PARAMETERS_X = 5*BASE_SPACING;
   public static final int GRID_PARAMETERS_Y = 2*BASE_SPACING;
-
-  public static final int PARAMETERS_ROWS = 6;
-  public static final int PARAMETERS_COLUMNS = 5;
-  public static final String ACTIVE_PLACEHOLDER = "";
-
   public static final String BUTTON_LABEL_WIDTH = "        ";
+
+  public static final int PARAMETERS_ROWS = 5;
+  public static final int PARAMETERS_COLUMNS = 2;
+  public static final int HUD_PARAMETERS_ROWS = 6;
+  public static final int HUD_PARAMETERS_COLUMNS = 5;
 
   public static JPanel createPlaceholder()
     {
@@ -29,7 +28,9 @@ public class Spacing
 
   public static void addPlaceholdersToModWindow(ModWindow modWindow, Object[] parameters)
     {
-    for (int i = 0; i < PARAMETERS_ROWS*PARAMETERS_COLUMNS-parameters.length-1; i += 1)
+    int maximumParameters = PARAMETERS_ROWS*PARAMETERS_COLUMNS-parameters.length-1 >= 0 ? PARAMETERS_ROWS*PARAMETERS_COLUMNS-parameters.length-1 : HUD_PARAMETERS_ROWS*HUD_PARAMETERS_COLUMNS-parameters.length-1;
+
+    for (int i = 0; i < maximumParameters; i += 1)
       modWindow.addPlaceHolder();
     }
   }
