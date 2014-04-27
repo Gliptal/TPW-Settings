@@ -8,6 +8,10 @@ It is coded in Java so the JVM is required (although 95% of PCs and Laptops will
 Changelog
 ======
 
+[1.2.1] | UPDATE YOUR PRESETS
+
+- parameters matching HUD [1.19]
+
 [1.2.0]
 
 - working presets
@@ -52,6 +56,7 @@ Next Steps
 Limitations
 ======
 
+- Presets are not backwards compatible. You can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
 - `TPW_MODS.hpp` must be in the same folder with `TPW Settings.java` for the program to work.
 - HUD is only partially implemented: you still have to insert all values as strings (no checkboxes and comboboxes yet).
 - If you wish to rename a preset, select it, delete it, and save it again with the new name.
@@ -82,6 +87,8 @@ Progress
 25/04/14 | [1.1.0](https://github.com/Gliptal/TPW-Settings/tree/1.1.0) | total reimplementation, added feautures
 
 27/04/14 | [1.2.0](https://github.com/Gliptal/TPW-Settings/tree/1.2.0) | working presets
+
+27/04/14 | [1.2.1](https://github.com/Gliptal/TPW-Settings/tree/1.2.1) | parameters matching HUD [1.19]
 
 Links
 ======

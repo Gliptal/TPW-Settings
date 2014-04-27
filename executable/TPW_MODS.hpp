@@ -90,6 +90,7 @@ tpw_hud_tmp[] = {1,0.6,0.5,1};
 tpw_hud_hlt[] = {1,0.4,0.55,1};
 tpw_hud_rng[] = {1,0.5,0.55,1};
 tpw_hud_vel[] = {1,0.6,0.55,1};
+tpw_hud_prx[] = {1,0.5,0.5,1};
 tpw_hud_unit[] = {1,2,0.5,0.75};
 tpw_hud_offset[] = {0.35,0.28};
 tpw_hud_scale = 0.8;
@@ -104,6 +105,7 @@ tpw_hud_hlt_txt = "%1<t size='0.5'><br />HLT</t>";
 tpw_hud_rng_txt = "%1<t size='0.5'><br />RNG</t>";
 tpw_hud_vel_txt = "%1<t size='0.5'><br />VEL</t>";
 tpw_hud_airvel_txt = "%1<t size='0.5'><br />VEL KTS</t>";
+tpw_hud_prx_txt = "<t color='%4'>%1</t> <t color='%5'>%2</t> <t color='%6'>%3</t><t size='0.5'><br />PRX</t>";
 //><
 tpw_los_active = 0;
 tpw_los_debug = 0;

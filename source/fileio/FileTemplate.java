@@ -100,6 +100,7 @@ public class FileTemplate
                                          "tpw_hud_hlt[] = ",
                                          "tpw_hud_rng[] = ",
                                          "tpw_hud_vel[] = ",
+                                         "tpw_hud_prx[] = ",
                                          "tpw_hud_unit[] = ",
                                          "tpw_hud_offset[] = ",
                                          "tpw_hud_scale = ",
@@ -113,7 +114,8 @@ public class FileTemplate
                                          "tpw_hud_hlt_txt = ",
                                          "tpw_hud_rng_txt = ",
                                          "tpw_hud_vel_txt = ",
-                                         "tpw_hud_airvel_txt = "};
+                                         "tpw_hud_airvel_txt = ",
+                                         "tpw_hud_prx_txt = "};
 
   protected static final String[] LOS = {"tpw_los_active = ",
                                          "tpw_los_debug = ",

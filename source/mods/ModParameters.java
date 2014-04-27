@@ -98,6 +98,7 @@ public class ModParameters
                                       "HLT[]",
                                       "RNG[]",
                                       "VEL[]",
+                                      "PRX[]",
                                       "UNIT[]",
                                       "OFFSET[]",
                                       "SCALE",
@@ -111,7 +112,8 @@ public class ModParameters
                                       "HLT TXT",
                                       "RNG TXT",
                                       "VEL TXT",
-                                      "AIRVEL TXT"};
+                                      "AIRVEL TXT",
+                                      "PRX TXT"};
 
   public static final String[] LOS = {ACTIVE_PLACEHOLDER,
                                       "DEBUG",
