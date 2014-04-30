@@ -19,7 +19,7 @@ public class Spacing
   public static final int PARAMETERS_ROWS = 5;
   public static final int PARAMETERS_COLUMNS = 2;
   public static final int HUD_PARAMETERS_ROWS = 6;
-  public static final int HUD_PARAMETERS_COLUMNS = 5;
+  public static final int HUD_PARAMETERS_COLUMNS = 6;
 
   public static JPanel createPlaceholder()
     {
@@ -28,9 +28,12 @@ public class Spacing
 
   public static void addPlaceholdersToModWindow(ModWindow modWindow, Object[] parameters)
     {
-    int maximumParameters = PARAMETERS_ROWS*PARAMETERS_COLUMNS-parameters.length-1 >= 0 ? PARAMETERS_ROWS*PARAMETERS_COLUMNS-parameters.length-1 : HUD_PARAMETERS_ROWS*HUD_PARAMETERS_COLUMNS-parameters.length-1;
+    int maxParameters = PARAMETERS_ROWS*PARAMETERS_COLUMNS - parameters.length - 1;
 
-    for (int i = 0; i < maximumParameters; i += 1)
+    if (maxParameters < 0)
+      maxParameters = HUD_PARAMETERS_ROWS*HUD_PARAMETERS_COLUMNS - parameters.length - 1;
+
+    for (int i = 0; i < maxParameters; i += 1)
       modWindow.addPlaceHolder();
     }
   }

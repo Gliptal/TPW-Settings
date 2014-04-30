@@ -96,6 +96,8 @@ tpw_hud_offset[] = {0.35,0.28};
 tpw_hud_scale = 0.8;
 tpw_hud_textscale = 1;
 tpw_hud_degradation = 1;
+tpw_hud_thirdperson = 0;
+tpw_hud_addtac = 1;
 tpw_hud_asl_txt = "%1<t size='0.5'><br />ASL</t>";
 tpw_hud_azt_txt = "%1<t size='0.5'><br />AZT %2</t>";
 tpw_hud_grd_txt = "%1<t size='0.5'><br />GRD</t>";

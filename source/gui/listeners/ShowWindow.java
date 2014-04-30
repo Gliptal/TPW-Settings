@@ -4,12 +4,12 @@ import gui.*;
 import java.awt.event.*;
 
 
-public class WindowVisibilityListener implements ActionListener
+public class ShowWindow implements ActionListener
   {
   private ModWindow modWindow;
   private boolean isVisible;
 
-  public WindowVisibilityListener(ModWindow modWindow, boolean isVisible)
+  public ShowWindow(ModWindow modWindow, boolean isVisible)
     {
     this.modWindow = modWindow;
     this.isVisible = isVisible;

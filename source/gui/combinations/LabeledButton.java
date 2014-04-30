@@ -1,7 +1,6 @@
 package gui.combinations;
 
 import exec.userinterface.*;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -12,7 +11,7 @@ public class LabeledButton extends LabeledComponent
 
   public LabeledButton(String buttonText)
     {
-    super(new BorderLayout(Spacing.COMBINATIONS, Spacing.COMBINATIONS), Spacing.BUTTON_LABEL_WIDTH);
+    super(Layouts.LABELED_BORDER(), Spacing.BUTTON_LABEL_WIDTH);
 
     addComponent(new JButton(buttonText));
     button = (JButton)component;
@@ -23,12 +22,12 @@ public class LabeledButton extends LabeledComponent
     button.addActionListener(listener);
     }
 
-  public void setCorrespondingColor(boolean linkedIsActive)
+  public void setSemaphoreColor(boolean linkedIsActive)
     {
     if (linkedIsActive)
-      setLabelColor(Buttons.ACTIVE_MOD_COLOR);
+      setLabelColor(Colors.ACTIVE_MOD_COLOR);
     else
-      setLabelColor(Buttons.INACTIVE_MOD_COLOR);
+      setLabelColor(Colors.INACTIVE_MOD_COLOR);
     }
 
   public String getValue() {return "";}  // Dummy function

@@ -3,9 +3,9 @@ package exec;
 
 public class Utils
   {
-  public static boolean stringToBoolean(String stringInt)
+  public static boolean stringToBoolean(String intAsString)
     {
-    return stringInt.equals("1") ? true : false;
+    return intAsString.equals("1") ? true : false;
     }
 
   public static String booleanToString(boolean bool)

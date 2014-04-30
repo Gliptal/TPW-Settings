@@ -6,7 +6,6 @@ import exec.userinterface.*;
 public class ModParameters
   {
   public static final int MAXIMUM_PARAMETERS = Spacing.PARAMETERS_ROWS*Spacing.PARAMETERS_COLUMNS;
-  public static final String ACTIVE = "ACTIVE";
   public static final String ACTIVE_PLACEHOLDER = "";
 
   public static final String[] AIR = {ACTIVE_PLACEHOLDER,
@@ -104,6 +103,8 @@ public class ModParameters
                                       "SCALE",
                                       "TEXTSCALE",
                                       "DEGRADATION",
+                                      "THIRD PERSON",
+                                      "ADD TAC",
                                       "ASL TXT",
                                       "AZT TXT",
                                       "GRD TXT",
@@ -141,7 +142,7 @@ public class ModParameters
                                                "COLOUR",
                                                "MOTHS"};
 
-  public static String[] STREETLIGHTS_COLOUR = {"WHITE INCANDESCENT",
-                                                "YELLOW SODIUM",
-                                                "BLUE FLUORESCENT"};
+  public static final String[] STREETLIGHTS_COLOUR = {"WHITE INCANDESCENT",
+                                                      "YELLOW SODIUM",
+                                                      "BLUE FLUORESCENT"};
   }

@@ -100,6 +100,8 @@ public class ToolTips
                                       "HUD scale.",
                                       "HUD text scale.",
                                       "Whether HUD performance is reduced with distance.",
+                                      "Whether HUD is visible in third person.",
+                                      "Whether tactical glasses are automatically added to the player's inventory if he hasn't got them already.",
                                       "Only edit these if you know what you're doing with structured text.",
                                       "Only edit these if you know what you're doing with structured text.",
                                       "Only edit these if you know what you're doing with structured text.",

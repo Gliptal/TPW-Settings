@@ -4,11 +4,11 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class PresetSaveListener implements ActionListener
+public class SavePreset implements ActionListener
   {
   private JComboBox<String> comboBox;
 
-  public PresetSaveListener(JComboBox<String> comboBox)
+  public SavePreset(JComboBox<String> comboBox)
     {
     this.comboBox = comboBox;
     }

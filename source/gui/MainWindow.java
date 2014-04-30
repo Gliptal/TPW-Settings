@@ -7,7 +7,8 @@ import gui.combinations.*;
 import gui.listeners.*;
 import gui.listeners.presets.*;
 import java.awt.*;
-import java.io.*;
+import java.awt.font.*;
+import java.util.*;
 import javax.swing.*;
 import mods.*;
 
@@ -21,21 +22,35 @@ public class MainWindow extends CommonWindow
   private JButton presetsDeleteButton;
   private JButton presetsSaveButton;
 
+  private JLabel versionLabel;
+
   private LabeledButton[] modButtons;
 
   public MainWindow()
     {
-    super(Windows.MAIN_WINDOW_WIDTH, Windows.MAIN_WINDOW_HEIGHT, Windows.MAIN_WINDOW_TITLE);
+    super(Sizes.MAIN_WINDOW_WIDTH, Sizes.MAIN_WINDOW_HEIGHT, Text.PROGRAM_NAME);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     createAndAddPanels();
-    createAndAddComboBoxes();
-    createAndAddButtons();
+    createAndAddPresetsElements();
+    createAndAddVersionLabel();
+    createAndAddModButtons();
 
-    setListeners();
+    setActions();
     }
 
-  public JComboBox<String> getComboBox()
+  public void addPresetsToComboBox()
+    {
+    String[] presetFiles = FileBuffer.parseDirectoryFor(Files.PRESET_EXTENSION);
+
+    for (int i = 0; i < presetFiles.length; i += 1)
+      presetsComboBox.addItem(presetFiles[i].replaceFirst(Files.PRESET_EXTENSION, ""));
+
+    presetsComboBox.insertItemAt(Files.REVERT, LabeledComboBox.COMBO_BOX_TOP);
+    presetsComboBox.setSelectedIndex(LabeledComboBox.COMBO_BOX_TOP);
+    }
+
+  public JComboBox<String> getPresetsComboBox()
     {
     return presetsComboBox;
     }
@@ -45,68 +60,28 @@ public class MainWindow extends CommonWindow
     return modButtons[which];
     }
 
-  public void savePresetsToComboBox()
-    {
-    File directory = new File(".");
-    //System.out.println(System.getProperty("user.dir"));
-    String[] presetFiles = directory.list(new FilenameFilter()
-                                            {
-                                            public boolean accept(File directory, String name)
-                                              {
-                                              return name.endsWith(ActionBuffer.PRESET_EXTENSION);
-                                              }
-                                            }
-                                          );
-
-    for (int i = 0; i < presetFiles.length; i += 1)
-      presetsComboBox.addItem(presetFiles[i].replaceFirst(ActionBuffer.PRESET_EXTENSION, ""));
-
-    presetsComboBox.insertItemAt(ActionBuffer.REVERT_FILE_NAME, LabeledComboBox.COMBO_BOX_TOP);
-    presetsComboBox.setSelectedIndex(LabeledComboBox.COMBO_BOX_TOP);
-    }
-
   private void createAndAddPanels()
     {
-    presetsPanel = new JPanel(new GridLayout(1, 5, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
-    modsPanel = new JPanel(new GridLayout(4, 4, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
+    presetsPanel = new JPanel(Layouts.PRESETS());
+    modsPanel = new JPanel(Layouts.MODS_GRID());
 
     mainPanel.add(presetsPanel, BorderLayout.NORTH);
     mainPanel.add(modsPanel, BorderLayout.CENTER);
     }
 
-  private void createAndAddComboBoxes()
+  private void createAndAddPresetsElements()
     {
-    createAndAddPresetComboBoxes();
-    }
-
-  private void createAndAddButtons()
-    {
+    createAndAddPresetsComboBox();
     createAndAddPresetsButtons();
-    createAndAddModButtons();
     }
 
-  private void setListeners()
+  private void createAndAddVersionLabel()
     {
-    setPresetsListeners();
-    setModButtonsListeners();
-    }
+    versionLabel = new JLabel(Text.PROGRAM_VERSION);
 
-  private void createAndAddPresetComboBoxes()
-    {
-    presetsComboBox = new JComboBox<String>();
+    versionLabel.setHorizontalAlignment(JLabel.RIGHT);
 
-    presetsPanel.add(presetsComboBox);
-    }
-
-  private void createAndAddPresetsButtons()
-    {
-    presetsDeleteButton = new JButton(Buttons.PRESETS_DELETE);
-    presetsSaveButton = new JButton(Buttons.PRESETS_SAVE);
-
-    presetsPanel.add(Spacing.createPlaceholder());
-    presetsPanel.add(presetsDeleteButton);
-    presetsPanel.add(presetsSaveButton);
-    presetsPanel.add(Spacing.createPlaceholder());
+    presetsPanel.add(versionLabel);
     }
 
   private void createAndAddModButtons()
@@ -116,23 +91,53 @@ public class MainWindow extends CommonWindow
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       {
       modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i]);
+
       modButtons[i].setToolTip(ToolTips.MODS[i]);
+
       modsPanel.add(modButtons[i]);
       }
     }
 
-  private void setPresetsListeners()
+  private void setActions()
     {
-    presetsComboBox.addActionListener(new PresetInsertEntryListener(presetsComboBox));
-    presetsComboBox.addItemListener(new PresetLoadListener(presetsComboBox));
-
-    presetsDeleteButton.addActionListener(new PresetDeleteListener(presetsComboBox));
-    presetsSaveButton.addActionListener(new PresetSaveListener(presetsComboBox));
+    setPresetsActions();
+    setModButtonsAction();
+    setLabelAction();
     }
 
-  private void setModButtonsListeners()
+  private void createAndAddPresetsComboBox()
+    {
+    presetsComboBox = new JComboBox<String>();
+
+    presetsPanel.add(presetsComboBox);
+    }
+
+  private void createAndAddPresetsButtons()
+    {
+    presetsDeleteButton = new JButton(Text.BUTTON_PRESETS_DELETE);
+    presetsSaveButton = new JButton(Text.BUTTON_PRESETS_SAVE);
+
+    presetsPanel.add(presetsDeleteButton);
+    presetsPanel.add(presetsSaveButton);
+    }
+
+  private void setPresetsActions()
+    {
+    presetsComboBox.addActionListener(new AddPreset(presetsComboBox));
+    presetsComboBox.addItemListener(new LoadPreset(presetsComboBox));
+
+    presetsDeleteButton.addActionListener(new DeletePreset(presetsComboBox));
+    presetsSaveButton.addActionListener(new SavePreset(presetsComboBox));
+    }
+
+  private void setModButtonsAction()
     {
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      modButtons[i].addButtonListener(new WindowVisibilityListener(Main.modWindows[i], true));
+      modButtons[i].addButtonListener(new ShowWindow(Main.modWindows[i], true));
+    }
+
+  private void setLabelAction()
+    {
+    versionLabel.addMouseListener(new OpenOnlineReadme(versionLabel));
     }
   }

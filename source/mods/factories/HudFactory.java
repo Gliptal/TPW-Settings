@@ -26,22 +26,24 @@ public class HudFactory extends ModFactory
   private LabeledTextField scale = new LabeledTextField(ModParameters.HUD[17]);
   private LabeledTextField textscale = new LabeledTextField(ModParameters.HUD[18]);
   private LabeledTextField degradation = new LabeledTextField(ModParameters.HUD[19]);
-  private LabeledTextField aslTxt = new LabeledTextField(ModParameters.HUD[20]);
-  private LabeledTextField aztTxt = new LabeledTextField(ModParameters.HUD[21]);
-  private LabeledTextField grdTxt = new LabeledTextField(ModParameters.HUD[22]);
-  private LabeledTextField lmtTxt = new LabeledTextField(ModParameters.HUD[23]);
-  private LabeledTextField tmpTxt = new LabeledTextField(ModParameters.HUD[24]);
-  private LabeledTextField hltTxt = new LabeledTextField(ModParameters.HUD[25]);
-  private LabeledTextField rngTxt = new LabeledTextField(ModParameters.HUD[26]);
-  private LabeledTextField velTxt = new LabeledTextField(ModParameters.HUD[27]);
-  private LabeledTextField airvelTxt = new LabeledTextField(ModParameters.HUD[28]);
-  private LabeledTextField prxTxt = new LabeledTextField(ModParameters.HUD[29]);
+  private LabeledTextField thirdPerson = new LabeledTextField(ModParameters.HUD[20]);
+  private LabeledTextField addTac = new LabeledTextField(ModParameters.HUD[21]);
+  private LabeledTextField aslTxt = new LabeledTextField(ModParameters.HUD[22]);
+  private LabeledTextField aztTxt = new LabeledTextField(ModParameters.HUD[23]);
+  private LabeledTextField grdTxt = new LabeledTextField(ModParameters.HUD[24]);
+  private LabeledTextField lmtTxt = new LabeledTextField(ModParameters.HUD[25]);
+  private LabeledTextField tmpTxt = new LabeledTextField(ModParameters.HUD[26]);
+  private LabeledTextField hltTxt = new LabeledTextField(ModParameters.HUD[27]);
+  private LabeledTextField rngTxt = new LabeledTextField(ModParameters.HUD[28]);
+  private LabeledTextField velTxt = new LabeledTextField(ModParameters.HUD[29]);
+  private LabeledTextField airvelTxt = new LabeledTextField(ModParameters.HUD[30]);
+  private LabeledTextField prxTxt = new LabeledTextField(ModParameters.HUD[31]);
 
   public HudFactory(ModWindow hudWindow)
     {
     super(hudWindow);
 
-    parameters = new LabeledComponent[] {range, colour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    parameters = new LabeledComponent[] {range, colour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
     }
 
   protected void addToolTips()

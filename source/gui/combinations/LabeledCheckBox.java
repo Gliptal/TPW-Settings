@@ -3,7 +3,6 @@ package gui.combinations;
 import exec.*;
 import exec.userinterface.*;
 import gui.listeners.*;
-import java.awt.*;
 import javax.swing.*;
 
 
@@ -13,7 +12,7 @@ public class LabeledCheckBox extends LabeledComponent
 
   public LabeledCheckBox(String labelText)
     {
-    super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
+    super(Layouts.LABELED_GRID(), labelText);
 
     addComponent(new JCheckBox());
     checkBox = (JCheckBox)component;
@@ -35,7 +34,7 @@ public class LabeledCheckBox extends LabeledComponent
 
   public void linkToButton(LabeledButton button)
     {
-    checkBox.addActionListener(new ModSemaphoreListener(checkBox, button));
+    checkBox.addActionListener(new UpdateSemaphores(checkBox, button));
     }
 
   public boolean isActive()

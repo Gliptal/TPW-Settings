@@ -1,8 +1,6 @@
 package gui.combinations;
 
 import exec.userinterface.*;
-import fileio.*;
-import java.awt.*;
 import javax.swing.*;
 
 
@@ -12,9 +10,9 @@ public class LabeledTextField extends LabeledComponent
 
   public LabeledTextField(String labelText)
     {
-    super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
+    super(Layouts.LABELED_GRID(), labelText);
 
-    addComponent(new JTextField(FileTemplate.LOADING));
+    addComponent(new JTextField(Files.LOADING));
     textField = (JTextField)component;
 
     tailorTextField();

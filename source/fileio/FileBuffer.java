@@ -5,15 +5,27 @@ import java.io.*;
 import mods.*;
 import mods.factories.*;
 
+import static exec.userinterface.Files.*;
 
-public class ActionBuffer
+
+public class FileBuffer
   {
-  public static final String CONFIG_FILE_NAME = "TPW_MODS.hpp";
-  public static final String REVERT_FILE_NAME = "REVERT";
-  public static final String PRESET_EXTENSION = ".PRST";
-
   private static PrintWriter writer;
   private static BufferedReader reader;
+
+  public static String[] parseDirectoryFor(final String extension)
+    {
+    File directory = new File(".");
+
+    return directory.list(new FilenameFilter()
+                           {
+                           public boolean accept(File directory, String name)
+                             {
+                             return name.endsWith(extension);
+                             }
+                           }
+                         );
+    }
 
   public static void writeWholeFile(String fileName)
     {
@@ -30,16 +42,23 @@ public class ActionBuffer
     closeWriter();
     }
 
-  public static void readWholeFile(String fileName)
+  public static boolean readWholeFile(String fileName)
     {
-    openReader(fileName);
+    boolean readable = (new File(DIRECTORY+fileName)).canRead();
 
-    plainRead();
-    plainRead();
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      readSection(Main.modFactories[i]);
+    if (readable)
+      {
+      openReader(fileName);
 
-    closeReader();
+      plainRead();
+      plainRead();
+      for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+        readSection(Main.modFactories[i]);
+
+      closeReader();
+      }
+
+    return readable;
     }
 
   private static void openWriter(String fileName)
@@ -83,7 +102,7 @@ public class ActionBuffer
   private static void writeSection(String[] lines, ModFactory modFactory)
     {
     for (int i = 0; i < lines.length; i += 1)
-      writeLine(lines[i]+modFactory.getValueValue(i)+";");
+      writeLine(lines[i]+modFactory.getValueFromParameter(i)+SEMICOLON);
     }
 
   private static void plainRead()
@@ -94,7 +113,7 @@ public class ActionBuffer
       {
       line = readLine();
       }
-    while (!line.equals(FileTemplate.SEPARATOR));
+    while (!line.equals(SEPARATOR));
     }
 
   private static void readSection(ModFactory modFactory)
@@ -106,21 +125,21 @@ public class ActionBuffer
       {
       line = readLine();
 
-      int equalsChar = line.indexOf("=");
-      int semicolonChar = line.lastIndexOf(";");
+      int equalsIndex = line.indexOf(EQUALS);
+      int semicolonIndex = line.lastIndexOf(SEMICOLON);
 
-      if (equalsChar != -1 && semicolonChar != -1)
+      if (equalsIndex != -1 && semicolonIndex != -1)
         {
-        modFactory.setValueToParameter(line.substring(equalsChar+2, semicolonChar), parameter);
+        modFactory.setValueToParameter(line.substring(equalsIndex+2, semicolonIndex), parameter);
         parameter += 1;
         }
       }
-    while (!line.equals(FileTemplate.SEPARATOR));
+    while (!line.equals(SEPARATOR));
     }
 
   private static void separateSection()
     {
-    writeLine(FileTemplate.SEPARATOR);
+    writeLine(SEPARATOR);
     }
 
   private static void writeLine(String line)
@@ -136,7 +155,7 @@ public class ActionBuffer
       }
     catch (IOException except)
       {
-      return FileTemplate.ERROR;
+      return ERROR;
       }
     }
   }

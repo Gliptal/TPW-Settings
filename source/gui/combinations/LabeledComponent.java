@@ -33,7 +33,7 @@ public abstract class LabeledComponent extends JPanel
     {
     this.component = component;
 
-    if (layoutIs("java.awt.BorderLayout"))
+    if (layoutIs("BorderLayout"))
       add(component, BorderLayout.CENTER);
     else
       add(component);
@@ -51,7 +51,7 @@ public abstract class LabeledComponent extends JPanel
     label.setOpaque(true);
     label.setHorizontalAlignment(JLabel.RIGHT);
 
-    if (layoutIs("java.awt.BorderLayout"))
+    if (layoutIs("BorderLayout"))
       add(label, BorderLayout.WEST);
     else
       add(label);
@@ -61,6 +61,6 @@ public abstract class LabeledComponent extends JPanel
     {
     String layoutClass = getLayout().getClass().getName();
 
-    return layoutClass.equals(className);
+    return layoutClass.equals("java.awt."+className);
     }
   }

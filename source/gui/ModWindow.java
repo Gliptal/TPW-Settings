@@ -5,7 +5,6 @@ import gui.combinations.*;
 import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
-import mods.*;
 
 
 public class ModWindow extends CommonWindow
@@ -18,18 +17,13 @@ public class ModWindow extends CommonWindow
 
   public ModWindow(String title)
     {
-    super(Windows.MOD_WINDOW_WIDTH, Windows.MOD_WINDOW_HEIGHT, title);
+    super(Sizes.MOD_WINDOW_WIDTH, Sizes.MOD_WINDOW_HEIGHT, title);
     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
     createAndAddPanels();
     createAndAddGeneralElements();
 
-    setButtonListeners();
-    }
-
-  public void overrideSize(int width, int height)
-    {
-    setSize(width, height);
+    setBackButtonAction();
     }
 
   public void overrideParametersPanelLayout(LayoutManager layout)
@@ -61,8 +55,8 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    generalPanel = new JPanel(new GridLayout(1, 3, Spacing.GRID_PARAMETERS_X, Spacing.GRID_PARAMETERS_Y));
-    parametersPanel = new JPanel(new GridLayout(Spacing.PARAMETERS_ROWS, Spacing.PARAMETERS_COLUMNS, Spacing.GRID_PARAMETERS_X, Spacing.GRID_PARAMETERS_Y));
+    generalPanel = new JPanel(Layouts.MOD_GENERAL());
+    parametersPanel = new JPanel(Layouts.MOD_PARAMETERS());
 
     mainPanel.add(generalPanel, BorderLayout.NORTH);
     mainPanel.add(parametersPanel, BorderLayout.CENTER);
@@ -70,16 +64,16 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddGeneralElements()
     {
-    isActiveCheckBox = new LabeledCheckBox(ModParameters.ACTIVE);
-    backButton = new JButton(Buttons.MOD_BACK);
+    isActiveCheckBox = new LabeledCheckBox(Text.ACTIVE);
+    backButton = new JButton(Text.BUTTON_BACK);
 
     generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
     generalPanel.add(Spacing.createPlaceholder());
     generalPanel.add(backButton, BorderLayout.NORTH);
     }
 
-  private void setButtonListeners()
+  private void setBackButtonAction()
     {
-    backButton.addActionListener(new WindowVisibilityListener(this, false));
+    backButton.addActionListener(new ShowWindow(this, false));
     }
   }

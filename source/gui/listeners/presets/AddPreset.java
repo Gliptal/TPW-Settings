@@ -1,15 +1,16 @@
 package gui.listeners.presets;
 
+import exec.userinterface.*;
 import fileio.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 
-public class PresetInsertEntryListener implements ActionListener
+public class AddPreset implements ActionListener
   {
   private JComboBox<String> comboBox;
 
-  public PresetInsertEntryListener(JComboBox<String> comboBox)
+  public AddPreset(JComboBox<String> comboBox)
     {
     this.comboBox = comboBox;
     }
@@ -20,10 +21,13 @@ public class PresetInsertEntryListener implements ActionListener
       {
       String newEntry = entryToUpperCase();
 
-      ActionBuffer.writeWholeFile(newEntry+ActionBuffer.PRESET_EXTENSION);
+      if (!newEntry.equals(Files.REVERT))
+        {
+        FileBuffer.writeWholeFile(newEntry+Files.PRESET_EXTENSION);
 
-      if (!entryExists(newEntry))
-        comboBox.addItem(newEntry);
+        if (!exists(newEntry))
+          comboBox.addItem(newEntry);
+        }
 
       comboBox.setEditable(false);
       }
@@ -31,12 +35,14 @@ public class PresetInsertEntryListener implements ActionListener
 
   private String entryToUpperCase()
     {
-    comboBox.setSelectedItem(((String)comboBox.getSelectedItem()).toUpperCase());
+    String entry = (String)comboBox.getSelectedItem();
+
+    comboBox.setSelectedItem(entry.toUpperCase());
 
     return (String)comboBox.getSelectedItem();
     }
 
-  private boolean entryExists(String entry)
+  private boolean exists(String entry)
     {
     for (int i = 0; i < comboBox.getItemCount(); i += 1)
       {

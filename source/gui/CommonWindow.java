@@ -1,9 +1,7 @@
 package gui;
 
-import gui.listeners.fileio.*;
-import gui.listeners.presets.*;
 import exec.userinterface.*;
-import fileio.*;
+import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
@@ -14,8 +12,8 @@ public class CommonWindow extends JFrame
   protected JPanel mainPanel;
   private JPanel commitPanel;
 
-  private JButton commitNegativeButton;
   private JButton commitPositiveButton;
+  private JButton commitNegativeButton;
 
   protected CommonWindow(int width, int height, String title)
     {
@@ -25,38 +23,38 @@ public class CommonWindow extends JFrame
     createAndAddPanels();
     createAndAddCommitButtons();
 
-    setButtonListeners();
+    setCommitButtonsActions();
+    }
+
+  public void overrideSize(int width, int height)
+    {
+    setSize(width, height);
     }
 
   private void createAndAddPanels()
     {
-    mainPanel = new JPanel(new BorderLayout(Spacing.WINDOW_INNER, Spacing.WINDOW_INNER));
-    commitPanel = new JPanel(new GridLayout(1, 3, Spacing.GRID_BUTTONS, Spacing.GRID_BUTTONS));
+    mainPanel = new JPanel(Layouts.MAIN());
+    commitPanel = new JPanel(Layouts.COMMITS());
 
     mainPanel.setBorder(new EmptyBorder(Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER));
 
-    this.add(mainPanel);
+    add(mainPanel);
     mainPanel.add(commitPanel, BorderLayout.SOUTH);
     }
 
   private void createAndAddCommitButtons()
     {
-    commitNegativeButton = new JButton(Buttons.COMMIT_NEGATIVE);
-    commitPositiveButton = new JButton(Buttons.COMMIT_POSITIVE);
+    commitPositiveButton = new JButton(Text.BUTTON_NEGATIVE_COMMIT);
+    commitNegativeButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
 
     commitPanel.add(Spacing.createPlaceholder());
-    commitPanel.add(commitNegativeButton);
     commitPanel.add(commitPositiveButton);
+    commitPanel.add(commitNegativeButton);
     }
 
-  private void setButtonListeners()
+  private void setCommitButtonsActions()
     {
-    setCommitButtonListeners();
-    }
-
-  private void setCommitButtonListeners()
-    {
-    commitNegativeButton.addActionListener(new RevertListener());
-    commitPositiveButton.addActionListener(new WriteFromParametersListener(ActionBuffer.CONFIG_FILE_NAME));
+    commitPositiveButton.addActionListener(new RevertValues());
+    commitNegativeButton.addActionListener(new WriteValuestToFile(Files.CONFIG));
     }
   }

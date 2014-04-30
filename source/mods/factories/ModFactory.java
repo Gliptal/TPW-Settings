@@ -21,7 +21,7 @@ abstract public class ModFactory
     addToolTips();
     }
 
-  public String getValueValue(int which)
+  public String getValueFromParameter(int which)
     {
     if (which == 0)
       return modWindow.getIsActiveLabeledCheckBox().getValue();

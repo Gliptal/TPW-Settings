@@ -1,7 +1,6 @@
 package gui.combinations;
 
 import exec.userinterface.*;
-import java.awt.*;
 import javax.swing.*;
 
 
@@ -13,7 +12,7 @@ public class LabeledComboBox extends LabeledComponent
 
   public LabeledComboBox(String labelText, String[] choices)
     {
-    super(new GridLayout(1, 2, Spacing.COMBINATIONS, Spacing.COMBINATIONS), labelText);
+    super(Layouts.LABELED_GRID(), labelText);
 
     addComponent(new JComboBox<String>(choices));
     comboBox = (JComboBox)component;

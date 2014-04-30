@@ -3,10 +3,6 @@ package fileio;
 
 public class FileTemplate
   {
-  public static final String ERROR = "ERR";
-  public static final String LOADING = "LOADING";
-  protected static final String SEPARATOR = "//><";
-
   protected static final String[] HEADER = {"//",
                                             "// File created with TPW Settings. All comments are missing.",
                                             "//",
@@ -106,6 +102,8 @@ public class FileTemplate
                                          "tpw_hud_scale = ",
                                          "tpw_hud_textscale = ",
                                          "tpw_hud_degradation = ",
+                                         "tpw_hud_thirdperson = ",
+                                         "tpw_hud_addtac = ",
                                          "tpw_hud_asl_txt = ",
                                          "tpw_hud_azt_txt = ",
                                          "tpw_hud_grd_txt = ",

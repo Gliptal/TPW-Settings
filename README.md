@@ -8,6 +8,14 @@ It is coded in Java so the JVM is required (although 95% of PCs and Laptops will
 Changelog
 ======
 
+[1.3.0] | UPDATE YOUR PRESETS
+
+- parameters matching HUD [1.21]
+- added version number
+- added online README link
+- tweaked presets section appearence
+- corrected a rare saving bug
+
 [1.2.1] | UPDATE YOUR PRESETS
 
 - parameters matching HUD [1.19]
@@ -48,7 +56,7 @@ Tooltips are available on mouse hover, describing either an whole mod (in the ma
 Next Steps
 ======
 
-1. Version number
+1. Handle not updated presets
 2. Better names for parameters
 3. Expanded HUD section
 4. HUD live preview
@@ -89,6 +97,8 @@ Progress
 27/04/14 | [1.2.0](https://github.com/Gliptal/TPW-Settings/tree/1.2.0) | working presets
 
 27/04/14 | [1.2.1](https://github.com/Gliptal/TPW-Settings/tree/1.2.1) | parameters matching HUD [1.19]
+
+27/04/14 | [1.3.0](https://github.com/Gliptal/TPW-Settings/tree/1.3.0) | added feautures, parameters matching HUD [1.21]
 
 Links
 ======
