@@ -14,6 +14,7 @@ public class HouselightsFactory extends ModFactory
     super(houselightsWindow);
 
     parameters = new LabeledComponent[] {delay};
+    visualParameters = new LabeledComponent[] {delay};
     }
 
   protected void addToolTips()

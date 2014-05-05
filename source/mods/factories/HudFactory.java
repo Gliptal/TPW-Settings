@@ -27,12 +27,12 @@ public class HudFactory extends ModFactory
   private LabeledTextField unit = new LabeledTextField(ModParameters.HUD[15]);
   private LabeledTextField offset = new LabeledTextField(ModParameters.HUD[16]);
   private LabeledTextField scale = new LabeledTextField(ModParameters.HUD[17]);
-
   private LabeledTextField textscale = new LabeledTextField(ModParameters.HUD[18]);
-  private LabeledTextField degradation = new LabeledTextField(ModParameters.HUD[19]);
-  private LabeledTextField thirdPerson = new LabeledTextField(ModParameters.HUD[20]);
 
-  private LabeledTextField addTac = new LabeledTextField(ModParameters.HUD[21]);
+  private LabeledCheckBox degradation = new LabeledCheckBox(ModParameters.HUD[19]);
+  private LabeledCheckBox thirdPerson = new LabeledCheckBox(ModParameters.HUD[20]);
+  private LabeledCheckBox addTac = new LabeledCheckBox(ModParameters.HUD[21]);
+
   private LabeledTextField aslTxt = new LabeledTextField(ModParameters.HUD[22]);
   private LabeledTextField aztTxt = new LabeledTextField(ModParameters.HUD[23]);
   private LabeledTextField grdTxt = new LabeledTextField(ModParameters.HUD[24]);
@@ -49,6 +49,7 @@ public class HudFactory extends ModFactory
     super(hudWindow);
 
     parameters = new LabeledComponent[] {range, colour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    visualParameters = new LabeledComponent[] {range, degradation, thirdPerson, addTac, colour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
     }
 
   public void addParametersAndTooltips()
@@ -59,16 +60,14 @@ public class HudFactory extends ModFactory
 
   private void addParameters()
     {
-    for (int i = 0; i < 1; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_GENERAL);
-    for (int i = 1; i < 5; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_COLOR);
-    for (int i = 5; i < 18; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_POSITIONING);
-    for (int i = 18; i < 21; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_OTHER);
-    for (int i = 21; i < parameters.length; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_TXT);
+    for (int i = 0; i < 4; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_GENERAL);
+    for (int i = 4; i < 8; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_COLORS);
+    for (int i = 8; i < 21; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_GRAPHICS);
+    for (int i = 21; i < visualParameters.length; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_TXT);
 
     ((HudWindow)modWindow).fillModWindowWithPlaceholders();
     }

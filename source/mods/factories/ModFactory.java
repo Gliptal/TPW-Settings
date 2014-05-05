@@ -7,7 +7,9 @@ import gui.combinations.*;
 abstract public class ModFactory
   {
   protected ModWindow modWindow;
+
   protected LabeledComponent[] parameters;
+  protected LabeledComponent[] visualParameters;
 
   public ModFactory(ModWindow modWindow)
     {
@@ -40,8 +42,8 @@ abstract public class ModFactory
 
   private void addParameters()
     {
-    for (int i = 0; i < parameters.length; i += 1)
-      modWindow.addParameter(parameters[i]);
+    for (int i = 0; i < visualParameters.length; i += 1)
+      modWindow.addParameter(visualParameters[i]);
 
     modWindow.fillModWindowWithPlaceholders();
     }

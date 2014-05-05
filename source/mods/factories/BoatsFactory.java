@@ -17,6 +17,7 @@ public class BoatsFactory extends ModFactory
     super(boatsWindow);
 
     parameters = new LabeledComponent[] {delay, radius, waypoints, num};
+    visualParameters = new LabeledComponent[] {delay, num, radius, waypoints};
     }
 
   protected void addToolTips()

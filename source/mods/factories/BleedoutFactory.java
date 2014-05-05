@@ -17,6 +17,7 @@ public class BleedoutFactory extends ModFactory
     super(bleedoutWindow);
 
     parameters = new LabeledComponent[] {inc, cThresh, pThresh, iThresh};
+    visualParameters = new LabeledComponent[] {inc, cThresh, pThresh, iThresh};
     }
 
   protected void addToolTips()

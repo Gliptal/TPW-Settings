@@ -20,6 +20,7 @@ public class EbsFactory extends ModFactory
     super(ebsWindow);
 
     parameters = new LabeledComponent[] {thresh, delay, debug, radius, playerSup, aiSup, findCover};
+    visualParameters = new LabeledComponent[] {debug, delay, thresh, radius, playerSup, aiSup, findCover};
     }
 
   protected void addToolTips()

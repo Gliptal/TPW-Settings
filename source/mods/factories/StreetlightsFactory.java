@@ -17,6 +17,7 @@ public class StreetlightsFactory extends ModFactory
     super(streetlightsWindow);
 
     parameters = new LabeledComponent[] {factor, range, colour, moths};
+    visualParameters = new LabeledComponent[] {range, factor, colour, moths};
     }
 
   protected void addToolTips()

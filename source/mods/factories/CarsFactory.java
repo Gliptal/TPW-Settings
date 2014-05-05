@@ -18,6 +18,7 @@ public class CarsFactory extends ModFactory
     super(carsWindow);
 
     parameters = new LabeledComponent[] {delay, waypoints, num, radius, noCombatSpawn};
+    visualParameters = new LabeledComponent[] {delay, num, radius, waypoints, noCombatSpawn};
     }
 
   protected void addToolTips()

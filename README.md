@@ -8,6 +8,16 @@ It is coded in Java so the JVM is required (although most PCs and Laptops will a
 Changelog
 ======
 
+[1.5.0]
+
+- added checkboxes to HUD
+- reordered GUI parameters for consistency, no changes in .hpp
+- reduced HUD sections
+- more descriptive parameter names
+- added all unit of measurements to parameter names
+- ERR value will be shown if `.hpp` or `.PRST` files are outdated
+- corrected 'REVERT' buttomn bug
+
 [1.4.0]
 
 - corrected CIVS display bug
@@ -61,19 +71,14 @@ Tooltips are available on mouse hover, describing either an whole mod (in the ma
 Next Steps
 ======
 
-1. Checkboxes and combobexes for HUD
-2. Better names for parameters
-3. Reorder parameters in a consistent way
-4. Handle not updated presets
-5. HUD live preview
-6. Inserted value check
+1. HUD live preview
+2. Inserted value check
 
 Limitations
 ======
 
 - Presets are not backwards compatible. You can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
 - `TPW_MODS.hpp` must be in the same folder with `TPW Settings.java` in order for the program to work.
-- HUD is only partially implemented: you still have to insert all values as strings (no checkboxes and comboboxes yet).
 - If you wish to rename a preset you must select it, delete it, and save it again with the new name.
 
 Progress
@@ -107,7 +112,9 @@ Progress
 
 27/04/14 | [1.3.0](https://github.com/Gliptal/TPW-Settings/tree/1.3.0) | added feautures, parameters matching HUD [1.21]
 
-05/05/14 | [1.4.0](https://github.com/Gliptal/TPW-Settings/tree/1.3.0) | added feautures, refactoring
+05/05/14 | [1.4.0](https://github.com/Gliptal/TPW-Settings/tree/1.4.0) | added feautures, refactoring
+
+05/05/14 | [1.4.0](https://github.com/Gliptal/TPW-Settings/tree/1.5.0) | added feautures, parameters reordering
 
 Links
 ======

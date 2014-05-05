@@ -17,6 +17,7 @@ public class LosFactory extends ModFactory
     super(losWindow);
 
     parameters = new LabeledComponent[] {debug, maxDist, minDist, delay};
+    visualParameters = new LabeledComponent[] {debug, delay, minDist, maxDist};
     }
 
   protected void addToolTips()

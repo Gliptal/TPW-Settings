@@ -1,5 +1,6 @@
 package gui.listeners;
 
+import exec.userinterface.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -12,7 +13,7 @@ public class OpenOnlineReadme extends MouseAdapter
     {
     try
       {
-      URI onlineReadme = new URI("https://github.com/Gliptal/TPW-Settings#usage");
+      URI onlineReadme = new URI(Text.README_URL);
       Desktop.getDesktop().browse(onlineReadme);
       }
     catch (URISyntaxException | IOException exception) {}

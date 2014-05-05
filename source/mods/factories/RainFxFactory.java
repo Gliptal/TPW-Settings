@@ -12,6 +12,7 @@ public class RainFxFactory extends ModFactory
     super(rainFxWindow);
 
     parameters = new LabeledComponent[] {};
+    visualParameters = new LabeledComponent[] {};
     }
 
   protected void addToolTips()

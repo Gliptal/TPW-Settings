@@ -18,6 +18,7 @@ public class FallFactory extends ModFactory
     super(fallWindow);
 
     parameters = new LabeledComponent[] {sensitivity, threshold, delay, ragdoll, fallTimeSup};
+    visualParameters = new LabeledComponent[] {delay, threshold, sensitivity, fallTimeSup, ragdoll};
     }
 
   protected void addToolTips()

@@ -23,6 +23,7 @@ public class CivsFactory extends ModFactory
     super(civsFactory);
 
     parameters = new LabeledComponent[] {delay, radius, waypoints, density, maxSquadCas, maxAllCas, casDisplay, maxCiv, interact, noCombatSpawn};
+    visualParameters = new LabeledComponent[] {delay, maxCiv, density, radius, waypoints, interact, noCombatSpawn, maxAllCas, maxSquadCas, casDisplay};
     }
 
   protected void addToolTips()

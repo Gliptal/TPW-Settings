@@ -18,6 +18,7 @@ public class AnimalsFactory extends ModFactory
     super(animalsWindow);
 
     parameters = new LabeledComponent[] {delay, max, maxRadius, minRadius, noiseTime};
+    visualParameters = new LabeledComponent[] {delay, max, minRadius, maxRadius, noiseTime};
     }
 
   protected void addToolTips()

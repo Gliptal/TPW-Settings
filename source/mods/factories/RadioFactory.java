@@ -16,6 +16,7 @@ public class RadioFactory extends ModFactory
     super(radioFactory);
 
     parameters = new LabeledComponent[] {house, car, time};
+    visualParameters = new LabeledComponent[] {time, house, car};
     }
 
   protected void addToolTips()

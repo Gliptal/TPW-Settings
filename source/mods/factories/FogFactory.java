@@ -20,6 +20,7 @@ public class FogFactory extends ModFactory
     super(fogWindow);
 
     parameters = new LabeledComponent[] {radius, delay, breath, groundFog, rainFog, heatHaze, canSnow};
+    visualParameters = new LabeledComponent[] {delay, radius, breath, groundFog, heatHaze, rainFog, canSnow};
     }
 
   protected void addToolTips()

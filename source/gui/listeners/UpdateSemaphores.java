@@ -18,6 +18,17 @@ public class UpdateSemaphores implements ActionListener
     this.labeledButton = labeledButton;
     }
 
+  public static void updateSemaphores()
+    {
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      {
+      LabeledButton modButton = Main.mainWindow.getModButton(i);
+      boolean modIsActive = Main.modWindows[i].getIsActiveLabeledCheckBox().isActive();
+
+      modButton.setSemaphoreColor(modIsActive);
+      }
+    }
+
   public void actionPerformed(ActionEvent event)
     {
     labeledButton.setSemaphoreColor(checkBox.isSelected());

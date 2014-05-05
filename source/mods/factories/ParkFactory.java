@@ -18,6 +18,7 @@ public class ParkFactory extends ModFactory
     super(parkWindow);
 
     parameters = new LabeledComponent[] {perc, createDist, hideDist, simDist, max};
+    visualParameters = new LabeledComponent[] {max, perc, createDist, hideDist, simDist};
     }
 
   protected void addToolTips()

@@ -16,6 +16,7 @@ public class AirFactory extends ModFactory
     super(airWindow);
 
     parameters = new LabeledComponent[] {delay, time, max};
+    visualParameters = new LabeledComponent[] {delay, max, time};
     }
 
   protected void addToolTips()

@@ -12,7 +12,6 @@ public class HudWindow extends ModWindow
   private JPanel generalPanel;
   private JPanel colorPanel;
   private JPanel positioningPanel;
-  private JPanel otherPanel;
   private JPanel txtPanel;
 
   private JButton generalButton;
@@ -38,7 +37,6 @@ public class HudWindow extends ModWindow
     Spacing.fillGridWithPlaceholders(generalPanel);
     Spacing.fillGridWithPlaceholders(colorPanel);
     Spacing.fillGridWithPlaceholders(positioningPanel);
-    Spacing.fillGridWithPlaceholders(otherPanel);
     Spacing.fillGridWithPlaceholders(txtPanel);
     }
 
@@ -49,14 +47,11 @@ public class HudWindow extends ModWindow
       case Text.HUD_SECTION_GENERAL:
         generalPanel.add(parameter);
         break;
-      case Text.HUD_SECTION_COLOR:
+      case Text.HUD_SECTION_COLORS:
         colorPanel.add(parameter);
         break;
-      case Text.HUD_SECTION_POSITIONING:
+      case Text.HUD_SECTION_GRAPHICS:
         positioningPanel.add(parameter);
-        break;
-      case Text.HUD_SECTION_OTHER:
-        otherPanel.add(parameter);
         break;
       case Text.HUD_SECTION_TXT:
         txtPanel.add(parameter);
@@ -71,7 +66,6 @@ public class HudWindow extends ModWindow
     generalPanel = new JPanel(Layouts.HUD_SECTION_GENERAL());
     colorPanel = new JPanel(Layouts.HUD_SECTION_COLOR());
     positioningPanel = new JPanel(Layouts.HUD_SECTION_POSITIONING());
-    otherPanel = new JPanel(Layouts.HUD_SECTION_OTHER());
     txtPanel = new JPanel(Layouts.HUD_SECTION_TXT());
 
     parametersPanel.add(sectionsPanel, BorderLayout.NORTH);
@@ -80,15 +74,13 @@ public class HudWindow extends ModWindow
   private void createAndAddButtons()
     {
     generalButton = new JButton(Text.HUD_SECTION_GENERAL);
-    colorButton = new JButton(Text.HUD_SECTION_COLOR);
-    positioningButton = new JButton(Text.HUD_SECTION_POSITIONING);
-    otherButton = new JButton(Text.HUD_SECTION_OTHER);
+    colorButton = new JButton(Text.HUD_SECTION_COLORS);
+    positioningButton = new JButton(Text.HUD_SECTION_GRAPHICS);
     txtButton = new JButton(Text.HUD_SECTION_TXT);
 
     sectionsPanel.add(generalButton);
     sectionsPanel.add(colorButton);
     sectionsPanel.add(positioningButton);
-    sectionsPanel.add(otherButton);
     sectionsPanel.add(txtButton);
     }
 
@@ -97,7 +89,6 @@ public class HudWindow extends ModWindow
     generalButton.addActionListener(new OpenHudSection(generalPanel, parametersPanel, sectionsPanel));
     colorButton.addActionListener(new OpenHudSection(colorPanel, parametersPanel, sectionsPanel));
     positioningButton.addActionListener(new OpenHudSection(positioningPanel, parametersPanel, sectionsPanel));
-    otherButton.addActionListener(new OpenHudSection(otherPanel, parametersPanel, sectionsPanel));
     txtButton.addActionListener(new OpenHudSection(txtPanel, parametersPanel, sectionsPanel));
     }
   }
