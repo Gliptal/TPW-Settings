@@ -12,7 +12,7 @@ public class LabeledTextField extends LabeledComponent
     {
     super(Layouts.LABELED_GRID(), labelText);
 
-    addComponent(new JTextField(Files.LOADING));
+    addComponent(new JTextField(Files.ERROR));
     textField = (JTextField)component;
 
     tailorTextField();

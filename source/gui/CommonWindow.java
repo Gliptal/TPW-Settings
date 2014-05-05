@@ -12,8 +12,8 @@ public class CommonWindow extends JFrame
   protected JPanel mainPanel;
   private JPanel commitPanel;
 
-  private JButton commitPositiveButton;
   private JButton commitNegativeButton;
+  private JButton commitPositiveButton;
 
   protected CommonWindow(int width, int height, String title)
     {
@@ -26,7 +26,7 @@ public class CommonWindow extends JFrame
     setCommitButtonsActions();
     }
 
-  public void overrideSize(int width, int height)
+  protected void overrideSize(int width, int height)
     {
     setSize(width, height);
     }
@@ -44,17 +44,17 @@ public class CommonWindow extends JFrame
 
   private void createAndAddCommitButtons()
     {
-    commitPositiveButton = new JButton(Text.BUTTON_NEGATIVE_COMMIT);
-    commitNegativeButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
+    commitNegativeButton = new JButton(Text.BUTTON_NEGATIVE_COMMIT);
+    commitPositiveButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
 
     commitPanel.add(Spacing.createPlaceholder());
-    commitPanel.add(commitPositiveButton);
     commitPanel.add(commitNegativeButton);
+    commitPanel.add(commitPositiveButton);
     }
 
   private void setCommitButtonsActions()
     {
-    commitPositiveButton.addActionListener(new RevertValues());
-    commitNegativeButton.addActionListener(new WriteValuestToFile(Files.CONFIG));
+    commitNegativeButton.addActionListener(new RevertValues());
+    commitPositiveButton.addActionListener(new WriteValuestToFile(Files.CONFIG));
     }
   }

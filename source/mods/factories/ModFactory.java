@@ -1,6 +1,5 @@
 package mods.factories;
 
-import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 
@@ -44,6 +43,6 @@ abstract public class ModFactory
     for (int i = 0; i < parameters.length; i += 1)
       modWindow.addParameter(parameters[i]);
 
-    Spacing.addPlaceholdersToModWindow(modWindow, parameters);
+    modWindow.fillModWindowWithPlaceholders();
     }
   }

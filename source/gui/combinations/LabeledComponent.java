@@ -1,5 +1,6 @@
 package gui.combinations;
 
+import exec.userinterface.*;
 import java.awt.*;
 import javax.swing.*;
 
@@ -32,11 +33,7 @@ public abstract class LabeledComponent extends JPanel
   protected void addComponent(JComponent component)
     {
     this.component = component;
-
-    if (layoutIs("BorderLayout"))
-      add(component, BorderLayout.CENTER);
-    else
-      add(component);
+    add(component);
     }
 
   protected void setLabelColor(Color color)
@@ -61,6 +58,6 @@ public abstract class LabeledComponent extends JPanel
     {
     String layoutClass = getLayout().getClass().getName();
 
-    return layoutClass.equals("java.awt."+className);
+    return layoutClass.equals(Layouts.JAVA_CLASSPATH+className);
     }
   }

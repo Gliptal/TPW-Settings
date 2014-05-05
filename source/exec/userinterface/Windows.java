@@ -1,7 +1,7 @@
 package exec.userinterface;
 
 
-public class Sizes
+public class Windows
   {
   public static final int MAIN_WINDOW_WIDTH = 1000;
   public static final int MAIN_WINDOW_HEIGHT = 600;

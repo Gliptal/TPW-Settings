@@ -7,8 +7,6 @@ import gui.combinations.*;
 import gui.listeners.*;
 import gui.listeners.presets.*;
 import java.awt.*;
-import java.awt.font.*;
-import java.util.*;
 import javax.swing.*;
 import mods.*;
 
@@ -28,7 +26,7 @@ public class MainWindow extends CommonWindow
 
   public MainWindow()
     {
-    super(Sizes.MAIN_WINDOW_WIDTH, Sizes.MAIN_WINDOW_HEIGHT, Text.PROGRAM_NAME);
+    super(Windows.MAIN_WINDOW_WIDTH, Windows.MAIN_WINDOW_HEIGHT, Text.PROGRAM_NAME);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     createAndAddPanels();
@@ -36,7 +34,9 @@ public class MainWindow extends CommonWindow
     createAndAddVersionLabel();
     createAndAddModButtons();
 
-    setActions();
+    setPresetsActions();
+    setModButtonsAction();
+    setLabelAction();
     }
 
   public void addPresetsToComboBox()
@@ -50,14 +50,14 @@ public class MainWindow extends CommonWindow
     presetsComboBox.setSelectedIndex(LabeledComboBox.COMBO_BOX_TOP);
     }
 
-  public JComboBox<String> getPresetsComboBox()
-    {
-    return presetsComboBox;
-    }
-
   public LabeledButton getModButton(int which)
     {
     return modButtons[which];
+    }
+
+  public JComboBox<String> getPresetsComboBox()
+    {
+    return presetsComboBox;
     }
 
   private void createAndAddPanels()
@@ -98,13 +98,6 @@ public class MainWindow extends CommonWindow
       }
     }
 
-  private void setActions()
-    {
-    setPresetsActions();
-    setModButtonsAction();
-    setLabelAction();
-    }
-
   private void createAndAddPresetsComboBox()
     {
     presetsComboBox = new JComboBox<String>();
@@ -138,6 +131,6 @@ public class MainWindow extends CommonWindow
 
   private void setLabelAction()
     {
-    versionLabel.addMouseListener(new OpenOnlineReadme(versionLabel));
+    versionLabel.addMouseListener(new OpenOnlineReadme());
     }
   }

@@ -1,21 +1,13 @@
 package gui.listeners;
 
-import java.awt.event.*;
-import java.net.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.io.*;
-import javax.swing.*;
+import java.net.*;
 
 
 public class OpenOnlineReadme extends MouseAdapter
   {
-  private JLabel label;
-
-  public OpenOnlineReadme(JLabel label)
-    {
-    this.label = label;
-    }
-
   public void mouseClicked(MouseEvent event)
     {
     try

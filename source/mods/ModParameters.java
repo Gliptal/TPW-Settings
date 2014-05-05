@@ -1,11 +1,8 @@
 package mods;
 
-import exec.userinterface.*;
-
 
 public class ModParameters
   {
-  public static final int MAXIMUM_PARAMETERS = Spacing.PARAMETERS_ROWS*Spacing.PARAMETERS_COLUMNS;
   public static final String ACTIVE_PLACEHOLDER = "";
 
   public static final String[] AIR = {ACTIVE_PLACEHOLDER,

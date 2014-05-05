@@ -53,12 +53,8 @@ public class Main
     for (int i = 0; i < NUMBER_OF_MODS; i += 1)
       {
       modWindows[i] = new ModWindow(MOD_NAMES[i]);
-
       if (i == HUD_ID)
-        {
-        modWindows[i].overrideSize(Sizes.HUD_WINDOW_WIDTH, Sizes.HUD_WINDOW_HEIGHT);
-        modWindows[i].overrideParametersPanelLayout(Layouts.HUD_PARAMETERS());
-        }
+        modWindows[i] = new HudWindow(MOD_NAMES[i]);
 
       modWindows[i].setLocationRelativeTo(null);
       }

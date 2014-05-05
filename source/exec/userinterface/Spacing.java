@@ -1,6 +1,6 @@
 package exec.userinterface;
 
-import gui.*;
+import java.awt.*;
 import javax.swing.*;
 
 
@@ -16,24 +16,20 @@ public class Spacing
   public static final int GRID_PARAMETERS_Y = 2*BASE_SPACING;
   public static final String BUTTON_LABEL_WIDTH = "        ";
 
-  public static final int PARAMETERS_ROWS = 5;
-  public static final int PARAMETERS_COLUMNS = 2;
-  public static final int HUD_PARAMETERS_ROWS = 6;
-  public static final int HUD_PARAMETERS_COLUMNS = 6;
-
   public static JPanel createPlaceholder()
     {
     return new JPanel();
     }
 
-  public static void addPlaceholdersToModWindow(ModWindow modWindow, Object[] parameters)
+  public static void fillGridWithPlaceholders(JPanel panel)
     {
-    int maxParameters = PARAMETERS_ROWS*PARAMETERS_COLUMNS - parameters.length - 1;
+    GridLayout gridLayout = (GridLayout)panel.getLayout();
 
-    if (maxParameters < 0)
-      maxParameters = HUD_PARAMETERS_ROWS*HUD_PARAMETERS_COLUMNS - parameters.length - 1;
+    int rows = gridLayout.getRows();
+    int columns = gridLayout.getColumns();
+    int components = panel.getComponentCount();
 
-    for (int i = 0; i < maxParameters; i += 1)
-      modWindow.addPlaceHolder();
+    for (int i = 0; i < rows*columns - components; i += 1)
+      panel.add(new JPanel());
     }
   }

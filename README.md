@@ -3,10 +3,15 @@ TPW Settings
 
 This small program provides an easy-to-use and efficient graphical interface to configure the TPW MODS package, that has proven essential for a thorough enjoyement of [ArmA III](http://www.arma3.com/).
 
-It is coded in Java so the JVM is required (although 95% of PCs and Laptops will already have it installed by default), and simply acts as a graphical version of `TPW_MODS.hpp` that [tpw](http://forums.bistudio.com/member.php?62814-tpw) himself has already set up to configure his mod package.
+It is coded in Java so the JVM is required (although most PCs and Laptops will already have it installed by default), and simply acts as a graphical version of `TPW_MODS.hpp` that [tpw](http://forums.bistudio.com/member.php?62814-tpw) himself has already set up to configure his mod package.
 
 Changelog
 ======
+
+[1.4.0]
+
+- corrected CIVS display bug
+- implemented HUD sections
 
 [1.3.0] | UPDATE YOUR PRESETS
 
@@ -41,7 +46,7 @@ Changelog
 Usage
 ======
 
-The main window shows the collection of all available TPW Mods. The colored column to the left of every button is as a quick reference to the state of the mod (green: enabled | red: disabled). Clicking on a button will open the relevant mod page, where changes to every value can be easily made by either editing a value directly or by selecting an appropriate one via checkboxes or comboboxes.
+The main window shows the collection of all available TPW Mods. The colored column to the left of every button acts as a quick reference to the state of the mod (green: enabled | red: disabled). Clicking on a button will open the relevant mod page, where changes to every value can be easily made by either editing a value directly or by selecting an appropriate one via checkboxes or comboboxes.
 
 - GENERAL
   - 'APPLY': saves any changes you made by writing them in the config file.
@@ -56,18 +61,20 @@ Tooltips are available on mouse hover, describing either an whole mod (in the ma
 Next Steps
 ======
 
-1. Handle not updated presets
+1. Checkboxes and combobexes for HUD
 2. Better names for parameters
-3. Expanded HUD section
-4. HUD live preview
+3. Reorder parameters in a consistent way
+4. Handle not updated presets
+5. HUD live preview
+6. Inserted value check
 
 Limitations
 ======
 
 - Presets are not backwards compatible. You can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
-- `TPW_MODS.hpp` must be in the same folder with `TPW Settings.java` for the program to work.
+- `TPW_MODS.hpp` must be in the same folder with `TPW Settings.java` in order for the program to work.
 - HUD is only partially implemented: you still have to insert all values as strings (no checkboxes and comboboxes yet).
-- If you wish to rename a preset, select it, delete it, and save it again with the new name.
+- If you wish to rename a preset you must select it, delete it, and save it again with the new name.
 
 Progress
 ======
@@ -99,6 +106,8 @@ Progress
 27/04/14 | [1.2.1](https://github.com/Gliptal/TPW-Settings/tree/1.2.1) | parameters matching HUD [1.19]
 
 27/04/14 | [1.3.0](https://github.com/Gliptal/TPW-Settings/tree/1.3.0) | added feautures, parameters matching HUD [1.21]
+
+05/05/14 | [1.4.0](https://github.com/Gliptal/TPW-Settings/tree/1.3.0) | added feautures, refactoring
 
 Links
 ======

@@ -1,5 +1,6 @@
 package mods.factories;
 
+import exec.userinterface.*;
 import gui.*;
 import gui.combinations.*;
 import mods.*;
@@ -8,10 +9,12 @@ import mods.*;
 public class HudFactory extends ModFactory
   {
   private LabeledTextField range = new LabeledTextField(ModParameters.HUD[1]);
+
   private LabeledTextField colour = new LabeledTextField(ModParameters.HUD[2]);
   private LabeledTextField enemyColour = new LabeledTextField(ModParameters.HUD[3]);
   private LabeledTextField squadColour = new LabeledTextField(ModParameters.HUD[4]);
   private LabeledTextField alpha = new LabeledTextField(ModParameters.HUD[5]);
+
   private LabeledTextField asl = new LabeledTextField(ModParameters.HUD[6]);
   private LabeledTextField azt = new LabeledTextField(ModParameters.HUD[7]);
   private LabeledTextField grd = new LabeledTextField(ModParameters.HUD[8]);
@@ -24,9 +27,11 @@ public class HudFactory extends ModFactory
   private LabeledTextField unit = new LabeledTextField(ModParameters.HUD[15]);
   private LabeledTextField offset = new LabeledTextField(ModParameters.HUD[16]);
   private LabeledTextField scale = new LabeledTextField(ModParameters.HUD[17]);
+
   private LabeledTextField textscale = new LabeledTextField(ModParameters.HUD[18]);
   private LabeledTextField degradation = new LabeledTextField(ModParameters.HUD[19]);
   private LabeledTextField thirdPerson = new LabeledTextField(ModParameters.HUD[20]);
+
   private LabeledTextField addTac = new LabeledTextField(ModParameters.HUD[21]);
   private LabeledTextField aslTxt = new LabeledTextField(ModParameters.HUD[22]);
   private LabeledTextField aztTxt = new LabeledTextField(ModParameters.HUD[23]);
@@ -44,6 +49,28 @@ public class HudFactory extends ModFactory
     super(hudWindow);
 
     parameters = new LabeledComponent[] {range, colour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    }
+
+  public void addParametersAndTooltips()
+    {
+    addParameters();
+    addToolTips();
+    }
+
+  private void addParameters()
+    {
+    for (int i = 0; i < 1; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_GENERAL);
+    for (int i = 1; i < 5; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_COLOR);
+    for (int i = 5; i < 18; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_POSITIONING);
+    for (int i = 18; i < 21; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_OTHER);
+    for (int i = 21; i < parameters.length; i += 1)
+      ((HudWindow)modWindow).addParameterToSection(parameters[i], Text.HUD_SECTION_TXT);
+
+    ((HudWindow)modWindow).fillModWindowWithPlaceholders();
     }
 
   protected void addToolTips()

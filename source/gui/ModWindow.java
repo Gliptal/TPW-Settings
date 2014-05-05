@@ -10,20 +10,25 @@ import javax.swing.*;
 public class ModWindow extends CommonWindow
   {
   private JPanel generalPanel;
-  private JPanel parametersPanel;
+  protected JPanel parametersPanel;
 
   private LabeledCheckBox isActiveCheckBox;
   private JButton backButton;
 
   public ModWindow(String title)
     {
-    super(Sizes.MOD_WINDOW_WIDTH, Sizes.MOD_WINDOW_HEIGHT, title);
+    super(Windows.MOD_WINDOW_WIDTH, Windows.MOD_WINDOW_HEIGHT, title);
     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
     createAndAddPanels();
     createAndAddGeneralElements();
 
     setBackButtonAction();
+    }
+
+  public void fillModWindowWithPlaceholders()
+    {
+    Spacing.fillGridWithPlaceholders(parametersPanel);
     }
 
   public void overrideParametersPanelLayout(LayoutManager layout)
@@ -36,11 +41,6 @@ public class ModWindow extends CommonWindow
   public void addParameter(JPanel parameter)
     {
     parametersPanel.add(parameter);
-    }
-
-  public void addPlaceHolder()
-    {
-    parametersPanel.add(Spacing.createPlaceholder());
     }
 
   public LabeledCheckBox getIsActiveLabeledCheckBox()

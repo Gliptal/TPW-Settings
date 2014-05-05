@@ -1,10 +1,12 @@
 package gui.listeners.presets;
 
+import exec.*;
 import exec.userinterface.*;
 import fileio.*;
-import gui.listeners.*;
+import gui.combinations.*;
 import java.awt.event.*;
 import javax.swing.*;
+import mods.*;
 
 public class LoadPreset implements ItemListener
   {
@@ -29,9 +31,19 @@ public class LoadPreset implements ItemListener
       if (FileBuffer.readWholeFile(fileToRead))
         {
         FileBuffer.writeWholeFile(Files.CONFIG);
-
-        UpdateSemaphores.updateSemaphores();
+        updateSemaphores();
         }
+      }
+    }
+
+  private void updateSemaphores()
+    {
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      {
+      LabeledButton modButton = Main.mainWindow.getModButton(i);
+      boolean modIsActive = Main.modWindows[i].getIsActiveLabeledCheckBox().isActive();
+
+      modButton.setSemaphoreColor(modIsActive);
       }
     }
   }
