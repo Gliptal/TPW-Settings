@@ -81,7 +81,7 @@ public class ToolTips
 
   public static final String[] HOUSELIGHTS = {"Delay before houselights function starts,"};
 
-  public static final String[] HUD = {"Effective range of goggles to scan for units.",
+  public static final String[] HUD = {"Effective range of goggles to scan for units. [minimum, maximum]",
                                       "HUD and friendly units colour.",
                                       "Enemy units colour.",
                                       "Squad and markers colour.",

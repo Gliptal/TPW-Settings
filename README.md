@@ -1,12 +1,17 @@
 TPW Settings
 ======
 
-This small program provides an easy-to-use and efficient graphical interface to configure the TPW MODS package, that has proven essential for a thorough enjoyement of [ArmA III](http://www.arma3.com/).
+This small program provides an easy-to-use and efficient graphical interface to configure the TPW MODS package. This collection was proven to be essential for a thorough enjoyement of [ArmA III](http://www.arma3.com/), thanks to the life it brings in what are otherwise barren and uninhabited islands.
 
-It is coded in Java so the JVM is required (although most PCs and Laptops will already have it installed by default), and simply acts as a graphical version of `TPW_MODS.hpp` that [tpw](http://forums.bistudio.com/member.php?62814-tpw) himself has already set up to configure his mod package.
+What the program does is to simply act as a graphical version of `TPW_MODS.hpp` that [tpw](http://forums.bistudio.com/member.php?62814-tpw) himself has already set up to configure and fine-tune his mod package. Being coded in Java the Java Virtual Machine (JVM) is required: luckily most PCs and Laptops already have it installed by default.
 
 Changelog
 ======
+
+[1.6.0]
+
+- more descriptive HUD names
+- added color chooser for HUD
 
 [1.5.0]
 
@@ -16,7 +21,7 @@ Changelog
 - more descriptive parameter names
 - added all unit of measurements to parameter names
 - ERR value will be shown if `.hpp` or `.PRST` files are outdated
-- corrected 'REVERT' buttomn bug
+- corrected 'REVERT' button bug
 
 [1.4.0]
 
@@ -53,33 +58,80 @@ Changelog
 
 - first working release
 
+Install
+======
+
+[tpw](http://forums.bistudio.com/member.php?62814-tpw)'s download should already have embedded the latest `TPW SETTINGS.jar`, placed in the correct folder.
+
+If for any reason you don't find the latest version there:
+- Download it manually from [git](https://github.com/Gliptal/TPW-Settings) using the 'Download ZIP' button in the right pane
+- Extract the `.jar` file from the `/executable` folder
+- Place it alongside `TPW_MODS.hpp` in Arma's `userconfig/TPW_MODS/` folder.
+
+The `.jar` works exactly like an `.exe`, hence you can make shortcuts or similar.
+
 Usage
 ======
 
-The main window shows the collection of all available TPW Mods. The colored column to the left of every button acts as a quick reference to the state of the mod (green: enabled | red: disabled). Clicking on a button will open the relevant mod page, where changes to every value can be easily made by either editing a value directly or by selecting an appropriate one via checkboxes or comboboxes.
+- MAIN WINDOW:
+  - Shows the collection of all available TPW Mods
+  - The colored column to the left of every mod button acts as a quick reference to the state of the mod (green: enabled | red: disabled)
+  - Clicking on a mod button will open the relevant mod window
+  - Each mod button has tooltips available on mouse hover, with a quick description of the mod itself
+
+- MOD WINDOW
+  - The mod can be activated or deactivated with the checkbox in the window's top left hand corner
+  - Changes to every value can be easily made by either editing it directly or by selecting an appropriate one via checkboxes or comboboxes
+  - Each parameter has tooltips available on mouse hover, with a description on what it does and/or what values are acceptable
 
 - GENERAL
-  - 'APPLY': saves any changes you made by writing them in the config file.
-  - 'REVERT': cancels any changes you made by reloading the values that were set just before the program was run.
+  - 'APPLY': saves any changes you made by writing them in the config file
+  - 'REVERT': cancels any changes you made by reloading the values that were set just before the program was run
 
 - PRESETS
   - 'SAVE': pick a name and save the current parameter values as a new preset
   - 'DELETE': permanently delete the selected preset
 
-Tooltips are available on mouse hover, describing either an whole mod (in the main window) or a single parameter (in the relevant mod window).
-
-Next Steps
-======
-
-1. HUD live preview
-2. Inserted value check
+- COLOR CHOOSER
+  - The sliders can be used to select the wanted color
+  - In the top field the relative values are shown: simply copy (CTRL-C) and paste (CTRL-V) the string in the desired parameter field to have that color in your HUD
 
 Limitations
 ======
 
-- Presets are not backwards compatible. You can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
-- `TPW_MODS.hpp` must be in the same folder with `TPW Settings.java` in order for the program to work.
-- If you wish to rename a preset you must select it, delete it, and save it again with the new name.
+- JVM is required. Most PCs come with it installed by default, and if you don't have it you should (unless you have valid reason not to).
+- `TPW_MODS.hpp` must be in the same folder with `TPW Settings.jar` in order for the program to work.
+- If you wish to simply rename a preset you must select it, delete it, and save it again with the new name.
+- Presets are not backwards compatible: you can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
+- The only way to copy values from one field to another is using keyboard shortcuts (CTRL-C and CTRL-V), since the right mouse button dropdown menu isn't available in Java.
+- Closing the HUD window using the top right hand corner 'X' will not automatically close the color chooser, unlike the 'BACK' button.
+- TECHNICAL: If using cmd to run the program, it must be executed from the folder it resides in.
+
+Next Steps
+======
+
+1. Nicer color chooser UI
+2. HUD live preview
+3. Inserted value check
+
+Screens
+======
+
+- Main
+
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Main.png)
+
+- Presets
+
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Presets.png)
+
+- Civs
+
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Civs.png)
+
+- Hud
+
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Hud.png)
 
 Progress
 ======
@@ -114,10 +166,13 @@ Progress
 
 05/05/14 | [1.4.0](https://github.com/Gliptal/TPW-Settings/tree/1.4.0) | added feautures, refactoring
 
-05/05/14 | [1.4.0](https://github.com/Gliptal/TPW-Settings/tree/1.5.0) | added feautures, parameters reordering
+05/05/14 | [1.5.0](https://github.com/Gliptal/TPW-Settings/tree/1.5.0) | added feautures, parameters reordering
+
+XX/05/14 | [1.6.0](https://github.com/Gliptal/TPW-Settings/tree/1.6.0) | added color chooser, README.md refactoring
 
 Links
 ======
+
 - [TPW MODS @ BI Forums](http://forums.bistudio.com/showthread.php?164304-TPW-MODS-enhanced-realism-immersion-for-Arma-3-SP)
 - [tpw profile @ BI Forums](http://forums.bistudio.com/member.php?62814-tpw)
 - [ArmA III official site](http://www.arma3.com/)
@@ -126,3 +181,5 @@ Credits
 ======
 
 All credits for the TPW MODS package go to its author [tpw](http://forums.bistudio.com/member.php?62814-tpw). Special thanks go to Bohemia Interactive, that have proven to be one of, if not the best game studios around.
+
+Thank you also to anyone that helped me in the BI Forums, be it a simple thanks or an helpful suggestion.

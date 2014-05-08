@@ -17,7 +17,7 @@ public class ModWindow extends CommonWindow
 
   public ModWindow(String title)
     {
-    super(Windows.MOD_WINDOW_WIDTH, Windows.MOD_WINDOW_HEIGHT, title);
+    super(Windows.MOD_WIDTH, Windows.MOD_HEIGHT, title);
     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
     createAndAddPanels();

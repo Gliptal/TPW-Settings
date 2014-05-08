@@ -12,6 +12,7 @@ import static mods.CommonMod.*;
 
 public class Main
   {
+  public static ColorWindow colorWindow;
   public static MainWindow mainWindow;
   public static ModWindow[] modWindows;
   public static ModFactory[] modFactories;
@@ -20,6 +21,7 @@ public class Main
     {
     setSystemLookAndFeel();
 
+    createColorWindow();
     createModWindows();
     createModFactories();
     addParametersToModWindows();
@@ -93,6 +95,11 @@ public class Main
     mainWindow = new MainWindow();
     mainWindow.setLocationRelativeTo(null);
     mainWindow.setVisible(true);
+    }
+
+  private void createColorWindow()
+    {
+    colorWindow = new ColorWindow(Windows.COLOR_WIDTH, Windows.COLOR_HEIGHT, Text.COLOR_WINDOW_TITLE);
     }
 
   private void loadValuesFromConfig()

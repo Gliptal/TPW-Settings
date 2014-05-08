@@ -26,7 +26,7 @@ public class MainWindow extends CommonWindow
 
   public MainWindow()
     {
-    super(Windows.MAIN_WINDOW_WIDTH, Windows.MAIN_WINDOW_HEIGHT, Text.PROGRAM_NAME);
+    super(Windows.MAIN_WIDTH, Windows.MAIN_HEIGHT, Text.PROGRAM_NAME);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     createAndAddPanels();
@@ -126,7 +126,12 @@ public class MainWindow extends CommonWindow
   private void setModButtonsAction()
     {
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      modButtons[i].addButtonListener(new ShowWindow(Main.modWindows[i], true));
+      {
+      if (i == CommonMod.HUD_ID)
+        modButtons[i].addButtonListener(new ShowTwoWindows(Main.modWindows[i], Main.colorWindow, true));
+      else
+        modButtons[i].addButtonListener(new ShowWindow(Main.modWindows[i], true));
+      }
     }
 
   private void setLabelAction()

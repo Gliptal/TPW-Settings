@@ -4,8 +4,11 @@ package exec.userinterface;
 public class Text
   {
   public static final String PROGRAM_NAME = "TPW SETTINGS";
-  public static final String PROGRAM_VERSION = "<html> <font color=blue> <u> [1.5.0] HELP </u> </font> </html>";
+  public static final String PROGRAM_VERSION = "<html> <font color=blue> <u> [1.6.0] HELP </u> </font> </html>";
   public static final String README_URL = "https://github.com/Gliptal/TPW-Settings#usage";
+
+  public static final String COLOR_WINDOW_TITLE = "COLOR CHOOSER";
+  public static final String COLOR_DEFAULT_STRING = "{1.00,1.00,1.00}";
 
   public static final String BUTTON_POSITIVE_COMMIT = "APPLY";
   public static final String BUTTON_NEGATIVE_COMMIT = "REVERT";

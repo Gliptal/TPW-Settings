@@ -4,7 +4,6 @@ import exec.userinterface.*;
 import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.*;
 
 
 public class CommonWindow extends JFrame
@@ -36,7 +35,7 @@ public class CommonWindow extends JFrame
     mainPanel = new JPanel(Layouts.MAIN());
     commitPanel = new JPanel(Layouts.COMMITS());
 
-    mainPanel.setBorder(new EmptyBorder(Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER));
+    mainPanel.setBorder(Spacing.createFrameBorder());
 
     add(mainPanel);
     mainPanel.add(commitPanel, BorderLayout.SOUTH);

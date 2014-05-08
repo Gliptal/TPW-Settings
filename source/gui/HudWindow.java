@@ -23,7 +23,7 @@ public class HudWindow extends ModWindow
   public HudWindow(String title)
     {
     super(title);
-    overrideSize(Windows.HUD_WINDOW_WIDTH, Windows.HUD_WINDOW_HEIGHT);
+    overrideSize(Windows.HUD_WIDTH, Windows.HUD_HEIGHT);
     overrideParametersPanelLayout(Layouts.HUD_PARAMETERS());
 
     createAndAddPanels();

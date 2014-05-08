@@ -2,6 +2,7 @@ package exec.userinterface;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.*;
 
 
 public class Spacing
@@ -19,6 +20,11 @@ public class Spacing
   public static JPanel createPlaceholder()
     {
     return new JPanel();
+    }
+
+  public static Border createFrameBorder()
+    {
+    return new EmptyBorder(Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER);
     }
 
   public static void fillGridWithPlaceholders(JPanel panel)

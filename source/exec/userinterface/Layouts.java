@@ -10,9 +10,11 @@ public class Layouts
   public static final String JAVA_CLASSPATH = "java.awt.";
 
   private static final int ONE_ROW = 1;
+  private static final int THREE_ROWS = 3;
   private static final int FOUR_ROWS = 4;
   private static final int FIVE_ROWS = 5;
 
+  private static final int ONE_SLOT = 1;
   private static final int TWO_SLOTS = 2;
   private static final int THREE_SLOTS = 3;
   private static final int FOUR_SLOTS = 4;
@@ -81,6 +83,16 @@ public class Layouts
   public static LayoutManager HUD_SECTION_TXT()
     {
     return new GridLayout(FIVE_ROWS, TWO_SLOTS, GRID_PARAMETERS_X, GRID_PARAMETERS_Y);
+    }
+
+  public static LayoutManager COLOR()
+    {
+    return new BorderLayout(WINDOW_INNER, WINDOW_INNER);
+    }
+
+  public static LayoutManager SLIDERS()
+    {
+    return new GridLayout(THREE_ROWS, ONE_SLOT, GRID_PARAMETERS_X, GRID_PARAMETERS_Y);
     }
 
   public static LayoutManager LABELED_BORDER()
