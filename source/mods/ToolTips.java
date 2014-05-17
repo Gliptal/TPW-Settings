@@ -102,6 +102,7 @@ public class ToolTips
                                       "Whether HUD performance is reduced with distance.",
                                       "Whether HUD is visible in third person.",
                                       "Whether tactical glasses are automatically added to the player's inventory if he hasn't got them already.",
+                                      "HUD icon types, use the provided image as a reference. [unit, hidden unit, vehicle, hidden vehicle, marker, predictor]",
                                       "Only edit these if you know what you're doing with structured text.",
                                       "Only edit these if you know what you're doing with structured text.",
                                       "Only edit these if you know what you're doing with structured text.",

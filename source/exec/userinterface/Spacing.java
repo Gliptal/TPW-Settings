@@ -9,13 +9,13 @@ public class Spacing
   {
   private static final int BASE_SPACING = 12;
 
+  public static final int COMBINATIONS = 1*BASE_SPACING;
+  public static final String BUTTON_LABEL_WIDTH = "        ";
+  public static final int BUTTONS = 2*BASE_SPACING;
   public static final int WINDOW_OUTER = 2*BASE_SPACING;
   public static final int WINDOW_INNER = 4*BASE_SPACING;
-  public static final int GRID_BUTTONS = 2*BASE_SPACING;
-  public static final int COMBINATIONS = 1*BASE_SPACING;
-  public static final int GRID_PARAMETERS_X = 5*BASE_SPACING;
-  public static final int GRID_PARAMETERS_Y = 2*BASE_SPACING;
-  public static final String BUTTON_LABEL_WIDTH = "        ";
+  public static final int PARAMETERS_X = 5*BASE_SPACING;
+  public static final int PARAMETERS_Y = 2*BASE_SPACING;
 
   public static JPanel createPlaceholder()
     {
@@ -24,7 +24,7 @@ public class Spacing
 
   public static Border createFrameBorder()
     {
-    return new EmptyBorder(Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER, Spacing.WINDOW_OUTER);
+    return new EmptyBorder(WINDOW_OUTER, WINDOW_OUTER, WINDOW_OUTER, WINDOW_OUTER);
     }
 
   public static void fillGridWithPlaceholders(JPanel panel)
@@ -36,6 +36,6 @@ public class Spacing
     int components = panel.getComponentCount();
 
     for (int i = 0; i < rows*columns - components; i += 1)
-      panel.add(new JPanel());
+      panel.add(createPlaceholder());
     }
   }

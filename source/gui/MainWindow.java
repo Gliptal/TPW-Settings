@@ -62,8 +62,8 @@ public class MainWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    presetsPanel = new JPanel(Layouts.PRESETS());
-    modsPanel = new JPanel(Layouts.MODS_GRID());
+    presetsPanel = new JPanel(Layouts.MAIN_PRESETS());
+    modsPanel = new JPanel(Layouts.MAIN_MODS());
 
     mainPanel.add(presetsPanel, BorderLayout.NORTH);
     mainPanel.add(modsPanel, BorderLayout.CENTER);

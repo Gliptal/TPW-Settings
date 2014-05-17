@@ -24,7 +24,7 @@ public class HudWindow extends ModWindow
     {
     super(title);
     overrideSize(Windows.HUD_WIDTH, Windows.HUD_HEIGHT);
-    overrideParametersPanelLayout(Layouts.HUD_PARAMETERS());
+    overrideParametersPanelLayout(Layouts.HUD());
 
     createAndAddPanels();
     createAndAddButtons();
@@ -65,7 +65,7 @@ public class HudWindow extends ModWindow
 
     generalPanel = new JPanel(Layouts.HUD_SECTION_GENERAL());
     colorPanel = new JPanel(Layouts.HUD_SECTION_COLOR());
-    positioningPanel = new JPanel(Layouts.HUD_SECTION_POSITIONING());
+    positioningPanel = new JPanel(Layouts.HUD_SECTION_GRAPHICS());
     txtPanel = new JPanel(Layouts.HUD_SECTION_TXT());
 
     parametersPanel.add(sectionsPanel, BorderLayout.NORTH);

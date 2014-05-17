@@ -114,6 +114,7 @@ public class ModParameters
                                       "DEGRADATION",
                                       "THIRD PERSON",
                                       "ADD TACTICAL GLASSES",
+                                      "ICON TYPES",
                                       "ASL TXT",
                                       "AZT TXT",
                                       "GRD TXT",

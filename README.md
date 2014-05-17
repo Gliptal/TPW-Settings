@@ -8,6 +8,10 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.6.1] | UPDATE YOUR PRESETS
+
+- parameters matching HUD [1.24]
+
 [1.6.0]
 
 - more descriptive HUD names
@@ -168,7 +172,9 @@ Progress
 
 05/05/14 | [1.5.0](https://github.com/Gliptal/TPW-Settings/tree/1.5.0) | added feautures, parameters reordering
 
-XX/05/14 | [1.6.0](https://github.com/Gliptal/TPW-Settings/tree/1.6.0) | added color chooser, README.md refactoring
+08/05/14 | [1.6.0](https://github.com/Gliptal/TPW-Settings/tree/1.6.0) | added color chooser, README.md refactoring
+
+17/05/14 | [1.6.1](https://github.com/Gliptal/TPW-Settings/tree/1.6.1) | parameters matching HUD [1.24]
 
 Links
 ======

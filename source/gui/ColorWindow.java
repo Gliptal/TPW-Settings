@@ -120,7 +120,7 @@ public class ColorWindow extends JFrame
 
   private void createAndAddMainPanel()
     {
-    mainPanel = new JPanel(Layouts.COLOR());
+    mainPanel = new JPanel(Layouts.CHOOSER());
 
     mainPanel.setBorder(Spacing.createFrameBorder());
 
@@ -138,7 +138,7 @@ public class ColorWindow extends JFrame
 
   private void createAndAddSlidersPanel()
     {
-    slidersPanel = new JPanel(Layouts.SLIDERS());
+    slidersPanel = new JPanel(Layouts.CHOOSER_SLIDERS());
 
     mainPanel.add(slidersPanel, BorderLayout.SOUTH);
     }

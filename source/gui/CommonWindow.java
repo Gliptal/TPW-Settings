@@ -32,8 +32,8 @@ public class CommonWindow extends JFrame
 
   private void createAndAddPanels()
     {
-    mainPanel = new JPanel(Layouts.MAIN());
-    commitPanel = new JPanel(Layouts.COMMITS());
+    mainPanel = new JPanel(Layouts.COMMON());
+    commitPanel = new JPanel(Layouts.COMMON_COMMITS());
 
     mainPanel.setBorder(Spacing.createFrameBorder());
 

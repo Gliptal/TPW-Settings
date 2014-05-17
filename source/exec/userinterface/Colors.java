@@ -9,6 +9,6 @@ public class Colors
   public static final int MAXIMUM_VALUE = 255;
   public static final int DEFAULT_VALUE = 255;
 
-  public static final Color ACTIVE_MOD_COLOR = Color.GREEN;
-  public static final Color INACTIVE_MOD_COLOR = Color.RED;
+  public static final Color ACTIVE_MOD = Color.GREEN;
+  public static final Color INACTIVE_MOD = Color.RED;
   }

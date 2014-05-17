@@ -25,9 +25,9 @@ public class LabeledButton extends LabeledComponent
   public void setSemaphoreColor(boolean linkedIsActive)
     {
     if (linkedIsActive)
-      setLabelColor(Colors.ACTIVE_MOD_COLOR);
+      setLabelColor(Colors.ACTIVE_MOD);
     else
-      setLabelColor(Colors.INACTIVE_MOD_COLOR);
+      setLabelColor(Colors.INACTIVE_MOD);
     }
 
   public String getValue() {return "";}  // Dummy function

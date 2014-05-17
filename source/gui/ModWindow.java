@@ -55,7 +55,7 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    generalPanel = new JPanel(Layouts.MOD_GENERAL());
+    generalPanel = new JPanel(Layouts.MOD());
     parametersPanel = new JPanel(Layouts.MOD_PARAMETERS());
 
     mainPanel.add(generalPanel, BorderLayout.NORTH);
@@ -64,7 +64,7 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddGeneralElements()
     {
-    isActiveCheckBox = new LabeledCheckBox(Text.ACTIVE);
+    isActiveCheckBox = new LabeledCheckBox(Text.CHECKBOX_ACTIVE);
     backButton = new JButton(Text.BUTTON_BACK);
 
     generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
