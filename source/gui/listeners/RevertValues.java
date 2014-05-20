@@ -1,5 +1,6 @@
 package gui.listeners;
 
+import gui.listeners.semaphores.UpdateSemaphores;
 import exec.*;
 import exec.userinterface.*;
 import fileio.*;

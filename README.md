@@ -8,6 +8,14 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.7.0] | UPDATE YOUR PRESETS
+
+- parameters matching HUD [1.27]
+- enabling and disabling mods through semaphores
+- moved color chooser below HUD window
+- added copy buttons to color chooser
+- fixed HUD Colors section bug
+
 [1.6.1] | UPDATE YOUR PRESETS
 
 - parameters matching HUD [1.24]
@@ -79,7 +87,8 @@ Usage
 
 - MAIN WINDOW:
   - Shows the collection of all available TPW Mods
-  - The colored column to the left of every mod button acts as a quick reference to the state of the mod (green: enabled | red: disabled)
+  - The colored semaphore to the left of every mod button acts as a quick reference to the state of the mod (green: enabled | red: disabled)
+  - Clicking on the semaphore instantly toggles the state of the mod
   - Clicking on a mod button will open the relevant mod window
   - Each mod button has tooltips available on mouse hover, with a quick description of the mod itself
 
@@ -98,7 +107,8 @@ Usage
 
 - COLOR CHOOSER
   - The sliders can be used to select the wanted color
-  - In the top field the relative values are shown: simply copy (CTRL-C) and paste (CTRL-V) the string in the desired parameter field to have that color in your HUD
+  - In the top field the relative values are shown
+  - Click on one of the buttons to copy the selected value in the relevant parameter
 
 Limitations
 ======
@@ -114,7 +124,7 @@ Limitations
 Next Steps
 ======
 
-1. Nicer color chooser UI
+1. Icon chooser UI
 2. HUD live preview
 3. Inserted value check
 
@@ -175,6 +185,8 @@ Progress
 08/05/14 | [1.6.0](https://github.com/Gliptal/TPW-Settings/tree/1.6.0) | added color chooser, README.md refactoring
 
 17/05/14 | [1.6.1](https://github.com/Gliptal/TPW-Settings/tree/1.6.1) | parameters matching HUD [1.24]
+
+20/05/14 | [1.7.0](https://github.com/Gliptal/TPW-Settings/tree/1.7.0) | added feautures, parameters matching HUD [1.27]
 
 Links
 ======

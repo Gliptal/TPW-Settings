@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public abstract class LabeledComponent extends JPanel
   {
-  private JLabel label;
+  protected JLabel label;
   protected JComponent component;
 
   private String labelText;

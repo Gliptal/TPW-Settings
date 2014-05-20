@@ -51,7 +51,7 @@ public class Layouts
 
   public static LayoutManager HUD()
     {
-    return new BorderLayout(WINDOW_INNER, WINDOW_INNER);
+    return new BorderLayout(BASIC, BASIC);
     }
 
   public static LayoutManager HUD_SECTIONS()
@@ -81,11 +81,21 @@ public class Layouts
 
   public static LayoutManager CHOOSER()
     {
-    return new BorderLayout(WINDOW_INNER, WINDOW_INNER);
+    return new BorderLayout(BASIC, BASIC);
+    }
+
+  public static LayoutManager CHOOSER_RESULT()
+    {
+    return new GridLayout(2, 1, BASIC, BASIC);
+    }
+
+  public static LayoutManager CHOOSER_COPY_BUTTONS()
+    {
+    return new GridLayout(1, 3, BUTTONS, BUTTONS);
     }
 
   public static LayoutManager CHOOSER_SLIDERS()
     {
-    return new GridLayout(3, 1, PARAMETERS_X, PARAMETERS_Y);
+    return new GridLayout(3, 1, BASIC, BASIC);
     }
   }

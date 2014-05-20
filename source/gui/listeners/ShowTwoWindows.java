@@ -22,7 +22,7 @@ public class ShowTwoWindows implements ActionListener
     {
     modWindow.setVisible(isVisible);
 
-   ((ColorWindow)secondWindow).setFrameLeftOf(modWindow);
+    ((ColorWindow)secondWindow).setFrameBelow(modWindow);
     secondWindow.setVisible(isVisible);
     }
   }

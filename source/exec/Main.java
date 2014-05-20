@@ -12,18 +12,18 @@ import static mods.CommonMod.*;
 
 public class Main
   {
-  public static ColorWindow colorWindow;
   public static MainWindow mainWindow;
   public static ModWindow[] modWindows;
   public static ModFactory[] modFactories;
+  public static ColorWindow colorWindow;
 
   private Main()
     {
     setSystemLookAndFeel();
 
-    createColorWindow();
     createModWindows();
     createModFactories();
+    createColorWindow();
     addParametersToModWindows();
     createAndShowMainWindow();
 
@@ -125,6 +125,7 @@ public class Main
       LabeledButton button = mainWindow.getModButton(i);
 
       checkBox.linkToButton(button);
+      button.linkToCheckBox(checkBox);
       }
     }
   };

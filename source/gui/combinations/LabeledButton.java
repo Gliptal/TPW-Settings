@@ -1,6 +1,7 @@
 package gui.combinations;
 
 import exec.userinterface.*;
+import gui.listeners.semaphores.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -28,6 +29,11 @@ public class LabeledButton extends LabeledComponent
       setLabelColor(Colors.ACTIVE_MOD);
     else
       setLabelColor(Colors.INACTIVE_MOD);
+    }
+
+  public void linkToCheckBox(LabeledCheckBox checkBox)
+    {
+    label.addMouseListener(new ToggleModState(checkBox));
     }
 
   public String getValue() {return "";}  // Dummy function

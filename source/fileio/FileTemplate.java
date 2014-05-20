@@ -105,6 +105,7 @@ public class FileTemplate
                                          "tpw_hud_thirdperson = ",
                                          "tpw_hud_addtac = ",
                                          "tpw_hud_icons[] = ",
+                                         "tpw_hud_vehiclefactor = ",
                                          "tpw_hud_asl_txt = ",
                                          "tpw_hud_azt_txt = ",
                                          "tpw_hud_grd_txt = ",

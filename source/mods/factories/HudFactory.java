@@ -30,23 +30,24 @@ public class HudFactory extends ModFactory
   private LabeledCheckBox thirdPerson = new LabeledCheckBox(ModParameters.HUD[20]);
   private LabeledCheckBox addTac = new LabeledCheckBox(ModParameters.HUD[21]);
   private LabeledTextField icons = new LabeledTextField(ModParameters.HUD[22]);
-  private LabeledTextField aslTxt = new LabeledTextField(ModParameters.HUD[23]);
-  private LabeledTextField aztTxt = new LabeledTextField(ModParameters.HUD[24]);
-  private LabeledTextField grdTxt = new LabeledTextField(ModParameters.HUD[25]);
-  private LabeledTextField lmtTxt = new LabeledTextField(ModParameters.HUD[26]);
-  private LabeledTextField tmpTxt = new LabeledTextField(ModParameters.HUD[27]);
-  private LabeledTextField hltTxt = new LabeledTextField(ModParameters.HUD[28]);
-  private LabeledTextField rngTxt = new LabeledTextField(ModParameters.HUD[29]);
-  private LabeledTextField velTxt = new LabeledTextField(ModParameters.HUD[30]);
-  private LabeledTextField airvelTxt = new LabeledTextField(ModParameters.HUD[31]);
-  private LabeledTextField prxTxt = new LabeledTextField(ModParameters.HUD[32]);
+  private LabeledTextField vehicleFactor = new LabeledTextField(ModParameters.HUD[23]);
+  private LabeledTextField aslTxt = new LabeledTextField(ModParameters.HUD[24]);
+  private LabeledTextField aztTxt = new LabeledTextField(ModParameters.HUD[25]);
+  private LabeledTextField grdTxt = new LabeledTextField(ModParameters.HUD[26]);
+  private LabeledTextField lmtTxt = new LabeledTextField(ModParameters.HUD[27]);
+  private LabeledTextField tmpTxt = new LabeledTextField(ModParameters.HUD[28]);
+  private LabeledTextField hltTxt = new LabeledTextField(ModParameters.HUD[29]);
+  private LabeledTextField rngTxt = new LabeledTextField(ModParameters.HUD[30]);
+  private LabeledTextField velTxt = new LabeledTextField(ModParameters.HUD[31]);
+  private LabeledTextField airvelTxt = new LabeledTextField(ModParameters.HUD[32]);
+  private LabeledTextField prxTxt = new LabeledTextField(ModParameters.HUD[33]);
 
   public HudFactory(ModWindow hudWindow)
     {
     super(hudWindow);
 
-    parameters = new LabeledComponent[] {range, colour, squadColour, enemyColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, icons, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
-    visualParameters = new LabeledComponent[] {range, degradation, thirdPerson, addTac, colour, enemyColour, squadColour, alpha, icons, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    parameters = new LabeledComponent[] {range, colour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, icons, vehicleFactor, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    visualParameters = new LabeledComponent[] {range, vehicleFactor, degradation, thirdPerson, addTac, colour, squadColour, enemyColour, alpha, icons, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
     }
 
   public void addParametersAndTooltips()
@@ -55,15 +56,30 @@ public class HudFactory extends ModFactory
     addToolTips();
     }
 
+  public LabeledTextField getColourParameter()
+    {
+    return colour;
+    }
+
+  public LabeledTextField getEnemyColourParameter()
+    {
+    return enemyColour;
+    }
+
+  public LabeledTextField getSquadColourParameter()
+    {
+    return squadColour;
+    }
+
   private void addParameters()
     {
-    for (int i = 0; i < 4; i += 1)
+    for (int i = 0; i < 5; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_GENERAL);
-    for (int i = 4; i < 8; i += 1)
+    for (int i = 5; i < 9; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_COLORS);
-    for (int i = 8; i < 22; i += 1)
+    for (int i = 9; i < 23; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_GRAPHICS);
-    for (int i = 22; i < visualParameters.length; i += 1)
+    for (int i = 23; i < visualParameters.length; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_TXT);
 
     ((HudWindow)modWindow).fillModWindowWithPlaceholders();

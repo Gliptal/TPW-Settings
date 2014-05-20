@@ -1,5 +1,6 @@
 package gui.combinations;
 
+import gui.listeners.semaphores.UpdateSemaphores;
 import exec.*;
 import exec.userinterface.*;
 import gui.listeners.*;

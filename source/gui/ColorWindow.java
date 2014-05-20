@@ -1,19 +1,19 @@
 package gui;
 
+import exec.*;
 import exec.userinterface.*;
+import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
+import mods.*;
+import mods.factories.*;
 
 
 public class ColorWindow extends JFrame
   {
   private class SliderResult implements ChangeListener
     {
-    private static final String ARRAY_OPEN = "{";
-    private static final String ARRAY_CLOSE = "}";
-    private static final String ARRAY_SEPARATOR = ",";
-
     public void stateChanged(ChangeEvent event)
       {
       int red = redSlider.getValue();
@@ -28,7 +28,7 @@ public class ColorWindow extends JFrame
       {
       Color newColor = new Color(red, green, blue);
 
-      colorPanel.setBackground(newColor);
+      colorLabel.setBackground(newColor);
       }
 
     private void updateResultField(int red, int green, int blue)
@@ -41,19 +41,26 @@ public class ColorWindow extends JFrame
       String greenFormatted = String.format("%.2f", greenRelative);
       String blueFormatted = String.format("%.2f", blueRelative);
 
-      resultField.setText(ARRAY_OPEN+redFormatted+ARRAY_SEPARATOR+greenFormatted+ARRAY_SEPARATOR+blueFormatted+ARRAY_CLOSE);
+      resultField.setText(Text.ARRAY_OPEN+redFormatted+Text.ARRAY_SEPARATOR+greenFormatted+Text.ARRAY_SEPARATOR+blueFormatted+Text.ARRAY_CLOSE);
       }
     }
 
   private JPanel mainPanel;
-  private JPanel colorPanel;
+  private JPanel resultPanel;
+  private JPanel copyButtonsPanel;
   private JPanel slidersPanel;
 
   private JTextField resultField;
 
+  private JLabel colorLabel;
+
   private JSlider redSlider;
   private JSlider greenSlider;
   private JSlider blueSlider;
+
+  private JButton baseColorButton;
+  private JButton secondaryColorButton;
+  private JButton enemyColorButton;
 
   public ColorWindow(int width, int height, String title)
     {
@@ -62,16 +69,19 @@ public class ColorWindow extends JFrame
 
     createAndAddPanels();
 
+    createAndAddCopyButtons();
     createAndAddResultField();
+    createAndAddColorLabel();
     createAndAddColorSliders();
 
+    setColorButtonsActions();
     setSlidersActions();
     }
 
-  public void setFrameLeftOf(JFrame frame)
+  public void setFrameBelow(JFrame frame)
     {
-    int xCoordinate = (int)frame.getLocation().getX() + frame.getWidth();
-    int yCoordinate = (int)frame.getLocation().getY();
+    int xCoordinate = (int)frame.getLocation().getX();
+    int yCoordinate = (int)frame.getLocation().getY() + frame.getHeight();
 
     setLocation(xCoordinate, yCoordinate);
     }
@@ -79,8 +89,20 @@ public class ColorWindow extends JFrame
   private void createAndAddPanels()
     {
     createAndAddMainPanel();
-    createAndAddColorPanel();
+    createAndAddResultPanel();
+    createAndAddCopyButtonsPanel();
     createAndAddSlidersPanel();
+    }
+
+  private void createAndAddCopyButtons()
+    {
+    baseColorButton = new JButton(Text.BUTTON_CHOOSER_COPY_BASE);
+    secondaryColorButton = new JButton(Text.BUTTON_CHOOSER_COPY_SECONDARY);
+    enemyColorButton = new JButton(Text.BUTTON_CHOOSER_COPY_ENEMY);
+
+    copyButtonsPanel.add(baseColorButton);
+    copyButtonsPanel.add(secondaryColorButton);
+    copyButtonsPanel.add(enemyColorButton);
     }
 
   private void createAndAddResultField()
@@ -89,7 +111,17 @@ public class ColorWindow extends JFrame
 
     resultField.setHorizontalAlignment(JTextField.CENTER);
 
-    mainPanel.add(resultField, BorderLayout.NORTH);
+    resultPanel.add(resultField);
+    }
+
+  private void createAndAddColorLabel()
+    {
+    colorLabel = new JLabel(Spacing.CHOOSER_LABEL_WIDTH);
+
+    colorLabel.setOpaque(true);
+    colorLabel.setBackground(new Color(Colors.DEFAULT_VALUE, Colors.DEFAULT_VALUE, Colors.DEFAULT_VALUE));
+
+    mainPanel.add(colorLabel, BorderLayout.WEST);
     }
 
   private void createAndAddColorSliders()
@@ -98,17 +130,20 @@ public class ColorWindow extends JFrame
     greenSlider = new JSlider(Colors.MINIMUM_VALUE, Colors.MAXIMUM_VALUE, Colors.DEFAULT_VALUE);
     blueSlider = new JSlider(Colors.MINIMUM_VALUE, Colors.MAXIMUM_VALUE, Colors.DEFAULT_VALUE);
 
-    redSlider.setBackground(Color.RED);
-    greenSlider.setBackground(Color.GREEN);
-    blueSlider.setBackground(Color.BLUE);
-
-    redSlider.setPaintTicks(true);
-    greenSlider.setPaintTicks(true);
-    blueSlider.setPaintTicks(true);
+    redSlider.setBackground(Color.RED.darker());
+    greenSlider.setBackground(Color.GREEN.darker());
+    blueSlider.setBackground(Color.BLUE.darker());
 
     slidersPanel.add(redSlider);
     slidersPanel.add(greenSlider);
     slidersPanel.add(blueSlider);
+    }
+
+  private void setColorButtonsActions()
+    {
+    baseColorButton.addActionListener(new CopyToParameter(resultField, ((HudFactory)(Main.modFactories[CommonMod.HUD_ID])).getColourParameter()));
+    secondaryColorButton.addActionListener(new CopyToParameter(resultField, ((HudFactory)(Main.modFactories[CommonMod.HUD_ID])).getSquadColourParameter()));
+    enemyColorButton.addActionListener(new CopyToParameter(resultField, ((HudFactory)(Main.modFactories[CommonMod.HUD_ID])).getEnemyColourParameter()));
     }
 
   private void setSlidersActions()
@@ -127,19 +162,24 @@ public class ColorWindow extends JFrame
     add(mainPanel);
     }
 
-  private void createAndAddColorPanel()
+  private void createAndAddResultPanel()
     {
-    colorPanel = new JPanel();
+    resultPanel = new JPanel(Layouts.CHOOSER_RESULT());
 
-    colorPanel.setBackground(new Color(Colors.DEFAULT_VALUE, Colors.DEFAULT_VALUE, Colors.DEFAULT_VALUE));
+    mainPanel.add(resultPanel, BorderLayout.NORTH);
+    }
 
-    mainPanel.add(colorPanel, BorderLayout.CENTER);
+  private void createAndAddCopyButtonsPanel()
+    {
+    copyButtonsPanel = new JPanel(Layouts.CHOOSER_COPY_BUTTONS());
+
+    resultPanel.add(copyButtonsPanel);
     }
 
   private void createAndAddSlidersPanel()
     {
     slidersPanel = new JPanel(Layouts.CHOOSER_SLIDERS());
 
-    mainPanel.add(slidersPanel, BorderLayout.SOUTH);
+    mainPanel.add(slidersPanel, BorderLayout.CENTER);
     }
   }

@@ -9,8 +9,10 @@ public class Spacing
   {
   private static final int BASE_SPACING = 12;
 
+  public static final int BASIC = 2*BASE_SPACING;
   public static final int COMBINATIONS = 1*BASE_SPACING;
   public static final String BUTTON_LABEL_WIDTH = "        ";
+  public static final String CHOOSER_LABEL_WIDTH = "                ";
   public static final int BUTTONS = 2*BASE_SPACING;
   public static final int WINDOW_OUTER = 2*BASE_SPACING;
   public static final int WINDOW_INNER = 4*BASE_SPACING;

@@ -1,4 +1,4 @@
-package gui.listeners;
+package gui.listeners.semaphores;
 
 import exec.*;
 import gui.combinations.*;

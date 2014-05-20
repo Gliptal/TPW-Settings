@@ -7,7 +7,7 @@ tpw_hint_active = 1;
 //><
 tpw_air_active = 1;
 tpw_air_delay = 10;
-tpw_air_time = 30;
+tpw_air_time = 300;
 tpw_air_max = 2;
 //><
 tpw_animal_active = 1;
@@ -62,7 +62,7 @@ tpw_fall_sensitivity = 100;
 tpw_fall_threshold = 300;
 tpw_fall_delay = 10;
 tpw_fall_ragdoll = 1;
-tpw_fall_falltime = 30;
+tpw_fall_falltime = 15;
 //><
 tpw_fog_active = 1;
 tpw_fog_radius = 250;
@@ -91,14 +91,15 @@ tpw_hud_hlt[] = {1,0.4,0.55,1};
 tpw_hud_rng[] = {1,0.5,0.55,1};
 tpw_hud_vel[] = {1,0.6,0.55,1};
 tpw_hud_prx[] = {1,0.5,0.5,1};
-tpw_hud_unit[] = {1,2,0.5,0.75};
+tpw_hud_unit[] = {1,1,0.25,0.75};
 tpw_hud_offset[] = {0.35,0.28};
 tpw_hud_scale = 0.8;
 tpw_hud_textscale = 1;
 tpw_hud_degradation = 1;
 tpw_hud_thirdperson = 0;
 tpw_hud_addtac = 1;
-tpw_hud_icons[] = {24,23,30,29,22,20};
+tpw_hud_icons[] = {24,23,30,29,24,23,30,29,22,20};
+tpw_hud_vehiclefactor = 1.5;
 tpw_hud_asl_txt = "%1<t size='0.5'><br />ASL</t>";
 tpw_hud_azt_txt = "%1<t size='0.5'><br />AZT %2</t>";
 tpw_hud_grd_txt = "%1<t size='0.5'><br />GRD</t>";

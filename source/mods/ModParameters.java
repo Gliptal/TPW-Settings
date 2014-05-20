@@ -115,6 +115,7 @@ public class ModParameters
                                       "THIRD PERSON",
                                       "ADD TACTICAL GLASSES",
                                       "ICON TYPES",
+                                      "VEHICLE RANGE FACTOR",
                                       "ASL TXT",
                                       "AZT TXT",
                                       "GRD TXT",
