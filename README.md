@@ -8,6 +8,10 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.8.1]
+
+- color chooser parsing bug fixed
+
 [1.8.0] | UPDATE YOUR PRESETS
 
 - parameters matching HUD [1.28]
@@ -197,6 +201,8 @@ Progress
 20/05/14 | [1.7.0](https://github.com/Gliptal/TPW-Settings/tree/1.7.0) | added feautures, parameters matching HUD [1.27]
 
 22/05/14 | [1.8.0](https://github.com/Gliptal/TPW-Settings/tree/1.8.0) | fixed color chooser, parameters matching HUD [1.28]
+
+22/05/14 | [1.8.1](https://github.com/Gliptal/TPW-Settings/tree/1.8.1) | fixed color chooser bug
 
 Links
 ======

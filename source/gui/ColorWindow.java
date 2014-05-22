@@ -123,9 +123,9 @@ public class ColorWindow extends JFrame
 
     if (startBracketIndex != -1 && firstColonIndex != -1 && secondColonIndex != -1 && endBracketIndex != -1)
       {
-      redLoaded = (int)Double.parseDouble(line.substring(startBracketIndex+1, firstColonIndex))*255;
-      greenLoaded = (int)Double.parseDouble(line.substring(firstColonIndex+1, secondColonIndex))*255;
-      blueLoaded = (int)Double.parseDouble(line.substring(secondColonIndex+1, endBracketIndex))*255;
+      redLoaded = (int)(Double.parseDouble(line.substring(startBracketIndex+1, firstColonIndex))*255);
+      greenLoaded = (int)(Double.parseDouble(line.substring(firstColonIndex+1, secondColonIndex))*255);
+      blueLoaded = (int)(Double.parseDouble(line.substring(secondColonIndex+1, endBracketIndex))*255);
       }
     else
       {
