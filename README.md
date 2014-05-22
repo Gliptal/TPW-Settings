@@ -8,6 +8,14 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.8.0] | UPDATE YOUR PRESETS
+
+- parameters matching HUD [1.28]
+- color chooser now opens when click-selecting a color parameter
+- enlarged color chooser slider handles
+- shortened tooltip pop up delay to 1 second
+- lengthned tooltip duration to 20 seconds
+
 [1.7.0] | UPDATE YOUR PRESETS
 
 - parameters matching HUD [1.27]
@@ -108,7 +116,7 @@ Usage
 - COLOR CHOOSER
   - The sliders can be used to select the wanted color
   - In the top field the relative values are shown
-  - Click on one of the buttons to copy the selected value in the relevant parameter
+  - 'APPLY': saves the set color to the selected parameter
 
 Limitations
 ======
@@ -187,6 +195,8 @@ Progress
 17/05/14 | [1.6.1](https://github.com/Gliptal/TPW-Settings/tree/1.6.1) | parameters matching HUD [1.24]
 
 20/05/14 | [1.7.0](https://github.com/Gliptal/TPW-Settings/tree/1.7.0) | added feautures, parameters matching HUD [1.27]
+
+22/05/14 | [1.8.0](https://github.com/Gliptal/TPW-Settings/tree/1.8.0) | fixed color chooser, parameters matching HUD [1.28]
 
 Links
 ======

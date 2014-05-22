@@ -82,9 +82,12 @@ public class ToolTips
   public static final String[] HOUSELIGHTS = {"Delay before houselights function starts,"};
 
   public static final String[] HUD = {"Effective range of goggles to scan for foot units. [minimum, maximum]",
-                                      "HUD and friendly units color.",
-                                      "Enemy units color.",
-                                      "Squad and markers color.",
+                                      "Detection range multiplication factor for vehicles relative to foot units.",
+                                      "HUD color.",
+                                      "Friendly icons color.",
+                                      "Civilian icons color.",
+                                      "Enemy icons color.",
+                                      "Squad and marker icons color.",
                                       "Initial transparency of HUD. (0: invisible | 1: opaque)",
                                       "Height above sea level. [active, X position, Y position, text size]",
                                       "Direction of player's gaze. [active, X position, Y position, text size]",
@@ -103,7 +106,6 @@ public class ToolTips
                                       "Whether HUD is visible in third person.",
                                       "Whether tactical glasses are automatically added to the player's inventory if he hasn't got them already.",
                                       "HUD icon types, use the provided image as a reference. [unit, hidden unit, vehicle, hidden vehicle, enemy unit, hidden enemy unit, enemy vehicle, hidden enemy vehicle, marker, predictor]",
-                                      "Detection range multiplication factor for vehicles relative to foot units.",
                                       "Only edit these if you know what you're doing with structured text.",
                                       "Only edit these if you know what you're doing with structured text.",
                                       "Only edit these if you know what you're doing with structured text.",

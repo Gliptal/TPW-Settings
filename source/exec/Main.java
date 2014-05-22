@@ -15,7 +15,6 @@ public class Main
   public static MainWindow mainWindow;
   public static ModWindow[] modWindows;
   public static ModFactory[] modFactories;
-  public static ColorWindow colorWindow;
 
   private Main()
     {
@@ -23,7 +22,6 @@ public class Main
 
     createModWindows();
     createModFactories();
-    createColorWindow();
     addParametersToModWindows();
     createAndShowMainWindow();
 
@@ -46,6 +44,9 @@ public class Main
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
       }
     catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except) {}
+
+    ToolTipManager.sharedInstance().setInitialDelay(ExtendedLaF.TOOLTIP_DELAY);
+    ToolTipManager.sharedInstance().setDismissDelay(ExtendedLaF.TOOLTIP_DISMISS);
     }
 
   private void createModWindows()
@@ -95,11 +96,6 @@ public class Main
     mainWindow = new MainWindow();
     mainWindow.setLocationRelativeTo(null);
     mainWindow.setVisible(true);
-    }
-
-  private void createColorWindow()
-    {
-    colorWindow = new ColorWindow(Windows.COLOR_WIDTH, Windows.COLOR_HEIGHT, Text.COLOR_WINDOW_TITLE);
     }
 
   private void loadValuesFromConfig()

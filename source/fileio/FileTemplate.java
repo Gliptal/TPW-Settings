@@ -84,7 +84,10 @@ public class FileTemplate
 
   protected static final String[] HUD = {"tpw_hud_active = ",
                                          "tpw_hud_range[] = ",
+                                         "tpw_hud_vehiclefactor = ",
                                          "tpw_hud_colour[] = ",
+                                         "tpw_hud_friendlycolour[] = ",
+                                         "tpw_hud_civcolour[] = ",
                                          "tpw_hud_enemycolour[] = ",
                                          "tpw_hud_squadcolour[] = ",
                                          "tpw_hud_alpha = ",
@@ -105,7 +108,6 @@ public class FileTemplate
                                          "tpw_hud_thirdperson = ",
                                          "tpw_hud_addtac = ",
                                          "tpw_hud_icons[] = ",
-                                         "tpw_hud_vehiclefactor = ",
                                          "tpw_hud_asl_txt = ",
                                          "tpw_hud_azt_txt = ",
                                          "tpw_hud_grd_txt = ",

@@ -6,7 +6,7 @@ public class Text
   public static final String README_URL = "\"https://github.com/Gliptal/TPW-Settings#usage\"";
 
   public static final String PROGRAM_NAME = "TPW SETTINGS";
-  public static final String PROGRAM_VERSION = "<html> <a href="+README_URL+">[1.7.0] HELP</a> </html>";
+  public static final String PROGRAM_VERSION = "<html> <a href="+README_URL+">[1.8.0] HELP</a> </html>";
 
   public static final String ARRAY_OPEN = "{";
   public static final String ARRAY_CLOSE = "}";
@@ -18,10 +18,6 @@ public class Text
   public static final String BUTTON_PRESETS_DELETE = "DELETE";
   public static final String BUTTON_PRESETS_SAVE = "SAVE";
 
-  public static final String BUTTON_CHOOSER_COPY_BASE = "BASE";
-  public static final String BUTTON_CHOOSER_COPY_SECONDARY = "SECONDARY";
-  public static final String BUTTON_CHOOSER_COPY_ENEMY = "ENEMY";
-
   public static final String CHECKBOX_ACTIVE = "ACTIVE";
   public static final String BUTTON_BACK = "BACK";
 
@@ -31,5 +27,4 @@ public class Text
   public static final String HUD_SECTION_TXT = "TXT";
 
   public static final String COLOR_WINDOW_TITLE = "COLOR CHOOSER";
-  public static final String COLOR_DEFAULT_STRING = "{1.00,1.00,1.00}";
   }

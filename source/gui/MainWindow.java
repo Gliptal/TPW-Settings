@@ -126,12 +126,7 @@ public class MainWindow extends CommonWindow
   private void setModButtonsAction()
     {
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      {
-      if (i == CommonMod.HUD_ID)
-        modButtons[i].addButtonListener(new ShowTwoWindows(Main.modWindows[i], Main.colorWindow, true));
-      else
-        modButtons[i].addButtonListener(new ShowWindow(Main.modWindows[i], true));
-      }
+      modButtons[i].addButtonListener(new ShowWindow(Main.modWindows[i], true));
     }
 
   private void setLabelAction()

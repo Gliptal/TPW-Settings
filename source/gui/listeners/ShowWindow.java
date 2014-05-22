@@ -1,16 +1,15 @@
 package gui.listeners;
 
-import exec.*;
-import gui.*;
+import javax.swing.*;
 import java.awt.event.*;
 
 
 public class ShowWindow implements ActionListener
   {
-  private ModWindow modWindow;
+  private JFrame modWindow;
   private boolean isVisible;
 
-  public ShowWindow(ModWindow modWindow, boolean isVisible)
+  public ShowWindow(JFrame modWindow, boolean isVisible)
     {
     this.modWindow = modWindow;
     this.isVisible = isVisible;
@@ -19,8 +18,5 @@ public class ShowWindow implements ActionListener
   public void actionPerformed(ActionEvent event)
     {
     modWindow.setVisible(isVisible);
-
-    if (!isVisible)
-      Main.colorWindow.setVisible(isVisible);
     }
   }

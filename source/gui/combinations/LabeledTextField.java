@@ -1,6 +1,7 @@
 package gui.combinations;
 
 import exec.userinterface.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 
@@ -16,6 +17,11 @@ public class LabeledTextField extends LabeledComponent
     textField = (JTextField)component;
 
     tailorTextField();
+    }
+
+  public void addMouseListener(MouseListener listener)
+    {
+    textField.addMouseListener(listener);
     }
 
   public String getValue()

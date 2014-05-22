@@ -84,16 +84,6 @@ public class Layouts
     return new BorderLayout(BASIC, BASIC);
     }
 
-  public static LayoutManager CHOOSER_RESULT()
-    {
-    return new GridLayout(2, 1, BASIC, BASIC);
-    }
-
-  public static LayoutManager CHOOSER_COPY_BUTTONS()
-    {
-    return new GridLayout(1, 3, BUTTONS, BUTTONS);
-    }
-
   public static LayoutManager CHOOSER_SLIDERS()
     {
     return new GridLayout(3, 1, BASIC, BASIC);
