@@ -1,6 +1,9 @@
 package gui;
 
-import exec.userinterface.*;
+import exec.laf.Text;
+import exec.laf.Spacing;
+import exec.laf.Layouts;
+import exec.laf.Frames;
 import gui.combinations.*;
 import gui.listeners.*;
 import java.awt.*;
@@ -17,7 +20,7 @@ public class ModWindow extends CommonWindow
 
   public ModWindow(String title)
     {
-    super(Windows.MOD_WIDTH, Windows.MOD_HEIGHT, title);
+    super(Frames.MOD_WIDTH, Frames.MOD_HEIGHT, title);
     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
     createAndAddPanels();
@@ -28,7 +31,7 @@ public class ModWindow extends CommonWindow
 
   public void fillModWindowWithPlaceholders()
     {
-    Spacing.fillGridWithPlaceholders(parametersPanel);
+    Spacing.addPlaceholdersToEmptySlots(parametersPanel);
     }
 
   public void overrideParametersPanelLayout(LayoutManager layout)
@@ -55,8 +58,8 @@ public class ModWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    generalPanel = new JPanel(Layouts.MOD());
-    parametersPanel = new JPanel(Layouts.MOD_PARAMETERS());
+    generalPanel = new JPanel(Layouts.FRAME_MOD_GENERAL());
+    parametersPanel = new JPanel(Layouts.FRAME_MOD_PARAMETERS());
 
     mainPanel.add(generalPanel, BorderLayout.NORTH);
     mainPanel.add(parametersPanel, BorderLayout.CENTER);
@@ -68,7 +71,7 @@ public class ModWindow extends CommonWindow
     backButton = new JButton(Text.BUTTON_BACK);
 
     generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
-    generalPanel.add(Spacing.createPlaceholder());
+    generalPanel.add(Spacing.summonPlaceholder());
     generalPanel.add(backButton, BorderLayout.NORTH);
     }
 

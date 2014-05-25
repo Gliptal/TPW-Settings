@@ -1,6 +1,6 @@
-package exec.userinterface;
+package exec.laf;
 
-import java.awt.*;
+import java.awt.Color;
 
 
 public class Colors

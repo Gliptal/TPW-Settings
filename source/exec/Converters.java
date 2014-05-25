@@ -1,11 +1,11 @@
 package exec;
 
 
-public class Utils
+public class Converters
   {
-  public static boolean stringToBoolean(String intAsString)
+  public static boolean stringToBoolean(String string)
     {
-    return intAsString.equals("1") ? true : false;
+    return string.equals("1") ? true : false;
     }
 
   public static String booleanToString(boolean bool)

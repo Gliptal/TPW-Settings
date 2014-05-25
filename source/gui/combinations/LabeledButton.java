@@ -1,6 +1,8 @@
 package gui.combinations;
 
-import exec.userinterface.*;
+import exec.laf.Spacing;
+import exec.laf.Layouts;
+import exec.laf.Colors;
 import gui.listeners.semaphores.*;
 import java.awt.event.*;
 import javax.swing.*;

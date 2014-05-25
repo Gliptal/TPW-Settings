@@ -1,6 +1,6 @@
 package gui.listeners;
 
-import exec.userinterface.*;
+import exec.laf.Text;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;

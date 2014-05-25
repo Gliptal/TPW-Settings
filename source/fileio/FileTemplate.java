@@ -139,6 +139,17 @@ public class FileTemplate
 
   protected static final String[] RAIN_FX = {"tpw_rain_active = "};
 
+  protected static final String[] SKIRMISH = {"tpw_skirmish_active = ",
+                                              "tpw_skirmish_enemysquad_max = ",
+                                              "tpw_skirmish_enemyvehicles_max = ",
+                                              "tpw_skirmish_friendlysquad_max = ",
+                                              "tpw_skirmish_friendlyvehicles_max = ",
+                                              "tpw_skirmish_minspawnradius = ",
+                                              "tpw_skirmish_maxspawnradius = ",
+                                              "tpw_skirmish_support = ",
+                                              "tpw_skirmish_friendlytype = ",
+                                              "tpw_skirmish_enemytype = "};
+
   protected static final String[] STREETLIGHTS = {"tpw_streetlights_active = ",
                                                   "tpw_streetlights_factor = ",
                                                   "tpw_streetlights_range = ",
@@ -160,5 +171,6 @@ public class FileTemplate
                                                     PARK,
                                                     RADIO,
                                                     RAIN_FX,
+                                                    SKIRMISH,
                                                     STREETLIGHTS};
   }

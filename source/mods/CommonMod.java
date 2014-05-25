@@ -18,6 +18,7 @@ public class CommonMod
                                             "PARK",
                                             "RADIO",
                                             "RAIN_FX",
+                                            "SKIRMISH",
                                             "STREETLIGHTS"};
 
   public static final int NUMBER_OF_MODS = MOD_NAMES.length;
@@ -37,6 +38,7 @@ public class CommonMod
   public static final int PARK_ID = getModId("PARK");
   public static final int RADIO_ID = getModId("RADIO");
   public static final int RAIN_FX_ID = getModId("RAIN_FX");
+  public static final int SKIRMISH_ID = getModId("SKIRMISH");
   public static final int STREETLIGHTS_ID = getModId("STREETLIGHTS");
 
   private static int getModId(String modName)

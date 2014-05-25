@@ -1,6 +1,7 @@
 package gui.listeners;
 
-import exec.userinterface.*;
+import exec.laf.Text;
+import exec.laf.Frames;
 import gui.*;
 import gui.combinations.*;
 import java.awt.event.*;
@@ -17,7 +18,7 @@ public class OpenColorChooser extends MouseAdapter
 
   public void mouseClicked(MouseEvent event)
     {
-    ColorWindow colorWindow = new ColorWindow(Windows.COLOR_WIDTH, Windows.COLOR_HEIGHT, Text.COLOR_WINDOW_TITLE, destinationField);
+    ColorWindow colorWindow = new ColorWindow(Frames.COLOR_WIDTH, Frames.COLOR_HEIGHT, Text.COLOR_CHOOSER_TITLE, destinationField);
     colorWindow.setLocationRelativeTo(null);
     colorWindow.setVisible(true);
     }

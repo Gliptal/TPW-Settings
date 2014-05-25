@@ -1,8 +1,8 @@
 package gui.combinations;
 
+import exec.laf.Layouts;
 import gui.listeners.semaphores.UpdateSemaphores;
 import exec.*;
-import exec.userinterface.*;
 import gui.listeners.*;
 import javax.swing.*;
 
@@ -23,12 +23,12 @@ public class LabeledCheckBox extends LabeledComponent
     {
     boolean valueAsBoolean = checkBox.isSelected();
 
-    return Utils.booleanToString(valueAsBoolean);
+    return Converters.booleanToString(valueAsBoolean);
     }
 
   public void setValue(String value)
     {
-    boolean valueAsBoolean = Utils.stringToBoolean(value);
+    boolean valueAsBoolean = Converters.stringToBoolean(value);
 
     checkBox.setSelected(valueAsBoolean);
     }

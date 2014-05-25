@@ -1,7 +1,7 @@
 package gui.listeners.presets;
 
+import exec.laf.Files;
 import gui.listeners.semaphores.UpdateSemaphores;
-import exec.userinterface.*;
 import fileio.*;
 import gui.listeners.*;
 import java.awt.event.*;
@@ -27,9 +27,9 @@ public class LoadPreset implements ItemListener
       else
         fileToRead = (String)comboBox.getSelectedItem()+Files.PRESET_EXTENSION;
 
-      if (FileBuffer.readWholeFile(fileToRead))
+      if (FileParser.readFile(fileToRead))
         {
-        FileBuffer.writeWholeFile(Files.CONFIG);
+        FileParser.writeFile(Files.CONFIG);
         UpdateSemaphores.updateSemaphores();
         }
       }

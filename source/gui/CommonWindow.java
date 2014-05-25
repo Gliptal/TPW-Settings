@@ -1,6 +1,9 @@
 package gui;
 
-import exec.userinterface.*;
+import exec.laf.Text;
+import exec.laf.Files;
+import exec.laf.Spacing;
+import exec.laf.Layouts;
 import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
@@ -32,10 +35,10 @@ public class CommonWindow extends JFrame
 
   private void createAndAddPanels()
     {
-    mainPanel = new JPanel(Layouts.COMMON());
-    commitPanel = new JPanel(Layouts.COMMON_COMMITS());
+    mainPanel = new JPanel(Layouts.FRAME_COMMON());
+    commitPanel = new JPanel(Layouts.FRAME_COMMON_COMMITS());
 
-    mainPanel.setBorder(Spacing.createFrameBorder());
+    mainPanel.setBorder(Spacing.summonFrameBorder());
 
     add(mainPanel);
     mainPanel.add(commitPanel, BorderLayout.SOUTH);
@@ -46,7 +49,7 @@ public class CommonWindow extends JFrame
     commitNegativeButton = new JButton(Text.BUTTON_NEGATIVE_COMMIT);
     commitPositiveButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
 
-    commitPanel.add(Spacing.createPlaceholder());
+    commitPanel.add(Spacing.summonPlaceholder());
     commitPanel.add(commitNegativeButton);
     commitPanel.add(commitPositiveButton);
     }

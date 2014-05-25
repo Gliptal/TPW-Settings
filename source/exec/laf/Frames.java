@@ -1,7 +1,7 @@
-package exec.userinterface;
+package exec.laf;
 
 
-public class Windows
+public class Frames
   {
   public static final int MAIN_WIDTH = 1000;
   public static final int MAIN_HEIGHT = 600;

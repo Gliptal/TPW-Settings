@@ -1,6 +1,6 @@
 package gui.listeners.presets;
 
-import exec.userinterface.*;
+import exec.laf.Files;
 import fileio.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -23,7 +23,7 @@ public class AddPreset implements ActionListener
 
       if (!newEntry.equals(Files.REVERT))
         {
-        FileBuffer.writeWholeFile(newEntry+Files.PRESET_EXTENSION);
+        FileParser.writeFile(newEntry+Files.PRESET_EXTENSION);
 
         if (!exists(newEntry))
           comboBox.addItem(newEntry);

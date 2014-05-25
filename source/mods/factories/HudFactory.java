@@ -1,6 +1,6 @@
 package mods.factories;
 
-import exec.userinterface.*;
+import exec.laf.Text;
 import gui.*;
 import gui.combinations.*;
 import gui.listeners.*;
@@ -94,13 +94,13 @@ public class HudFactory extends ModFactory
   private void addParameters()
     {
     for (int i = 0; i < 5; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_GENERAL);
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.FRAME_HUD_SECTION_GENERAL);
     for (int i = 5; i < 11; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_COLORS);
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.FRAME_HUD_SECTION_COLORS);
     for (int i = 11; i < 25; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_GRAPHICS);
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.FRAME_HUD_SECTION_GRAPHICS);
     for (int i = 25; i < visualParameters.length; i += 1)
-      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_SECTION_TXT);
+      ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.FRAME_HUD_SECTION_TXT);
 
     ((HudWindow)modWindow).fillModWindowWithPlaceholders();
     }

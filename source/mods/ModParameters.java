@@ -143,11 +143,30 @@ public class ModParameters
                                        "MAXIMUM PARKED CARS"+UNIT_SEPARATOR+VEHICLES};
 
   public static final String[] RADIO = {ACTIVE_PLACEHOLDER,
-                                       "HOUSES",
-                                       "CARS",
-                                       "MESSAGES WAIT"+UNIT_SEPARATOR+SECONDS};
+                                        "HOUSES",
+                                        "CARS",
+                                        "MESSAGES WAIT"+UNIT_SEPARATOR+SECONDS};
 
   public static final String[] RAIN_FX = {ACTIVE_PLACEHOLDER};
+
+  public static final String[] SKIRMISH = {ACTIVE_PLACEHOLDER,
+                                           "MAXIMUM ENEMY SQUADS",
+                                           "MAXIMUM ENEMY VEHICLES",
+                                           "MAXIMUM FRIENDLY SQUADS",
+                                           "MAXIMUM FRIENDLY VEHICLES",
+                                           "MINIMUM DISTANCE",
+                                           "MAXIMUM DISTANCE",
+                                           "NATO SUPPORT",
+                                           "FRIENDLY FACTION",
+                                           "ENEMY FACTION"};
+
+  public static final String[] SKIRMISH_FRIENDLY = {"NATO",
+                                                    "FIA",
+                                                    "AAF"};
+
+  public static final String[] SKIRMISH_ENEMY = {"CAF AGGRESSORS",
+                                                 "CSAT",
+                                                 "AAF"};
 
   public static final String[] STREETLIGHTS = {ACTIVE_PLACEHOLDER,
                                                "FACTOR",

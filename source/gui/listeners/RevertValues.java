@@ -1,8 +1,8 @@
 package gui.listeners;
 
+import exec.laf.Files;
 import gui.listeners.semaphores.UpdateSemaphores;
 import exec.*;
-import exec.userinterface.*;
 import fileio.*;
 import gui.combinations.*;
 import java.awt.event.*;
@@ -17,8 +17,8 @@ public class RevertValues implements ActionListener
 
     if (presetComboBox.getSelectedIndex() == 0)
       {
-      FileBuffer.readWholeFile(Files.REVERT);
-      FileBuffer.writeWholeFile(Files.CONFIG);
+      FileParser.readFile(Files.REVERT);
+      FileParser.writeFile(Files.CONFIG);
 
       UpdateSemaphores.updateSemaphores();
       }

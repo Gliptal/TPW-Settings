@@ -1,3 +1,4 @@
+//
 // File created with TPW Settings. All comments are missing.
 //
 // It isn't advisable to modify this file manually (unless instructed so), since it may break parsing.
@@ -132,6 +133,17 @@ tpw_radio_car = 1;
 tpw_radio_time = 60;
 //><
 tpw_rain_active = 1;
+//><
+tpw_skirmish_active = 1;
+tpw_skirmish_enemysquad_max = 5;
+tpw_skirmish_enemyvehicles_max = 2;
+tpw_skirmish_friendlysquad_max = 5;
+tpw_skirmish_friendlyvehicles_max = 2;
+tpw_skirmish_minspawnradius = 500;
+tpw_skirmish_maxspawnradius = 2000;
+tpw_skirmish_support = 1;
+tpw_skirmish_friendlytype = 0;
+tpw_skirmish_enemytype = 0;
 //><
 tpw_streetlights_active = 1;
 tpw_streetlights_factor = 10;

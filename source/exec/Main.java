@@ -1,12 +1,12 @@
 package exec;
 
-import exec.userinterface.*;
+import javax.swing.*;
+
+import exec.laf.*;
 import fileio.*;
 import gui.*;
 import gui.combinations.*;
-import javax.swing.*;
 import mods.factories.*;
-
 import static mods.CommonMod.*;
 
 
@@ -18,18 +18,12 @@ public class Main
 
   private Main()
     {
-    setSystemLookAndFeel();
+    setLookAndFeel();
+    createGuiElements();
+    manageValues();
+    setLinks();
 
-    createModWindows();
-    createModFactories();
-    addParametersToModWindows();
-    createAndShowMainWindow();
-
-    loadValuesFromConfig();
-    saveRevertFile();
-    loadPresets();
-
-    setSemaphores();
+    showMainWindow();
     }
 
   public static void main(String[] args)
@@ -37,7 +31,7 @@ public class Main
     new Main();
     }
 
-  private void setSystemLookAndFeel()
+  private void setLookAndFeel()
     {
     try
       {
@@ -45,8 +39,33 @@ public class Main
       }
     catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except) {}
 
-    ToolTipManager.sharedInstance().setInitialDelay(ExtendedLaF.TOOLTIP_DELAY);
-    ToolTipManager.sharedInstance().setDismissDelay(ExtendedLaF.TOOLTIP_DISMISS);
+    ToolTipManager.sharedInstance().setInitialDelay(Tooltips.TOOLTIP_DELAY);
+    ToolTipManager.sharedInstance().setDismissDelay(Tooltips.TOOLTIP_DISMISS);
+    }
+
+  private void createGuiElements()
+    {
+    createModWindows();
+    createModFactories();
+    addParametersToModWindows();
+    createMainWindow();
+    }
+
+  private void manageValues()
+    {
+    loadValuesFromConfig();
+    saveRevertFile();
+    loadPresets();
+    }
+
+  private void setLinks()
+    {
+    setSemaphores();
+    }
+
+  private void showMainWindow()
+    {
+    mainWindow.setVisible(true);
     }
 
   private void createModWindows()
@@ -82,6 +101,7 @@ public class Main
     modFactories[PARK_ID] = new ParkFactory(modWindows[PARK_ID]);
     modFactories[RADIO_ID] = new RadioFactory(modWindows[RADIO_ID]);
     modFactories[RAIN_FX_ID] = new RainFxFactory(modWindows[RAIN_FX_ID]);
+    modFactories[SKIRMISH_ID] = new SkirmishFactory(modWindows[SKIRMISH_ID]);
     modFactories[STREETLIGHTS_ID] = new StreetlightsFactory(modWindows[STREETLIGHTS_ID]);
     }
 
@@ -91,21 +111,20 @@ public class Main
       modFactories[i].addParametersAndTooltips();
     }
 
-  private void createAndShowMainWindow()
+  private void createMainWindow()
     {
     mainWindow = new MainWindow();
     mainWindow.setLocationRelativeTo(null);
-    mainWindow.setVisible(true);
     }
 
   private void loadValuesFromConfig()
     {
-    FileBuffer.readWholeFile(Files.CONFIG);
+    FileParser.readFile(Files.CONFIG);
     }
 
   private void saveRevertFile()
     {
-    FileBuffer.writeWholeFile(Files.REVERT);
+    FileParser.writeFile(Files.REVERT);
     }
 
   private void loadPresets()
@@ -124,4 +143,4 @@ public class Main
       button.linkToCheckBox(checkBox);
       }
     }
-  };
+  }

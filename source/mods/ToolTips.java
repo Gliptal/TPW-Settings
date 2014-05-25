@@ -18,6 +18,7 @@ public class ToolTips
                                        "Ambient parked cars.",
                                        "Ambient radio chatter and music.",
                                        "Rain droplet effect.",
+                                       "Ambient skirmish combat system.",
                                        "Streetlights for ArmA 2 maps."};
 
   public static final String[] AIR = {"Delay before flybys start.",
@@ -133,6 +134,16 @@ public class ToolTips
                                         "Maximum time between radio messages."};
 
   public static final String[] RAIN_FX = {};
+
+  public static final String[] SKIRMISH = {"Maximum number of enemy squads around the player.",
+                                           "Maximum number of enemy vehicles around the player.",
+                                           "Maximum number of friendly squads around the player.",
+                                           "Maximum number of friendly vehicles around the player.",
+                                           "Minimum distance from the player to spawn units.",
+                                           "Maximum distance from the player to spawn units: beyond this distance, units are deleted.",
+                                           "Whether NATO units can call for support.",
+                                           "Friendly faction.",
+                                           "Enemy faction."};
 
   public static final String[] STREETLIGHTS = {"Lights brightness factor: 3-15 should be ideal for most maps.",
                                                "Radius around the player to scan for streetlights.",

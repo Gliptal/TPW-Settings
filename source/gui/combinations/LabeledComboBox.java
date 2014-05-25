@@ -1,6 +1,6 @@
 package gui.combinations;
 
-import exec.userinterface.*;
+import exec.laf.Layouts;
 import javax.swing.*;
 
 

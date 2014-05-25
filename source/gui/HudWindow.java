@@ -1,6 +1,9 @@
 package gui;
 
-import exec.userinterface.*;
+import exec.laf.Text;
+import exec.laf.Spacing;
+import exec.laf.Layouts;
+import exec.laf.Frames;
 import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
@@ -23,8 +26,8 @@ public class HudWindow extends ModWindow
   public HudWindow(String title)
     {
     super(title);
-    overrideSize(Windows.HUD_WIDTH, Windows.HUD_HEIGHT);
-    overrideParametersPanelLayout(Layouts.HUD());
+    overrideSize(Frames.HUD_WIDTH, Frames.HUD_HEIGHT);
+    overrideParametersPanelLayout(Layouts.FRAME_HUD_INNER());
 
     createAndAddPanels();
     createAndAddButtons();
@@ -34,26 +37,26 @@ public class HudWindow extends ModWindow
 
   public void fillModWindowWithPlaceholders()
     {
-    Spacing.fillGridWithPlaceholders(generalPanel);
-    Spacing.fillGridWithPlaceholders(colorPanel);
-    Spacing.fillGridWithPlaceholders(positioningPanel);
-    Spacing.fillGridWithPlaceholders(txtPanel);
+    Spacing.addPlaceholdersToEmptySlots(generalPanel);
+    Spacing.addPlaceholdersToEmptySlots(colorPanel);
+    Spacing.addPlaceholdersToEmptySlots(positioningPanel);
+    Spacing.addPlaceholdersToEmptySlots(txtPanel);
     }
 
   public void addParameterToSection(JPanel parameter, String section)
     {
     switch (section)
       {
-      case Text.HUD_SECTION_GENERAL:
+      case Text.FRAME_HUD_SECTION_GENERAL:
         generalPanel.add(parameter);
         break;
-      case Text.HUD_SECTION_COLORS:
+      case Text.FRAME_HUD_SECTION_COLORS:
         colorPanel.add(parameter);
         break;
-      case Text.HUD_SECTION_GRAPHICS:
+      case Text.FRAME_HUD_SECTION_GRAPHICS:
         positioningPanel.add(parameter);
         break;
-      case Text.HUD_SECTION_TXT:
+      case Text.FRAME_HUD_SECTION_TXT:
         txtPanel.add(parameter);
         break;
       }
@@ -61,22 +64,22 @@ public class HudWindow extends ModWindow
 
   private void createAndAddPanels()
     {
-    sectionsPanel = new JPanel(Layouts.HUD_SECTIONS());
+    sectionsPanel = new JPanel(Layouts.FRAME_HUD_SECTIONS());
 
-    generalPanel = new JPanel(Layouts.HUD_SECTION_GENERAL());
-    colorPanel = new JPanel(Layouts.HUD_SECTION_COLOR());
-    positioningPanel = new JPanel(Layouts.HUD_SECTION_GRAPHICS());
-    txtPanel = new JPanel(Layouts.HUD_SECTION_TXT());
+    generalPanel = new JPanel(Layouts.FRAME_HUD_SECTION_GENERAL());
+    colorPanel = new JPanel(Layouts.FRAME_HUD_SECTION_COLOR());
+    positioningPanel = new JPanel(Layouts.FRAME_HUD_SECTION_GRAPHICS());
+    txtPanel = new JPanel(Layouts.FRAME_HUD_SECTION_TXT());
 
     parametersPanel.add(sectionsPanel, BorderLayout.NORTH);
     }
 
   private void createAndAddButtons()
     {
-    generalButton = new JButton(Text.HUD_SECTION_GENERAL);
-    colorButton = new JButton(Text.HUD_SECTION_COLORS);
-    positioningButton = new JButton(Text.HUD_SECTION_GRAPHICS);
-    txtButton = new JButton(Text.HUD_SECTION_TXT);
+    generalButton = new JButton(Text.FRAME_HUD_SECTION_GENERAL);
+    colorButton = new JButton(Text.FRAME_HUD_SECTION_COLORS);
+    positioningButton = new JButton(Text.FRAME_HUD_SECTION_GRAPHICS);
+    txtButton = new JButton(Text.FRAME_HUD_SECTION_TXT);
 
     sectionsPanel.add(generalButton);
     sectionsPanel.add(colorButton);

@@ -1,6 +1,10 @@
 package gui;
 
-import exec.userinterface.*;
+import exec.laf.Files;
+import exec.laf.Text;
+import exec.laf.Spacing;
+import exec.laf.Layouts;
+import exec.laf.Colors;
 import gui.combinations.*;
 import gui.listeners.*;
 import java.awt.*;
@@ -39,7 +43,7 @@ public class ColorWindow extends JFrame
       String greenFormatted = String.format("%.2f", greenRelative);
       String blueFormatted = String.format("%.2f", blueRelative);
 
-      resultField.setText(Text.ARRAY_OPEN+redFormatted+Text.ARRAY_SEPARATOR+greenFormatted+Text.ARRAY_SEPARATOR+blueFormatted+Text.ARRAY_CLOSE);
+      resultField.setText(Files.ARRAY_OPEN+redFormatted+Files.ARRAY_SEPARATOR+greenFormatted+Files.ARRAY_SEPARATOR+blueFormatted+Files.ARRAY_CLOSE);
       }
     }
 
@@ -116,10 +120,10 @@ public class ColorWindow extends JFrame
     int blueLoaded;
 
     String line = destinationField.getValue();
-    int startBracketIndex = line.indexOf(Text.ARRAY_OPEN);
-    int firstColonIndex = line.indexOf(Text.ARRAY_SEPARATOR);
-    int secondColonIndex = line.lastIndexOf(Text.ARRAY_SEPARATOR);
-    int endBracketIndex = line.lastIndexOf(Text.ARRAY_CLOSE);
+    int startBracketIndex = line.indexOf(Files.ARRAY_OPEN);
+    int firstColonIndex = line.indexOf(Files.ARRAY_SEPARATOR);
+    int secondColonIndex = line.lastIndexOf(Files.ARRAY_SEPARATOR);
+    int endBracketIndex = line.lastIndexOf(Files.ARRAY_CLOSE);
 
     if (startBracketIndex != -1 && firstColonIndex != -1 && secondColonIndex != -1 && endBracketIndex != -1)
       {
@@ -166,16 +170,16 @@ public class ColorWindow extends JFrame
 
   private void createAndAddMainPanel()
     {
-    mainPanel = new JPanel(Layouts.CHOOSER());
+    mainPanel = new JPanel(Layouts.FRAME_CHOOSER());
 
-    mainPanel.setBorder(Spacing.createFrameBorder());
+    mainPanel.setBorder(Spacing.summonFrameBorder());
 
     add(mainPanel);
     }
 
   private void createAndAddSlidersPanel()
     {
-    slidersPanel = new JPanel(Layouts.CHOOSER_SLIDERS());
+    slidersPanel = new JPanel(Layouts.FRAME_CHOOSER_SLIDERS());
 
     mainPanel.add(slidersPanel, BorderLayout.CENTER);
     }

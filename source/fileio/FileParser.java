@@ -1,33 +1,42 @@
 package fileio;
 
-import exec.*;
 import java.io.*;
+
+import exec.*;
 import mods.*;
 import mods.factories.*;
+import static exec.laf.Files.*;
 
-import static exec.userinterface.Files.*;
 
-
-public class FileBuffer
+public class FileParser
   {
+  private static class PresetFilter implements FilenameFilter
+    {
+    private String extension;
+
+    private PresetFilter(String extension)
+      {
+      this.extension = extension;
+      }
+
+    public boolean accept(File directory, String name)
+      {
+      return name.endsWith(extension);
+      }
+    }
+
   private static PrintWriter writer;
   private static BufferedReader reader;
 
-  public static String[] parseDirectoryFor(final String extension)
+  public static String[] parseDirectoryFor(String extension)
     {
-    File directory = new File(".");
+    File workingDirectory = new File(WORKING_DIRECTORY);
+    String[] filteredFiles = workingDirectory.list(new PresetFilter(extension));
 
-    return directory.list(new FilenameFilter()
-                           {
-                           public boolean accept(File directory, String name)
-                             {
-                             return name.endsWith(extension);
-                             }
-                           }
-                         );
+    return filteredFiles;
     }
 
-  public static void writeWholeFile(String fileName)
+  public static void writeFile(String fileName)
     {
     openWriter(fileName);
 
@@ -42,11 +51,11 @@ public class FileBuffer
     closeWriter();
     }
 
-  public static boolean readWholeFile(String fileName)
+  public static boolean readFile(String fileName)
     {
-    boolean readable = (new File(DIRECTORY+fileName)).canRead();
+    boolean isReadable = (new File(INSIDE_WORKING_DIRECTORY+fileName)).canRead();
 
-    if (readable)
+    if (isReadable)
       {
       openReader(fileName);
 
@@ -58,7 +67,7 @@ public class FileBuffer
       closeReader();
       }
 
-    return readable;
+    return isReadable;
     }
 
   private static void openWriter(String fileName)
@@ -95,7 +104,7 @@ public class FileBuffer
 
   private static void plainWrite(String[] lines)
     {
-    for (int i = 1; i < lines.length; i += 1)
+    for (int i = 0; i < lines.length; i += 1)
       writeLine(lines[i]);
     }
 
@@ -113,7 +122,7 @@ public class FileBuffer
       {
       line = readLine();
       }
-    while (!line.equals(SEPARATOR));
+    while (!line.equals(SECTION_SEPARATOR));
     }
 
   private static void readSection(ModFactory modFactory)
@@ -126,20 +135,22 @@ public class FileBuffer
       line = readLine();
 
       int equalsIndex = line.indexOf(EQUALS);
-      int semicolonIndex = line.lastIndexOf(SEMICOLON);
+      int semicolonIndex = line.indexOf(SEMICOLON);
 
-      if (equalsIndex != -1 && semicolonIndex != -1)
+      if (lineIsParameter(equalsIndex, semicolonIndex))
         {
-        modFactory.setValueToParameter(line.substring(equalsIndex+2, semicolonIndex), parameter);
+        String value = line.substring(equalsIndex+2, semicolonIndex);
+
+        modFactory.setValueToParameter(value, parameter);
         parameter += 1;
         }
       }
-    while (!line.equals(SEPARATOR));
+    while (!line.equals(SECTION_SEPARATOR));
     }
 
   private static void separateSection()
     {
-    writeLine(SEPARATOR);
+    writeLine(SECTION_SEPARATOR);
     }
 
   private static void writeLine(String line)
@@ -149,13 +160,22 @@ public class FileBuffer
 
   private static String readLine()
     {
+    String line = "";
+
     try
       {
-      return reader.readLine();
+      line = reader.readLine();
       }
-    catch (IOException except)
-      {
-      return ERROR;
-      }
+    catch (IOException except) {}
+
+    return line;
+    }
+
+  private static boolean lineIsParameter(int equalsIndex, int semicolonIndex)
+    {
+    boolean equalsExists = (equalsIndex != -1);
+    boolean semicolonExists = (semicolonIndex != -1);
+
+    return equalsExists && semicolonExists;
     }
   }

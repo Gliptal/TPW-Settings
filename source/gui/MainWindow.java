@@ -1,7 +1,10 @@
 package gui;
 
+import exec.laf.Text;
+import exec.laf.Files;
+import exec.laf.Layouts;
+import exec.laf.Frames;
 import exec.*;
-import exec.userinterface.*;
 import fileio.*;
 import gui.combinations.*;
 import gui.listeners.*;
@@ -26,7 +29,7 @@ public class MainWindow extends CommonWindow
 
   public MainWindow()
     {
-    super(Windows.MAIN_WIDTH, Windows.MAIN_HEIGHT, Text.PROGRAM_NAME);
+    super(Frames.MAIN_WIDTH, Frames.MAIN_HEIGHT, Text.PROGRAM_NAME);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     createAndAddPanels();
@@ -41,7 +44,7 @@ public class MainWindow extends CommonWindow
 
   public void addPresetsToComboBox()
     {
-    String[] presetFiles = FileBuffer.parseDirectoryFor(Files.PRESET_EXTENSION);
+    String[] presetFiles = FileParser.parseDirectoryFor(Files.PRESET_EXTENSION);
 
     for (int i = 0; i < presetFiles.length; i += 1)
       presetsComboBox.addItem(presetFiles[i].replaceFirst(Files.PRESET_EXTENSION, ""));
@@ -62,8 +65,8 @@ public class MainWindow extends CommonWindow
 
   private void createAndAddPanels()
     {
-    presetsPanel = new JPanel(Layouts.MAIN_PRESETS());
-    modsPanel = new JPanel(Layouts.MAIN_MODS());
+    presetsPanel = new JPanel(Layouts.FRAME_MAIN_PRESETS());
+    modsPanel = new JPanel(Layouts.FRAME_MAIN_MODS());
 
     mainPanel.add(presetsPanel, BorderLayout.NORTH);
     mainPanel.add(modsPanel, BorderLayout.CENTER);

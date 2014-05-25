@@ -15,6 +15,6 @@ public class WriteValuestToFile implements ActionListener
 
   public void actionPerformed(ActionEvent event)
     {
-    FileBuffer.writeWholeFile(fileName);
+    FileParser.writeFile(fileName);
     }
   }

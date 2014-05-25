@@ -8,6 +8,11 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.9.0] | UPDATE YOUR PRESETS
+
+- added SKIRMISH [1.00]
+- slightly tweaked the UI
+
 [1.8.1]
 
 - color chooser parsing bug fixed
@@ -159,6 +164,10 @@ Screens
 
 ![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Hud.png)
 
+- Color Chooser
+
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/ColorChooser.png)
+
 Progress
 ======
 
@@ -203,6 +212,8 @@ Progress
 22/05/14 | [1.8.0](https://github.com/Gliptal/TPW-Settings/tree/1.8.0) | fixed color chooser, parameters matching HUD [1.28]
 
 22/05/14 | [1.8.1](https://github.com/Gliptal/TPW-Settings/tree/1.8.1) | fixed color chooser bug
+
+25/05/14 | [1.9.0](https://github.com/Gliptal/TPW-Settings/tree/1.9.0) | slight tweaks, added SKIRMISH [1.00]
 
 Links
 ======
