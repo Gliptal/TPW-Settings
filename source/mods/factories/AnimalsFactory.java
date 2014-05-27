@@ -1,29 +1,23 @@
 package mods.factories;
 
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
 import mods.*;
 
 
 public class AnimalsFactory extends ModFactory
   {
-  private LabeledTextField delay = new LabeledTextField(ModParameters.ANIMALS[1]);
-  private LabeledTextField max = new LabeledTextField(ModParameters.ANIMALS[2]);
-  private LabeledTextField maxRadius = new LabeledTextField(ModParameters.ANIMALS[3]);
-  private LabeledTextField minRadius = new LabeledTextField(ModParameters.ANIMALS[4]);
-  private LabeledTextField noiseTime = new LabeledTextField(ModParameters.ANIMALS[5]);
+  private TextFieldParameter delay = new TextFieldParameter(ModParameters.ANIMALS[1]);
+  private TextFieldParameter max = new TextFieldParameter(ModParameters.ANIMALS[2]);
+  private TextFieldParameter maxRadius = new TextFieldParameter(ModParameters.ANIMALS[3]);
+  private TextFieldParameter minRadius = new TextFieldParameter(ModParameters.ANIMALS[4]);
+  private TextFieldParameter noiseTime = new TextFieldParameter(ModParameters.ANIMALS[5]);
 
   public AnimalsFactory(ModWindow animalsWindow)
     {
     super(animalsWindow);
 
-    parameters = new LabeledComponent[] {delay, max, maxRadius, minRadius, noiseTime};
-    visualParameters = new LabeledComponent[] {delay, max, minRadius, maxRadius, noiseTime};
-    }
-
-  protected void addToolTips()
-    {
-    for (int i = 0; i < parameters.length; i += 1)
-      parameters[i].setToolTip(ToolTips.ANIMALS[i]);
+    parameters = new Parameter[] {delay, max, maxRadius, minRadius, noiseTime};
+    visualParameters = new Parameter[] {delay, max, minRadius, maxRadius, noiseTime};
     }
   }

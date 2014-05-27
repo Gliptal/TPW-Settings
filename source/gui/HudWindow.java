@@ -1,20 +1,38 @@
 package gui;
 
-import exec.laf.Text;
-import exec.laf.Spacing;
-import exec.laf.Layouts;
-import exec.laf.Frames;
-import gui.listeners.*;
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
+
+import exec.laf.*;
 
 
 public class HudWindow extends ModWindow
   {
+  private class OpenHudSection implements ActionListener
+    {
+    private JPanel selectedSection;
+
+    private OpenHudSection(JPanel selectedSection)
+      {
+      this.selectedSection = selectedSection;
+      }
+
+    public void actionPerformed(ActionEvent event)
+      {
+      parametersPanel.removeAll();
+      parametersPanel.add(sectionsPanel, BorderLayout.NORTH);
+      parametersPanel.add(selectedSection, BorderLayout.CENTER);
+
+      parametersPanel.revalidate();
+      parametersPanel.repaint();
+      }
+    }
+
   private JPanel sectionsPanel;
   private JPanel generalPanel;
   private JPanel colorPanel;
-  private JPanel positioningPanel;
+  private JPanel graphicsPanel;
   private JPanel txtPanel;
 
   private JButton generalButton;
@@ -26,21 +44,15 @@ public class HudWindow extends ModWindow
   public HudWindow(String title)
     {
     super(title);
+
     overrideSize(Frames.HUD_WIDTH, Frames.HUD_HEIGHT);
     overrideParametersPanelLayout(Layouts.FRAME_HUD_INNER());
 
-    createAndAddPanels();
-    createAndAddButtons();
+    forgePanels();
+
+    forgeButtons();
 
     setSectionButtonsActions();
-    }
-
-  public void fillModWindowWithPlaceholders()
-    {
-    Spacing.addPlaceholdersToEmptySlots(generalPanel);
-    Spacing.addPlaceholdersToEmptySlots(colorPanel);
-    Spacing.addPlaceholdersToEmptySlots(positioningPanel);
-    Spacing.addPlaceholdersToEmptySlots(txtPanel);
     }
 
   public void addParameterToSection(JPanel parameter, String section)
@@ -54,7 +66,7 @@ public class HudWindow extends ModWindow
         colorPanel.add(parameter);
         break;
       case Text.FRAME_HUD_SECTION_GRAPHICS:
-        positioningPanel.add(parameter);
+        graphicsPanel.add(parameter);
         break;
       case Text.FRAME_HUD_SECTION_TXT:
         txtPanel.add(parameter);
@@ -62,19 +74,26 @@ public class HudWindow extends ModWindow
       }
     }
 
-  private void createAndAddPanels()
+  public void fillWithPlaceholders()
+    {
+    Spacing.addPlaceholdersToEmptySlots(generalPanel);
+    Spacing.addPlaceholdersToEmptySlots(colorPanel);
+    Spacing.addPlaceholdersToEmptySlots(graphicsPanel);
+    Spacing.addPlaceholdersToEmptySlots(txtPanel);
+    }
+
+  private void forgePanels()
     {
     sectionsPanel = new JPanel(Layouts.FRAME_HUD_SECTIONS());
-
     generalPanel = new JPanel(Layouts.FRAME_HUD_SECTION_GENERAL());
     colorPanel = new JPanel(Layouts.FRAME_HUD_SECTION_COLOR());
-    positioningPanel = new JPanel(Layouts.FRAME_HUD_SECTION_GRAPHICS());
+    graphicsPanel = new JPanel(Layouts.FRAME_HUD_SECTION_GRAPHICS());
     txtPanel = new JPanel(Layouts.FRAME_HUD_SECTION_TXT());
 
     parametersPanel.add(sectionsPanel, BorderLayout.NORTH);
     }
 
-  private void createAndAddButtons()
+  private void forgeButtons()
     {
     generalButton = new JButton(Text.FRAME_HUD_SECTION_GENERAL);
     colorButton = new JButton(Text.FRAME_HUD_SECTION_COLORS);
@@ -89,9 +108,9 @@ public class HudWindow extends ModWindow
 
   private void setSectionButtonsActions()
     {
-    generalButton.addActionListener(new OpenHudSection(generalPanel, parametersPanel, sectionsPanel));
-    colorButton.addActionListener(new OpenHudSection(colorPanel, parametersPanel, sectionsPanel));
-    positioningButton.addActionListener(new OpenHudSection(positioningPanel, parametersPanel, sectionsPanel));
-    txtButton.addActionListener(new OpenHudSection(txtPanel, parametersPanel, sectionsPanel));
+    generalButton.addActionListener(new OpenHudSection(generalPanel));
+    colorButton.addActionListener(new OpenHudSection(colorPanel));
+    positioningButton.addActionListener(new OpenHudSection(graphicsPanel));
+    txtButton.addActionListener(new OpenHudSection(txtPanel));
     }
   }

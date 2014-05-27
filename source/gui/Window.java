@@ -1,15 +1,13 @@
 package gui;
 
-import exec.laf.Text;
-import exec.laf.Files;
-import exec.laf.Spacing;
-import exec.laf.Layouts;
-import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
 
+import exec.laf.*;
+import gui.listeners.fileio.*;
 
-public class CommonWindow extends JFrame
+
+public abstract class Window extends JFrame
   {
   protected JPanel mainPanel;
   private JPanel commitPanel;
@@ -17,13 +15,14 @@ public class CommonWindow extends JFrame
   private JButton commitNegativeButton;
   private JButton commitPositiveButton;
 
-  protected CommonWindow(int width, int height, String title)
+  protected Window(int width, int height, String title)
     {
     setSize(width, height);
     setTitle(title);
 
-    createAndAddPanels();
-    createAndAddCommitButtons();
+    forgePanels();
+
+    forgeCommitButtons();
 
     setCommitButtonsActions();
     }
@@ -33,7 +32,7 @@ public class CommonWindow extends JFrame
     setSize(width, height);
     }
 
-  private void createAndAddPanels()
+  private void forgePanels()
     {
     mainPanel = new JPanel(Layouts.FRAME_COMMON());
     commitPanel = new JPanel(Layouts.FRAME_COMMON_COMMITS());
@@ -44,7 +43,7 @@ public class CommonWindow extends JFrame
     mainPanel.add(commitPanel, BorderLayout.SOUTH);
     }
 
-  private void createAndAddCommitButtons()
+  private void forgeCommitButtons()
     {
     commitNegativeButton = new JButton(Text.BUTTON_NEGATIVE_COMMIT);
     commitPositiveButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
@@ -57,6 +56,6 @@ public class CommonWindow extends JFrame
   private void setCommitButtonsActions()
     {
     commitNegativeButton.addActionListener(new RevertValues());
-    commitPositiveButton.addActionListener(new WriteValuestToFile(Files.CONFIG));
+    commitPositiveButton.addActionListener(new WriteValuesToFile(Files.CONFIG));
     }
   }

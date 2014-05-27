@@ -1,28 +1,23 @@
-package gui.combinations;
+package gui.components;
 
-import exec.laf.Files;
-import exec.laf.Layouts;
 import java.awt.event.*;
 import javax.swing.*;
 
+import exec.laf.Files;
 
-public class LabeledTextField extends LabeledComponent
+
+public class TextFieldParameter extends Parameter
   {
   private JTextField textField;
 
-  public LabeledTextField(String labelText)
+  public TextFieldParameter(String labelText)
     {
-    super(Layouts.LABELED_GRID(), labelText);
+    super(labelText);
 
     addComponent(new JTextField(Files.ERROR));
     textField = (JTextField)component;
 
     tailorTextField();
-    }
-
-  public void addMouseListener(MouseListener listener)
-    {
-    textField.addMouseListener(listener);
     }
 
   public String getValue()
@@ -33,6 +28,11 @@ public class LabeledTextField extends LabeledComponent
   public void setValue(String value)
     {
     textField.setText(value);
+    }
+
+  public void addMouseListener(MouseListener listener)
+    {
+    textField.addMouseListener(listener);
     }
 
   private void tailorTextField()

@@ -1,34 +1,28 @@
 package mods.factories;
 
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
 import mods.*;
 
 
 public class CivsFactory extends ModFactory
   {
-  private LabeledTextField delay = new LabeledTextField(ModParameters.CIVS[1]);
-  private LabeledTextField radius = new LabeledTextField(ModParameters.CIVS[2]);
-  private LabeledTextField waypoints = new LabeledTextField(ModParameters.CIVS[3]);
-  private LabeledTextField density = new LabeledTextField(ModParameters.CIVS[4]);
-  private LabeledTextField maxSquadCas = new LabeledTextField(ModParameters.CIVS[5]);
-  private LabeledTextField maxAllCas = new LabeledTextField(ModParameters.CIVS[6]);
-  private LabeledComboBox casDisplay = new LabeledComboBox(ModParameters.CIVS[7], ModParameters.CIVS_CAS_DISPLAY);
-  private LabeledTextField maxCiv = new LabeledTextField(ModParameters.CIVS[8]);
-  private LabeledTextField interact = new LabeledTextField(ModParameters.CIVS[9]);
-  private LabeledCheckBox noCombatSpawn = new LabeledCheckBox(ModParameters.CIVS[10]);
+  private TextFieldParameter delay = new TextFieldParameter(ModParameters.CIVS[1]);
+  private TextFieldParameter radius = new TextFieldParameter(ModParameters.CIVS[2]);
+  private TextFieldParameter waypoints = new TextFieldParameter(ModParameters.CIVS[3]);
+  private TextFieldParameter density = new TextFieldParameter(ModParameters.CIVS[4]);
+  private TextFieldParameter maxSquadCas = new TextFieldParameter(ModParameters.CIVS[5]);
+  private TextFieldParameter maxAllCas = new TextFieldParameter(ModParameters.CIVS[6]);
+  private ComboBoxParameter casDisplay = new ComboBoxParameter(ModParameters.CIVS[7], ModParameters.CIVS_CAS_DISPLAY);
+  private TextFieldParameter maxCiv = new TextFieldParameter(ModParameters.CIVS[8]);
+  private TextFieldParameter interact = new TextFieldParameter(ModParameters.CIVS[9]);
+  private CheckBoxParameter noCombatSpawn = new CheckBoxParameter(ModParameters.CIVS[10]);
 
   public CivsFactory(ModWindow civsFactory)
     {
     super(civsFactory);
 
-    parameters = new LabeledComponent[] {delay, radius, waypoints, density, maxSquadCas, maxAllCas, casDisplay, maxCiv, interact, noCombatSpawn};
-    visualParameters = new LabeledComponent[] {delay, maxCiv, density, radius, waypoints, interact, noCombatSpawn, maxAllCas, maxSquadCas, casDisplay};
-    }
-
-  protected void addToolTips()
-    {
-    for (int i = 0; i < parameters.length; i += 1)
-      parameters[i].setToolTip(ToolTips.CIVS[i]);
+    parameters = new Parameter[] {delay, radius, waypoints, density, maxSquadCas, maxAllCas, casDisplay, maxCiv, interact, noCombatSpawn};
+    visualParameters = new Parameter[] {delay, maxCiv, density, radius, waypoints, interact, noCombatSpawn, maxAllCas, maxSquadCas, casDisplay};
     }
   }

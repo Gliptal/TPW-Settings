@@ -1,29 +1,23 @@
 package mods.factories;
 
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
 import mods.*;
 
 
 public class CarsFactory extends ModFactory
   {
-  private LabeledTextField delay = new LabeledTextField(ModParameters.CARS[1]);
-  private LabeledTextField waypoints = new LabeledTextField(ModParameters.CARS[2]);
-  private LabeledTextField num = new LabeledTextField(ModParameters.CARS[3]);
-  private LabeledTextField radius = new LabeledTextField(ModParameters.CARS[4]);
-  private LabeledCheckBox noCombatSpawn = new LabeledCheckBox(ModParameters.CARS[5]);
+  private TextFieldParameter delay = new TextFieldParameter(ModParameters.CARS[1]);
+  private TextFieldParameter waypoints = new TextFieldParameter(ModParameters.CARS[2]);
+  private TextFieldParameter num = new TextFieldParameter(ModParameters.CARS[3]);
+  private TextFieldParameter radius = new TextFieldParameter(ModParameters.CARS[4]);
+  private CheckBoxParameter noCombatSpawn = new CheckBoxParameter(ModParameters.CARS[5]);
 
   public CarsFactory(ModWindow carsWindow)
     {
     super(carsWindow);
 
-    parameters = new LabeledComponent[] {delay, waypoints, num, radius, noCombatSpawn};
-    visualParameters = new LabeledComponent[] {delay, num, radius, waypoints, noCombatSpawn};
-    }
-
-  protected void addToolTips()
-    {
-    for (int i = 0; i < parameters.length; i += 1)
-      parameters[i].setToolTip(ToolTips.CARS[i]);
+    parameters = new Parameter[] {delay, waypoints, num, radius, noCombatSpawn};
+    visualParameters = new Parameter[] {delay, num, radius, waypoints, noCombatSpawn};
     }
   }

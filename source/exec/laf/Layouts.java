@@ -6,8 +6,6 @@ import static exec.laf.Spacing.*;
 
 public class Layouts
   {
-  public static final String JAVA_CLASSPATH = "java.awt.";
-
   public static LayoutManager FRAME_COMMON()
     {
     return new BorderLayout(FRAME_INNER, FRAME_INNER);
@@ -18,12 +16,12 @@ public class Layouts
     return new GridLayout(1, 3, BUTTONS, BUTTONS);
     }
 
-  public static LayoutManager LABELED_BORDER()
+  public static LayoutManager LABELED_BUTTON()
     {
     return new BorderLayout(COMBINATIONS, COMBINATIONS);
     }
 
-  public static LayoutManager LABELED_GRID()
+  public static LayoutManager PARAMETER()
     {
     return new GridLayout(1, 2, COMBINATIONS, COMBINATIONS);
     }

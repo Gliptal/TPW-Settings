@@ -1,4 +1,4 @@
-package gui.listeners;
+package gui.listeners.windows;
 
 import javax.swing.*;
 import java.awt.event.*;

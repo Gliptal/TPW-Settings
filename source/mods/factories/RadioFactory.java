@@ -1,27 +1,21 @@
 package mods.factories;
 
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
 import mods.*;
 
 
 public class RadioFactory extends ModFactory
   {
-  private LabeledCheckBox house = new LabeledCheckBox(ModParameters.RADIO[1]);
-  private LabeledCheckBox car = new LabeledCheckBox(ModParameters.RADIO[2]);
-  private LabeledTextField time = new LabeledTextField(ModParameters.RADIO[3]);
+  private CheckBoxParameter house = new CheckBoxParameter(ModParameters.RADIO[1]);
+  private CheckBoxParameter car = new CheckBoxParameter(ModParameters.RADIO[2]);
+  private TextFieldParameter time = new TextFieldParameter(ModParameters.RADIO[3]);
 
   public RadioFactory(ModWindow radioFactory)
     {
     super(radioFactory);
 
-    parameters = new LabeledComponent[] {house, car, time};
-    visualParameters = new LabeledComponent[] {time, house, car};
-    }
-
-  protected void addToolTips()
-    {
-    for (int i = 0; i < parameters.length; i += 1)
-      parameters[i].setToolTip(ToolTips.RADIO[i]);
+    parameters = new Parameter[] {house, car, time};
+    visualParameters = new Parameter[] {time, house, car};
     }
   }

@@ -1,17 +1,17 @@
-package gui.listeners;
+package gui.listeners.fileio;
 
-import gui.combinations.*;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import gui.components.*;
 
-public class CopyToParameter implements ActionListener
+
+public class CopyValue implements ActionListener
   {
   private JTextField originField;
-  private LabeledTextField destinationField;
+  private TextFieldParameter destinationField;
 
-  public CopyToParameter(JTextField originField, LabeledTextField destinationField)
+  public CopyValue(JTextField originField, TextFieldParameter destinationField)
     {
     this.originField = originField;
     this.destinationField = destinationField;

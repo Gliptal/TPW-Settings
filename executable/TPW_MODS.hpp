@@ -1,7 +1,7 @@
 //
 // File created with TPW Settings. All comments are missing.
 //
-// It isn't advisable to modify this file manually (unless instructed so), since it may break parsing.
+// It is not advisable to manually edit this file (unless instructed so), since it may break parsing.
 //
 //><
 tpw_hint_active = 1;
@@ -10,6 +10,8 @@ tpw_air_active = 1;
 tpw_air_delay = 10;
 tpw_air_time = 300;
 tpw_air_max = 2;
+tpw_air_heights[] = {50,250,500};
+tpw_air_civexclude = 1;
 //><
 tpw_animal_active = 1;
 tpw_animal_delay = 10;
@@ -64,6 +66,7 @@ tpw_fall_threshold = 300;
 tpw_fall_delay = 10;
 tpw_fall_ragdoll = 1;
 tpw_fall_falltime = 15;
+tpw_fall_player = 1;
 //><
 tpw_fog_active = 1;
 tpw_fog_radius = 250;

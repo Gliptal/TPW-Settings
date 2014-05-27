@@ -1,61 +1,82 @@
 package gui;
 
-import exec.laf.Text;
-import exec.laf.Files;
-import exec.laf.Layouts;
-import exec.laf.Frames;
-import exec.*;
-import fileio.*;
-import gui.combinations.*;
-import gui.listeners.*;
-import gui.listeners.presets.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
 import javax.swing.*;
+
+import exec.*;
+import exec.laf.*;
+import fileio.*;
+import gui.components.*;
+import gui.listeners.presets.*;
+import gui.listeners.windows.*;
 import mods.*;
 
 
-public class MainWindow extends CommonWindow
+public class MainWindow extends Window
   {
+  public class PrepareInput implements ActionListener
+    {
+    public void actionPerformed(ActionEvent event)
+      {
+      presetsComboBox.setEditable(true);
+      presetsComboBox.grabFocus();
+      }
+    }
+
+  private class OpenLink extends MouseAdapter
+    {
+    private URI link;
+
+    private OpenLink(String link)
+      {
+      try
+        {
+        this.link = new URI(link);
+        }
+      catch (URISyntaxException exception) {}
+      }
+
+    public void mouseClicked(MouseEvent event)
+      {
+      try
+        {
+        Desktop.getDesktop().browse(link);
+        }
+      catch (IOException exception) {}
+      }
+    }
+
   private JPanel presetsPanel;
   private JPanel modsPanel;
 
   private JComboBox<String> presetsComboBox;
   private JButton presetsDeleteButton;
   private JButton presetsSaveButton;
-
   private JLabel versionLabel;
-
   private LabeledButton[] modButtons;
 
   public MainWindow()
     {
     super(Frames.MAIN_WIDTH, Frames.MAIN_HEIGHT, Text.PROGRAM_NAME);
+
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    createAndAddPanels();
-    createAndAddPresetsElements();
-    createAndAddVersionLabel();
-    createAndAddModButtons();
+    forgePanels();
+
+    forgePresetsComboBox();
+    forgePresetsButtons();
+    forgeVersionLabel();
+    forgeModButtons();
+
+    tailorVersionLabel();
+    tailorModButtons();
 
     setPresetsActions();
-    setModButtonsAction();
     setLabelAction();
-    }
-
-  public void addPresetsToComboBox()
-    {
-    String[] presetFiles = FileParser.parseDirectoryFor(Files.PRESET_EXTENSION);
-
-    for (int i = 0; i < presetFiles.length; i += 1)
-      presetsComboBox.addItem(presetFiles[i].replaceFirst(Files.PRESET_EXTENSION, ""));
-
-    presetsComboBox.insertItemAt(Files.REVERT, LabeledComboBox.COMBO_BOX_TOP);
-    presetsComboBox.setSelectedIndex(LabeledComboBox.COMBO_BOX_TOP);
-    }
-
-  public LabeledButton getModButton(int which)
-    {
-    return modButtons[which];
+    setModButtonsAction();
     }
 
   public JComboBox<String> getPresetsComboBox()
@@ -63,7 +84,27 @@ public class MainWindow extends CommonWindow
     return presetsComboBox;
     }
 
-  private void createAndAddPanels()
+  public LabeledButton getModButton(int which)
+    {
+    return modButtons[which];
+    }
+
+  public void addPresetsToComboBox()
+    {
+    String[] presetFiles = FileParser.parseDirectoryFor(Files.PRESET_EXTENSION);
+
+    for (int i = 0; i < presetFiles.length; i += 1)
+      {
+      String presetWithoutExtension = presetFiles[i].replaceFirst(Files.PRESET_EXTENSION, "");
+
+      presetsComboBox.addItem(presetWithoutExtension);
+      }
+
+    presetsComboBox.insertItemAt(Files.REVERT, ComboBoxParameter.COMBO_BOX_TOP);
+    presetsComboBox.setSelectedIndex(ComboBoxParameter.COMBO_BOX_TOP);
+    }
+
+  private void forgePanels()
     {
     presetsPanel = new JPanel(Layouts.FRAME_MAIN_PRESETS());
     modsPanel = new JPanel(Layouts.FRAME_MAIN_MODS());
@@ -72,43 +113,14 @@ public class MainWindow extends CommonWindow
     mainPanel.add(modsPanel, BorderLayout.CENTER);
     }
 
-  private void createAndAddPresetsElements()
-    {
-    createAndAddPresetsComboBox();
-    createAndAddPresetsButtons();
-    }
-
-  private void createAndAddVersionLabel()
-    {
-    versionLabel = new JLabel(Text.PROGRAM_VERSION);
-
-    versionLabel.setHorizontalAlignment(JLabel.RIGHT);
-
-    presetsPanel.add(versionLabel);
-    }
-
-  private void createAndAddModButtons()
-    {
-    modButtons = new LabeledButton[CommonMod.NUMBER_OF_MODS];
-
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      {
-      modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i]);
-
-      modButtons[i].setToolTip(ToolTips.MODS[i]);
-
-      modsPanel.add(modButtons[i]);
-      }
-    }
-
-  private void createAndAddPresetsComboBox()
+  private void forgePresetsComboBox()
     {
     presetsComboBox = new JComboBox<String>();
 
     presetsPanel.add(presetsComboBox);
     }
 
-  private void createAndAddPresetsButtons()
+  private void forgePresetsButtons()
     {
     presetsDeleteButton = new JButton(Text.BUTTON_PRESETS_DELETE);
     presetsSaveButton = new JButton(Text.BUTTON_PRESETS_SAVE);
@@ -117,23 +129,53 @@ public class MainWindow extends CommonWindow
     presetsPanel.add(presetsSaveButton);
     }
 
+  private void forgeVersionLabel()
+    {
+    versionLabel = new JLabel(Text.PROGRAM_VERSION);
+
+    presetsPanel.add(versionLabel);
+    }
+
+  private void forgeModButtons()
+    {
+    modButtons = new LabeledButton[CommonMod.NUMBER_OF_MODS];
+
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      {
+      modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i]);
+
+      modsPanel.add(modButtons[i]);
+      }
+    }
+
+  private void tailorVersionLabel()
+    {
+    versionLabel.setHorizontalAlignment(JLabel.RIGHT);
+    }
+
+  private void tailorModButtons()
+    {
+    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      modButtons[i].setToolTip(ToolTips.MODS[i]);
+    }
+
   private void setPresetsActions()
     {
-    presetsComboBox.addActionListener(new AddPreset(presetsComboBox));
+    presetsComboBox.addActionListener(new SavePreset(presetsComboBox));
     presetsComboBox.addItemListener(new LoadPreset(presetsComboBox));
 
     presetsDeleteButton.addActionListener(new DeletePreset(presetsComboBox));
-    presetsSaveButton.addActionListener(new SavePreset(presetsComboBox));
+    presetsSaveButton.addActionListener(new PrepareInput());
+    }
+
+  private void setLabelAction()
+    {
+    versionLabel.addMouseListener(new OpenLink(Text.README_URL));
     }
 
   private void setModButtonsAction()
     {
     for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
       modButtons[i].addButtonListener(new ShowWindow(Main.modWindows[i], true));
-    }
-
-  private void setLabelAction()
-    {
-    versionLabel.addMouseListener(new OpenOnlineReadme());
     }
   }

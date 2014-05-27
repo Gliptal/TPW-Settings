@@ -1,7 +1,7 @@
 package mods.factories;
 
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
 import mods.*;
 
 
@@ -11,13 +11,7 @@ public class RainFxFactory extends ModFactory
     {
     super(rainFxWindow);
 
-    parameters = new LabeledComponent[] {};
-    visualParameters = new LabeledComponent[] {};
-    }
-
-  protected void addToolTips()
-    {
-    for (int i = 0; i < parameters.length; i += 1)
-      parameters[i].setToolTip(ToolTips.RAIN_FX[i]);
+    parameters = new Parameter[] {};
+    visualParameters = new Parameter[] {};
     }
   }

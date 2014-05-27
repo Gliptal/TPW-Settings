@@ -9,7 +9,6 @@ public class ModParameters
   public static final String SECONDS = "s";
   public static final String METERS = "m";
   public static final String PERCENTAGE = "%";
-
   public static final String VEHICLES = "veh";
   public static final String NPC = "npc";
   public static final String PRC_10SEC = "%/10sec";
@@ -20,7 +19,9 @@ public class ModParameters
   public static final String[] AIR = {ACTIVE_PLACEHOLDER,
                                       "ACTIVATION DELAY"+UNIT_SEPARATOR+SECONDS,
                                       "FLYBYS WAIT"+UNIT_SEPARATOR+SECONDS,
-                                      "MAXIMUM AIRCRAFTS"+UNIT_SEPARATOR+VEHICLES};
+                                      "MAXIMUM AIRCRAFTS"+UNIT_SEPARATOR+VEHICLES,
+                                      "POSSIBLE HEIGHTS"+UNIT_SEPARATOR+METERS,
+                                      "EXCLUDE CIVILIAN"};
 
   public static final String[] ANIMALS = {ACTIVE_PLACEHOLDER,
                                           "ACTIVATION DELAY"+UNIT_SEPARATOR+SECONDS,
@@ -78,7 +79,8 @@ public class ModParameters
                                        "ACTIVE RADIUS"+UNIT_SEPARATOR+METERS,
                                        "ACTIVATION DELAY"+UNIT_SEPARATOR+SECONDS,
                                        "RAGDOLL",
-                                       "INCAPACITATED TIME"+UNIT_SEPARATOR+SECONDS};
+                                       "INCAPACITATED TIME"+UNIT_SEPARATOR+SECONDS,
+                                       "PLAYER FALL"};
 
   public static final String[] FOG = {ACTIVE_PLACEHOLDER,
                                       "ACTIVE RADIUS"+UNIT_SEPARATOR+METERS,
@@ -150,12 +152,12 @@ public class ModParameters
   public static final String[] RAIN_FX = {ACTIVE_PLACEHOLDER};
 
   public static final String[] SKIRMISH = {ACTIVE_PLACEHOLDER,
-                                           "MAXIMUM ENEMY SQUADS",
-                                           "MAXIMUM ENEMY VEHICLES",
-                                           "MAXIMUM FRIENDLY SQUADS",
-                                           "MAXIMUM FRIENDLY VEHICLES",
-                                           "MINIMUM DISTANCE",
-                                           "MAXIMUM DISTANCE",
+                                           "MAXIMUM ENEMY SQUADS"+UNIT_SEPARATOR+NPC,
+                                           "MAXIMUM ENEMY VEHICLES"+UNIT_SEPARATOR+VEHICLES,
+                                           "MAXIMUM FRIENDLY SQUADS"+UNIT_SEPARATOR+NPC,
+                                           "MAXIMUM FRIENDLY VEHICLES"+UNIT_SEPARATOR+VEHICLES,
+                                           "MINIMUM DISTANCE"+UNIT_SEPARATOR+METERS,
+                                           "MAXIMUM DISTANCE"+UNIT_SEPARATOR+METERS,
                                            "NATO SUPPORT",
                                            "FRIENDLY FACTION",
                                            "ENEMY FACTION"};

@@ -1,37 +1,33 @@
 package gui;
 
-import exec.laf.Text;
-import exec.laf.Spacing;
-import exec.laf.Layouts;
-import exec.laf.Frames;
-import gui.combinations.*;
-import gui.listeners.*;
 import java.awt.*;
 import javax.swing.*;
 
+import exec.laf.*;
+import gui.components.*;
+import gui.listeners.windows.*;
 
-public class ModWindow extends CommonWindow
+
+public class ModWindow extends Window
   {
-  private JPanel generalPanel;
+  private JPanel commonPanel;
   protected JPanel parametersPanel;
 
-  private LabeledCheckBox isActiveCheckBox;
+  private CheckBoxParameter isActiveCheckBox;
   private JButton backButton;
 
   public ModWindow(String title)
     {
     super(Frames.MOD_WIDTH, Frames.MOD_HEIGHT, title);
+
     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
-    createAndAddPanels();
-    createAndAddGeneralElements();
+    forgePanels();
+
+    forgeIsActiveCheckBox();
+    forgeBackButton();
 
     setBackButtonAction();
-    }
-
-  public void fillModWindowWithPlaceholders()
-    {
-    Spacing.addPlaceholdersToEmptySlots(parametersPanel);
     }
 
   public void overrideParametersPanelLayout(LayoutManager layout)
@@ -41,12 +37,17 @@ public class ModWindow extends CommonWindow
     mainPanel.add(parametersPanel, BorderLayout.CENTER);
     }
 
-  public void addParameter(JPanel parameter)
+  public void addParameter(Parameter parameter)
     {
     parametersPanel.add(parameter);
     }
 
-  public LabeledCheckBox getIsActiveLabeledCheckBox()
+  public void fillWithPlaceholders()
+    {
+    Spacing.addPlaceholdersToEmptySlots(parametersPanel);
+    }
+
+  public CheckBoxParameter getIsActiveLabeledCheckBox()
     {
     return isActiveCheckBox;
     }
@@ -56,23 +57,28 @@ public class ModWindow extends CommonWindow
     isActiveCheckBox.setValue(isActive);
     }
 
-  private void createAndAddPanels()
+  private void forgePanels()
     {
-    generalPanel = new JPanel(Layouts.FRAME_MOD_GENERAL());
+    commonPanel = new JPanel(Layouts.FRAME_MOD_GENERAL());
     parametersPanel = new JPanel(Layouts.FRAME_MOD_PARAMETERS());
 
-    mainPanel.add(generalPanel, BorderLayout.NORTH);
+    mainPanel.add(commonPanel, BorderLayout.NORTH);
     mainPanel.add(parametersPanel, BorderLayout.CENTER);
     }
 
-  private void createAndAddGeneralElements()
+  private void forgeIsActiveCheckBox()
     {
-    isActiveCheckBox = new LabeledCheckBox(Text.CHECKBOX_ACTIVE);
+    isActiveCheckBox = new CheckBoxParameter(Text.CHECKBOX_ACTIVE);
+
+    commonPanel.add(isActiveCheckBox, BorderLayout.NORTH);
+    }
+
+  private void forgeBackButton()
+    {
     backButton = new JButton(Text.BUTTON_BACK);
 
-    generalPanel.add(isActiveCheckBox, BorderLayout.NORTH);
-    generalPanel.add(Spacing.summonPlaceholder());
-    generalPanel.add(backButton, BorderLayout.NORTH);
+    commonPanel.add(Spacing.summonPlaceholder());
+    commonPanel.add(backButton, BorderLayout.NORTH);
     }
 
   private void setBackButtonAction()

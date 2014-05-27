@@ -1,9 +1,10 @@
 package gui.listeners.semaphores;
 
-import exec.*;
-import gui.combinations.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import exec.*;
+import gui.components.*;
 import mods.*;
 
 

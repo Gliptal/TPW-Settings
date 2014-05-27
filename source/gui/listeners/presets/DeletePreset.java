@@ -1,9 +1,10 @@
 package gui.listeners.presets;
 
-import exec.laf.Files;
 import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
+
+import exec.laf.*;
 
 
 public class DeletePreset implements ActionListener
@@ -19,10 +20,12 @@ public class DeletePreset implements ActionListener
     {
     if (comboBox.getItemCount() != 0)
       {
-      File preset = new File(comboBox.getItemAt(comboBox.getSelectedIndex())+Files.PRESET_EXTENSION);
+      int selectedPreset = comboBox.getSelectedIndex();
+      String presetName = comboBox.getItemAt(selectedPreset);
+      File preset = new File(presetName+Files.PRESET_EXTENSION);
 
-      if(preset.delete())
-        comboBox.removeItemAt(comboBox.getSelectedIndex());
+      if (preset.delete())
+        comboBox.removeItemAt(selectedPreset);
       }
     }
   }

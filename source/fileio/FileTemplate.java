@@ -6,7 +6,7 @@ public class FileTemplate
   protected static final String[] HEADER = {"//",
                                             "// File created with TPW Settings. All comments are missing.",
                                             "//",
-                                            "// It isn't advisable to modify this file manually (unless instructed so), since it may break parsing.",
+                                            "// It is not advisable to manually edit this file (unless instructed so), since it may break parsing.",
                                             "//",
                                             "//><",
                                             "tpw_hint_active = 1;"};
@@ -14,7 +14,9 @@ public class FileTemplate
   protected static final String[] AIR = {"tpw_air_active = ",
                                          "tpw_air_delay = ",
                                          "tpw_air_time = ",
-                                         "tpw_air_max = "};
+                                         "tpw_air_max = ",
+                                         "tpw_air_heights[] = ",
+                                         "tpw_air_civexclude = "};
 
   protected static final String[] ANIMALS = {"tpw_animal_active = ",
                                              "tpw_animal_delay = ",
@@ -68,7 +70,8 @@ public class FileTemplate
                                           "tpw_fall_threshold = ",
                                           "tpw_fall_delay = ",
                                           "tpw_fall_ragdoll = ",
-                                          "tpw_fall_falltime = "};
+                                          "tpw_fall_falltime = ",
+                                          "tpw_fall_player = "};
 
   protected static final String[] FOG = {"tpw_fog_active = ",
                                          "tpw_fog_radius = ",

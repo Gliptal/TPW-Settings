@@ -1,31 +1,25 @@
 package mods.factories;
 
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
 import mods.*;
 
 
 public class EbsFactory extends ModFactory
   {
-  private LabeledTextField thresh = new LabeledTextField(ModParameters.EBS[1]);
-  private LabeledTextField delay = new LabeledTextField(ModParameters.EBS[2]);
-  private LabeledCheckBox debug = new LabeledCheckBox(ModParameters.EBS[3]);
-  private LabeledTextField radius = new LabeledTextField(ModParameters.EBS[4]);
-  private LabeledCheckBox playerSup = new LabeledCheckBox(ModParameters.EBS[5]);
-  private LabeledCheckBox aiSup = new LabeledCheckBox(ModParameters.EBS[6]);
-  private LabeledCheckBox findCover = new LabeledCheckBox(ModParameters.EBS[7]);
+  private TextFieldParameter thresh = new TextFieldParameter(ModParameters.EBS[1]);
+  private TextFieldParameter delay = new TextFieldParameter(ModParameters.EBS[2]);
+  private CheckBoxParameter debug = new CheckBoxParameter(ModParameters.EBS[3]);
+  private TextFieldParameter radius = new TextFieldParameter(ModParameters.EBS[4]);
+  private CheckBoxParameter playerSup = new CheckBoxParameter(ModParameters.EBS[5]);
+  private CheckBoxParameter aiSup = new CheckBoxParameter(ModParameters.EBS[6]);
+  private CheckBoxParameter findCover = new CheckBoxParameter(ModParameters.EBS[7]);
 
   public EbsFactory(ModWindow ebsWindow)
     {
     super(ebsWindow);
 
-    parameters = new LabeledComponent[] {thresh, delay, debug, radius, playerSup, aiSup, findCover};
-    visualParameters = new LabeledComponent[] {debug, delay, thresh, radius, playerSup, aiSup, findCover};
-    }
-
-  protected void addToolTips()
-    {
-    for (int i = 0; i < parameters.length; i += 1)
-      parameters[i].setToolTip(ToolTips.EBS[i]);
+    parameters = new Parameter[] {thresh, delay, debug, radius, playerSup, aiSup, findCover};
+    visualParameters = new Parameter[] {debug, delay, thresh, radius, playerSup, aiSup, findCover};
     }
   }

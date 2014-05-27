@@ -1,11 +1,11 @@
 package gui.listeners.presets;
 
-import exec.laf.Files;
-import gui.listeners.semaphores.UpdateSemaphores;
-import fileio.*;
-import gui.listeners.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import exec.laf.*;
+import fileio.*;
+import gui.listeners.semaphores.*;
 
 public class LoadPreset implements ItemListener
   {
@@ -20,12 +20,10 @@ public class LoadPreset implements ItemListener
     {
     if (event.getStateChange() == ItemEvent.SELECTED)
       {
-      String fileToRead;
+      String fileToRead = (String)comboBox.getSelectedItem();
 
-      if (comboBox.getSelectedItem().equals(Files.REVERT))
-        fileToRead = (String)comboBox.getSelectedItem();
-      else
-        fileToRead = (String)comboBox.getSelectedItem()+Files.PRESET_EXTENSION;
+      if (!comboBox.getSelectedItem().equals(Files.REVERT))
+        fileToRead += Files.PRESET_EXTENSION;
 
       if (FileParser.readFile(fileToRead))
         {

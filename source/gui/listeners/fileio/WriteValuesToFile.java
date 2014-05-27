@@ -1,14 +1,15 @@
-package gui.listeners;
+package gui.listeners.fileio;
 
-import fileio.*;
 import java.awt.event.*;
 
+import fileio.*;
 
-public class WriteValuestToFile implements ActionListener
+
+public class WriteValuesToFile implements ActionListener
   {
   private String fileName;
 
-  public WriteValuestToFile(String fileName)
+  public WriteValuesToFile(String fileName)
     {
     this.fileName = fileName;
     }

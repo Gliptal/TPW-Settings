@@ -1,25 +1,26 @@
 package mods.factories;
 
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
+import mods.*;
 
 
 abstract public class ModFactory
   {
   protected ModWindow modWindow;
 
-  protected LabeledComponent[] parameters;
-  protected LabeledComponent[] visualParameters;
+  protected Parameter[] parameters;
+  protected Parameter[] visualParameters;
 
   public ModFactory(ModWindow modWindow)
     {
     this.modWindow = modWindow;
     }
 
-  public void addParametersAndTooltips()
+  public void addParametersAndTooltips(int mod)
     {
     addParameters();
-    addToolTips();
+    addToolTips(mod);
     }
 
   public String getValueFromParameter(int which)
@@ -38,13 +39,17 @@ abstract public class ModFactory
       parameters[which-1].setValue(value);
     }
 
-  protected abstract void addToolTips();
+  protected void addToolTips(int mod)
+    {
+    for (int i = 0; i < parameters.length; i += 1)
+      parameters[i].setToolTip(ToolTips.MOD_TOOLTIPS[mod][i]);
+    }
 
   private void addParameters()
     {
     for (int i = 0; i < visualParameters.length; i += 1)
       modWindow.addParameter(visualParameters[i]);
 
-    modWindow.fillModWindowWithPlaceholders();
+    modWindow.fillWithPlaceholders();
     }
   }

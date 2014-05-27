@@ -5,7 +5,7 @@ import javax.swing.*;
 import exec.laf.*;
 import fileio.*;
 import gui.*;
-import gui.combinations.*;
+import gui.components.*;
 import mods.factories.*;
 import static mods.CommonMod.*;
 
@@ -108,7 +108,7 @@ public class Main
   private void addParametersToModWindows()
     {
     for (int i = 0; i < NUMBER_OF_MODS; i += 1)
-      modFactories[i].addParametersAndTooltips();
+      modFactories[i].addParametersAndTooltips(i);
     }
 
   private void createMainWindow()
@@ -136,7 +136,7 @@ public class Main
     {
     for (int i = 0; i < NUMBER_OF_MODS; i += 1)
       {
-      LabeledCheckBox checkBox = modWindows[i].getIsActiveLabeledCheckBox();
+      CheckBoxParameter checkBox = modWindows[i].getIsActiveLabeledCheckBox();
       LabeledButton button = mainWindow.getModButton(i);
 
       checkBox.linkToButton(button);

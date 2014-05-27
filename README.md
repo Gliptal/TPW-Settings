@@ -8,6 +8,14 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.10.0] | UPDATE YOUR PRESETS
+
+- parameters matching AIR [1.26]
+- parameters matching FALL [1.29]
+- added unit of measurements to SKIRMISH
+- tweaked sliders background color
+- added ticks to color chooser sliders
+
 [1.9.0] | UPDATE YOUR PRESETS
 
 - added SKIRMISH [1.00]
@@ -214,6 +222,8 @@ Progress
 22/05/14 | [1.8.1](https://github.com/Gliptal/TPW-Settings/tree/1.8.1) | fixed color chooser bug
 
 25/05/14 | [1.9.0](https://github.com/Gliptal/TPW-Settings/tree/1.9.0) | slight tweaks, added SKIRMISH [1.00]
+
+27/05/14 | [1.10.0](https://github.com/Gliptal/TPW-Settings/tree/1.10.0) | complete refactoring, parameters matching AIR [1.26] FALL [1.29]
 
 Links
 ======

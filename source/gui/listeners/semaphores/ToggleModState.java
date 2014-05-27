@@ -1,24 +1,25 @@
 package gui.listeners.semaphores;
 
-import gui.combinations.*;
 import java.awt.event.*;
+
+import gui.components.*;
 
 
 public class ToggleModState extends MouseAdapter
   {
-  private LabeledCheckBox labeledCheckBox;
+  private CheckBoxParameter checkBoxParameter;
 
-  public ToggleModState(LabeledCheckBox labeledCheckBox)
+  public ToggleModState(CheckBoxParameter checkBoxParameter)
     {
-    this.labeledCheckBox = labeledCheckBox;
+    this.checkBoxParameter = checkBoxParameter;
     }
 
   public void mouseClicked(MouseEvent event)
     {
-    if (labeledCheckBox.isActive())
-      labeledCheckBox.setValue("0");
+    if (checkBoxParameter.isActive())
+      checkBoxParameter.setValue(CheckBoxParameter.NOT_SELECTED);
     else
-      labeledCheckBox.setValue("1");
+      checkBoxParameter.setValue(CheckBoxParameter.SELECTED);
 
     UpdateSemaphores.updateSemaphores();
     }

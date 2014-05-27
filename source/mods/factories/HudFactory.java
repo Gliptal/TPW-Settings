@@ -2,84 +2,78 @@ package mods.factories;
 
 import exec.laf.Text;
 import gui.*;
-import gui.combinations.*;
-import gui.listeners.*;
+import gui.components.*;
+import gui.listeners.windows.*;
 import mods.*;
 
 
 public class HudFactory extends ModFactory
   {
-  private LabeledTextField range = new LabeledTextField(ModParameters.HUD[1]);
-  private LabeledTextField vehicleFactor = new LabeledTextField(ModParameters.HUD[2]);
-  private LabeledTextField colour = new LabeledTextField(ModParameters.HUD[3]);
-  private LabeledTextField friendlyColour = new LabeledTextField(ModParameters.HUD[4]);
-  private LabeledTextField civColour = new LabeledTextField(ModParameters.HUD[5]);
-  private LabeledTextField enemyColour = new LabeledTextField(ModParameters.HUD[6]);
-  private LabeledTextField squadColour = new LabeledTextField(ModParameters.HUD[7]);
-  private LabeledTextField alpha = new LabeledTextField(ModParameters.HUD[8]);
-  private LabeledTextField asl = new LabeledTextField(ModParameters.HUD[9]);
-  private LabeledTextField azt = new LabeledTextField(ModParameters.HUD[10]);
-  private LabeledTextField grd = new LabeledTextField(ModParameters.HUD[11]);
-  private LabeledTextField lmt = new LabeledTextField(ModParameters.HUD[12]);
-  private LabeledTextField tmp = new LabeledTextField(ModParameters.HUD[13]);
-  private LabeledTextField hlt = new LabeledTextField(ModParameters.HUD[14]);
-  private LabeledTextField rng = new LabeledTextField(ModParameters.HUD[15]);
-  private LabeledTextField vel = new LabeledTextField(ModParameters.HUD[16]);
-  private LabeledTextField prx = new LabeledTextField(ModParameters.HUD[17]);
-  private LabeledTextField unit = new LabeledTextField(ModParameters.HUD[18]);
-  private LabeledTextField offset = new LabeledTextField(ModParameters.HUD[19]);
-  private LabeledTextField scale = new LabeledTextField(ModParameters.HUD[20]);
-  private LabeledTextField textscale = new LabeledTextField(ModParameters.HUD[21]);
-  private LabeledCheckBox degradation = new LabeledCheckBox(ModParameters.HUD[22]);
-  private LabeledCheckBox thirdPerson = new LabeledCheckBox(ModParameters.HUD[23]);
-  private LabeledCheckBox addTac = new LabeledCheckBox(ModParameters.HUD[24]);
-  private LabeledTextField icons = new LabeledTextField(ModParameters.HUD[25]);
-  private LabeledTextField aslTxt = new LabeledTextField(ModParameters.HUD[26]);
-  private LabeledTextField aztTxt = new LabeledTextField(ModParameters.HUD[27]);
-  private LabeledTextField grdTxt = new LabeledTextField(ModParameters.HUD[28]);
-  private LabeledTextField lmtTxt = new LabeledTextField(ModParameters.HUD[29]);
-  private LabeledTextField tmpTxt = new LabeledTextField(ModParameters.HUD[30]);
-  private LabeledTextField hltTxt = new LabeledTextField(ModParameters.HUD[31]);
-  private LabeledTextField rngTxt = new LabeledTextField(ModParameters.HUD[32]);
-  private LabeledTextField velTxt = new LabeledTextField(ModParameters.HUD[33]);
-  private LabeledTextField airvelTxt = new LabeledTextField(ModParameters.HUD[34]);
-  private LabeledTextField prxTxt = new LabeledTextField(ModParameters.HUD[35]);
+  private TextFieldParameter range = new TextFieldParameter(ModParameters.HUD[1]);
+  private TextFieldParameter vehicleFactor = new TextFieldParameter(ModParameters.HUD[2]);
+  private TextFieldParameter colour = new TextFieldParameter(ModParameters.HUD[3]);
+  private TextFieldParameter friendlyColour = new TextFieldParameter(ModParameters.HUD[4]);
+  private TextFieldParameter civColour = new TextFieldParameter(ModParameters.HUD[5]);
+  private TextFieldParameter enemyColour = new TextFieldParameter(ModParameters.HUD[6]);
+  private TextFieldParameter squadColour = new TextFieldParameter(ModParameters.HUD[7]);
+  private TextFieldParameter alpha = new TextFieldParameter(ModParameters.HUD[8]);
+  private TextFieldParameter asl = new TextFieldParameter(ModParameters.HUD[9]);
+  private TextFieldParameter azt = new TextFieldParameter(ModParameters.HUD[10]);
+  private TextFieldParameter grd = new TextFieldParameter(ModParameters.HUD[11]);
+  private TextFieldParameter lmt = new TextFieldParameter(ModParameters.HUD[12]);
+  private TextFieldParameter tmp = new TextFieldParameter(ModParameters.HUD[13]);
+  private TextFieldParameter hlt = new TextFieldParameter(ModParameters.HUD[14]);
+  private TextFieldParameter rng = new TextFieldParameter(ModParameters.HUD[15]);
+  private TextFieldParameter vel = new TextFieldParameter(ModParameters.HUD[16]);
+  private TextFieldParameter prx = new TextFieldParameter(ModParameters.HUD[17]);
+  private TextFieldParameter unit = new TextFieldParameter(ModParameters.HUD[18]);
+  private TextFieldParameter offset = new TextFieldParameter(ModParameters.HUD[19]);
+  private TextFieldParameter scale = new TextFieldParameter(ModParameters.HUD[20]);
+  private TextFieldParameter textscale = new TextFieldParameter(ModParameters.HUD[21]);
+  private CheckBoxParameter degradation = new CheckBoxParameter(ModParameters.HUD[22]);
+  private CheckBoxParameter thirdPerson = new CheckBoxParameter(ModParameters.HUD[23]);
+  private CheckBoxParameter addTac = new CheckBoxParameter(ModParameters.HUD[24]);
+  private TextFieldParameter icons = new TextFieldParameter(ModParameters.HUD[25]);
+  private TextFieldParameter aslTxt = new TextFieldParameter(ModParameters.HUD[26]);
+  private TextFieldParameter aztTxt = new TextFieldParameter(ModParameters.HUD[27]);
+  private TextFieldParameter grdTxt = new TextFieldParameter(ModParameters.HUD[28]);
+  private TextFieldParameter lmtTxt = new TextFieldParameter(ModParameters.HUD[29]);
+  private TextFieldParameter tmpTxt = new TextFieldParameter(ModParameters.HUD[30]);
+  private TextFieldParameter hltTxt = new TextFieldParameter(ModParameters.HUD[31]);
+  private TextFieldParameter rngTxt = new TextFieldParameter(ModParameters.HUD[32]);
+  private TextFieldParameter velTxt = new TextFieldParameter(ModParameters.HUD[33]);
+  private TextFieldParameter airvelTxt = new TextFieldParameter(ModParameters.HUD[34]);
+  private TextFieldParameter prxTxt = new TextFieldParameter(ModParameters.HUD[35]);
 
   public HudFactory(ModWindow hudWindow)
     {
     super(hudWindow);
 
-    parameters = new LabeledComponent[] {range, vehicleFactor, colour, friendlyColour, civColour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, icons, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
-    visualParameters = new LabeledComponent[] {range, vehicleFactor, degradation, thirdPerson, addTac, colour, squadColour, friendlyColour, enemyColour, civColour, alpha, icons, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    parameters = new Parameter[] {range, vehicleFactor, colour, friendlyColour, civColour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, icons, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    visualParameters = new Parameter[] {range, vehicleFactor, degradation, thirdPerson, addTac, colour, squadColour, friendlyColour, enemyColour, civColour, alpha, icons, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
 
     setFocusListeners();
     }
 
-  public void addParametersAndTooltips()
+  public void addParametersAndTooltips(int mod)
     {
     addParameters();
-    addToolTips();
+    addToolTips(mod);
     }
 
-  public LabeledTextField getColourParameter()
+  public TextFieldParameter getColourParameter()
     {
     return colour;
     }
 
-  public LabeledTextField getEnemyColourParameter()
+  public TextFieldParameter getEnemyColourParameter()
     {
     return enemyColour;
     }
 
-  public LabeledTextField getSquadColourParameter()
+  public TextFieldParameter getSquadColourParameter()
     {
     return squadColour;
-    }
-
-  protected void addToolTips()
-    {
-    for (int i = 0; i < parameters.length; i += 1)
-      parameters[i].setToolTip(ToolTips.HUD[i]);
     }
 
   private void setFocusListeners()
@@ -102,6 +96,6 @@ public class HudFactory extends ModFactory
     for (int i = 25; i < visualParameters.length; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.FRAME_HUD_SECTION_TXT);
 
-    ((HudWindow)modWindow).fillModWindowWithPlaceholders();
+    ((HudWindow)modWindow).fillWithPlaceholders();
     }
   }
