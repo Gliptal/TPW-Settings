@@ -10,7 +10,7 @@ import gui.listeners.fileio.*;
 import gui.listeners.windows.*;
 
 
-public class ColorChooser extends JFrame
+public class ColorChooser extends Chooser
   {
   private class UpdateChooser implements ChangeListener
     {
@@ -49,57 +49,34 @@ public class ColorChooser extends JFrame
       }
     }
 
-  private JPanel mainPanel;
   private JPanel slidersPanel;
 
-  private JTextField resultField;
   private JSlider redSlider;
   private JSlider greenSlider;
   private JSlider blueSlider;
   private JLabel colorLabel;
-  private JButton commitButton;
-
-  private TextFieldParameter destinationField;
 
   public ColorChooser(int width, int height, String title, TextFieldParameter destinationField)
     {
-    setSize(width, height);
-    setTitle(title);
-    this.destinationField = destinationField;
-
-    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    super(width, height, title, destinationField);
 
     forgePanels();
 
-    forgeResultField();
     forgeColorSliders();
     forgeColorLabel();
-    forgeCommitButton();
 
     tailorColorSliders();
 
     setSlidersActions();
-    setCommitAction();
     }
 
   private void forgePanels()
     {
-    mainPanel = new JPanel(Layouts.FRAME_CHOOSER());
     slidersPanel = new JPanel(Layouts.FRAME_CHOOSER_SLIDERS());
 
     mainPanel.setBorder(Spacing.summonFrameBorder());
 
-    add(mainPanel);
     mainPanel.add(slidersPanel, BorderLayout.CENTER);
-    }
-
-  private void forgeResultField()
-    {
-    resultField = new JTextField(destinationField.getValue());
-
-    resultField.setHorizontalAlignment(JTextField.CENTER);
-
-    mainPanel.add(resultField, BorderLayout.NORTH);
     }
 
   private void forgeColorLabel()
@@ -123,13 +100,6 @@ public class ColorChooser extends JFrame
     slidersPanel.add(redSlider);
     slidersPanel.add(greenSlider);
     slidersPanel.add(blueSlider);
-    }
-
-  private void forgeCommitButton()
-    {
-    commitButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
-
-    mainPanel.add(commitButton, BorderLayout.SOUTH);
     }
 
   private void tailorColorSliders()
@@ -156,12 +126,6 @@ public class ColorChooser extends JFrame
     redSlider.addChangeListener(new UpdateChooser());
     greenSlider.addChangeListener(new UpdateChooser());
     blueSlider.addChangeListener(new UpdateChooser());
-    }
-
-  private void setCommitAction()
-    {
-    commitButton.addActionListener(new CopyValue(resultField, destinationField));
-    commitButton.addActionListener(new DisposeWindow(this));
     }
 
   private Color summonSetColor()

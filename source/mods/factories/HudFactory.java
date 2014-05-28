@@ -52,7 +52,7 @@ public class HudFactory extends ModFactory
     parameters = new Parameter[] {range, vehicleFactor, colour, friendlyColour, civColour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, icons, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
     visualParameters = new Parameter[] {range, vehicleFactor, degradation, thirdPerson, addTac, colour, squadColour, friendlyColour, enemyColour, civColour, alpha, icons, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
 
-    setFocusListeners();
+    setChoosers();
     }
 
   public void addParametersAndTooltips(int mod)
@@ -76,13 +76,14 @@ public class HudFactory extends ModFactory
     return squadColour;
     }
 
-  private void setFocusListeners()
+  private void setChoosers()
     {
     colour.addMouseListener(new OpenColorChooser(colour));
     friendlyColour.addMouseListener(new OpenColorChooser(friendlyColour));
     civColour.addMouseListener(new OpenColorChooser(civColour));
     enemyColour.addMouseListener(new OpenColorChooser(enemyColour));
     squadColour.addMouseListener(new OpenColorChooser(squadColour));
+    icons.addMouseListener(new OpenIconChooser(icons));
     }
 
   private void addParameters()

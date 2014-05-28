@@ -8,16 +8,12 @@ import exec.laf.*;
 import gui.listeners.semaphores.*;
 
 
-public class LabeledButton extends JPanel
+public class LabeledButton extends Labeled
   {
-  private JLabel label;
   private JButton button;
 
   public LabeledButton(String buttonText)
     {
-    setLayout(Layouts.LABELED_BUTTON());
-
-    forgeLabel(Spacing.BUTTON_LABEL_WIDTH);
     forgeButton(buttonText);
     }
 
@@ -43,15 +39,6 @@ public class LabeledButton extends JPanel
   public void linkToCheckBox(CheckBoxParameter checkBox)
     {
     label.addMouseListener(new ToggleModState(checkBox));
-    }
-
-  private void forgeLabel(String labelText)
-    {
-    label = new JLabel(labelText);
-
-    label.setOpaque(true);
-
-    add(label, BorderLayout.WEST);
     }
 
   private void forgeButton(String buttonText)

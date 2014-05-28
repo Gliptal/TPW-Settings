@@ -17,6 +17,7 @@ public class Spacing
   public static final int BUTTONS = 2*MULTIPLIER;
   public static final int PARAMETERS_X = 5*MULTIPLIER;
   public static final int PARAMETERS_Y = 2*MULTIPLIER;
+  public static final int ICON = MULTIPLIER/6;
   public static final String BUTTON_LABEL_WIDTH = STRING_MULTIPLIER;
   public static final String CHOOSER_LABEL_WIDTH = STRING_MULTIPLIER+STRING_MULTIPLIER;
 

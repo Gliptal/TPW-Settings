@@ -8,6 +8,10 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.11.0]
+
+- added icon chooser for HUD
+
 [1.10.0] | UPDATE YOUR PRESETS
 
 - parameters matching AIR [1.26]
@@ -131,9 +135,16 @@ Usage
   - 'DELETE': permanently delete the selected preset
 
 - COLOR CHOOSER
+  - Opened by clicking on the wanted parameter's white text area
   - The sliders can be used to select the wanted color
   - In the top field the relative values are shown
   - 'APPLY': saves the set color to the selected parameter
+
+- ICON CHOOSER
+  - Opened by clicking on the ICON TYPES parameter's white text area
+  - Use the checkboxes on the right to select which elements to change
+  - Click on an image on the left to change the icon for the selected elements
+  - 'APPLY': saves the set icons
 
 Limitations
 ======
@@ -142,16 +153,15 @@ Limitations
 - `TPW_MODS.hpp` must be in the same folder with `TPW Settings.jar` in order for the program to work.
 - If you wish to simply rename a preset you must select it, delete it, and save it again with the new name.
 - Presets are not backwards compatible: you can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
-- The only way to copy values from one field to another is using keyboard shortcuts (CTRL-C and CTRL-V), since the right mouse button dropdown menu isn't available in Java.
 - Closing the HUD window using the top right hand corner 'X' will not automatically close the color chooser, unlike the 'BACK' button.
+- Sometimes the GUI may look unresponsive, especially after multiple subsequent and quick clicks: wait a few moments before attempting any other action if this happens.
 - TECHNICAL: If using cmd to run the program, it must be executed from the folder it resides in.
 
 Next Steps
 ======
 
-1. Icon chooser UI
-2. HUD live preview
-3. Inserted value check
+1. HUD live preview
+2. Inserted value check
 
 Screens
 ======
@@ -175,6 +185,10 @@ Screens
 - Color Chooser
 
 ![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/ColorChooser.png)
+
+- Icon Chooser
+
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/IconChooser.png)
 
 Progress
 ======
@@ -224,6 +238,8 @@ Progress
 25/05/14 | [1.9.0](https://github.com/Gliptal/TPW-Settings/tree/1.9.0) | slight tweaks, added SKIRMISH [1.00]
 
 27/05/14 | [1.10.0](https://github.com/Gliptal/TPW-Settings/tree/1.10.0) | complete refactoring, parameters matching AIR [1.26] FALL [1.29]
+
+28/05/14 | [1.11.0](https://github.com/Gliptal/TPW-Settings/tree/1.11.0) | added icon chooser
 
 Links
 ======

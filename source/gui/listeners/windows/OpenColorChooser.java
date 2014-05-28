@@ -18,8 +18,8 @@ public class OpenColorChooser extends MouseAdapter
 
   public void mouseClicked(MouseEvent event)
     {
-    ColorChooser colorWindow = new ColorChooser(Frames.COLOR_WIDTH, Frames.COLOR_HEIGHT, Text.COLOR_CHOOSER_TITLE, destinationField);
-    colorWindow.setLocationRelativeTo(null);
-    colorWindow.setVisible(true);
+    ColorChooser colorChooser = new ColorChooser(Frames.COLOR_CHOOSER_WIDTH, Frames.COLOR_CHOOSER_HEIGHT, Text.COLOR_CHOOSER_TITLE, destinationField);
+    colorChooser.setLocationRelativeTo(null);
+    colorChooser.setVisible(true);
     }
   }

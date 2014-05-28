@@ -1,7 +1,9 @@
 package exec.laf;
 
 import java.awt.*;
+
 import static exec.laf.Spacing.*;
+import gui.*;
 
 
 public class Layouts
@@ -16,7 +18,7 @@ public class Layouts
     return new GridLayout(1, 3, BUTTONS, BUTTONS);
     }
 
-  public static LayoutManager LABELED_BUTTON()
+  public static LayoutManager LABELED()
     {
     return new BorderLayout(COMBINATIONS, COMBINATIONS);
     }
@@ -84,5 +86,15 @@ public class Layouts
   public static LayoutManager FRAME_CHOOSER_SLIDERS()
     {
     return new GridLayout(3, 1, BASIC, BASIC);
+    }
+
+  public static LayoutManager FRAME_CHOOSER_CHECKBOXES()
+    {
+    return new GridLayout(IconChooser.ICON_TYPES, 1, BASIC, BASIC);
+    }
+
+  public static LayoutManager FRAME_CHOOSER_ICONS()
+    {
+    return new GridLayout(6, 6, ICON, ICON);
     }
   }

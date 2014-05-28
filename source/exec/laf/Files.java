@@ -3,6 +3,7 @@ package exec.laf;
 
 public class Files
   {
+  public static final String ICON_URL = "/assets/icons/";
   public static final String WORKING_DIRECTORY = ".";
   public static final String INSIDE_WORKING_DIRECTORY = "./";
   public static final String CONFIG = "TPW_MODS.hpp";
@@ -17,4 +18,5 @@ public class Files
   public static final String ARRAY_SEPARATOR = ",";
 
   public static final String ERROR = "ERR";
+
   }

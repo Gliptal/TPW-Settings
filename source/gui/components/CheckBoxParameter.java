@@ -25,12 +25,12 @@ public class CheckBoxParameter extends Parameter
     {
     boolean boolValue = checkBox.isSelected();
 
-    return Converters.booleanToString(boolValue);
+    return Utils.booleanToString(boolValue);
     }
 
   public void setValue(String value)
     {
-    boolean boolValue = Converters.stringToBoolean(value);
+    boolean boolValue = Utils.stringToBoolean(value);
 
     checkBox.setSelected(boolValue);
     }

@@ -12,6 +12,9 @@ public class Frames
   public static final int HUD_WIDTH = 1200;
   public static final int HUD_HEIGHT = 600;
 
-  public static final int COLOR_WIDTH = 600;
-  public static final int COLOR_HEIGHT = 350;
+  public static final int COLOR_CHOOSER_WIDTH = 600;
+  public static final int COLOR_CHOOSER_HEIGHT = 350;
+
+  public static final int ICON_CHOOSER_WIDTH = 700;
+  public static final int ICON_CHOOSER_HEIGHT = 600;
   }
