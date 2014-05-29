@@ -21,7 +21,11 @@ public class ModParameters
                                       "FLYBYS WAIT"+UNIT_SEPARATOR+SECONDS,
                                       "MAXIMUM AIRCRAFTS"+UNIT_SEPARATOR+VEHICLES,
                                       "POSSIBLE HEIGHTS"+UNIT_SEPARATOR+METERS,
-                                      "EXCLUDE CIVILIAN"};
+                                      "EXCLUSIONS"};
+
+  public static final String[] AIR_EXCLUDE = {"NO EXCLUSIONS",
+                                              "CIVILIAN",
+                                              "MILITARY"};
 
   public static final String[] ANIMALS = {ACTIVE_PLACEHOLDER,
                                           "ACTIVATION DELAY"+UNIT_SEPARATOR+SECONDS,
@@ -119,6 +123,7 @@ public class ModParameters
                                       "DEGRADATION",
                                       "THIRD PERSON",
                                       "ADD TACTICAL GLASSES",
+                                      "AUDIBLE WARNING",
                                       "ICON TYPES",
                                       "ASL TXT",
                                       "AZT TXT",

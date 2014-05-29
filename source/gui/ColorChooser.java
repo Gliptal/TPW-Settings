@@ -140,7 +140,7 @@ public class ColorChooser extends Chooser
     int secondColonIndex = line.lastIndexOf(Files.ARRAY_SEPARATOR);
     int endBracketIndex = line.lastIndexOf(Files.ARRAY_CLOSE);
 
-    if (lineIsColor(startBracketIndex, firstColonIndex, secondColonIndex, endBracketIndex))
+    if (inputIsCorrect(startBracketIndex, firstColonIndex, secondColonIndex, endBracketIndex))
       {
       String redParsed = line.substring(startBracketIndex+1, firstColonIndex);
       String greenParsed = line.substring(firstColonIndex+1, secondColonIndex);
@@ -160,7 +160,7 @@ public class ColorChooser extends Chooser
     return new Color(red, green, blue);
     }
 
-  private boolean lineIsColor(int startBracketIndex, int firstColonIndex, int secondColonIndex, int endBracketIndex)
+  private boolean inputIsCorrect(int startBracketIndex, int firstColonIndex, int secondColonIndex, int endBracketIndex)
     {
     return startBracketIndex != -1 && firstColonIndex != -1 && secondColonIndex != -1 && endBracketIndex != -1;
     }

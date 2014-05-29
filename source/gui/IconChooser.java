@@ -41,58 +41,30 @@ public class IconChooser extends Chooser
 
       for (int i = 0; i < ICON_TYPES; i += 1)
         {
-        resultField.setText(resultField.getText()+iconIds[i]);
+        appendToResultField(iconIds[i]);
 
         if (i != ICON_TYPES-1)
-          resultField.setText(resultField.getText()+Files.ARRAY_SEPARATOR);
+          appendToResultField(Files.ARRAY_SEPARATOR);
         }
 
-      resultField.setText(resultField.getText()+Files.ARRAY_CLOSE);
+      appendToResultField(Files.ARRAY_CLOSE);
+      }
+
+    private void appendToResultField(String text)
+      {
+      String existingText = resultField.getText();
+
+      resultField.setText(existingText+text);
       }
     }
 
-  private ImageIcon[] ICON_IMAGES = {new ImageIcon(getClass().getResource(Files.ICON_URL+"0.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"1.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"2.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"3.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"4.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"5.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"6.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"7.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"8.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"9.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"10.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"11.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"12.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"13.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"14.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"15.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"16.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"17.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"18.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"19.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"20.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"21.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"22.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"23.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"24.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"25.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"26.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"27.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"28.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"29.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"30.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"31.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"32.png")),
-                                     new ImageIcon(getClass().getResource(Files.ICON_URL+"33.png"))};
-
-  private int ICON_NUMBER = ICON_IMAGES.length;
   public static final int ICON_TYPES = 10;
+  private static final int ICON_VARIATIONS = 34;
 
   private JPanel iconsPanel;
   private JPanel checkBoxesPanel;
 
-  private JLabel[] iconImages;
+  private JLabel[] iconTiles;
   private LabeledCheckBox[] checkBoxes;
 
   private String[] iconIds;
@@ -103,10 +75,10 @@ public class IconChooser extends Chooser
 
     forgePanels();
 
-    forgeIcons();
+    forgeIconTiles();
     forgeCheckBoxes();
 
-    tailorIcons();
+    tailorIconTiles();
 
     setIconActions();
 
@@ -122,15 +94,15 @@ public class IconChooser extends Chooser
     mainPanel.add(checkBoxesPanel, BorderLayout.EAST);
     }
 
-  private void forgeIcons()
+  private void forgeIconTiles()
     {
-    iconImages = new JLabel[ICON_NUMBER];
+    iconTiles = new JLabel[ICON_VARIATIONS];
 
-    for (int i = 0; i < ICON_NUMBER; i += 1)
+    for (int i = 0; i < ICON_VARIATIONS; i += 1)
       {
-      iconImages[i] = new JLabel(ICON_IMAGES[i]);
+      iconTiles[i] = new JLabel();
 
-      iconsPanel.add(iconImages[i]);
+      iconsPanel.add(iconTiles[i]);
       }
     }
 
@@ -140,42 +112,42 @@ public class IconChooser extends Chooser
 
     for (int i = 0; i < ICON_TYPES; i += 1)
       {
-      checkBoxes[i] = new LabeledCheckBox(Text.FRAME_ICON_CHOOSER_ICONS[i]);
+      checkBoxes[i] = new LabeledCheckBox(Text.FRAME_ICON_CHOOSER_TYPES[i]);
 
       checkBoxesPanel.add(checkBoxes[i]);
       }
     }
 
-  private void tailorIcons()
+  private void tailorIconTiles()
     {
-    for (int i = 0; i < ICON_NUMBER; i += 1)
+    for (int i = 0; i < ICON_VARIATIONS; i += 1)
       {
-      iconImages[i].setOpaque(true);
-      iconImages[i].setBackground(Colors.ICON_BACKGROUND);
+      iconTiles[i].setOpaque(true);
+      iconTiles[i].setBackground(Colors.ICON_BACKGROUND);
+      iconTiles[i].setHorizontalAlignment(JLabel.CENTER);
+      iconTiles[i].setIcon(summonImageIcon(i));
       }
     }
 
   private void setIconActions()
     {
-    for (int i = 0; i < ICON_NUMBER; i += 1)
-      iconImages[i].addMouseListener(new UpdateChooser(i));
+    for (int i = 0; i < ICON_VARIATIONS; i += 1)
+      iconTiles[i].addMouseListener(new UpdateChooser(i));
     }
 
   private void loadIconValues()
     {
     iconIds = new String[ICON_TYPES];
-    int[] markersIndexes = new int[ICON_TYPES+1];
-    for (int i = 0; i < markersIndexes.length; i += 1)
-      markersIndexes[i] = -1;
 
     String line = resultField.getText();
+    int[] markersIndexes = new int[ICON_TYPES+1];
 
     markersIndexes[0] = line.indexOf(Files.ARRAY_OPEN);
     for (int i = 1; i < markersIndexes.length-1; i += 1)
       markersIndexes[i] = Utils.ordinalIndexOf(line, Files.ARRAY_SEPARATOR, i);
     markersIndexes[markersIndexes.length-1] = line.lastIndexOf(Files.ARRAY_CLOSE);
 
-    if (lineIsIcons(markersIndexes))
+    if (inputIsCorrect(markersIndexes))
       {
       for (int i = 0; i < ICON_TYPES; i += 1)
         iconIds[i] = line.substring(markersIndexes[i]+1, markersIndexes[i+1]);
@@ -183,11 +155,18 @@ public class IconChooser extends Chooser
     else
       {
       for (int i = 0; i < ICON_TYPES; i += 1)
-        iconIds[i] = "0";
+        iconIds[i] = Text.FRAME_ICON_CHOOSER_DEFAULT_TYPE;
       }
     }
 
-  private boolean lineIsIcons(int[] markersIndexes)
+  private ImageIcon summonImageIcon(int iconId)
+    {
+    String iconName = String.valueOf(iconId)+Files.ICON_EXTENSION;
+
+    return new ImageIcon(getClass().getResource(Files.ICON_URL+iconName));
+    }
+
+  private boolean inputIsCorrect(int[] markersIndexes)
     {
     for (int i = 0; i < markersIndexes.length; i += 1)
       {

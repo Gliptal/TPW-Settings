@@ -11,7 +11,7 @@ tpw_air_delay = 10;
 tpw_air_time = 300;
 tpw_air_max = 2;
 tpw_air_heights[] = {50,250,500};
-tpw_air_civexclude = 1;
+tpw_air_exclude = 1;
 //><
 tpw_animal_active = 1;
 tpw_animal_delay = 10;
@@ -105,6 +105,7 @@ tpw_hud_textscale = 1;
 tpw_hud_degradation = 1;
 tpw_hud_thirdperson = 0;
 tpw_hud_addtac = 1;
+tpw_hud_audible = 1;
 tpw_hud_icons[] = {24,23,30,29,24,23,30,29,22,20};
 tpw_hud_asl_txt = "%1<t size='0.5'><br />ASL</t>";
 tpw_hud_azt_txt = "%1<t size='0.5'><br />AZT %2</t>";

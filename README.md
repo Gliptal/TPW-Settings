@@ -8,6 +8,11 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.11.1] | UPDATE YOUR PRESETS
+
+- parameters matching AIR [1.27]
+- parameters matching HUD [1.30]
+
 [1.11.0]
 
 - added icon chooser for HUD
@@ -142,7 +147,7 @@ Usage
 
 - ICON CHOOSER
   - Opened by clicking on the ICON TYPES parameter's white text area
-  - Use the checkboxes on the right to select which elements to change
+  - Use the checkboxes on the right to select which elements to change (more elements at once are selectable)
   - Click on an image on the left to change the icon for the selected elements
   - 'APPLY': saves the set icons
 
@@ -154,7 +159,7 @@ Limitations
 - If you wish to simply rename a preset you must select it, delete it, and save it again with the new name.
 - Presets are not backwards compatible: you can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
 - Closing the HUD window using the top right hand corner 'X' will not automatically close the color chooser, unlike the 'BACK' button.
-- Sometimes the GUI may look unresponsive, especially after multiple subsequent and quick clicks: wait a few moments before attempting any other action if this happens.
+- Sometimes the GUI may seem unresponsive, especially after multiple subsequent and quick clicks: wait a few moments before attempting any other action if this happens.
 - TECHNICAL: If using cmd to run the program, it must be executed from the folder it resides in.
 
 Next Steps
@@ -240,6 +245,8 @@ Progress
 27/05/14 | [1.10.0](https://github.com/Gliptal/TPW-Settings/tree/1.10.0) | complete refactoring, parameters matching AIR [1.26] FALL [1.29]
 
 28/05/14 | [1.11.0](https://github.com/Gliptal/TPW-Settings/tree/1.11.0) | added icon chooser
+
+29/05/14 | [1.11.1](https://github.com/Gliptal/TPW-Settings/tree/1.11.1) | parameters matching AIR [1.27] HUD [1.30]
 
 Links
 ======

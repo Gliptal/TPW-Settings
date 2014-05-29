@@ -16,7 +16,7 @@ public class FileTemplate
                                          "tpw_air_time = ",
                                          "tpw_air_max = ",
                                          "tpw_air_heights[] = ",
-                                         "tpw_air_civexclude = "};
+                                         "tpw_air_exclude = "};
 
   protected static final String[] ANIMALS = {"tpw_animal_active = ",
                                              "tpw_animal_delay = ",
@@ -110,6 +110,7 @@ public class FileTemplate
                                          "tpw_hud_degradation = ",
                                          "tpw_hud_thirdperson = ",
                                          "tpw_hud_addtac = ",
+                                         "tpw_hud_audible = ",
                                          "tpw_hud_icons[] = ",
                                          "tpw_hud_asl_txt = ",
                                          "tpw_hud_azt_txt = ",

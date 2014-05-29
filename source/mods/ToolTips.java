@@ -25,7 +25,7 @@ public class ToolTips
                                        "Maximum time between flybys.",
                                        "Maximum number of aircrafts at a given time.",
                                        "Aircrafats will fly at one of these heigts, randomly chosen.",
-                                       "Whether civilian aircrafts are excluded."};
+                                       "Aircraft types to be excluded from flybys."};
 
   private static final String[] ANIMALS = {"Delay before animals start spawning.",
                                            "Maximum number of animals near player.",
@@ -109,7 +109,8 @@ public class ToolTips
                                        "Whether HUD performance is reduced with distance.",
                                        "Whether HUD is visible in third person.",
                                        "Whether tactical glasses are automatically added to the player's inventory if he hasn't got them already.",
-                                       "HUD icon types, use the provided image as a reference. [unit, hidden unit, vehicle, hidden vehicle, enemy unit, hidden enemy unit, enemy vehicle, hidden enemy vehicle, marker, predictor]",
+                                       "Whether an audible warning is given whenever an enemy is detected.",
+                                       "HUD icon types. [unit, hidden unit, vehicle, hidden vehicle, enemy unit, hidden enemy unit, enemy vehicle, hidden enemy vehicle, marker, predictor]",
                                        "Only edit these if you know what you're doing with structured text.",
                                        "Only edit these if you know what you're doing with structured text.",
                                        "Only edit these if you know what you're doing with structured text.",
