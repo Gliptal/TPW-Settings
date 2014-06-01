@@ -8,6 +8,10 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.11.2] | UPDATE YOUR PRESETS
+
+- parameters matching SKIRMISH [1.01]
+
 [1.11.1] | UPDATE YOUR PRESETS
 
 - parameters matching AIR [1.27]
@@ -247,6 +251,8 @@ Progress
 28/05/14 | [1.11.0](https://github.com/Gliptal/TPW-Settings/tree/1.11.0) | added icon chooser
 
 29/05/14 | [1.11.1](https://github.com/Gliptal/TPW-Settings/tree/1.11.1) | parameters matching AIR [1.27] HUD [1.30]
+
+01/06/14 | [1.11.2](https://github.com/Gliptal/TPW-Settings/tree/1.11.2) | parameters matching SKIRMISH [1.01]
 
 Links
 ======

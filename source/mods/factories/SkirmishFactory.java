@@ -16,12 +16,13 @@ public class SkirmishFactory extends ModFactory
   private CheckBoxParameter support = new CheckBoxParameter(ModParameters.SKIRMISH[7]);
   private ComboBoxParameter friendlyType = new ComboBoxParameter(ModParameters.SKIRMISH[8], ModParameters.SKIRMISH_FRIENDLY);
   private ComboBoxParameter enemyType = new ComboBoxParameter(ModParameters.SKIRMISH[9], ModParameters.SKIRMISH_ENEMY);
+  private TextFieldParameter spawnTime = new TextFieldParameter(ModParameters.SKIRMISH[10]);
 
   public SkirmishFactory(ModWindow skirmishWindow)
     {
     super(skirmishWindow);
 
-    parameters = new Parameter[] {enemySquadMax, enemyVehiclesMax, friendlySquadMax, friendlyVehiclesMax, minSpawnRadius, maxSpawnRadius, support, friendlyType, enemyType};
-    visualParameters = new Parameter[] {minSpawnRadius, maxSpawnRadius, friendlySquadMax, friendlyVehiclesMax, enemySquadMax, enemyVehiclesMax, friendlyType, enemyType, support};
+    parameters = new Parameter[] {enemySquadMax, enemyVehiclesMax, friendlySquadMax, friendlyVehiclesMax, minSpawnRadius, maxSpawnRadius, support, friendlyType, enemyType, spawnTime};
+    visualParameters = new Parameter[] {minSpawnRadius, maxSpawnRadius, spawnTime, friendlySquadMax, friendlyVehiclesMax, enemySquadMax, enemyVehiclesMax, friendlyType, enemyType, support};
     }
   }

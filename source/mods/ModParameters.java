@@ -165,7 +165,8 @@ public class ModParameters
                                            "MAXIMUM DISTANCE"+UNIT_SEPARATOR+METERS,
                                            "NATO SUPPORT",
                                            "FRIENDLY FACTION",
-                                           "ENEMY FACTION"};
+                                           "ENEMY FACTION",
+                                           "SPAWN DELAY"+UNIT_SEPARATOR+SECONDS};
 
   public static final String[] SKIRMISH_FRIENDLY = {"NATO",
                                                     "FIA",
@@ -173,7 +174,10 @@ public class ModParameters
 
   public static final String[] SKIRMISH_ENEMY = {"CAF AGGRESSORS",
                                                  "CSAT",
-                                                 "AAF"};
+                                                 "AAF",
+                                                 "CMP ARID",
+                                                 "CMP SEMIARID",
+                                                 "CMP URBAN"};
 
   public static final String[] STREETLIGHTS = {ACTIVE_PLACEHOLDER,
                                                "FACTOR",

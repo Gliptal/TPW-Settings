@@ -148,6 +148,7 @@ tpw_skirmish_maxspawnradius = 2000;
 tpw_skirmish_support = 1;
 tpw_skirmish_friendlytype = 0;
 tpw_skirmish_enemytype = 0;
+tpw_skirmish_spawntime = 10;
 //><
 tpw_streetlights_active = 1;
 tpw_streetlights_factor = 10;

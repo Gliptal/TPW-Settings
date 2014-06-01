@@ -147,7 +147,8 @@ public class ToolTips
                                             "Maximum distance from the player to spawn units: beyond this distance, units are deleted.",
                                             "Whether NATO units can call for support.",
                                             "Friendly faction.",
-                                            "Enemy faction."};
+                                            "Enemy faction.",
+                                            "Time delay between each spawn (either enemy or friendly and unit or vehicle)"};
 
   private static final String[] STREETLIGHTS = {"Lights brightness factor: 3-15 should be ideal for most maps.",
                                                 "Radius around the player to scan for streetlights.",

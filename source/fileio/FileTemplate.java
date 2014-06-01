@@ -152,7 +152,8 @@ public class FileTemplate
                                               "tpw_skirmish_maxspawnradius = ",
                                               "tpw_skirmish_support = ",
                                               "tpw_skirmish_friendlytype = ",
-                                              "tpw_skirmish_enemytype = "};
+                                              "tpw_skirmish_enemytype = ",
+                                              "tpw_skirmish_spawntime = "};
 
   protected static final String[] STREETLIGHTS = {"tpw_streetlights_active = ",
                                                   "tpw_streetlights_factor = ",
