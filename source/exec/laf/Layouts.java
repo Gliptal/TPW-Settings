@@ -3,7 +3,7 @@ package exec.laf;
 import java.awt.*;
 
 import static exec.laf.Spacing.*;
-import gui.*;
+import gui.choosers.*;
 
 
 public class Layouts
@@ -18,9 +18,19 @@ public class Layouts
     return new GridLayout(1, 3, BUTTONS, BUTTONS);
     }
 
-  public static LayoutManager LABELED()
+  public static LayoutManager LABELED_BUTTON()
     {
     return new BorderLayout(COMBINATIONS, COMBINATIONS);
+    }
+
+  public static LayoutManager LABELED_CHECKBOX()
+    {
+    return new GridLayout(1, 1);
+    }
+
+  public static LayoutManager LABELED_TEXTFIELD()
+    {
+    return new GridLayout(1, 2, COMBINATIONS, COMBINATIONS);
     }
 
   public static LayoutManager PARAMETER()

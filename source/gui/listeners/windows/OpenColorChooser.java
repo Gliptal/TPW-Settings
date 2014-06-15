@@ -3,7 +3,7 @@ package gui.listeners.windows;
 import gui.components.TextFieldParameter;
 import exec.laf.Text;
 import exec.laf.Frames;
-import gui.*;
+import gui.choosers.*;
 import java.awt.event.*;
 
 

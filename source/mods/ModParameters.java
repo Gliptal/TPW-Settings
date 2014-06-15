@@ -177,7 +177,8 @@ public class ModParameters
                                                  "AAF",
                                                  "CMP ARID",
                                                  "CMP SEMIARID",
-                                                 "CMP URBAN"};
+                                                 "CMP URBAN",
+                                                 "ISIS"};
 
   public static final String[] STREETLIGHTS = {ACTIVE_PLACEHOLDER,
                                                "FACTOR",

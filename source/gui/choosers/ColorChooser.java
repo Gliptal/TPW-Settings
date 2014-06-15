@@ -1,4 +1,4 @@
-package gui;
+package gui.choosers;
 
 import java.awt.*;
 import javax.swing.*;
@@ -6,8 +6,6 @@ import javax.swing.event.*;
 
 import exec.laf.*;
 import gui.components.*;
-import gui.listeners.fileio.*;
-import gui.listeners.windows.*;
 
 
 public class ColorChooser extends Chooser

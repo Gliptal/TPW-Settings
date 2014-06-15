@@ -8,13 +8,19 @@ import exec.laf.*;
 import gui.listeners.semaphores.*;
 
 
-public class LabeledButton extends Labeled
+public class LabeledButton extends JPanel
   {
+  private JLabel label;
   private JButton button;
 
   public LabeledButton(String buttonText)
     {
+    setLayout(Layouts.LABELED_BUTTON());
+
+    forgeLabel();
     forgeButton(buttonText);
+
+    tailorLabel();
     }
 
   public void setToolTip(String toolTipText)
@@ -46,5 +52,17 @@ public class LabeledButton extends Labeled
     button = new JButton(buttonText);
 
     add(button, BorderLayout.CENTER);
+    }
+
+   private void forgeLabel()
+    {
+    label = new JLabel(Spacing.BUTTON_LABEL_WIDTH);
+
+    add(label, BorderLayout.WEST);
+    }
+
+  private void tailorLabel()
+    {
+    label.setOpaque(true);
     }
   }

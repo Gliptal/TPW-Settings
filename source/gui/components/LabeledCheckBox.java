@@ -1,15 +1,16 @@
 package gui.components;
 
-import java.awt.*;
+import exec.laf.*;
 import javax.swing.*;
 
 
-public class LabeledCheckBox extends Labeled
+public class LabeledCheckBox extends JPanel
   {
   private JCheckBox checkBox;
 
   public LabeledCheckBox(String checkBoxText)
     {
+    setLayout(Layouts.LABELED_CHECKBOX());
     forgeCheckBox(checkBoxText);
     }
 
@@ -22,6 +23,6 @@ public class LabeledCheckBox extends Labeled
     {
     checkBox = new JCheckBox(checkBoxText);
 
-    add(checkBox, BorderLayout.CENTER);
+    add(checkBox);
     }
   }

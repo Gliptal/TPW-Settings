@@ -1,4 +1,4 @@
-package gui;
+package gui.choosers;
 
 import java.awt.*;
 import javax.swing.*;
