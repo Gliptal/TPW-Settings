@@ -67,6 +67,7 @@ tpw_fall_delay = 10;
 tpw_fall_ragdoll = 1;
 tpw_fall_falltime = 15;
 tpw_fall_player = 1;
+tpw_fall_bullet = 1;
 //><
 tpw_fog_active = 1;
 tpw_fog_radius = 250;
@@ -146,9 +147,13 @@ tpw_skirmish_friendlyvehicles_max = 2;
 tpw_skirmish_minspawnradius = 500;
 tpw_skirmish_maxspawnradius = 2000;
 tpw_skirmish_support = 1;
-tpw_skirmish_friendlytype = 0;
-tpw_skirmish_enemytype = 0;
-tpw_skirmish_spawntime = 10;
+tpw_skirmish_friendlytype = 1;
+tpw_skirmish_enemytype = 1;
+tpw_skirmish_spawntime = 9;
+tpw_skirmish_friendlyunitstring = "";
+tpw_skirmish_friendlyvehiclestring = "";
+tpw_skirmish_enemyunitstring = "";
+tpw_skirmish_enemyvehiclestring = "";
 //><
 tpw_streetlights_active = 1;
 tpw_streetlights_factor = 10;

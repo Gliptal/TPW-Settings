@@ -1,5 +1,6 @@
 package gui.components;
 
+import java.awt.event.*;
 import javax.swing.*;
 
 
@@ -29,5 +30,15 @@ public class ComboBoxParameter extends Parameter
     int intValue = Integer.parseInt(value);
 
     comboBox.setSelectedIndex(intValue);
+    }
+
+  public boolean selectedIndexIs(int index)
+    {
+    return comboBox.getSelectedIndex() == index;
+    }
+
+  public void addActionListener(ActionListener actionListener)
+    {
+    comboBox.addActionListener(actionListener);
     }
   }

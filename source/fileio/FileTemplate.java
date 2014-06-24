@@ -71,7 +71,8 @@ public class FileTemplate
                                           "tpw_fall_delay = ",
                                           "tpw_fall_ragdoll = ",
                                           "tpw_fall_falltime = ",
-                                          "tpw_fall_player = "};
+                                          "tpw_fall_player = ",
+                                          "tpw_fall_bullet = "};
 
   protected static final String[] FOG = {"tpw_fog_active = ",
                                          "tpw_fog_radius = ",
@@ -153,7 +154,11 @@ public class FileTemplate
                                               "tpw_skirmish_support = ",
                                               "tpw_skirmish_friendlytype = ",
                                               "tpw_skirmish_enemytype = ",
-                                              "tpw_skirmish_spawntime = "};
+                                              "tpw_skirmish_spawntime = ",
+                                              "tpw_skirmish_friendlyunitstring = ",
+                                              "tpw_skirmish_friendlyvehiclestring = ",
+                                              "tpw_skirmish_enemyunitstring = ",
+                                              "tpw_skirmish_enemyvehiclestring = "};
 
   protected static final String[] STREETLIGHTS = {"tpw_streetlights_active = ",
                                                   "tpw_streetlights_factor = ",

@@ -77,6 +77,8 @@ public class Main
       modWindows[i] = new ModWindow(MOD_NAMES[i]);
       if (i == HUD_ID)
         modWindows[i] = new HudWindow(MOD_NAMES[i]);
+      if (i == SKIRMISH_ID)
+        modWindows[i].overrideParametersPanelLayout(Layouts.FRAME_SKIRMISH_PARAMETERS());
 
       modWindows[i].setLocationRelativeTo(null);
       }

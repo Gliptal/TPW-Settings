@@ -30,6 +30,11 @@ public class TextFieldParameter extends Parameter
     textField.setText(value);
     }
 
+  public void setState(boolean active)
+    {
+    textField.setEnabled(active);
+    }
+
   public void addMouseListener(MouseListener listener)
     {
     textField.addMouseListener(listener);

@@ -73,7 +73,8 @@ public class ToolTips
                                         "Delay until FALL function starts.",
                                         "Whether to use ragdoll animations when a unit is hit.",
                                         "Maximum time a unit will remain incapacitated after being hit.",
-                                        "Whether the player can fall from bullet hits and large drops."};
+                                        "Whether the player can fall from bullet hits and large drops.",
+                                        "Whether units react to bullets that hit them."};
 
   private static final String[] FOG = {"Units must be closer than this to the player to show foggy breath.",
                                        "Delay before FOG function starts.",
@@ -148,7 +149,11 @@ public class ToolTips
                                             "Whether NATO units can call for support.",
                                             "Friendly faction.",
                                             "Enemy faction.",
-                                            "Time delay between each spawn (either enemy or friendly and unit or vehicle)"};
+                                            "Time delay between each spawn (either enemy or friendly and unit or vehicle).",
+                                            "Custom string to select friendly units: only valid when CUSTOM is selected in FRIENDLY FACTION dropdown.",
+                                            "Custom string to select friendly vehicles: only valid when CUSTOM is selected in FRIENDLY FACTION dropdown.",
+                                            "Custom string to select enemy units: only valid when CUSTOM is selected in ENEMY FACTION dropdown.",
+                                            "Custom string to select enemy vehicles: only valid when CUSTOM is selected in ENEMY FACTION dropdown."};
 
   private static final String[] STREETLIGHTS = {"Lights brightness factor: 3-15 should be ideal for most maps.",
                                                 "Radius around the player to scan for streetlights.",

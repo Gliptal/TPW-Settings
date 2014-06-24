@@ -84,7 +84,8 @@ public class ModParameters
                                        "ACTIVATION DELAY"+UNIT_SEPARATOR+SECONDS,
                                        "RAGDOLL",
                                        "INCAPACITATED TIME"+UNIT_SEPARATOR+SECONDS,
-                                       "PLAYER FALL"};
+                                       "PLAYER FALL",
+                                       "BULLET REACTION"};
 
   public static final String[] FOG = {ACTIVE_PLACEHOLDER,
                                       "ACTIVE RADIUS"+UNIT_SEPARATOR+METERS,
@@ -166,13 +167,19 @@ public class ModParameters
                                            "NATO SUPPORT",
                                            "FRIENDLY FACTION",
                                            "ENEMY FACTION",
-                                           "SPAWN DELAY"+UNIT_SEPARATOR+SECONDS};
+                                           "SPAWN DELAY"+UNIT_SEPARATOR+SECONDS,
+                                           "FRIENDLY UNIT STRING",
+                                           "FRIENDLY VEHICLE STRING",
+                                           "ENEMY UNIT STRING",
+                                           "ENEMY VEHICLE STRING"};
 
-  public static final String[] SKIRMISH_FRIENDLY = {"NATO",
+  public static final String[] SKIRMISH_FRIENDLY = {"CUSTOM",
+                                                    "NATO",
                                                     "FIA",
                                                     "AAF"};
 
-  public static final String[] SKIRMISH_ENEMY = {"CAF AGGRESSORS",
+  public static final String[] SKIRMISH_ENEMY = {"CUSTOM",
+                                                 "CAF AGGRESSORS",
                                                  "CSAT",
                                                  "AAF",
                                                  "CMP ARID",

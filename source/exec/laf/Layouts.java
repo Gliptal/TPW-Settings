@@ -58,6 +58,11 @@ public class Layouts
     return new GridLayout(5, 2, PARAMETERS_X, PARAMETERS_Y);
     }
 
+  public static LayoutManager FRAME_SKIRMISH_PARAMETERS()
+    {
+    return new GridLayout(7, 2, PARAMETERS_X, PARAMETERS_Y);
+    }
+
   public static LayoutManager FRAME_HUD_INNER()
     {
     return new BorderLayout(BASIC, BASIC);

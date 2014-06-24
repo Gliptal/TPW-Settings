@@ -8,6 +8,11 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.11.4] | UPDATE YOUR PRESETS
+
+- parameters matching FALL [1.30]
+- parameters matching SKIRMISH [1.08]
+
 [1.11.3]
 
 - parameters matching SKIRMISH [1.06]
@@ -162,7 +167,7 @@ Usage
 Limitations
 ======
 
-- JVM is required. Most PCs come with it installed by default, and if you don't have it you should (unless you have valid reason not to).
+- JVM is required. Most PCs come with it installed by default, and if you don't have it you should install it (unless you have a valid reason not to).
 - `TPW_MODS.hpp` must be in the same folder with `TPW Settings.jar` in order for the program to work.
 - If you wish to simply rename a preset you must select it, delete it, and save it again with the new name.
 - Presets are not backwards compatible: you can make them so by adding the right lines at the right places manually (just edit the .PRST files with a text editor).
@@ -259,6 +264,8 @@ Progress
 01/06/14 | [1.11.2](https://github.com/Gliptal/TPW-Settings/tree/1.11.2) | parameters matching SKIRMISH [1.01]
 
 15/06/14 | [1.11.3](https://github.com/Gliptal/TPW-Settings/tree/1.11.3) | parameters matching SKIRMISH [1.06]
+
+23/06/14 | [1.11.4](https://github.com/Gliptal/TPW-Settings/tree/1.11.4) | parameters matching FALL [1.30] SKIRMISH [1.08]
 
 Links
 ======
