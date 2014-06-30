@@ -7,7 +7,7 @@ public class Text
   public static final String COLOR_CHOOSER_TITLE = "COLOR CHOOSER";
   public static final String ICON_CHOOSER_TITLE = "ICON CHOOSER";
   public static final String README_URL = "\"https://github.com/Gliptal/TPW-Settings#usage\"";
-  public static final String PROGRAM_VERSION = "<html> <a href="+README_URL+">[1.11.4] HELP</a> </html>";
+  public static final String PROGRAM_VERSION = "<html> <a href="+README_URL+">[1.11.5] HELP</a> </html>";
 
   public static final String BUTTON_POSITIVE_COMMIT = "APPLY";
   public static final String BUTTON_NEGATIVE_COMMIT = "REVERT";

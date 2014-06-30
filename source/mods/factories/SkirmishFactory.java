@@ -59,7 +59,7 @@ public class SkirmishFactory extends ModFactory
     setLinks();
 
     parameters = new Parameter[] {enemySquadMax, enemyVehiclesMax, friendlySquadMax, friendlyVehiclesMax, minSpawnRadius, maxSpawnRadius, support, friendlyType, enemyType, spawnTime, friendlyUnitString, friendlyVehicleString, enemyUnitString, enemyVehicleString};
-    visualParameters = new Parameter[] {minSpawnRadius, maxSpawnRadius, spawnTime, friendlySquadMax, friendlyVehiclesMax, enemySquadMax, enemyVehiclesMax, support, friendlyType, enemyType, friendlyUnitString, friendlyVehicleString, enemyUnitString, enemyVehicleString};
+    visualParameters = new Parameter[] {minSpawnRadius, maxSpawnRadius, spawnTime, friendlySquadMax, friendlyVehiclesMax, enemySquadMax, enemyVehiclesMax, support, friendlyType, enemyType, friendlyUnitString, enemyUnitString, friendlyVehicleString, enemyVehicleString};
     }
 
   private void setLinks()

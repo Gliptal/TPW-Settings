@@ -185,7 +185,8 @@ public class ModParameters
                                                  "CMP ARID",
                                                  "CMP SEMIARID",
                                                  "CMP URBAN",
-                                                 "ISIS"};
+                                                 "ISIS",
+                                                 "ISIS 2035"};
 
   public static final String[] STREETLIGHTS = {ACTIVE_PLACEHOLDER,
                                                "FACTOR",
