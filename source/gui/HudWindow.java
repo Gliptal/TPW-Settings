@@ -37,8 +37,7 @@ public class HudWindow extends ModWindow
 
   private JButton generalButton;
   private JButton colorButton;
-  private JButton positioningButton;
-  private JButton otherButton;
+  private JButton graphicsButton;
   private JButton txtButton;
 
   public HudWindow(String title)
@@ -97,12 +96,12 @@ public class HudWindow extends ModWindow
     {
     generalButton = new JButton(Text.FRAME_HUD_SECTION_GENERAL);
     colorButton = new JButton(Text.FRAME_HUD_SECTION_COLORS);
-    positioningButton = new JButton(Text.FRAME_HUD_SECTION_GRAPHICS);
+    graphicsButton = new JButton(Text.FRAME_HUD_SECTION_GRAPHICS);
     txtButton = new JButton(Text.FRAME_HUD_SECTION_TXT);
 
     sectionsPanel.add(generalButton);
     sectionsPanel.add(colorButton);
-    sectionsPanel.add(positioningButton);
+    sectionsPanel.add(graphicsButton);
     sectionsPanel.add(txtButton);
     }
 
@@ -110,7 +109,7 @@ public class HudWindow extends ModWindow
     {
     generalButton.addActionListener(new OpenHudSection(generalPanel));
     colorButton.addActionListener(new OpenHudSection(colorPanel));
-    positioningButton.addActionListener(new OpenHudSection(graphicsPanel));
+    graphicsButton.addActionListener(new OpenHudSection(graphicsPanel));
     txtButton.addActionListener(new OpenHudSection(txtPanel));
     }
   }

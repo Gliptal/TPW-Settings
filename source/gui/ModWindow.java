@@ -78,7 +78,7 @@ public class ModWindow extends Window
     backButton = new JButton(Text.BUTTON_BACK);
 
     commonPanel.add(Spacing.summonPlaceholder());
-    commonPanel.add(backButton, BorderLayout.NORTH);
+    commonPanel.add(backButton);
     }
 
   private void setBackButtonAction()

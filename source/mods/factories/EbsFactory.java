@@ -14,12 +14,13 @@ public class EbsFactory extends ModFactory
   private CheckBoxParameter playerSup = new CheckBoxParameter(ModParameters.EBS[5]);
   private CheckBoxParameter aiSup = new CheckBoxParameter(ModParameters.EBS[6]);
   private CheckBoxParameter findCover = new CheckBoxParameter(ModParameters.EBS[7]);
+  private ComboBoxParameter suptype = new ComboBoxParameter(ModParameters.EBS[8], ModParameters.EBS_SUPTYPE);
 
   public EbsFactory(ModWindow ebsWindow)
     {
     super(ebsWindow);
 
-    parameters = new Parameter[] {thresh, delay, debug, radius, playerSup, aiSup, findCover};
-    visualParameters = new Parameter[] {debug, delay, thresh, radius, playerSup, aiSup, findCover};
+    parameters = new Parameter[] {thresh, delay, debug, radius, playerSup, aiSup, findCover, suptype};
+    visualParameters = new Parameter[] {suptype, debug, delay, thresh, radius, playerSup, aiSup, findCover};
     }
   }

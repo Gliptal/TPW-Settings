@@ -66,7 +66,8 @@ public class ToolTips
                                        "Units must be closer than this to the player for EBS to work.",
                                        "Whether suppression effects are applied to the player.",
                                        "Whether suppression effects are applied to the AI.",
-                                       "Whether AI will seek cover when suppressed."};
+                                       "Whether AI will seek cover when suppressed.",
+                                       "Method used to detect suppression."};
 
   private static final String[] FALL = {"Sensitivity of units to falls (50: unit half as likely to fall over from a given height).",
                                         "Units must be closer than this to the player for realistic reactions to falls.",

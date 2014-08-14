@@ -59,6 +59,7 @@ tpw_ebs_radius = 500;
 tpw_ebs_playersup = 1;
 tpw_ebs_aisup = 1;
 tpw_ebs_findcover = 1;
+tpw_ebs_suptype = 0;
 //><
 tpw_fall_active = 1;
 tpw_fall_sensitivity = 100;
@@ -113,7 +114,7 @@ tpw_hud_azt_txt = "%1<t size='0.5'><br />AZT %2</t>";
 tpw_hud_grd_txt = "%1<t size='0.5'><br />GRD</t>";
 tpw_hud_lmt_txt = "%1%2<t size='0.5'><br />LMT</t>";
 tpw_hud_tmp_txt = "%1<t size='0.5'><br />TMP</t>";
-tpw_hud_hlt_txt = "%1<t size='0.5'><br />HLT</t>";
+tpw_hud_hlt_txt = "%1<t size='0.5'><br />HLT %2</t>";
 tpw_hud_rng_txt = "%1<t size='0.5'><br />RNG</t>";
 tpw_hud_vel_txt = "%1<t size='0.5'><br />VEL</t>";
 tpw_hud_airvel_txt = "%1<t size='0.5'><br />VEL KTS</t>";

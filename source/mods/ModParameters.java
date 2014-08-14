@@ -76,7 +76,11 @@ public class ModParameters
                                       "ACTIVE RADIUS"+UNIT_SEPARATOR+METERS,
                                       "PLAYER SUPPRESSION",
                                       "AI SUPPRESSION",
-                                      "COVER ALGORITHMS"};
+                                      "COVER ALGORITHMS",
+                                      "DETECTION TYPE"};
+
+  public static final String[] EBS_SUPTYPE = {"BULLET CENTRIC",
+                                              "ENTITY CENTRIC"};
 
   public static final String[] FALL = {ACTIVE_PLACEHOLDER,
                                        "SENSITIVITY"+UNIT_SEPARATOR+PERCENTAGE,

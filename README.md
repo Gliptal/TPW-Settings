@@ -8,6 +8,10 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.11.6] | UPDATE YOUR PRESETS
+
+- parameters matching EBS [1.23]
+
 [1.11.5]
 
 - parameters matching SKIRMISH [1.11]
@@ -273,6 +277,8 @@ Progress
 23/06/14 | [1.11.4](https://github.com/Gliptal/TPW-Settings/tree/1.11.4) | parameters matching FALL [1.30] SKIRMISH [1.08]
 
 30/06/14 | [1.11.5](https://github.com/Gliptal/TPW-Settings/tree/1.11.5) | parameters matching SKIRMISH [1.11]
+
+13/08/14 | [1.11.6](https://github.com/Gliptal/TPW-Settings/tree/1.11.6) | parameters matching EBS [1.23]
 
 Links
 ======

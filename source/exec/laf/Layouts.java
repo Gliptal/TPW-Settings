@@ -70,7 +70,7 @@ public class Layouts
 
   public static LayoutManager FRAME_HUD_SECTIONS()
     {
-    return new GridLayout(1, 5, BUTTONS, BUTTONS);
+    return new GridLayout(1, 4, BUTTONS, BUTTONS);
     }
 
   public static LayoutManager FRAME_HUD_SECTION_GENERAL()

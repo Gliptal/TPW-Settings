@@ -63,7 +63,8 @@ public class FileTemplate
                                          "tpw_ebs_radius = ",
                                          "tpw_ebs_playersup = ",
                                          "tpw_ebs_aisup = ",
-                                         "tpw_ebs_findcover = "};
+                                         "tpw_ebs_findcover = ",
+                                         "tpw_ebs_suptype = "};
 
   protected static final String[] FALL = {"tpw_fall_active = ",
                                           "tpw_fall_sensitivity = ",
