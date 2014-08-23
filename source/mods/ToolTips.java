@@ -19,7 +19,8 @@ public class ToolTips
                                        "Ambient radio chatter and music.",
                                        "Rain droplet effect.",
                                        "Ambient skirmish combat system.",
-                                       "Streetlights for ArmA 2 maps."};
+                                       "Streetlights for ArmA 2 maps.",
+                                       "Speed at which some animations are rendered."};
 
   private static final String[] AIR = {"Delay before flybys start.",
                                        "Maximum time between flybys.",
@@ -161,6 +162,12 @@ public class ToolTips
                                                 "Lights colour.",
                                                 "Whether moths are spawned around lights."};
 
+  public static final String[] ANIMATIONS = {"Walking animation speed, unarmed (default = 0.3).",
+                                             "Walking animation speed, weapon rested (default = 0.35).",
+                                             "Walking animation speed, weapon up (default = 0.85).",
+                                             "Rolling animation speed, to the left (default = 1.1).",
+                                             "Rolling animation speed, to the right (default = 1.2)."};
+
   public static final String[][] MOD_TOOLTIPS = {AIR,
                                                  ANIMALS,
                                                  BLEEDOUT,
@@ -177,5 +184,6 @@ public class ToolTips
                                                  RADIO,
                                                  RAIN_FX,
                                                  SKIRMISH,
-                                                 STREETLIGHTS};
+                                                 STREETLIGHTS,
+                                                 ANIMATIONS};
   }

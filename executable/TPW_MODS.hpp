@@ -162,3 +162,10 @@ tpw_streetlights_range = 1000;
 tpw_streetlights_colour = 0;
 tpw_streetlights_moths = 1;
 //><
+//animationsActivePlaceholder = 1;
+#define unarmed_walkspeed 0.27
+#define rifledown_walkspeed 0.22
+#define rifleup_walkspeed 0.81
+#define roll_left 0.75
+#define roll_right 0.8
+//><

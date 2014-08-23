@@ -201,4 +201,11 @@ public class ModParameters
   public static final String[] STREETLIGHTS_COLOUR = {"WHITE INCANDESCENT",
                                                       "YELLOW SODIUM",
                                                       "BLUE FLUORESCENT"};
+
+  public static final String[] ANIMATIONS = {ACTIVE_PLACEHOLDER,
+                                             "UNARMED SPEED",
+                                             "AT EASE SPEED",
+                                             "AIMING SPEED",
+                                             "ROLL LEFT",
+                                             "ROLL RIGHT"};
   }

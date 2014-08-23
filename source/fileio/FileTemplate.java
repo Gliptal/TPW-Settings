@@ -167,6 +167,13 @@ public class FileTemplate
                                                   "tpw_streetlights_colour = ",
                                                   "tpw_streetlights_moths = "};
 
+  protected static final String[] ANIMATIONS = {"//animationsActivePlaceholder = ",
+                                                "#define unarmed_walkspeed ",
+                                                "#define rifledown_walkspeed ",
+                                                "#define rifleup_walkspeed ",
+                                                "#define roll_left ",
+                                                "#define roll_right "};
+
   protected static final String[][] MOD_SECTIONS = {AIR,
                                                     ANIMALS,
                                                     BLEEDOUT,
@@ -183,5 +190,6 @@ public class FileTemplate
                                                     RADIO,
                                                     RAIN_FX,
                                                     SKIRMISH,
-                                                    STREETLIGHTS};
+                                                    STREETLIGHTS,
+                                                    ANIMATIONS};
   }

@@ -57,6 +57,11 @@ public class ModWindow extends Window
     isActiveCheckBox.setValue(isActive);
     }
 
+  public void setUntogglableMod()
+    {
+    isActiveCheckBox.disableCheckBox();
+    }
+
   private void forgePanels()
     {
     commonPanel = new JPanel(Layouts.FRAME_MOD_GENERAL());

@@ -19,7 +19,8 @@ public class CommonMod
                                             "RADIO",
                                             "RAIN_FX",
                                             "SKIRMISH",
-                                            "STREETLIGHTS"};
+                                            "STREETLIGHTS",
+                                            "ANIMATIONS"};
 
   public static final int NUMBER_OF_MODS = MOD_NAMES.length;
 
@@ -40,6 +41,7 @@ public class CommonMod
   public static final int RAIN_FX_ID = getModId("RAIN_FX");
   public static final int SKIRMISH_ID = getModId("SKIRMISH");
   public static final int STREETLIGHTS_ID = getModId("STREETLIGHTS");
+  public static final int ANIMATIONS_ID = getModId("ANIMATIONS");
 
   private static int getModId(String modName)
     {

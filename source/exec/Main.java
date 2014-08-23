@@ -79,6 +79,8 @@ public class Main
         modWindows[i] = new HudWindow(MOD_NAMES[i]);
       if (i == SKIRMISH_ID)
         modWindows[i].overrideParametersPanelLayout(Layouts.FRAME_SKIRMISH_PARAMETERS());
+      if (i == ANIMATIONS_ID)
+        modWindows[i].setUntogglableMod();
 
       modWindows[i].setLocationRelativeTo(null);
       }
@@ -105,6 +107,7 @@ public class Main
     modFactories[RAIN_FX_ID] = new RainFxFactory(modWindows[RAIN_FX_ID]);
     modFactories[SKIRMISH_ID] = new SkirmishFactory(modWindows[SKIRMISH_ID]);
     modFactories[STREETLIGHTS_ID] = new StreetlightsFactory(modWindows[STREETLIGHTS_ID]);
+    modFactories[ANIMATIONS_ID] = new AnimationsFactory(modWindows[ANIMATIONS_ID]);
     }
 
   private void addParametersToModWindows()
@@ -136,7 +139,7 @@ public class Main
 
   private void setSemaphores()
     {
-    for (int i = 0; i < NUMBER_OF_MODS; i += 1)
+    for (int i = 0; i < NUMBER_OF_MODS && i != ANIMATIONS_ID; i += 1)
       {
       CheckBoxParameter checkBox = modWindows[i].getIsActiveLabeledCheckBox();
       LabeledButton button = mainWindow.getModButton(i);

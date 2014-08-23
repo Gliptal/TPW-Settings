@@ -111,7 +111,12 @@ public class FileParser
   private static void writeSection(String[] lines, ModFactory modFactory)
     {
     for (int i = 0; i < lines.length; i += 1)
-      writeLine(lines[i]+modFactory.getValueFromParameter(i)+SEMICOLON);
+      {
+      if (lineIsDefine(lines[i]))
+        writeLine(lines[i]+modFactory.getValueFromParameter(i));
+      else
+        writeLine(lines[i]+modFactory.getValueFromParameter(i)+SEMICOLON);
+      }
     }
 
   private static void plainRead()
@@ -133,13 +138,23 @@ public class FileParser
     do
       {
       line = readLine();
-
-      int equalsIndex = line.indexOf(EQUALS);
-      int semicolonIndex = line.indexOf(SEMICOLON);
-
-      if (lineIsParameter(equalsIndex, semicolonIndex))
+      
+      if (lineIsParameter(line))
         {
+        int equalsIndex = line.indexOf(EQUALS);
+        int semicolonIndex = line.indexOf(SEMICOLON);
+
         String value = line.substring(equalsIndex+2, semicolonIndex);
+
+        modFactory.setValueToParameter(value, parameter);
+        parameter += 1;
+        }
+      else if (lineIsDefine(line))
+        {
+        int dotIndex = line.indexOf(".");
+        int lastDigit = dotIndex+3 > line.length() ? line.length() : dotIndex+3;
+
+        String value = line.substring(dotIndex-1, lastDigit);
 
         modFactory.setValueToParameter(value, parameter);
         parameter += 1;
@@ -171,11 +186,19 @@ public class FileParser
     return line;
     }
 
-  private static boolean lineIsParameter(int equalsIndex, int semicolonIndex)
+  private static boolean lineIsParameter(String line)
     {
+    int equalsIndex = line.indexOf(EQUALS);
+    int semicolonIndex = line.indexOf(SEMICOLON);
+
     boolean equalsExists = (equalsIndex != -1);
     boolean semicolonExists = (semicolonIndex != -1);
 
     return equalsExists && semicolonExists;
+    }
+
+  private static boolean lineIsDefine(String line)
+    {
+    return line.startsWith("#define");
     }
   }

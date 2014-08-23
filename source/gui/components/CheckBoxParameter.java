@@ -44,4 +44,9 @@ public class CheckBoxParameter extends Parameter
     {
     return checkBox.isSelected();
     }
+
+  public void disableCheckBox()
+    {
+    checkBox.setEnabled(false);
+    }
   }
