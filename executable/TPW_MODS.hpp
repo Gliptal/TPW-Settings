@@ -29,7 +29,7 @@ tpw_bleedout_ithresh = 0.85;
 tpw_boat_active = 1;
 tpw_boat_delay = 10;
 tpw_boat_radius = 1000;
-tpw_boat_waypoints = 5;
+tpw_boat_waypoints = 15;
 tpw_boat_num = 3;
 //><
 tpw_car_active = 1;
@@ -114,7 +114,7 @@ tpw_hud_azt_txt = "%1<t size='0.5'><br />AZT %2</t>";
 tpw_hud_grd_txt = "%1<t size='0.5'><br />GRD</t>";
 tpw_hud_lmt_txt = "%1%2<t size='0.5'><br />LMT</t>";
 tpw_hud_tmp_txt = "%1<t size='0.5'><br />TMP</t>";
-tpw_hud_hlt_txt = "%1<t size='0.5'><br />HLT %2</t>";
+tpw_hud_hlt_txt = "%1<t size='0.5'><br />HLT%2</t>";
 tpw_hud_rng_txt = "%1<t size='0.5'><br />RNG</t>";
 tpw_hud_vel_txt = "%1<t size='0.5'><br />VEL</t>";
 tpw_hud_airvel_txt = "%1<t size='0.5'><br />VEL KTS</t>";
@@ -163,6 +163,9 @@ tpw_streetlights_colour = 0;
 tpw_streetlights_moths = 1;
 //><
 //animationsActivePlaceholder = 1;
+#define run_rifle 0.6 
+#define tactical_rifleup 0.7 
+#define tactical_jog 1.35
 #define unarmed_walkspeed 0.27
 #define rifledown_walkspeed 0.22
 #define rifleup_walkspeed 0.81

@@ -162,7 +162,10 @@ public class ToolTips
                                                 "Lights colour.",
                                                 "Whether moths are spawned around lights."};
 
-  public static final String[] ANIMATIONS = {"Walking animation speed, unarmed (default = 0.3).",
+  public static final String[] ANIMATIONS = {"Run animation speed, armed (default = 0.685).",
+                                             "Tactical run animation speed, weapon up (default = 0.786).",
+                                             "Tactical jog animation speed, armed (default = 1.55).",
+                                             "Walking animation speed, unarmed (default = 0.3).",
                                              "Walking animation speed, weapon rested (default = 0.35).",
                                              "Walking animation speed, weapon up (default = 0.85).",
                                              "Rolling animation speed, to the left (default = 1.1).",

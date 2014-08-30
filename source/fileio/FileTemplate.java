@@ -168,6 +168,9 @@ public class FileTemplate
                                                   "tpw_streetlights_moths = "};
 
   protected static final String[] ANIMATIONS = {"//animationsActivePlaceholder = ",
+                                                "#define run_rifle ",
+                                                "#define tactical_rifleup ",
+                                                "#define tactical_jog ",
                                                 "#define unarmed_walkspeed ",
                                                 "#define rifledown_walkspeed ",
                                                 "#define rifleup_walkspeed ",

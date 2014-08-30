@@ -8,6 +8,10 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.11.8]
+
+- parameters matching ANIMATIONS [1.01]
+
 [1.11.7] | UPDATE YOUR PRESETS
 
 - added ANIMATIONS
@@ -285,6 +289,8 @@ Progress
 13/08/14 | [1.11.6](https://github.com/Gliptal/TPW-Settings/tree/1.11.6) | parameters matching EBS [1.23]
 
 23/08/14 | [1.11.7](https://github.com/Gliptal/TPW-Settings/tree/1.11.7) | added ANIMATIONS
+
+30/08/14 | [1.11.8](https://github.com/Gliptal/TPW-Settings/tree/1.11.8) | parameters matching ANIMATIONS [1.01]
 
 Links
 ======

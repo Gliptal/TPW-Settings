@@ -203,6 +203,9 @@ public class ModParameters
                                                       "BLUE FLUORESCENT"};
 
   public static final String[] ANIMATIONS = {ACTIVE_PLACEHOLDER,
+                                             "ARMED RUN SPEED",
+                                             "TACTICAL RUN SPEED",
+                                             "TACTICAL JOG SPEED",
                                              "UNARMED SPEED",
                                              "AT EASE SPEED",
                                              "AIMING SPEED",
