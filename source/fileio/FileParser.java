@@ -138,7 +138,7 @@ public class FileParser
     do
       {
       line = readLine();
-      
+
       if (lineIsParameter(line))
         {
         int equalsIndex = line.indexOf(EQUALS);
@@ -152,7 +152,7 @@ public class FileParser
       else if (lineIsDefine(line))
         {
         int dotIndex = line.indexOf(".");
-        int lastDigit = dotIndex+3 > line.length() ? line.length() : dotIndex+3;
+        int lastDigit = dotIndex+5 > line.length() ? line.length() : dotIndex+5;
 
         String value = line.substring(dotIndex-1, lastDigit);
 

@@ -8,6 +8,10 @@ What the program does is to simply act as a graphical version of `TPW_MODS.hpp` 
 Changelog
 ======
 
+[1.11.9]
+
+- fixed excessive digits rounding
+
 [1.11.8]
 
 - parameters matching ANIMATIONS [1.01]
@@ -291,6 +295,8 @@ Progress
 23/08/14 | [1.11.7](https://github.com/Gliptal/TPW-Settings/tree/1.11.7) | added ANIMATIONS
 
 30/08/14 | [1.11.8](https://github.com/Gliptal/TPW-Settings/tree/1.11.8) | parameters matching ANIMATIONS [1.01]
+
+18/09/14 | [1.11.9](https://github.com/Gliptal/TPW-Settings/tree/1.11.9) | fixed excessive digits rounding
 
 Links
 ======
