@@ -29,7 +29,8 @@ public class FileTemplate
                                               "tpw_bleedout_inc = ",
                                               "tpw_bleedout_cthresh = ",
                                               "tpw_bleedout_pthresh = ",
-                                              "tpw_bleedout_ithresh = "};
+                                              "tpw_bleedout_ithresh = ",
+                                              "tpw_bleedout_heartbeat = "};
 
   protected static final String[] BOATS = {"tpw_boat_active = ",
                                            "tpw_boat_delay = ",

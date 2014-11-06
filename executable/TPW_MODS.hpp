@@ -25,6 +25,7 @@ tpw_bleedout_inc = 5;
 tpw_bleedout_cthresh = 0.5;
 tpw_bleedout_pthresh = 0.7;
 tpw_bleedout_ithresh = 0.85;
+tpw_bleedout_heartbeat = 1;
 //><
 tpw_boat_active = 1;
 tpw_boat_delay = 10;
@@ -163,8 +164,8 @@ tpw_streetlights_colour = 0;
 tpw_streetlights_moths = 1;
 //><
 //animationsActivePlaceholder = 1;
-#define run_rifle 0.6 
-#define tactical_rifleup 0.7 
+#define run_rifle 0.6
+#define tactical_rifleup 0.7
 #define tactical_jog 1.35
 #define unarmed_walkspeed 0.27
 #define rifledown_walkspeed 0.22

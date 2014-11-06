@@ -37,7 +37,8 @@ public class ToolTips
   private static final String[] BLEEDOUT = {"Unit damage will be increased by this value every 10 sec.",
                                             "Damage beyond which a unit will be forced into crouch.",
                                             "Damage beyond which a unit will be forced into prone.",
-                                            "Damage beyond which a unit will writhe around incapacitated (1: dead)."};
+                                            "Damage beyond which a unit will writhe around incapacitated (1: dead).",
+                                            "Player heartbeat visible as a slight screen shake."};
 
   private static final String[] BOATS = {"Delay before boats start spawning.",
                                          "Radius around the player to scan for water to spawn boats.",

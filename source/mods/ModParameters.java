@@ -38,7 +38,8 @@ public class ModParameters
                                            "DAMAGE INCREASE"+UNIT_SEPARATOR+PRC_10SEC,
                                            "CROUCH THRESHOLD"+UNIT_SEPARATOR+PERCENTAGE,
                                            "PRONE THRESHOLD"+UNIT_SEPARATOR+PERCENTAGE,
-                                           "WOUNDED THRESHOLD"+UNIT_SEPARATOR+PERCENTAGE};
+                                           "WOUNDED THRESHOLD"+UNIT_SEPARATOR+PERCENTAGE,
+                                           "HEARTBEAT SCREENSHAKE"};
 
   public static final String[] BOATS = {ACTIVE_PLACEHOLDER,
                                         "ACTIVATION DELAY"+UNIT_SEPARATOR+SECONDS,
