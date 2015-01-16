@@ -3,42 +3,43 @@ package gui.choosers;
 import java.awt.*;
 import javax.swing.*;
 
-import exec.laf.*;
+import exec.*;
+import exec.theme.*;
+import gui.*;
 import gui.components.*;
 import gui.listeners.fileio.*;
 import gui.listeners.windows.*;
 
 
-public abstract class Chooser extends JFrame
+public abstract class Chooser extends FlatFrame
   {
   protected JPanel mainPanel;
 
   protected JTextField resultField;
-  protected JButton commitButton;
+  protected JButton    commitButton;
 
   protected TextFieldParameter destinationField;
 
   public Chooser(int width, int height, String title, TextFieldParameter destinationField)
     {
-    setSize(width, height);
-    setTitle(title);
+    super(width, height, title);
     this.destinationField = destinationField;
 
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    forgeMainPanel();
-
+    forgePanels();
     forgeResultField();
     forgeCommitButton();
 
-    setCommitAction();
+    tailorPanels();
+    tailorResultField();
+
+    setCommitActions();
     }
 
-  private void forgeMainPanel()
+  private void forgePanels()
     {
-    mainPanel = new JPanel(Layouts.FRAME_CHOOSER());
-
-    mainPanel.setBorder(Spacing.summonFrameBorder());
+    mainPanel = new JPanel(Layouts.CHOOSER());
 
     add(mainPanel);
     }
@@ -47,19 +48,27 @@ public abstract class Chooser extends JFrame
     {
     resultField = new JTextField(destinationField.getValue());
 
-    resultField.setHorizontalAlignment(JTextField.CENTER);
-
     mainPanel.add(resultField, BorderLayout.NORTH);
     }
 
   private void forgeCommitButton()
     {
-    commitButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
+    commitButton = new JButton(Text.COMMIT_POSITIVE);
 
     mainPanel.add(commitButton, BorderLayout.SOUTH);
     }
 
-  private void setCommitAction()
+  private void tailorPanels()
+    {
+    mainPanel.setBorder(Layouts.summonFrameBorder());
+    }
+
+  private void tailorResultField()
+    {
+    resultField.setHorizontalAlignment(JTextField.CENTER);
+    }
+
+  private void setCommitActions()
     {
     commitButton.addActionListener(new CopyValue(resultField, destinationField));
     commitButton.addActionListener(new DisposeWindow(this));

@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
 
-import exec.laf.*;
+import exec.*;
 
 
 public class DeletePreset implements ActionListener
@@ -21,7 +21,7 @@ public class DeletePreset implements ActionListener
     if (comboBox.getItemCount() != 0)
       {
       int selectedPreset = comboBox.getSelectedIndex();
-      String presetName = comboBox.getItemAt(selectedPreset);
+      String presetName  = comboBox.getItemAt(selectedPreset);
       File preset = new File(presetName+Files.PRESET_EXTENSION);
 
       if (preset.delete())

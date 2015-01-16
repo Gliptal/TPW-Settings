@@ -13,7 +13,7 @@ public class HouselightsFactory extends ModFactory
     {
     super(houselightsWindow);
 
-    parameters = new Parameter[] {delay};
+    parameters       = new Parameter[] {delay};
     visualParameters = new Parameter[] {delay};
     }
   }

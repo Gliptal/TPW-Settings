@@ -4,19 +4,19 @@ import javax.swing.*;
 import java.awt.event.*;
 
 
-public class ShowWindow implements ActionListener
+public class ToggleWindow implements ActionListener
   {
-  private JFrame modWindow;
+  private JFrame  window;
   private boolean isVisible;
 
-  public ShowWindow(JFrame modWindow, boolean isVisible)
+  public ToggleWindow(JFrame window, boolean isVisible)
     {
-    this.modWindow = modWindow;
+    this.window    = window;
     this.isVisible = isVisible;
     }
 
   public void actionPerformed(ActionEvent event)
     {
-    modWindow.setVisible(isVisible);
+    window.setVisible(isVisible);
     }
   }

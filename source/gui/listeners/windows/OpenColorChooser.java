@@ -1,10 +1,11 @@
 package gui.listeners.windows;
 
-import gui.components.TextFieldParameter;
-import exec.laf.Text;
-import exec.laf.Frames;
-import gui.choosers.*;
 import java.awt.event.*;
+
+import exec.*;
+import exec.theme.*;
+import gui.choosers.*;
+import gui.components.*;
 
 
 public class OpenColorChooser extends MouseAdapter
@@ -18,7 +19,7 @@ public class OpenColorChooser extends MouseAdapter
 
   public void mouseClicked(MouseEvent event)
     {
-    ColorChooser colorChooser = new ColorChooser(Frames.COLOR_CHOOSER_WIDTH, Frames.COLOR_CHOOSER_HEIGHT, Text.COLOR_CHOOSER_TITLE, destinationField);
+    ColorChooser colorChooser = new ColorChooser(Frames.COLOR_CHOOSER_WIDTH, Frames.COLOR_CHOOSER_HEIGHT, Text.COLOR_CHOOSER, destinationField);
     colorChooser.setLocationRelativeTo(null);
     colorChooser.setVisible(true);
     }

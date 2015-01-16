@@ -15,6 +15,7 @@ public class ComboBoxParameter extends Parameter
     super(labelText);
 
     addComponent(new JComboBox<String>(choices));
+
     comboBox = (JComboBox)component;
     }
 
@@ -32,7 +33,7 @@ public class ComboBoxParameter extends Parameter
     comboBox.setSelectedIndex(intValue);
     }
 
-  public boolean selectedIndexIs(int index)
+  public boolean checkSelectedIndex(int index)
     {
     return comboBox.getSelectedIndex() == index;
     }

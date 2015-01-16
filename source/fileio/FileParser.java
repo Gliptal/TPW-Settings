@@ -5,10 +5,10 @@ import java.io.*;
 import exec.*;
 import mods.*;
 import mods.factories.*;
-import static exec.laf.Files.*;
+import static exec.Files.*;
 
 
-public class FileParser
+public abstract class FileParser
   {
   private static class PresetFilter implements FilenameFilter
     {
@@ -25,13 +25,13 @@ public class FileParser
       }
     }
 
-  private static PrintWriter writer;
+  private static PrintWriter    writer;
   private static BufferedReader reader;
 
-  public static String[] parseDirectoryFor(String extension)
+  public static String[] getFilteredFiles(String extension)
     {
-    File workingDirectory = new File(WORKING_DIRECTORY);
-    String[] filteredFiles = workingDirectory.list(new PresetFilter(extension));
+    File directory = new File(WORKING_DIRECTORY);
+    String[] filteredFiles = directory.list(new PresetFilter(extension));
 
     return filteredFiles;
     }
@@ -42,9 +42,9 @@ public class FileParser
 
     plainWrite(FileTemplate.HEADER);
     separateSection();
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+    for (int i = 0; i < Mods.NUMBER_OF_MODS; i += 1)
       {
-      writeSection(FileTemplate.MOD_SECTIONS[i], Main.modFactories[i]);
+      writeSection(FileTemplate.FILE_SECTIONS[i], Main.modFactories[i]);
       separateSection();
       }
 
@@ -53,7 +53,7 @@ public class FileParser
 
   public static boolean readFile(String fileName)
     {
-    boolean isReadable = (new File(INSIDE_WORKING_DIRECTORY+fileName)).canRead();
+    boolean isReadable = (new File(WORKING_DIRECTORY+"/"+fileName)).canRead();
 
     if (isReadable)
       {
@@ -61,7 +61,7 @@ public class FileParser
 
       plainRead();
       plainRead();
-      for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+      for (int i = 0; i < Mods.NUMBER_OF_MODS; i += 1)
         readSection(Main.modFactories[i]);
 
       closeReader();
@@ -104,8 +104,8 @@ public class FileParser
 
   private static void plainWrite(String[] lines)
     {
-    for (int i = 0; i < lines.length; i += 1)
-      writeLine(lines[i]);
+    for (String line:lines)
+      writeLine(line);
     }
 
   private static void writeSection(String[] lines, ModFactory modFactory)
@@ -124,9 +124,7 @@ public class FileParser
     String line;
 
     do
-      {
       line = readLine();
-      }
     while (!line.equals(SECTION_SEPARATOR));
     }
 
@@ -141,9 +139,8 @@ public class FileParser
 
       if (lineIsParameter(line))
         {
-        int equalsIndex = line.indexOf(EQUALS);
+        int equalsIndex    = line.indexOf(EQUALS);
         int semicolonIndex = line.indexOf(SEMICOLON);
-
         String value = line.substring(equalsIndex+2, semicolonIndex);
 
         modFactory.setValueToParameter(value, parameter);
@@ -151,9 +148,10 @@ public class FileParser
         }
       else if (lineIsDefine(line))
         {
-        int dotIndex = line.indexOf(".");
-        int lastDigit = dotIndex+5 > line.length() ? line.length() : dotIndex+5;
-
+        int dotIndex  = line.indexOf('.');
+        int lastDigit = line.indexOf(' ', dotIndex)  != -1 ? line.indexOf(' ', dotIndex)  :
+                        line.indexOf('\t', dotIndex) != -1 ? line.indexOf('\t', dotIndex) :
+                                                             line.length();
         String value = line.substring(dotIndex-1, lastDigit);
 
         modFactory.setValueToParameter(value, parameter);
@@ -188,11 +186,8 @@ public class FileParser
 
   private static boolean lineIsParameter(String line)
     {
-    int equalsIndex = line.indexOf(EQUALS);
-    int semicolonIndex = line.indexOf(SEMICOLON);
-
-    boolean equalsExists = (equalsIndex != -1);
-    boolean semicolonExists = (semicolonIndex != -1);
+    boolean equalsExists    = (line.indexOf(EQUALS)    != -1);
+    boolean semicolonExists = (line.indexOf(SEMICOLON) != -1);
 
     return equalsExists && semicolonExists;
     }

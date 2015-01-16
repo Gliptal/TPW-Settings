@@ -2,12 +2,12 @@ package gui.components;
 
 import javax.swing.*;
 
-import exec.laf.*;
+import exec.theme.*;
 
 
 public abstract class Parameter extends JPanel
   {
-  private JLabel label;
+  private   JLabel     label;
   protected JComponent component;
 
   protected Parameter(String labelText)
@@ -15,6 +15,8 @@ public abstract class Parameter extends JPanel
     setLayout(Layouts.PARAMETER());
 
     forgeLabel(labelText);
+
+    tailorLabel();
     }
 
   public abstract String getValue();
@@ -37,8 +39,11 @@ public abstract class Parameter extends JPanel
     {
     label = new JLabel(labelText);
 
-    label.setHorizontalAlignment(JLabel.RIGHT);
-
     add(label);
+    }
+
+  private void tailorLabel()
+    {
+    label.setHorizontalAlignment(JLabel.RIGHT);
     }
   }

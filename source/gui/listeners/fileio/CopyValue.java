@@ -8,12 +8,12 @@ import gui.components.*;
 
 public class CopyValue implements ActionListener
   {
-  private JTextField originField;
+  private JTextField         originField;
   private TextFieldParameter destinationField;
 
   public CopyValue(JTextField originField, TextFieldParameter destinationField)
     {
-    this.originField = originField;
+    this.originField      = originField;
     this.destinationField = destinationField;
     }
 

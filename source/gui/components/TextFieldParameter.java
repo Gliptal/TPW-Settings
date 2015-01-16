@@ -3,7 +3,7 @@ package gui.components;
 import java.awt.event.*;
 import javax.swing.*;
 
-import exec.laf.Files;
+import exec.Files;
 
 
 public class TextFieldParameter extends Parameter
@@ -15,6 +15,7 @@ public class TextFieldParameter extends Parameter
     super(labelText);
 
     addComponent(new JTextField(Files.ERROR));
+
     textField = (JTextField)component;
 
     tailorTextField();

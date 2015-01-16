@@ -15,13 +15,13 @@ public class UpdateSemaphores implements ActionListener
 
   public UpdateSemaphores(JCheckBox checkBox, LabeledButton labeledButton)
     {
-    this.checkBox = checkBox;
+    this.checkBox      = checkBox;
     this.labeledButton = labeledButton;
     }
 
   public static void updateSemaphores()
     {
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+    for (int i = 0; i < Mods.NUMBER_OF_MODS; i += 1)
       {
       LabeledButton modButton = Main.mainWindow.getModButton(i);
       boolean modIsActive = Main.modWindows[i].getIsActiveLabeledCheckBox().isActive();
