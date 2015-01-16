@@ -11,7 +11,7 @@ public class RainFxFactory extends ModFactory
     {
     super(rainFxWindow);
 
-    parameters = new Parameter[] {};
+    parameters       = new Parameter[] {};
     visualParameters = new Parameter[] {};
     }
   }

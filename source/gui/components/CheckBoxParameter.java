@@ -3,13 +3,14 @@ package gui.components;
 import javax.swing.*;
 
 import exec.*;
+import exec.theme.*;
 import gui.listeners.semaphores.*;
 
 
 public class CheckBoxParameter extends Parameter
   {
   public static final String NOT_SELECTED = "0";
-  public static final String SELECTED = "1";
+  public static final String SELECTED     = "1";
 
   private JCheckBox checkBox;
 
@@ -17,7 +18,10 @@ public class CheckBoxParameter extends Parameter
     {
     super(labelText);
 
+    Ui.switchToWindowsLaF();
     addComponent(new JCheckBox());
+    Ui.switchToEditedLaF();
+
     checkBox = (JCheckBox)component;
     }
 

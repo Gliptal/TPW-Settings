@@ -1,7 +1,8 @@
 package gui.components;
 
-import exec.laf.*;
 import javax.swing.*;
+
+import exec.theme.*;
 
 
 public class LabeledCheckBox extends JPanel
@@ -11,6 +12,7 @@ public class LabeledCheckBox extends JPanel
   public LabeledCheckBox(String checkBoxText)
     {
     setLayout(Layouts.LABELED_CHECKBOX());
+
     forgeCheckBox(checkBoxText);
     }
 
@@ -21,7 +23,9 @@ public class LabeledCheckBox extends JPanel
 
   private void forgeCheckBox(String checkBoxText)
     {
+    Ui.switchToWindowsLaF();
     checkBox = new JCheckBox(checkBoxText);
+    Ui.switchToEditedLaF();
 
     add(checkBox);
     }

@@ -1,7 +1,8 @@
 //
-// File created with TPW Settings. All comments are missing.
+// File modified by TPW Settings. Comments are missing, description for all parameters are available as
+// tooltips in the GUI.
 //
-// It is not advisable to manually edit this file (unless instructed so), since it may break parsing.
+// Take care if manually editing this file, since it may break parsing.
 //
 //><
 tpw_hint_active = 1;
@@ -86,7 +87,7 @@ tpw_houselights_delay = 10;
 tpw_hud_active = 1;
 tpw_hud_range[] = {25,500};
 tpw_hud_vehiclefactor = 1.5;
-tpw_hud_colour[] = {1,1,1};
+tpw_hud_colour[] = {0.90,1.00,1.00};
 tpw_hud_friendlycolour[] = {0,1,1};
 tpw_hud_civcolour[] = {1,1,1};
 tpw_hud_enemycolour[] = {1,0.5,0};
@@ -168,7 +169,7 @@ tpw_streetlights_moths = 1;
 #define tactical_rifleup 0.7
 #define tactical_jog 1.35
 #define unarmed_walkspeed 0.27
-#define rifledown_walkspeed 0.22
+#define rifledown_walkspeed 0.2
 #define rifleup_walkspeed 0.81
 #define roll_left 0.75
 #define roll_right 0.8

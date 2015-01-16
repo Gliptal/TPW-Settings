@@ -1,1 +1,4 @@
-./executable/REVERT
+compiled/*
+nbproject/*
+executable/REVERT
+build.xml

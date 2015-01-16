@@ -7,7 +7,7 @@ import java.net.*;
 import javax.swing.*;
 
 import exec.*;
-import exec.laf.*;
+import exec.theme.*;
 import fileio.*;
 import gui.components.*;
 import gui.listeners.presets.*;
@@ -53,19 +53,18 @@ public class MainWindow extends Window
   private JPanel modsPanel;
 
   private JComboBox<String> presetsComboBox;
-  private JButton presetsDeleteButton;
-  private JButton presetsSaveButton;
-  private JLabel versionLabel;
-  private LabeledButton[] modButtons;
+  private JButton           presetsDeleteButton;
+  private JButton           presetsSaveButton;
+  private JLabel            versionLabel;
+  private LabeledButton[]   modButtons;
 
   public MainWindow()
     {
-    super(Frames.MAIN_WIDTH, Frames.MAIN_HEIGHT, Text.PROGRAM_NAME);
+    super(Frames.MAIN_WIDTH, Frames.MAIN_HEIGHT, Text.PROGRAM);
 
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     forgePanels();
-
     forgePresetsComboBox();
     forgePresetsButtons();
     forgeVersionLabel();
@@ -84,21 +83,17 @@ public class MainWindow extends Window
     return presetsComboBox;
     }
 
-  public LabeledButton getModButton(int which)
+  public LabeledButton getModButton(int mod)
     {
-    return modButtons[which];
+    return modButtons[mod];
     }
 
   public void addPresetsToComboBox()
     {
-    String[] presetFiles = FileParser.parseDirectoryFor(Files.PRESET_EXTENSION);
+    String[] presetFiles = FileParser.getFilteredFiles(Files.PRESET_EXTENSION);
 
-    for (int i = 0; i < presetFiles.length; i += 1)
-      {
-      String presetWithoutExtension = presetFiles[i].replaceFirst(Files.PRESET_EXTENSION, "");
-
-      presetsComboBox.addItem(presetWithoutExtension);
-      }
+    for (String preset:presetFiles)
+      presetsComboBox.addItem(preset.replaceFirst(Files.PRESET_EXTENSION, ""));
 
     presetsComboBox.insertItemAt(Files.REVERT, ComboBoxParameter.COMBO_BOX_TOP);
     presetsComboBox.setSelectedIndex(ComboBoxParameter.COMBO_BOX_TOP);
@@ -106,8 +101,8 @@ public class MainWindow extends Window
 
   private void forgePanels()
     {
-    presetsPanel = new JPanel(Layouts.FRAME_MAIN_PRESETS());
-    modsPanel = new JPanel(Layouts.FRAME_MAIN_MODS());
+    presetsPanel = new JPanel(Layouts.PRESETS());
+    modsPanel    = new JPanel(Layouts.MODS_GRID());
 
     mainPanel.add(presetsPanel, BorderLayout.NORTH);
     mainPanel.add(modsPanel, BorderLayout.CENTER);
@@ -122,8 +117,8 @@ public class MainWindow extends Window
 
   private void forgePresetsButtons()
     {
-    presetsDeleteButton = new JButton(Text.BUTTON_PRESETS_DELETE);
-    presetsSaveButton = new JButton(Text.BUTTON_PRESETS_SAVE);
+    presetsDeleteButton = new JButton(Text.PRESETS_DELETE);
+    presetsSaveButton   = new JButton(Text.PRESETS_SAVE);
 
     presetsPanel.add(presetsDeleteButton);
     presetsPanel.add(presetsSaveButton);
@@ -131,18 +126,18 @@ public class MainWindow extends Window
 
   private void forgeVersionLabel()
     {
-    versionLabel = new JLabel(Text.PROGRAM_VERSION);
+    versionLabel = new JLabel("<html> <a href=link>["+Text.PROGRAM_VERSION+"] HELP</a> </html>");
 
     presetsPanel.add(versionLabel);
     }
 
   private void forgeModButtons()
     {
-    modButtons = new LabeledButton[CommonMod.NUMBER_OF_MODS];
+    modButtons = new LabeledButton[Mods.NUMBER_OF_MODS];
 
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+    for (int i = 0; i < Mods.NUMBER_OF_MODS; i += 1)
       {
-      modButtons[i] = new LabeledButton(CommonMod.MOD_NAMES[i]);
+      modButtons[i] = new LabeledButton(Mods.MOD_NAMES[i]);
 
       modsPanel.add(modButtons[i]);
       }
@@ -155,7 +150,7 @@ public class MainWindow extends Window
 
   private void tailorModButtons()
     {
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
+    for (int i = 0; i < Mods.NUMBER_OF_MODS; i += 1)
       modButtons[i].setToolTip(ToolTips.MODS[i]);
     }
 
@@ -170,12 +165,12 @@ public class MainWindow extends Window
 
   private void setLabelAction()
     {
-    versionLabel.addMouseListener(new OpenLink(Text.README_URL));
+    versionLabel.addMouseListener(new OpenLink(Files.README_URL));
     }
 
   private void setModButtonsAction()
     {
-    for (int i = 0; i < CommonMod.NUMBER_OF_MODS; i += 1)
-      modButtons[i].addButtonListener(new ShowWindow(Main.modWindows[i], true));
+    for (int i = 0; i < Mods.NUMBER_OF_MODS; i += 1)
+      modButtons[i].addButtonListener(new ToggleWindow(Main.modWindows[i], true));
     }
   }

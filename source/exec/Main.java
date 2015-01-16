@@ -1,29 +1,30 @@
 package exec;
 
-import javax.swing.*;
+import java.io.*;
 
-import exec.laf.*;
+import exec.theme.*;
 import fileio.*;
 import gui.*;
 import gui.components.*;
 import mods.factories.*;
-import static mods.CommonMod.*;
+import static mods.Mods.*;
 
 
 public class Main
   {
-  public static MainWindow mainWindow;
-  public static ModWindow[] modWindows;
+  public static MainWindow   mainWindow;
+  public static HintsWindow  hintsWindow;
+  public static ModWindow[]  modWindows;
   public static ModFactory[] modFactories;
 
   private Main()
     {
-    setLookAndFeel();
-    createGuiElements();
-    manageValues();
-    setLinks();
+    setupLogger();
+    Ui.setTheme();
+    createGUI();
+    loadValues();
 
-    showMainWindow();
+    mainWindow.setVisible(true);
     }
 
   public static void main(String[] args)
@@ -31,41 +32,37 @@ public class Main
     new Main();
     }
 
-  private void setLookAndFeel()
+  private void setupLogger()
     {
     try
       {
-      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+      FileOutputStream log = new FileOutputStream(Files.LOG);
+      System.setErr(new PrintStream(log));
       }
-    catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException except) {}
-
-    ToolTipManager.sharedInstance().setInitialDelay(Tooltips.TOOLTIP_DELAY);
-    ToolTipManager.sharedInstance().setDismissDelay(Tooltips.TOOLTIP_DISMISS);
+    catch (FileNotFoundException exception) {}
     }
 
-  private void createGuiElements()
+  private void createGUI()
     {
+    createHintsWindow();
     createModWindows();
     createModFactories();
-    addParametersToModWindows();
+    addParameters();
     createMainWindow();
+    setSemaphores();
     }
 
-  private void manageValues()
+  private void loadValues()
     {
     loadValuesFromConfig();
     saveRevertFile();
     loadPresets();
     }
 
-  private void setLinks()
+  private void createHintsWindow()
     {
-    setSemaphores();
-    }
-
-  private void showMainWindow()
-    {
-    mainWindow.setVisible(true);
+    hintsWindow = new HintsWindow();
+    hintsWindow.setLocationRelativeTo(null);
     }
 
   private void createModWindows()
@@ -74,11 +71,10 @@ public class Main
 
     for (int i = 0; i < NUMBER_OF_MODS; i += 1)
       {
-      modWindows[i] = new ModWindow(MOD_NAMES[i]);
       if (i == HUD_ID)
         modWindows[i] = new HudWindow(MOD_NAMES[i]);
-      if (i == SKIRMISH_ID)
-        modWindows[i].overrideParametersPanelLayout(Layouts.FRAME_SKIRMISH_PARAMETERS());
+      else
+        modWindows[i] = new ModWindow(MOD_NAMES[i]);
       if (i == ANIMATIONS_ID)
         modWindows[i].setUntogglableMod();
 
@@ -90,36 +86,51 @@ public class Main
     {
     modFactories = new ModFactory[NUMBER_OF_MODS];
 
-    modFactories[AIR_ID] = new AirFactory(modWindows[AIR_ID]);
-    modFactories[ANIMALS_ID] = new AnimalsFactory(modWindows[ANIMALS_ID]);
-    modFactories[BLEEDOUT_ID] = new BleedoutFactory(modWindows[BLEEDOUT_ID]);
-    modFactories[BOATS_ID] = new BoatsFactory(modWindows[BOATS_ID]);
-    modFactories[CARS_ID] = new CarsFactory(modWindows[CARS_ID]);
-    modFactories[CIVS_ID] = new CivsFactory(modWindows[CIVS_ID]);
-    modFactories[EBS_ID] = new EbsFactory(modWindows[EBS_ID]);
-    modFactories[FALL_ID] = new FallFactory(modWindows[FALL_ID]);
-    modFactories[FOG_ID] = new FogFactory(modWindows[FOG_ID]);
-    modFactories[HOUSELIGHTS_ID] = new HouselightsFactory(modWindows[HOUSELIGHTS_ID]);
-    modFactories[HUD_ID] = new HudFactory(modWindows[HUD_ID]);
-    modFactories[LOS_ID] = new LosFactory(modWindows[LOS_ID]);
-    modFactories[PARK_ID] = new ParkFactory(modWindows[PARK_ID]);
-    modFactories[RADIO_ID] = new RadioFactory(modWindows[RADIO_ID]);
-    modFactories[RAIN_FX_ID] = new RainFxFactory(modWindows[RAIN_FX_ID]);
-    modFactories[SKIRMISH_ID] = new SkirmishFactory(modWindows[SKIRMISH_ID]);
-    modFactories[STREETLIGHTS_ID] = new StreetlightsFactory(modWindows[STREETLIGHTS_ID]);
-    modFactories[ANIMATIONS_ID] = new AnimationsFactory(modWindows[ANIMATIONS_ID]);
+    modFactories[0]  = new AirFactory(modWindows[0]);
+    modFactories[1]  = new AnimalsFactory(modWindows[1]);
+    modFactories[2]  = new BleedoutFactory(modWindows[2]);
+    modFactories[3]  = new BoatsFactory(modWindows[3]);
+    modFactories[4]  = new CarsFactory(modWindows[4]);
+    modFactories[5]  = new CivsFactory(modWindows[5]);
+    modFactories[6]  = new EbsFactory(modWindows[6]);
+    modFactories[7]  = new FallFactory(modWindows[7]);
+    modFactories[8]  = new FogFactory(modWindows[8]);
+    modFactories[9]  = new HouselightsFactory(modWindows[9]);
+    modFactories[10] = new HudFactory(modWindows[10]);
+    modFactories[11] = new LosFactory(modWindows[11]);
+    modFactories[12] = new ParkFactory(modWindows[12]);
+    modFactories[13] = new RadioFactory(modWindows[13]);
+    modFactories[14] = new RainFxFactory(modWindows[14]);
+    modFactories[15] = new SkirmishFactory(modWindows[15]);
+    modFactories[16] = new StreetlightsFactory(modWindows[16]);
+    modFactories[17] = new AnimationsFactory(modWindows[17]);
     }
 
-  private void addParametersToModWindows()
+  private void addParameters()
     {
     for (int i = 0; i < NUMBER_OF_MODS; i += 1)
-      modFactories[i].addParametersAndTooltips(i);
+      {
+      modFactories[i].addParameters();
+      modFactories[i].addToolTips(i);
+      }
     }
 
   private void createMainWindow()
     {
     mainWindow = new MainWindow();
     mainWindow.setLocationRelativeTo(null);
+    }
+
+  private void setSemaphores()
+    {
+    for (int i = 0; i < NUMBER_OF_MODS && i != ANIMATIONS_ID; i += 1)
+      {
+      CheckBoxParameter checkBox = modWindows[i].getIsActiveLabeledCheckBox();
+      LabeledButton     button   = mainWindow.getModButton(i);
+
+      checkBox.linkToButton(button);
+      button.linkToCheckBox(checkBox);
+      }
     }
 
   private void loadValuesFromConfig()
@@ -137,15 +148,4 @@ public class Main
     mainWindow.addPresetsToComboBox();
     }
 
-  private void setSemaphores()
-    {
-    for (int i = 0; i < NUMBER_OF_MODS && i != ANIMATIONS_ID; i += 1)
-      {
-      CheckBoxParameter checkBox = modWindows[i].getIsActiveLabeledCheckBox();
-      LabeledButton button = mainWindow.getModButton(i);
-
-      checkBox.linkToButton(button);
-      button.linkToCheckBox(checkBox);
-      }
-    }
   }

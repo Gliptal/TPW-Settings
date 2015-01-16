@@ -5,7 +5,7 @@ import gui.components.*;
 import mods.*;
 
 
-abstract public class ModFactory
+public abstract class ModFactory
   {
   protected ModWindow modWindow;
 
@@ -17,38 +17,32 @@ abstract public class ModFactory
     this.modWindow = modWindow;
     }
 
-  public void addParametersAndTooltips(int mod)
+  public String getValueFromParameter(int parameter)
     {
-    addParameters();
-    addToolTips(mod);
-    }
-
-  public String getValueFromParameter(int which)
-    {
-    if (which == 0)
+    if (parameter == 0)
       return modWindow.getIsActiveLabeledCheckBox().getValue();
     else
-      return parameters[which-1].getValue();
+      return parameters[parameter-1].getValue();
     }
 
-  public void setValueToParameter(String value, int which)
+  public void setValueToParameter(String value, int parameter)
     {
-    if (which == 0)
+    if (parameter == 0)
       modWindow.getIsActiveLabeledCheckBox().setValue(value);
     else
-      parameters[which-1].setValue(value);
+      parameters[parameter-1].setValue(value);
     }
 
-  protected void addToolTips(int mod)
+  public void addToolTips(int mod)
     {
     for (int i = 0; i < parameters.length; i += 1)
       parameters[i].setToolTip(ToolTips.MOD_TOOLTIPS[mod][i]);
     }
 
-  private void addParameters()
+  public void addParameters()
     {
-    for (int i = 0; i < visualParameters.length; i += 1)
-      modWindow.addParameter(visualParameters[i]);
+    for (Parameter parameter:visualParameters)
+      modWindow.addParameter(parameter);
 
     modWindow.fillWithPlaceholders();
     }

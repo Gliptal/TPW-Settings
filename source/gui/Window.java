@@ -3,59 +3,59 @@ package gui;
 import java.awt.*;
 import javax.swing.*;
 
-import exec.laf.*;
+import exec.*;
+import exec.theme.*;
+import gui.listeners.windows.*;
 import gui.listeners.fileio.*;
 
 
-public abstract class Window extends JFrame
+public abstract class Window extends FlatFrame
   {
   protected JPanel mainPanel;
-  private JPanel commitPanel;
+  private   JPanel commitPanel;
 
-  private JButton commitNegativeButton;
-  private JButton commitPositiveButton;
+  private JButton negativeButton;
+  private JButton positiveButton;
 
   protected Window(int width, int height, String title)
     {
-    setSize(width, height);
-    setTitle(title);
+    super(width, height, title);
 
     forgePanels();
+    forgeButtons();
 
-    forgeCommitButtons();
+    tailorPanels();
 
-    setCommitButtonsActions();
-    }
-
-  protected void overrideSize(int width, int height)
-    {
-    setSize(width, height);
+    setButtonsActions();
     }
 
   private void forgePanels()
     {
-    mainPanel = new JPanel(Layouts.FRAME_COMMON());
-    commitPanel = new JPanel(Layouts.FRAME_COMMON_COMMITS());
+    mainPanel   = new JPanel(Layouts.WINDOW());
+    commitPanel = new JPanel(Layouts.COMMITS());
 
-    mainPanel.setBorder(Spacing.summonFrameBorder());
-
-    add(mainPanel);
+    add(mainPanel, BorderLayout.CENTER);
     mainPanel.add(commitPanel, BorderLayout.SOUTH);
     }
 
-  private void forgeCommitButtons()
+  private void forgeButtons()
     {
-    commitNegativeButton = new JButton(Text.BUTTON_NEGATIVE_COMMIT);
-    commitPositiveButton = new JButton(Text.BUTTON_POSITIVE_COMMIT);
+    negativeButton = new JButton(Text.COMMIT_NEGATIVE);
+    positiveButton = new JButton(Text.COMMIT_POSITIVE);
 
-    commitPanel.add(Spacing.summonPlaceholder());
-    commitPanel.add(commitNegativeButton);
-    commitPanel.add(commitPositiveButton);
+    commitPanel.add(Layouts.summonPlaceholder());
+    commitPanel.add(negativeButton);
+    commitPanel.add(positiveButton);
     }
 
-  private void setCommitButtonsActions()
+  private void tailorPanels()
     {
-    commitNegativeButton.addActionListener(new RevertValues());
-    commitPositiveButton.addActionListener(new WriteValuesToFile(Files.CONFIG));
+    mainPanel.setBorder(Layouts.summonFrameBorder());
+    }
+
+  private void setButtonsActions()
+    {
+    negativeButton.addActionListener(new RevertValues());
+    positiveButton.addActionListener(new WriteValuesToFile(Files.CONFIG));
     }
   }

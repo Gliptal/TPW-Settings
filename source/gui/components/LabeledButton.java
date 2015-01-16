@@ -4,13 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import exec.laf.*;
+import exec.theme.*;
 import gui.listeners.semaphores.*;
 
 
 public class LabeledButton extends JPanel
   {
-  private JLabel label;
+  private JLabel  label;
   private JButton button;
 
   public LabeledButton(String buttonText)
@@ -32,9 +32,9 @@ public class LabeledButton extends JPanel
   public void setSemaphoreColor(boolean modIsActive)
     {
     if (modIsActive)
-      label.setBackground(Colors.ACTIVE_MOD);
+      label.setBackground(Colors.MOD_ACTIVE);
     else
-      label.setBackground(Colors.INACTIVE_MOD);
+      label.setBackground(Colors.MOD_INACTIVE);
     }
 
   public void addButtonListener(ActionListener listener)
@@ -47,18 +47,18 @@ public class LabeledButton extends JPanel
     label.addMouseListener(new ToggleModState(checkBox));
     }
 
+  private void forgeLabel()
+    {
+    label = new JLabel(Spacings.SEMAPHORE);
+
+    add(label, BorderLayout.WEST);
+    }
+
   private void forgeButton(String buttonText)
     {
     button = new JButton(buttonText);
 
     add(button, BorderLayout.CENTER);
-    }
-
-   private void forgeLabel()
-    {
-    label = new JLabel(Spacing.BUTTON_LABEL_WIDTH);
-
-    add(label, BorderLayout.WEST);
     }
 
   private void tailorLabel()

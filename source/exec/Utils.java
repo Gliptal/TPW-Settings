@@ -1,11 +1,11 @@
 package exec;
 
 
-public class Utils
+public abstract class Utils
   {
   public static boolean stringToBoolean(String string)
     {
-    return string.equals("1") ? true : false;
+    return string.equals("1");
     }
 
   public static String booleanToString(boolean bool)
@@ -13,11 +13,14 @@ public class Utils
     return bool ? "1" : "0";
     }
 
-  public static int ordinalIndexOf(String string, String searched, int ordinal)
+  public static int indexOfNth(String string, String searched, int occurence)
     {
-    int position = 0;
+    if (occurence <= 0)
+      throw new IndexOutOfBoundsException();
 
-    for (int i = 0; i < ordinal; i += 1)
+    int position = -1;
+
+    for (int i = 0; i < occurence; i += 1)
       {
       position = string.indexOf(searched, position+1);
 
@@ -25,6 +28,6 @@ public class Utils
         return -1;
       }
 
-    return string.indexOf(searched, position);
+    return position;
     }
   }

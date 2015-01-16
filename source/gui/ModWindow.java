@@ -3,18 +3,19 @@ package gui;
 import java.awt.*;
 import javax.swing.*;
 
-import exec.laf.*;
+import exec.*;
+import exec.theme.*;
 import gui.components.*;
 import gui.listeners.windows.*;
 
 
 public class ModWindow extends Window
   {
-  private JPanel commonPanel;
+  private   JPanel commonPanel;
   protected JPanel parametersPanel;
 
   private CheckBoxParameter isActiveCheckBox;
-  private JButton backButton;
+  private JButton           backButton;
 
   public ModWindow(String title)
     {
@@ -23,7 +24,6 @@ public class ModWindow extends Window
     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
     forgePanels();
-
     forgeIsActiveCheckBox();
     forgeBackButton();
 
@@ -44,7 +44,7 @@ public class ModWindow extends Window
 
   public void fillWithPlaceholders()
     {
-    Spacing.addPlaceholdersToEmptySlots(parametersPanel);
+    Layouts.fillWithPlaceholders(parametersPanel);
     }
 
   public CheckBoxParameter getIsActiveLabeledCheckBox()
@@ -64,8 +64,8 @@ public class ModWindow extends Window
 
   private void forgePanels()
     {
-    commonPanel = new JPanel(Layouts.FRAME_MOD_GENERAL());
-    parametersPanel = new JPanel(Layouts.FRAME_MOD_PARAMETERS());
+    commonPanel     = new JPanel(Layouts.MOD_GENERAL());
+    parametersPanel = new JPanel(Layouts.PARAMETERS_GRID());
 
     mainPanel.add(commonPanel, BorderLayout.NORTH);
     mainPanel.add(parametersPanel, BorderLayout.CENTER);
@@ -73,21 +73,21 @@ public class ModWindow extends Window
 
   private void forgeIsActiveCheckBox()
     {
-    isActiveCheckBox = new CheckBoxParameter(Text.CHECKBOX_ACTIVE);
+    isActiveCheckBox = new CheckBoxParameter(Text.MOD_STATE);
 
-    commonPanel.add(isActiveCheckBox, BorderLayout.NORTH);
+    commonPanel.add(isActiveCheckBox);
     }
 
   private void forgeBackButton()
     {
-    backButton = new JButton(Text.BUTTON_BACK);
+    backButton = new JButton(Text.BACK);
 
-    commonPanel.add(Spacing.summonPlaceholder());
+    commonPanel.add(Layouts.summonPlaceholder());
     commonPanel.add(backButton);
     }
 
   private void setBackButtonAction()
     {
-    backButton.addActionListener(new ShowWindow(this, false));
+    backButton.addActionListener(new ToggleWindow(this, false));
     }
   }
