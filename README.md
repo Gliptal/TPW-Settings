@@ -21,27 +21,27 @@ Screens
 
 - Main
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/main.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Main.png)
 
 - Presets
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/presets.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Presets.png)
 
 - Civs
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/civs.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Civs.png)
 
 - Hud
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/hud.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Hud.png)
 
 - Color Chooser
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/colorchooser.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/ColorChooser.png)
 
 - Icon Chooser
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/iconchooser.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/IconChooser.png)
 
 Installation
 ======
