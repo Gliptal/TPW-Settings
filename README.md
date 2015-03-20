@@ -117,6 +117,10 @@ Troubleshooting
 Changelog
 ======
 
+[2.0.2]
+
+- git mess fix
+
 [2.0.1]
 
 - parameters matching RADIO [1.19]
@@ -339,6 +343,8 @@ Progress
 16/01/14 | [2.0.0](https://github.com/Gliptal/TPW-Settings/tree/2.0.0) | complete overhaul
 
 20/03/14 | [2.0.1](https://github.com/Gliptal/TPW-Settings/tree/2.0.1) | parameters matching RADIO [1.19]
+
+20/03/14 | [2.0.2](https://github.com/Gliptal/TPW-Settings/tree/2.0.1) | git mess fix
 
 Notes
 ======
