@@ -7,7 +7,7 @@ import mods.*;
 
 public class RadioFactory extends ModFactory
   {
-  private CheckBoxParameter  house = new CheckBoxParameter (ModParameters.RADIO[1]);
+  private TextFieldParameter house = new TextFieldParameter(ModParameters.RADIO[1]);
   private CheckBoxParameter  car   = new CheckBoxParameter (ModParameters.RADIO[2]);
   private TextFieldParameter time  = new TextFieldParameter(ModParameters.RADIO[3]);
 

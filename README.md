@@ -21,27 +21,27 @@ Screens
 
 - Main
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/main.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Main.png)
 
 - Presets
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/presets.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Presets.png)
 
 - Civs
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/civs.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Civs.png)
 
 - Hud
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/hud.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/Hud.png)
 
 - Color Chooser
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/colorchooser.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/ColorChooser.png)
 
 - Icon Chooser
 
-![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/iconchooser.png)
+![](https://raw.githubusercontent.com/Gliptal/TPW-Settings/master/screens/IconChooser.png)
 
 Installation
 ======
@@ -116,6 +116,10 @@ Troubleshooting
 
 Changelog
 ======
+
+[2.0.1]
+
+- parameters matching RADIO [1.19]
 
 [2.0.0]
 
@@ -333,6 +337,8 @@ Progress
 06/11/14 | [1.11.10](https://github.com/Gliptal/TPW-Settings/tree/1.11.10) | parameters matching BLEEDOUT [1.15]
 
 16/01/14 | [2.0.0](https://github.com/Gliptal/TPW-Settings/tree/2.0.0) | complete overhaul
+
+20/03/14 | [2.0.1](https://github.com/Gliptal/TPW-Settings/tree/2.0.1) | parameters matching RADIO [1.19]
 
 Notes
 ======

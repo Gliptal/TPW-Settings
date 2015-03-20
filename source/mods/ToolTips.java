@@ -140,7 +140,7 @@ public abstract class ToolTips
                                                 OPEN+"Parked cars within this distance from to the player are fully simulated."+CLOSE,
                                                 OPEN+"Maximum number of cars to spawn regardless of DENSITY."+CLOSE};
 
-  private static final String[] RADIO =        {OPEN+"Whether radios can be heard from houses."+CLOSE,
+  private static final String[] RADIO =        {OPEN+"Frequency of houses from which radios can be heard. (0: none | 1: all)"+CLOSE,
                                                 OPEN+"Whether radios can be heard from vehicles."+CLOSE,
                                                 OPEN+"Maximum time interval between two radio messages."+CLOSE};
 
