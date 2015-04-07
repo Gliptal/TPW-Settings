@@ -21,12 +21,13 @@ tpw_animal_maxradius = 200;
 tpw_animal_minradius = 75;
 tpw_animal_noisetime = 60;
 //><
-tpw_bleedout_active = 1;
+tpw_bleedout_active = 0;
 tpw_bleedout_inc = 5;
 tpw_bleedout_cthresh = 0.5;
 tpw_bleedout_pthresh = 0.7;
 tpw_bleedout_ithresh = 0.85;
-tpw_bleedout_heartbeat = 0;
+tpw_bleedout_heartbeat = 1;
+tpw_bleedout_selfheal = 1;
 //><
 tpw_boat_active = 1;
 tpw_boat_delay = 10;

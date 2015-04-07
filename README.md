@@ -117,6 +117,10 @@ Troubleshooting
 Changelog
 ======
 
+[2.0.4]
+
+- bug fix
+
 [2.0.3]
 
 - parameters matching BLEEDOUT [1.16]
@@ -351,6 +355,8 @@ Progress
 20/03/14 | [2.0.2](https://github.com/Gliptal/TPW-Settings/tree/2.0.2) | git mess fix
 
 07/04/14 | [2.0.3](https://github.com/Gliptal/TPW-Settings/tree/2.0.3) | parameters matching BLEEDOUT [1.16]
+
+07/04/14 | [2.0.4](https://github.com/Gliptal/TPW-Settings/tree/2.0.4) | bug fix
 
 Notes
 ======
