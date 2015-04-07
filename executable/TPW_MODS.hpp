@@ -26,7 +26,7 @@ tpw_bleedout_inc = 5;
 tpw_bleedout_cthresh = 0.5;
 tpw_bleedout_pthresh = 0.7;
 tpw_bleedout_ithresh = 0.85;
-tpw_bleedout_heartbeat = 1;
+tpw_bleedout_heartbeat = 0;
 //><
 tpw_boat_active = 1;
 tpw_boat_delay = 10;

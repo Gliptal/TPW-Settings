@@ -12,12 +12,13 @@ public class BleedoutFactory extends ModFactory
   private TextFieldParameter pThresh   = new TextFieldParameter(ModParameters.BLEEDOUT[3]);
   private TextFieldParameter iThresh   = new TextFieldParameter(ModParameters.BLEEDOUT[4]);
   private CheckBoxParameter  heartbeat = new CheckBoxParameter (ModParameters.BLEEDOUT[5]);
+  private CheckBoxParameter  selfheal  = new CheckBoxParameter (ModParameters.BLEEDOUT[5]);
 
   public BleedoutFactory(ModWindow bleedoutWindow)
     {
     super(bleedoutWindow);
 
-    parameters       = new Parameter[] {inc, cThresh, pThresh, iThresh, heartbeat};
-    visualParameters = new Parameter[] {inc, cThresh, pThresh, iThresh, heartbeat};
+    parameters       = new Parameter[] {inc, cThresh, pThresh, iThresh, heartbeat, selfheal};
+    visualParameters = new Parameter[] {inc, cThresh, pThresh, iThresh, selfheal, heartbeat};
     }
   }

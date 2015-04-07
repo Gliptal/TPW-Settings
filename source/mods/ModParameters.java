@@ -35,7 +35,8 @@ public abstract class ModParameters
                                               "CROUCH THRESHOLD",
                                               "PRONE THRESHOLD",
                                               "WOUNDED THRESHOLD",
-                                              "HEARTBEAT EFFECT"};
+                                              "HEARTBEAT EFFECT",
+                                              "SELF HEAL"};
 
   public static final String[] BOATS =       {ACTIVE_PLACEHOLDER,
                                               "INITIAL DELAY"+SEPARATOR+SECONDS,

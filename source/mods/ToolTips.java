@@ -41,7 +41,8 @@ public abstract class ToolTips
                                                 OPEN+"Units damaged beyond this value are forced into a crouch stance (1: dead)."+CLOSE,
                                                 OPEN+"Units damaged beyond this value are forced into a prone stance (1: dead)."+CLOSE,
                                                 OPEN+"Units damaged beyond this value writhe around incapacitated (1: dead)."+CLOSE,
-                                                OPEN+"The player's heartbeat is simulated with a slight screen shake."+CLOSE};
+                                                OPEN+"The player's heartbeat is simulated with a slight screen shake."+CLOSE,
+                                                OPEN+"AI units will automatically try to stop their own bleeding if equipped with First Aid Kits."+CLOSE};
 
   private static final String[] BOATS =        {OPEN+"Time delay before the module starts."+CLOSE,
                                                 OPEN+"Boats are spawned if water is detected within this distance from the player."+CLOSE,
