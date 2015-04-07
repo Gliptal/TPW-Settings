@@ -117,6 +117,10 @@ Troubleshooting
 Changelog
 ======
 
+[2.0.5]
+
+- updated executable
+
 [2.0.4]
 
 - bug fix
@@ -357,6 +361,8 @@ Progress
 07/04/14 | [2.0.3](https://github.com/Gliptal/TPW-Settings/tree/2.0.3) | parameters matching BLEEDOUT [1.16]
 
 07/04/14 | [2.0.4](https://github.com/Gliptal/TPW-Settings/tree/2.0.4) | bug fix
+
+07/04/14 | [2.0.5](https://github.com/Gliptal/TPW-Settings/tree/2.0.5) | updated executable
 
 Notes
 ======
