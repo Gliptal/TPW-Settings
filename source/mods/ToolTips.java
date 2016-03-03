@@ -128,7 +128,9 @@ public abstract class ToolTips
                                                 OPEN+"Only edit this if you know what you are doing with structured text."+CLOSE,
                                                 OPEN+"Only edit this if you know what you are doing with structured text."+CLOSE,
                                                 OPEN+"Only edit this if you know what you are doing with structured text."+CLOSE,
-                                                OPEN+"Only edit this if you know what you are doing with structured text."+CLOSE};
+                                                OPEN+"Only edit this if you know what you are doing with structured text."+CLOSE,
+                                                OPEN+"Classnames of additional goggles you want HUD to display on e.g. {\"goggles1\",\"goggles2\"}"+CLOSE,
+                                                OPEN+"Classnames of additional headgear you want HUD to display on e.g. {\"goggles1\",\"goggles2\"}"+CLOSE};
 
   private static final String[] LOS =          {OPEN+"Spawns blue balls above units that have line of sight to a visible enemy."+CLOSE,
                                                 OPEN+"Effects are not applied to units beyond this distance from the player."+CLOSE,

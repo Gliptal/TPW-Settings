@@ -45,13 +45,15 @@ public class HudFactory extends ModFactory
   private TextFieldParameter velTxt         = new TextFieldParameter(ModParameters.HUD[34]);
   private TextFieldParameter airvelTxt      = new TextFieldParameter(ModParameters.HUD[35]);
   private TextFieldParameter prxTxt         = new TextFieldParameter(ModParameters.HUD[36]);
+  private TextFieldParameter extragoggles   = new TextFieldParameter(ModParameters.HUD[37]);
+  private TextFieldParameter extraheadgear  = new TextFieldParameter(ModParameters.HUD[38]);
 
   public HudFactory(ModWindow hudWindow)
     {
     super(hudWindow);
 
-    parameters       = new Parameter[] {range, vehicleFactor, color, friendlyColour, civColour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, audible, icons, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
-    visualParameters = new Parameter[] {range, vehicleFactor, degradation, thirdPerson, audible, addTac, color, squadColour, friendlyColour, enemyColour, civColour, alpha, icons, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
+    parameters       = new Parameter[] {range, vehicleFactor, color, friendlyColour, civColour, enemyColour, squadColour, alpha, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, degradation, thirdPerson, addTac, audible, icons, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt, extragoggles, extraheadgear};
+    visualParameters = new Parameter[] {range, vehicleFactor, degradation, thirdPerson, audible, addTac, extragoggles, extraheadgear, color, squadColour, friendlyColour, enemyColour, civColour, alpha, icons, asl, azt, grd, lmt, tmp, hlt, rng, vel, prx, unit, offset, scale, textscale, aslTxt, aztTxt, grdTxt, lmtTxt, tmpTxt, hltTxt, rngTxt, velTxt, airvelTxt, prxTxt};
 
     setChoosers();
     }
@@ -68,13 +70,13 @@ public class HudFactory extends ModFactory
 
   public void addParameters()
     {
-    for (int i = 0; i < 6; i += 1)
+    for (int i = 0; i < 8; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_TAB_GENERAL);
-    for (int i = 6; i < 12; i += 1)
+    for (int i = 8; i < 14; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_TAB_COLORS);
-    for (int i = 12; i < 26; i += 1)
+    for (int i = 14; i < 28; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_TAB_GRAPHICS);
-    for (int i = 26; i < visualParameters.length; i += 1)
+    for (int i = 28; i < visualParameters.length; i += 1)
       ((HudWindow)modWindow).addParameterToSection(visualParameters[i], Text.HUD_TAB_TXT);
 
     modWindow.fillWithPlaceholders();

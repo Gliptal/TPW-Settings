@@ -130,7 +130,9 @@ public abstract class ModParameters
                                                "RNG TXT",
                                                "VEL TXT",
                                                "AIRVEL TXT",
-                                               "PRX TXT"};
+                                               "PRX TXT",
+                                               "CUSTOM GOGGLES",
+                                               "CUSTOM HEADGEAR"};
 
   public static final String[] LOS =          {ACTIVE_PLACEHOLDER,
                                                "DEBUG",

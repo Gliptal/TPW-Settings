@@ -21,18 +21,18 @@ tpw_animal_maxradius = 200;
 tpw_animal_minradius = 75;
 tpw_animal_noisetime = 60;
 //><
-tpw_bleedout_active = 0;
+tpw_bleedout_active = 1;
 tpw_bleedout_inc = 5;
 tpw_bleedout_cthresh = 0.5;
 tpw_bleedout_pthresh = 0.7;
 tpw_bleedout_ithresh = 0.85;
-tpw_bleedout_heartbeat = 0;
+tpw_bleedout_heartbeat = 1;
 tpw_bleedout_selfheal = 1;
 //><
 tpw_boat_active = 1;
 tpw_boat_delay = 10;
 tpw_boat_radius = 1000;
-tpw_boat_waypoints = 15;
+tpw_boat_waypoints = 5;
 tpw_boat_num = 3;
 //><
 tpw_car_active = 1;
@@ -54,7 +54,7 @@ tpw_civ_maxciv = 20;
 tpw_civ_interact = 15;
 tpw_civ_nocombatspawn = 1;
 //><
-tpw_ebs_active = 1;
+tpw_ebs_active = 0;
 tpw_ebs_thresh = 5;
 tpw_ebs_delay = 1;
 tpw_ebs_debug = 0;
@@ -88,40 +88,42 @@ tpw_houselights_delay = 10;
 tpw_hud_active = 1;
 tpw_hud_range[] = {25,500};
 tpw_hud_vehiclefactor = 1.5;
-tpw_hud_colour[] = {0.90,1.00,1.00};
+tpw_hud_colour[] = {1,1,1};
 tpw_hud_friendlycolour[] = {0,1,1};
 tpw_hud_civcolour[] = {1,1,1};
 tpw_hud_enemycolour[] = {1,0.5,0};
 tpw_hud_squadcolour[] = {0.5,1,0};
 tpw_hud_alpha = 0.6;
-tpw_hud_asl[] = {1,0.6,0.45,1};
-tpw_hud_azt[] = {1,0.5,0.45,1};
+tpw_hud_asl[] = {1,0.6,0.456,1};
+tpw_hud_azt[] = {1,0.5,0.452,1};
 tpw_hud_grd[] = {1,0.4,0.45,1};
 tpw_hud_lmt[] = {1,0.4,0.5,1};
-tpw_hud_tmp[] = {1,0.6,0.5,1};
+tpw_hud_tmp[] = {1,0.6,0.51,1};
 tpw_hud_hlt[] = {1,0.4,0.55,1};
-tpw_hud_rng[] = {1,0.5,0.55,1};
-tpw_hud_vel[] = {1,0.6,0.55,1};
-tpw_hud_prx[] = {1,0.5,0.5,1};
+tpw_hud_rng[] = {1,0.5,0.56,1};
+tpw_hud_vel[] = {1,0.6,0.57,1};
+tpw_hud_prx[] = {1,0.5,0.505,1};
 tpw_hud_unit[] = {1,1,0.25,0.75};
-tpw_hud_offset[] = {0.35,0.28};
-tpw_hud_scale = 0.8;
+tpw_hud_offset[] = {0.34,0.26};
+tpw_hud_scale = 0.9;
 tpw_hud_textscale = 1;
 tpw_hud_degradation = 1;
 tpw_hud_thirdperson = 0;
 tpw_hud_addtac = 1;
 tpw_hud_audible = 1;
 tpw_hud_icons[] = {24,23,30,29,24,23,30,29,22,20};
-tpw_hud_asl_txt = "%1<t size='0.5'><br />ASL</t>";
-tpw_hud_azt_txt = "%1<t size='0.5'><br />AZT %2</t>";
-tpw_hud_grd_txt = "%1<t size='0.5'><br />GRD</t>";
-tpw_hud_lmt_txt = "%1%2<t size='0.5'><br />LMT</t>";
-tpw_hud_tmp_txt = "%1<t size='0.5'><br />TMP</t>";
-tpw_hud_hlt_txt = "%1<t size='0.5'><br />HLT%2</t>";
-tpw_hud_rng_txt = "%1<t size='0.5'><br />RNG</t>";
-tpw_hud_vel_txt = "%1<t size='0.5'><br />VEL</t>";
-tpw_hud_airvel_txt = "%1<t size='0.5'><br />VEL KTS</t>";
-tpw_hud_prx_txt = "<t color='%5'>%1</t> <t color='%6'>%2</t> <t color='%7'>%3</t> <t color='%8'>%4</t><t size='0.5'><br />PRX</t>";
+tpw_hud_asl_txt = "%1<t size='0.5'><br />VEL KTS</t>";
+tpw_hud_azt_txt = "<t color='%5'>%1</t> <t color='%6'>%2</t> <t color='%7'>%3</t> <t color='%8'>%4</t><t size='0.5'><br />PRX</t>";
+tpw_hud_grd_txt = "%1<t size='0.5'><br />ASL</t>";
+tpw_hud_lmt_txt = "%1<t size='0.5'><br />AZT %2</t>";
+tpw_hud_tmp_txt = "%1<t size='0.5'><br />GRD</t>";
+tpw_hud_hlt_txt = "%1%2<t size='0.5'><br />LMT</t>";
+tpw_hud_rng_txt = "%1<t size='0.5'><br />TMP</t>";
+tpw_hud_vel_txt = "%2<t size='0.5'><br />BPM %1</t>";
+tpw_hud_airvel_txt = "%1<t size='0.5'><br />RNG</t>";
+tpw_hud_prx_txt = "%1<t size='0.5'><br />VEL</t>";
+tpw_hud_extragoggles[] = {};
+tpw_hud_extraheadgear[] = {};
 //><
 tpw_los_active = 0;
 tpw_los_debug = 0;
@@ -137,13 +139,13 @@ tpw_park_simdist = 20;
 tpw_park_max = 15;
 //><
 tpw_radio_active = 1;
-tpw_radio_house = 1;
+tpw_radio_house = 0.75;
 tpw_radio_car = 1;
 tpw_radio_time = 60;
 //><
 tpw_rain_active = 1;
 //><
-tpw_skirmish_active = 1;
+tpw_skirmish_active = 0;
 tpw_skirmish_enemysquad_max = 5;
 tpw_skirmish_enemyvehicles_max = 2;
 tpw_skirmish_friendlysquad_max = 5;
@@ -159,7 +161,7 @@ tpw_skirmish_friendlyvehiclestring = "";
 tpw_skirmish_enemyunitstring = "";
 tpw_skirmish_enemyvehiclestring = "";
 //><
-tpw_streetlights_active = 1;
+tpw_streetlights_active = 0;
 tpw_streetlights_factor = 10;
 tpw_streetlights_range = 1000;
 tpw_streetlights_colour = 0;
@@ -170,8 +172,8 @@ tpw_streetlights_moths = 1;
 #define tactical_rifleup 0.7
 #define tactical_jog 1.35
 #define unarmed_walkspeed 0.27
-#define rifledown_walkspeed 0.2
-#define rifleup_walkspeed 0.81
-#define roll_left 0.75
-#define roll_right 0.8
+#define rifledown_walkspeed 0.20
+#define rifleup_walkspeed 0.80
+#define roll_left 0.6
+#define roll_right 0.7
 //><

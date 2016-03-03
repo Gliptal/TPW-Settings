@@ -126,7 +126,9 @@ public abstract class FileTemplate
                                                   "tpw_hud_rng_txt = ",
                                                   "tpw_hud_vel_txt = ",
                                                   "tpw_hud_airvel_txt = ",
-                                                  "tpw_hud_prx_txt = "};
+                                                  "tpw_hud_prx_txt = ",
+                                                  "tpw_hud_extragoggles[] = ",
+                                                  "tpw_hud_extraheadgear[] = "};
 
   protected static final String[] LOS =          {"tpw_los_active = ",
                                                   "tpw_los_debug = ",
