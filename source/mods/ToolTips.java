@@ -22,6 +22,7 @@ public abstract class ToolTips
                                                 "Ambient radio chatter and music.",
                                                 "Rain droplet effects.",
                                                 "Ambient skirmishes generation.",
+                                                "Sonic ambience program.",
                                                 "Working streetlights.",
                                                 "Speed of some charachter animations."};
 
@@ -147,7 +148,7 @@ public abstract class ToolTips
                                                 OPEN+"Whether radios can be heard from vehicles."+CLOSE,
                                                 OPEN+"Maximum time interval between two radio messages."+CLOSE};
 
-  private static final String[] RAIN_FX = {};
+  private static final String[] RAIN_FX =      {};
 
   private static final String[] SKIRMISH =     {OPEN+"Maximum number of enemy squads spawned around the player."+CLOSE,
                                                 OPEN+"Maximum number of enemy vehicles spawned around the player."+CLOSE,
@@ -163,6 +164,9 @@ public abstract class ToolTips
                                                 OPEN+"Custom string to set friendly vehicles: only valid when CUSTOM is selected in the FRIENDLY FACTION dropdown."+CLOSE,
                                                 OPEN+"Custom string to set enemy units: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE,
                                                 OPEN+"Custom string to set enemy vehicles: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE};
+
+  private static final String[] SOAP =         {OPEN+"Whether to include custom sounds by the user or not. Must be placed in @TPW_MODS\\music."+CLOSE,
+                                                OPEN+"Volume of the ambient sounds. (between 0 and 2)"+CLOSE};
 
   private static final String[] STREETLIGHTS = {OPEN+"Brightness factor for the streetlights: a value ranging from 3 to 15 is ideal for most maps."+CLOSE,
                                                 OPEN+"Only streetlights within this distance from the player will be lit."+CLOSE,
@@ -194,6 +198,7 @@ public abstract class ToolTips
                                                  RADIO,
                                                  RAIN_FX,
                                                  SKIRMISH,
+                                                 SOAP,
                                                  STREETLIGHTS,
                                                  ANIMATIONS};
   }

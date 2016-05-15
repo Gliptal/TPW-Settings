@@ -117,6 +117,10 @@ Troubleshooting
 Changelog
 ======
 
+[2.1.0]
+
+- added SOAP [1.00]
+
 [2.0.6]
 
 - parameters matching HUD [1.54]
@@ -369,6 +373,8 @@ Progress
 07/04/15 | [2.0.5](https://github.com/Gliptal/TPW-Settings/tree/2.0.5) | updated executable
 
 03/03/16 | [2.0.6](https://github.com/Gliptal/TPW-Settings/tree/2.0.6) | parameters matching BLEEDOUT [1.54]
+
+15/05/16 | [2.1.0](https://github.com/Gliptal/TPW-Settings/tree/2.1.0) | added SOAP [1.00]
 
 Notes
 ======

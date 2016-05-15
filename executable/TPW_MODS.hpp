@@ -112,8 +112,8 @@ tpw_hud_thirdperson = 0;
 tpw_hud_addtac = 1;
 tpw_hud_audible = 1;
 tpw_hud_icons[] = {24,23,30,29,24,23,30,29,22,20};
-tpw_hud_asl_txt = "%1<t size='0.5'><br />VEL KTS</t>";
-tpw_hud_azt_txt = "<t color='%5'>%1</t> <t color='%6'>%2</t> <t color='%7'>%3</t> <t color='%8'>%4</t><t size='0.5'><br />PRX</t>";
+tpw_hud_asl_txt = {};
+tpw_hud_azt_txt = {};
 tpw_hud_grd_txt = "%1<t size='0.5'><br />ASL</t>";
 tpw_hud_lmt_txt = "%1<t size='0.5'><br />AZT %2</t>";
 tpw_hud_tmp_txt = "%1<t size='0.5'><br />GRD</t>";
@@ -122,8 +122,8 @@ tpw_hud_rng_txt = "%1<t size='0.5'><br />TMP</t>";
 tpw_hud_vel_txt = "%2<t size='0.5'><br />BPM %1</t>";
 tpw_hud_airvel_txt = "%1<t size='0.5'><br />RNG</t>";
 tpw_hud_prx_txt = "%1<t size='0.5'><br />VEL</t>";
-tpw_hud_extragoggles[] = {};
-tpw_hud_extraheadgear[] = {};
+tpw_hud_extragoggles[] = "%1<t size='0.5'><br />VEL KTS</t>";
+tpw_hud_extraheadgear[] = "<t color='%5'>%1</t> <t color='%6'>%2</t> <t color='%7'>%3</t> <t color='%8'>%4</t><t size='0.5'><br />PRX</t>";
 //><
 tpw_los_active = 0;
 tpw_los_debug = 0;
@@ -160,6 +160,10 @@ tpw_skirmish_friendlyunitstring = "";
 tpw_skirmish_friendlyvehiclestring = "";
 tpw_skirmish_enemyunitstring = "";
 tpw_skirmish_enemyvehiclestring = "";
+//><
+tpw_soap_active = 1;
+tpw_soap_volume = 1;
+tpw_soap_usersounds = 0;
 //><
 tpw_streetlights_active = 0;
 tpw_streetlights_factor = 10;

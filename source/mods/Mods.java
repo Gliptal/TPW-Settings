@@ -19,6 +19,7 @@ public abstract class Mods
                                             "RADIO",
                                             "RAIN_FX",
                                             "SKIRMISH",
+                                            "SOAP",
                                             "STREETLIGHTS",
                                             "ANIMATIONS"};
   public static final int NUMBER_OF_MODS = MOD_NAMES.length;

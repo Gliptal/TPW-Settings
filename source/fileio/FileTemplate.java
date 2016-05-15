@@ -166,6 +166,10 @@ public abstract class FileTemplate
                                                   "tpw_skirmish_enemyunitstring = ",
                                                   "tpw_skirmish_enemyvehiclestring = "};
 
+  protected static final String[] SOAP =         {"tpw_soap_active = ",
+                                                  "tpw_soap_volume = ",
+                                                  "tpw_soap_usersounds = "};
+
   protected static final String[] STREETLIGHTS = {"tpw_streetlights_active = ",
                                                   "tpw_streetlights_factor = ",
                                                   "tpw_streetlights_range = ",
@@ -198,6 +202,7 @@ public abstract class FileTemplate
                                                      RADIO,
                                                      RAIN_FX,
                                                      SKIRMISH,
+                                                     SOAP,
                                                      STREETLIGHTS,
                                                      ANIMATIONS};
   }

@@ -170,6 +170,10 @@ public abstract class ModParameters
                                                "ENEMY UNIT STRING",
                                                "ENEMY VEHICLE STRING"};
 
+  public static final String[] SOAP =         {ACTIVE_PLACEHOLDER,
+                                               "VOLUME",
+                                               "USER SOUNDS"};
+
   public static final String[] STREETLIGHTS = {ACTIVE_PLACEHOLDER,
                                                "BRIGHTNESS",
                                                "RANGE"+SEPARATOR+METERS,

@@ -102,8 +102,9 @@ public class Main
     modFactories[13] = new RadioFactory(modWindows[13]);
     modFactories[14] = new RainFxFactory(modWindows[14]);
     modFactories[15] = new SkirmishFactory(modWindows[15]);
-    modFactories[16] = new StreetlightsFactory(modWindows[16]);
-    modFactories[17] = new AnimationsFactory(modWindows[17]);
+    modFactories[16] = new SoapFactory(modWindows[16]);
+    modFactories[17] = new StreetlightsFactory(modWindows[17]);
+    modFactories[18] = new AnimationsFactory(modWindows[18]);
     }
 
   private void addParameters()
