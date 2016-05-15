@@ -168,6 +168,7 @@ public abstract class FileTemplate
 
   protected static final String[] SOAP =         {"tpw_soap_active = ",
                                                   "tpw_soap_volume = ",
+                                                  "tpw_soap_usermusic = ",
                                                   "tpw_soap_usersounds = "};
 
   protected static final String[] STREETLIGHTS = {"tpw_streetlights_active = ",

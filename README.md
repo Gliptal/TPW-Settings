@@ -117,6 +117,10 @@ Troubleshooting
 Changelog
 ======
 
+[2.1.1]
+
+- parameters matching SOAP [1.01]
+
 [2.1.0]
 
 - added SOAP [1.00]
@@ -375,6 +379,8 @@ Progress
 03/03/16 | [2.0.6](https://github.com/Gliptal/TPW-Settings/tree/2.0.6) | parameters matching BLEEDOUT [1.54]
 
 15/05/16 | [2.1.0](https://github.com/Gliptal/TPW-Settings/tree/2.1.0) | added SOAP [1.00]
+
+15/05/16 | [2.1.1](https://github.com/Gliptal/TPW-Settings/tree/2.1.1) | parameters matching SOAP [1.01]
 
 Notes
 ======

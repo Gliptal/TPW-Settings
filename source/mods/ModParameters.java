@@ -172,6 +172,7 @@ public abstract class ModParameters
 
   public static final String[] SOAP =         {ACTIVE_PLACEHOLDER,
                                                "VOLUME",
+                                               "USER MUSIC",
                                                "USER SOUNDS"};
 
   public static final String[] STREETLIGHTS = {ACTIVE_PLACEHOLDER,

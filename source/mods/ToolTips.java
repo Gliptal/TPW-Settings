@@ -165,7 +165,8 @@ public abstract class ToolTips
                                                 OPEN+"Custom string to set enemy units: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE,
                                                 OPEN+"Custom string to set enemy vehicles: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE};
 
-  private static final String[] SOAP =         {OPEN+"Whether to include custom sounds by the user or not. Must be placed in @TPW_MODS\\music."+CLOSE,
+  private static final String[] SOAP =         {OPEN+"Number of user supplied music files in: must be placed in @TPW_MODS\\music. (0: no user music)"+CLOSE,
+                                                OPEN+"Number of user supplied sound files in: must be placed in @TPW_MODS\\sounds. (0: no user sounds)"+CLOSE,
                                                 OPEN+"Volume of the ambient sounds. (between 0 and 2)"+CLOSE};
 
   private static final String[] STREETLIGHTS = {OPEN+"Brightness factor for the streetlights: a value ranging from 3 to 15 is ideal for most maps."+CLOSE,
