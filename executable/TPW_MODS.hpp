@@ -165,6 +165,7 @@ tpw_soap_active = 1;
 tpw_soap_volume = 1;
 tpw_soap_usermusic = 0;
 tpw_soap_usersounds = 0;
+tpw_soap_region = 0;
 //><
 tpw_streetlights_active = 0;
 tpw_streetlights_factor = 10;

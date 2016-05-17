@@ -173,7 +173,8 @@ public abstract class ModParameters
   public static final String[] SOAP =         {ACTIVE_PLACEHOLDER,
                                                "VOLUME",
                                                "USER MUSIC",
-                                               "USER SOUNDS"};
+                                               "USER SOUNDS",
+                                               "REGION"};
 
   public static final String[] STREETLIGHTS = {ACTIVE_PLACEHOLDER,
                                                "BRIGHTNESS",
@@ -216,6 +217,10 @@ public abstract class ModParameters
                                                      "CMP URBAN",
                                                      "ISIS",
                                                      "ISIS 2035"};
+
+  public static final String[] SOAP_REGION =        {"AUTODETECT",
+                                                     "GREEK",
+                                                     "MIDEAST"};
 
   public static final String[] STREETLIGHTS_COLOR = {"WHITE INCANDESCENT",
                                                      "YELLOW SODIUM",
