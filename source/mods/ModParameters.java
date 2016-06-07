@@ -148,8 +148,6 @@ public abstract class ModParameters
                                                "MAXIMUM PARKED CARS"+SEPARATOR+VEHICLES};
 
   public static final String[] RADIO =        {ACTIVE_PLACEHOLDER,
-                                               "HOUSES",
-                                               "CARS",
                                                "INTERVAL"+SEPARATOR+SECONDS};
 
   public static final String[] RAIN_FX =      {ACTIVE_PLACEHOLDER};
@@ -171,7 +169,11 @@ public abstract class ModParameters
                                                "ENEMY VEHICLE STRING"};
 
   public static final String[] SOAP =         {ACTIVE_PLACEHOLDER,
-                                               "VOLUME",
+                                               "AMBIENT VOLUME",
+                                               "MUSIC VOLUME",
+                                               "AZAN VOLUME",
+                                               "HOUSES VOLUME",
+                                               "SCREAMS VOLUME",
                                                "USER MUSIC",
                                                "USER SOUNDS",
                                                "REGION"};
@@ -217,6 +219,10 @@ public abstract class ModParameters
                                                      "CMP URBAN",
                                                      "ISIS",
                                                      "ISIS 2035"};
+
+  public static final String[] SOAP_VOLUME =        {"OFF",
+                                                     "LOW",
+                                                     "HIGH"};
 
   public static final String[] SOAP_REGION =        {"AUTODETECT",
                                                      "GREEK",

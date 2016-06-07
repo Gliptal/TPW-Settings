@@ -139,8 +139,6 @@ tpw_park_simdist = 20;
 tpw_park_max = 15;
 //><
 tpw_radio_active = 1;
-tpw_radio_house = 0.75;
-tpw_radio_car = 1;
 tpw_radio_time = 60;
 //><
 tpw_rain_active = 1;
@@ -162,7 +160,11 @@ tpw_skirmish_enemyunitstring = "";
 tpw_skirmish_enemyvehiclestring = "";
 //><
 tpw_soap_active = 1;
-tpw_soap_volume = 1;
+tpw_soap_ambientvolume = 1;
+tpw_soap_musicvolume = 1;
+tpw_soap_azanvolume = 1;
+tpw_soap_housefxvolume = 1;
+tpw_soap_screamvolume = 1;
 tpw_soap_usermusic = 0;
 tpw_soap_usersounds = 0;
 tpw_soap_region = 0;

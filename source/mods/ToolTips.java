@@ -144,9 +144,7 @@ public abstract class ToolTips
                                                 OPEN+"Parked cars within this distance from to the player are fully simulated."+CLOSE,
                                                 OPEN+"Maximum number of cars to spawn regardless of DENSITY."+CLOSE};
 
-  private static final String[] RADIO =        {OPEN+"Frequency of houses from which radios can be heard. (0: none | 1: all)"+CLOSE,
-                                                OPEN+"Whether radios can be heard from vehicles."+CLOSE,
-                                                OPEN+"Maximum time interval between two radio messages."+CLOSE};
+  private static final String[] RADIO =        {OPEN+"Maximum time interval between two radio messages."+CLOSE};
 
   private static final String[] RAIN_FX =      {};
 
@@ -165,10 +163,14 @@ public abstract class ToolTips
                                                 OPEN+"Custom string to set enemy units: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE,
                                                 OPEN+"Custom string to set enemy vehicles: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE};
 
-  private static final String[] SOAP =         {OPEN+"Number of user supplied music files in: must be placed in @TPW_MODS\\music. (0: no user music)"+CLOSE,
+  private static final String[] SOAP =         {OPEN+"Ambient sounds volume. (between 0 and 2)"+CLOSE,
+                                                OPEN+"Music volume. (between 0 and 2)"+CLOSE,
+                                                OPEN+"Azan volume. (between 0 and 2)"+CLOSE,
+                                                OPEN+"Houses FX volume. (between 0 and 2)"+CLOSE,
+                                                OPEN+"Screams volume. (between 0 and 2)"+CLOSE,
+                                                OPEN+"Number of user supplied music files in: must be placed in @TPW_MODS\\music. (0: no user music)"+CLOSE,
                                                 OPEN+"Number of user supplied sound files in: must be placed in @TPW_MODS\\sounds. (0: no user sounds)"+CLOSE,
-                                                OPEN+"Volume of the ambient sounds. (between 0 and 2)"+CLOSE,
-                                                OPEN+"Geographical region of the sound assets."+CLOSE};
+                                                OPEN+"Geographical region of the sound assets."+CLOSE,};
 
   private static final String[] STREETLIGHTS = {OPEN+"Brightness factor for the streetlights: a value ranging from 3 to 15 is ideal for most maps."+CLOSE,
                                                 OPEN+"Only streetlights within this distance from the player will be lit."+CLOSE,

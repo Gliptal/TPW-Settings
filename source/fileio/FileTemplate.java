@@ -144,8 +144,6 @@ public abstract class FileTemplate
                                                   "tpw_park_max = "};
 
   protected static final String[] RADIO =        {"tpw_radio_active = ",
-                                                  "tpw_radio_house = ",
-                                                  "tpw_radio_car = ",
                                                   "tpw_radio_time = "};
 
   protected static final String[] RAIN_FX =      {"tpw_rain_active = "};
@@ -167,7 +165,11 @@ public abstract class FileTemplate
                                                   "tpw_skirmish_enemyvehiclestring = "};
 
   protected static final String[] SOAP =         {"tpw_soap_active = ",
-                                                  "tpw_soap_volume = ",
+                                                  "tpw_soap_ambientvolume = ",
+                                                  "tpw_soap_musicvolume = ",
+                                                  "tpw_soap_azanvolume = ",
+                                                  "tpw_soap_housefxvolume = ",
+                                                  "tpw_soap_screamvolume = ",
                                                   "tpw_soap_usermusic = ",
                                                   "tpw_soap_usersounds = ",
                                                   "tpw_soap_region = "};
