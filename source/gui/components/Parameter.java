@@ -1,5 +1,6 @@
 package gui.components;
 
+import java.awt.*;
 import javax.swing.*;
 
 import exec.theme.*;
@@ -27,6 +28,11 @@ public abstract class Parameter extends JPanel
     {
     setToolTipText(toolTipText);
     component.setToolTipText(toolTipText);
+    }
+
+  public void setClickable()
+    {
+    component.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
   protected void addComponent(JComponent component)

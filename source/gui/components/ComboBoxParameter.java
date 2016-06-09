@@ -1,5 +1,6 @@
 package gui.components;
 
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -17,6 +18,8 @@ public class ComboBoxParameter extends Parameter
     addComponent(new JComboBox<String>(choices));
 
     comboBox = (JComboBox)component;
+
+    tailorComboBox();
     }
 
   public String getValue()
@@ -41,5 +44,10 @@ public class ComboBoxParameter extends Parameter
   public void addActionListener(ActionListener actionListener)
     {
     comboBox.addActionListener(actionListener);
+    }
+
+  private void tailorComboBox()
+    {
+    comboBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
   }

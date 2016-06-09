@@ -5,7 +5,7 @@ import javax.swing.*;
 
 import exec.*;
 import exec.theme.*;
-import gui.listeners.windows.*;
+import gui.components.*;
 import gui.listeners.fileio.*;
 
 
@@ -14,8 +14,8 @@ public abstract class Window extends FlatFrame
   protected JPanel mainPanel;
   private   JPanel commitPanel;
 
-  private JButton negativeButton;
-  private JButton positiveButton;
+  private CursoredButton negativeButton;
+  private CursoredButton positiveButton;
 
   protected Window(int width, int height, String title)
     {
@@ -40,8 +40,8 @@ public abstract class Window extends FlatFrame
 
   private void forgeButtons()
     {
-    negativeButton = new JButton(Text.COMMIT_NEGATIVE);
-    positiveButton = new JButton(Text.COMMIT_POSITIVE);
+    negativeButton = new CursoredButton(Text.COMMIT_NEGATIVE);
+    positiveButton = new CursoredButton(Text.COMMIT_POSITIVE);
 
     commitPanel.add(Layouts.summonPlaceholder());
     commitPanel.add(negativeButton);

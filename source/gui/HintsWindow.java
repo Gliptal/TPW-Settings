@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import exec.*;
 import exec.theme.*;
+import gui.components.*;
 
 
 public class HintsWindow extends FlatFrame
@@ -14,7 +15,7 @@ public class HintsWindow extends FlatFrame
   private JPanel mainPanel;
   private JLabel hintLabel;
 
-  private JButton nextButton;
+  private CursoredButton nextButton;
 
   private int currentHint;
 
@@ -50,7 +51,7 @@ public class HintsWindow extends FlatFrame
 
   private void forgeButtons()
     {
-    nextButton = new JButton(Text.HINT_NEXT);
+    nextButton = new CursoredButton(Text.HINT_NEXT);
 
     mainPanel.add(nextButton, BorderLayout.SOUTH);
     }

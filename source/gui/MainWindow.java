@@ -53,8 +53,8 @@ public class MainWindow extends Window
   private JPanel modsPanel;
 
   private JComboBox<String> presetsComboBox;
-  private JButton           presetsDeleteButton;
-  private JButton           presetsSaveButton;
+  private CursoredButton    presetsDeleteButton;
+  private CursoredButton    presetsSaveButton;
   private JLabel            versionLabel;
   private LabeledButton[]   modButtons;
 
@@ -70,6 +70,7 @@ public class MainWindow extends Window
     forgeVersionLabel();
     forgeModButtons();
 
+    tailorPresetsComboBox();
     tailorVersionLabel();
     tailorModButtons();
 
@@ -117,8 +118,8 @@ public class MainWindow extends Window
 
   private void forgePresetsButtons()
     {
-    presetsDeleteButton = new JButton(Text.PRESETS_DELETE);
-    presetsSaveButton   = new JButton(Text.PRESETS_SAVE);
+    presetsDeleteButton = new CursoredButton(Text.PRESETS_DELETE);
+    presetsSaveButton   = new CursoredButton(Text.PRESETS_SAVE);
 
     presetsPanel.add(presetsDeleteButton);
     presetsPanel.add(presetsSaveButton);
@@ -143,9 +144,15 @@ public class MainWindow extends Window
       }
     }
 
+  private void tailorPresetsComboBox()
+    {
+    presetsComboBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }
+
   private void tailorVersionLabel()
     {
     versionLabel.setHorizontalAlignment(JLabel.RIGHT);
+    versionLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
   private void tailorModButtons()

@@ -1,5 +1,6 @@
 package gui.components;
 
+import java.awt.*;
 import javax.swing.*;
 
 import exec.*;
@@ -23,6 +24,8 @@ public class CheckBoxParameter extends Parameter
     Ui.switchToEditedLaF();
 
     checkBox = (JCheckBox)component;
+
+    tailorCheckBox();
     }
 
   public String getValue()
@@ -52,5 +55,10 @@ public class CheckBoxParameter extends Parameter
   public void disableCheckBox()
     {
     checkBox.setEnabled(false);
+    }
+
+  private void tailorCheckBox()
+    {
+    checkBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
   }

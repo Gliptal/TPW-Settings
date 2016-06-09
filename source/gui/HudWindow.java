@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import exec.*;
 import exec.theme.*;
+import gui.components.*;
 
 
 public class HudWindow extends ModWindow
@@ -37,10 +38,10 @@ public class HudWindow extends ModWindow
   private JPanel graphicsPanel;
   private JPanel txtPanel;
 
-  private JButton generalButton;
-  private JButton colorButton;
-  private JButton graphicsButton;
-  private JButton txtButton;
+  private CursoredButton generalButton;
+  private CursoredButton colorButton;
+  private CursoredButton graphicsButton;
+  private CursoredButton txtButton;
 
   public HudWindow(String title)
     {
@@ -95,10 +96,10 @@ public class HudWindow extends ModWindow
 
   private void forgeButtons()
     {
-    generalButton  = new JButton(Text.HUD_TAB_GENERAL);
-    colorButton    = new JButton(Text.HUD_TAB_COLORS);
-    graphicsButton = new JButton(Text.HUD_TAB_GRAPHICS);
-    txtButton      = new JButton(Text.HUD_TAB_TXT);
+    generalButton  = new CursoredButton(Text.HUD_TAB_GENERAL);
+    colorButton    = new CursoredButton(Text.HUD_TAB_COLORS);
+    graphicsButton = new CursoredButton(Text.HUD_TAB_GRAPHICS);
+    txtButton      = new CursoredButton(Text.HUD_TAB_TXT);
 
     sectionsPanel.add(generalButton);
     sectionsPanel.add(colorButton);

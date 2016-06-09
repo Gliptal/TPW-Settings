@@ -1,4 +1,5 @@
 compiled/*
 nbproject/*
 executable/REVERT
+executable/error.log
 build.xml

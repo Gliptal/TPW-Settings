@@ -61,11 +61,17 @@ public class HudFactory extends ModFactory
   private void setChoosers()
     {
     color.addMouseListener(new OpenColorChooser(color));
+    color.setClickable();
     friendlyColour.addMouseListener(new OpenColorChooser(friendlyColour));
+    friendlyColour.setClickable();
     civColour.addMouseListener(new OpenColorChooser(civColour));
+    civColour.setClickable();
     enemyColour.addMouseListener(new OpenColorChooser(enemyColour));
+    enemyColour.setClickable();
     squadColour.addMouseListener(new OpenColorChooser(squadColour));
+    squadColour.setClickable();
     icons.addMouseListener(new OpenIconChooser(icons));
+    icons.setClickable();
     }
 
   public void addParameters()

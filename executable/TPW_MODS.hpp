@@ -138,6 +138,15 @@ tpw_park_hidedist = 150;
 tpw_park_simdist = 20;
 tpw_park_max = 15;
 //><
+tpw_puddle_active = 1;
+tpw_puddle_max = 8;
+tpw_puddle_radius = 50;
+tpw_puddle_minradius =  10;
+tpw_puddle_gradient = 0.1;
+tpw_puddle_time = 600;
+tpw_puddle_rainthresh =  0.2;
+tpw_puddle_ripple = 0;
+//><
 tpw_radio_active = 1;
 tpw_radio_time = 60;
 //><

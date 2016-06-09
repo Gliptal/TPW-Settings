@@ -99,12 +99,13 @@ public class Main
     modFactories[10] = new HudFactory(modWindows[10]);
     modFactories[11] = new LosFactory(modWindows[11]);
     modFactories[12] = new ParkFactory(modWindows[12]);
-    modFactories[13] = new RadioFactory(modWindows[13]);
-    modFactories[14] = new RainFxFactory(modWindows[14]);
-    modFactories[15] = new SkirmishFactory(modWindows[15]);
-    modFactories[16] = new SoapFactory(modWindows[16]);
-    modFactories[17] = new StreetlightsFactory(modWindows[17]);
-    modFactories[18] = new AnimationsFactory(modWindows[18]);
+    modFactories[13] = new PuddleFactory(modWindows[13]);
+    modFactories[14] = new RadioFactory(modWindows[14]);
+    modFactories[15] = new RainFxFactory(modWindows[15]);
+    modFactories[16] = new SkirmishFactory(modWindows[16]);
+    modFactories[17] = new SoapFactory(modWindows[17]);
+    modFactories[18] = new StreetlightsFactory(modWindows[18]);
+    modFactories[19] = new AnimationsFactory(modWindows[19]);
     }
 
   private void addParameters()

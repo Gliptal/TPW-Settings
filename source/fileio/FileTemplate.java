@@ -143,6 +143,15 @@ public abstract class FileTemplate
                                                   "tpw_park_simdist = ",
                                                   "tpw_park_max = "};
 
+  protected static final String[] PUDDLE =       {"tpw_puddle_active = ",
+                                                  "tpw_puddle_max = ",
+                                                  "tpw_puddle_radius = ",
+                                                  "tpw_puddle_minradius = ",
+                                                  "tpw_puddle_gradient = ",
+                                                  "tpw_puddle_time = ",
+                                                  "tpw_puddle_rainthresh = ",
+                                                  "tpw_puddle_ripple = "};
+
   protected static final String[] RADIO =        {"tpw_radio_active = ",
                                                   "tpw_radio_time = "};
 
@@ -203,6 +212,7 @@ public abstract class FileTemplate
                                                      HUD,
                                                      LOS,
                                                      PARK,
+                                                     PUDDLE,
                                                      RADIO,
                                                      RAIN_FX,
                                                      SKIRMISH,

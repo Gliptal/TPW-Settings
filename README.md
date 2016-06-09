@@ -15,7 +15,7 @@ The utility acts as a graphical version of the package's `TPW_MODS.hpp` configur
 - [Notes](https://github.com/Gliptal/TPW-Settings#notes)
 - [Links](https://github.com/Gliptal/TPW-Settings#notes)
 - [Credits](https://github.com/Gliptal/TPW-Settings#credits)
-- [Licence](https://github.com/Gliptal/TPW-Settings#license)
+- [License](https://github.com/Gliptal/TPW-Settings#license)
 
 SCREENSHOTS
 ======
@@ -116,6 +116,11 @@ A: Post in the [TPW MODS](http://forums.bistudio.com/showthread.php?164304-TPW-M
 
 CHANGELOG
 ======
+
+[2.2.0]
+
+- added PUDDLE [1.00]
+- pointer cursor on all clickable elements
 
 [2.1.4]
 
@@ -399,6 +404,8 @@ PROGRESS
 17/05/16 | [2.1.3](https://github.com/Gliptal/TPW-Settings/tree/2.1.3) | parameters matching SOAP [1.02]
 
 07/06/16 | [2.1.4](https://github.com/Gliptal/TPW-Settings/tree/2.1.4) | parameters matching RADIO [1.24] SOAP [1.05]
+
+09/06/16 | [2.2.0](https://github.com/Gliptal/TPW-Settings/tree/2.2.0) | added PUDDLE [1.00], added pointer cursor
 
 NOTES
 ======

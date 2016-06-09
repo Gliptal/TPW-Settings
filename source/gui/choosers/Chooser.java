@@ -16,7 +16,7 @@ public abstract class Chooser extends FlatFrame
   protected JPanel mainPanel;
 
   protected JTextField resultField;
-  protected JButton    commitButton;
+  protected CursoredButton commitButton;
 
   protected TextFieldParameter destinationField;
 
@@ -53,7 +53,7 @@ public abstract class Chooser extends FlatFrame
 
   private void forgeCommitButton()
     {
-    commitButton = new JButton(Text.COMMIT_POSITIVE);
+    commitButton = new CursoredButton(Text.COMMIT_POSITIVE);
 
     mainPanel.add(commitButton, BorderLayout.SOUTH);
     }

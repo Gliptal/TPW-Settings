@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import exec.*;
 import exec.theme.*;
+import gui.components.*;
 import gui.listeners.windows.*;
 
 
@@ -19,9 +20,9 @@ public abstract class FlatFrame extends JFrame
   private JPanel iconPanel;
   private JPanel buttonsPanel;
 
-  private JButton hintsButton;
-  private JButton iconifyButton;
-  private JButton exitButton;
+  private CursoredButton hintsButton;
+  private CursoredButton iconifyButton;
+  private CursoredButton exitButton;
 
   protected FlatFrame(int width, int height, String title)
     {
@@ -99,9 +100,9 @@ public abstract class FlatFrame extends JFrame
 
   private void forgeButtons()
     {
-    hintsButton   = new JButton();
-    iconifyButton = new JButton();
-    exitButton    = new JButton();
+    hintsButton   = new CursoredButton();
+    iconifyButton = new CursoredButton();
+    exitButton    = new CursoredButton();
 
     buttonsPanel.add(hintsButton);
     buttonsPanel.add(iconifyButton);

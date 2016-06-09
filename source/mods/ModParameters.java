@@ -147,6 +147,15 @@ public abstract class ModParameters
                                                "SIMULATION DISTANCE"+SEPARATOR+METERS,
                                                "MAXIMUM PARKED CARS"+SEPARATOR+VEHICLES};
 
+  public static final String[] PUDDLE =       {ACTIVE_PLACEHOLDER,
+                                               "MAXIMUM AMOUNT",
+                                               "MAXIMUM SPAWN RADIUS"+SEPARATOR+METERS,
+                                               "MINIMUM SPAWN RADIUS"+SEPARATOR+METERS,
+                                               "MAXIMUM SLOPE",
+                                               "AFTER RAIN TIME"+SEPARATOR+SECONDS,
+                                               "RAIN THRESHOLD",
+                                               "RIPPLE EFFECT"};
+
   public static final String[] RADIO =        {ACTIVE_PLACEHOLDER,
                                                "INTERVAL"+SEPARATOR+SECONDS};
 

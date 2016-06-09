@@ -16,6 +16,7 @@ public abstract class Mods
                                             "HUD",
                                             "LOS",
                                             "PARK",
+                                            "PUDDLE",
                                             "RADIO",
                                             "RAIN_FX",
                                             "SKIRMISH",
@@ -25,7 +26,7 @@ public abstract class Mods
   public static final int NUMBER_OF_MODS = MOD_NAMES.length;
 
   public static final int HUD_ID        = 10;
-  public static final int ANIMATIONS_ID = 18;
+  public static final int ANIMATIONS_ID = 19;
 
   public static final int ICON_TYPES      = 10;
   public static final int ICON_VARIATIONS = 34;

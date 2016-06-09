@@ -11,11 +11,11 @@ import gui.listeners.windows.*;
 
 public class ModWindow extends Window
   {
-  private   JPanel commonPanel;
+  private JPanel commonPanel;
   protected JPanel parametersPanel;
 
   private CheckBoxParameter isActiveCheckBox;
-  private JButton           backButton;
+  private CursoredButton backButton;
 
   public ModWindow(String title)
     {
@@ -80,7 +80,7 @@ public class ModWindow extends Window
 
   private void forgeBackButton()
     {
-    backButton = new JButton(Text.BACK);
+    backButton = new CursoredButton(Text.BACK);
 
     commonPanel.add(Layouts.summonPlaceholder());
     commonPanel.add(backButton);

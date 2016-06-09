@@ -19,6 +19,7 @@ public abstract class ToolTips
                                                 "Comprehensive tactical HUD.",
                                                 "CQB line of sight enhancements for the AI (deprecated).",
                                                 "Ambient parked cars.",
+                                                "Puddles during and after rainy weather.",
                                                 "Ambient radio chatter and music.",
                                                 "Rain droplet effects.",
                                                 "Ambient skirmishes generation.",
@@ -144,6 +145,14 @@ public abstract class ToolTips
                                                 OPEN+"Parked cars within this distance from to the player are fully simulated."+CLOSE,
                                                 OPEN+"Maximum number of cars to spawn regardless of DENSITY."+CLOSE};
 
+  private static final String[] PUDDLE =       {OPEN+"Maximum amount of puddles spawned around the player."+CLOSE,
+                                                OPEN+"Puddles are spawned within this distance from the player."+CLOSE,
+                                                OPEN+"Puddles are not spawned within this distance from the player."+CLOSE,
+                                                OPEN+"Maximum gradient of the surface where a puddle can be spawned. (0: flat | 1: 45° slope)"+CLOSE,
+                                                OPEN+"Puddles are spawned if less than this time has passed since it stopped raining."+CLOSE,
+                                                OPEN+"Amount of rain necessary for puddles to be spawned. (-1: irregardless of rain)"+CLOSE,
+                                                OPEN+"Whether the rippling water shaders are used (will cause visual anomalies)."+CLOSE};
+
   private static final String[] RADIO =        {OPEN+"Maximum time interval between two radio messages."+CLOSE};
 
   private static final String[] RAIN_FX =      {};
@@ -199,6 +208,7 @@ public abstract class ToolTips
                                                  HUD,
                                                  LOS,
                                                  PARK,
+                                                 PUDDLE,
                                                  RADIO,
                                                  RAIN_FX,
                                                  SKIRMISH,

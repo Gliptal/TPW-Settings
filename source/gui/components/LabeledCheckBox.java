@@ -1,5 +1,6 @@
 package gui.components;
 
+import java.awt.*;
 import javax.swing.*;
 
 import exec.theme.*;
@@ -14,6 +15,7 @@ public class LabeledCheckBox extends JPanel
     setLayout(Layouts.LABELED_CHECKBOX());
 
     forgeCheckBox(checkBoxText);
+    tailorCheckBox();
     }
 
   public JCheckBox getCheckBox()
@@ -28,5 +30,10 @@ public class LabeledCheckBox extends JPanel
     Ui.switchToEditedLaF();
 
     add(checkBox);
+    }
+
+  private void tailorCheckBox()
+    {
+    checkBox.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
   }

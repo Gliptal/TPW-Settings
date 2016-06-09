@@ -11,7 +11,7 @@ import gui.listeners.semaphores.*;
 public class LabeledButton extends JPanel
   {
   private JLabel  label;
-  private JButton button;
+  private CursoredButton button;
 
   public LabeledButton(String buttonText)
     {
@@ -56,7 +56,7 @@ public class LabeledButton extends JPanel
 
   private void forgeButton(String buttonText)
     {
-    button = new JButton(buttonText);
+    button = new CursoredButton(buttonText);
 
     add(button, BorderLayout.CENTER);
     }
@@ -64,5 +64,6 @@ public class LabeledButton extends JPanel
   private void tailorLabel()
     {
     label.setOpaque(true);
+    label.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
   }
