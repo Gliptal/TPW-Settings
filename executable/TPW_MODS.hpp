@@ -112,6 +112,8 @@ tpw_hud_thirdperson = 0;
 tpw_hud_addtac = 1;
 tpw_hud_audible = 1;
 tpw_hud_icons[] = {24,23,30,29,24,23,30,29,22,20};
+tpw_hud_extragoggles[] = {};
+tpw_hud_extraheadgear[] = {};
 tpw_hud_asl_txt = "%1<t size='0.5'><br />ASL</t>";
 tpw_hud_azt_txt = "%1<t size='0.5'><br />AZT %2</t>";
 tpw_hud_grd_txt = "%1<t size='0.5'><br />GRD</t>";
@@ -122,8 +124,6 @@ tpw_hud_rng_txt = "%1<t size='0.5'><br />RNG</t>";
 tpw_hud_vel_txt = "%1<t size='0.5'><br />VEL</t>";
 tpw_hud_airvel_txt = "%1<t size='0.5'><br />VEL KTS</t>";
 tpw_hud_prx_txt = "<t color='%5'>%1</t> <t color='%6'>%2</t> <t color='%7'>%3</t> <t color='%8'>%4</t><t size='0.5'><br />PRX</t>";
-tpw_hud_extragoggles[] = {};
-tpw_hud_extraheadgear[] = {};
 //><
 tpw_los_active = 0;
 tpw_los_debug = 0;
@@ -149,6 +149,8 @@ tpw_puddle_ripple = 0;
 //><
 tpw_radio_active = 1;
 tpw_radio_time = 60;
+tpw_radio_car = 1;
+tpw_radio_foot = 1;
 //><
 tpw_rain_active = 1;
 //><

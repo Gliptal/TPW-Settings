@@ -153,7 +153,9 @@ public abstract class ToolTips
                                                 OPEN+"Amount of rain necessary for puddles to be spawned. (-1: irregardless of rain)"+CLOSE,
                                                 OPEN+"Whether the rippling water shaders are used (will cause visual anomalies)."+CLOSE};
 
-  private static final String[] RADIO =        {OPEN+"Maximum time interval between two radio messages."+CLOSE};
+  private static final String[] RADIO =        {OPEN+"Maximum time interval between two radio messages."+CLOSE,
+                                                OPEN+"Whether radio chatter is played when in vehicles."+CLOSE,
+                                                OPEN+"Whether radio chatter is played when on foot."+CLOSE};
 
   private static final String[] RAIN_FX =      {};
 

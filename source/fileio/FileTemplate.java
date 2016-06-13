@@ -117,6 +117,8 @@ public abstract class FileTemplate
                                                   "tpw_hud_addtac = ",
                                                   "tpw_hud_audible = ",
                                                   "tpw_hud_icons[] = ",
+                                                  "tpw_hud_extragoggles[] = ",
+                                                  "tpw_hud_extraheadgear[] = ",
                                                   "tpw_hud_asl_txt = ",
                                                   "tpw_hud_azt_txt = ",
                                                   "tpw_hud_grd_txt = ",
@@ -126,9 +128,7 @@ public abstract class FileTemplate
                                                   "tpw_hud_rng_txt = ",
                                                   "tpw_hud_vel_txt = ",
                                                   "tpw_hud_airvel_txt = ",
-                                                  "tpw_hud_prx_txt = ",
-                                                  "tpw_hud_extragoggles[] = ",
-                                                  "tpw_hud_extraheadgear[] = "};
+                                                  "tpw_hud_prx_txt = "};
 
   protected static final String[] LOS =          {"tpw_los_active = ",
                                                   "tpw_los_debug = ",
@@ -153,7 +153,9 @@ public abstract class FileTemplate
                                                   "tpw_puddle_ripple = "};
 
   protected static final String[] RADIO =        {"tpw_radio_active = ",
-                                                  "tpw_radio_time = "};
+                                                  "tpw_radio_time = ",
+                                                  "tpw_radio_car = ",
+                                                  "tpw_radio_foot = "};
 
   protected static final String[] RAIN_FX =      {"tpw_rain_active = "};
 

@@ -121,6 +121,8 @@ public abstract class ModParameters
                                                "ADD TACTICAL GLASSES",
                                                "WARNING TONE",
                                                "ICON TYPES",
+                                               "CUSTOM GOGGLES",
+                                               "CUSTOM HEADGEAR",
                                                "ASL TXT",
                                                "AZT TXT",
                                                "GRD TXT",
@@ -130,9 +132,7 @@ public abstract class ModParameters
                                                "RNG TXT",
                                                "VEL TXT",
                                                "AIRVEL TXT",
-                                               "PRX TXT",
-                                               "CUSTOM GOGGLES",
-                                               "CUSTOM HEADGEAR"};
+                                               "PRX TXT"};
 
   public static final String[] LOS =          {ACTIVE_PLACEHOLDER,
                                                "DEBUG",
@@ -157,7 +157,9 @@ public abstract class ModParameters
                                                "RIPPLE EFFECT"};
 
   public static final String[] RADIO =        {ACTIVE_PLACEHOLDER,
-                                               "INTERVAL"+SEPARATOR+SECONDS};
+                                               "INTERVAL"+SEPARATOR+SECONDS,
+                                               "VEHICLES",
+                                               "ON FOOT"};
 
   public static final String[] RAIN_FX =      {ACTIVE_PLACEHOLDER};
 

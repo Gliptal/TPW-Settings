@@ -117,6 +117,10 @@ A: Post in the [TPW MODS](http://forums.bistudio.com/showthread.php?164304-TPW-M
 CHANGELOG
 ======
 
+[2.2.2]
+
+- parameters matching RADIO [1.24]
+
 [2.2.1]
 
 - bug fix
@@ -412,6 +416,8 @@ PROGRESS
 09/06/16 | [2.2.0](https://github.com/Gliptal/TPW-Settings/tree/2.2.0) | added PUDDLE [1.00], added pointer cursor
 
 13/06/16 | [2.2.1](https://github.com/Gliptal/TPW-Settings/tree/2.2.1) | bug fix
+
+13/06/16 | [2.2.2](https://github.com/Gliptal/TPW-Settings/tree/2.2.2) | parameters matching RADIO [1.24]
 
 NOTES
 ======
