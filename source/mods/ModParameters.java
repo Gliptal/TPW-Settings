@@ -237,7 +237,8 @@ public abstract class ModParameters
 
   public static final String[] SOAP_REGION =        {"AUTODETECT",
                                                      "GREEK",
-                                                     "MIDEAST"};
+                                                     "MIDEAST",
+                                                     "FIJIAN"};
 
   public static final String[] STREETLIGHTS_COLOR = {"WHITE INCANDESCENT",
                                                      "YELLOW SODIUM",

@@ -117,6 +117,10 @@ A: Post in the [TPW MODS](http://forums.bistudio.com/showthread.php?164304-TPW-M
 CHANGELOG
 ======
 
+[2.2.3]
+
+- parameters matching SOAP [1.07]
+
 [2.2.2]
 
 - parameters matching RADIO [1.24]
@@ -418,6 +422,8 @@ PROGRESS
 13/06/16 | [2.2.1](https://github.com/Gliptal/TPW-Settings/tree/2.2.1) | bug fix
 
 13/06/16 | [2.2.2](https://github.com/Gliptal/TPW-Settings/tree/2.2.2) | parameters matching RADIO [1.24]
+
+14/06/16 | [2.2.3](https://github.com/Gliptal/TPW-Settings/tree/2.2.3) | parameters matching SOAP [1.07]
 
 NOTES
 ======
