@@ -162,13 +162,15 @@ tpw_skirmish_friendlyvehicles_max = 2;
 tpw_skirmish_minspawnradius = 500;
 tpw_skirmish_maxspawnradius = 2000;
 tpw_skirmish_support = 1;
-tpw_skirmish_friendlytype = 1;
-tpw_skirmish_enemytype = 1;
+tpw_skirmish_friendlytype[] = {1};
+tpw_skirmish_enemytype[] = {1};
 tpw_skirmish_spawntime = 10;
 tpw_skirmish_friendlyunitstring = "";
 tpw_skirmish_friendlyvehiclestring = "";
 tpw_skirmish_enemyunitstring = "";
 tpw_skirmish_enemyvehiclestring = "";
+tpw_skirmish_casstring = "";
+tpw_skirmish_chsstring = "";
 //><
 tpw_soap_active = 1;
 tpw_soap_ambientvolume = 1;

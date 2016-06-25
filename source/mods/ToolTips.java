@@ -166,13 +166,15 @@ public abstract class ToolTips
                                                 OPEN+"Units spawn beyond this distance from the player."+CLOSE,
                                                 OPEN+"Spawned units beyond this distance from the player are removed."+CLOSE,
                                                 OPEN+"Whether NATO units can call for support during the ingagement."+CLOSE,
-                                                OPEN+"Friendly faction."+CLOSE,
-                                                OPEN+"Enemy faction."+CLOSE,
+                                                OPEN+"Friendly factions. Multiple values are possible, separated by a comma. (1 = NATO | 2 - NATO PACIFIC | 3 - CTRG PACIFIC | 4 = AAF | 5 = FIA | 6 = SYNDIKAT | negative values will wear shemaghs)"+CLOSE,
+                                                OPEN+"Enemy faction. Multiple values are possible, separated by a comma. (1 = CSAT | 2 - CSAT PACIFIC | 3 - AAF | 4 = FIA | 5 = SYNDIKAT | negative values will wear shemaghs)"+CLOSE,
                                                 OPEN+"Time interval between each spawn (whether enemy, friendly, unit, or vehicle)."+CLOSE,
                                                 OPEN+"Custom string to set friendly units: only valid when CUSTOM is selected in the FRIENDLY FACTION dropdown."+CLOSE,
                                                 OPEN+"Custom string to set friendly vehicles: only valid when CUSTOM is selected in the FRIENDLY FACTION dropdown."+CLOSE,
                                                 OPEN+"Custom string to set enemy units: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE,
-                                                OPEN+"Custom string to set enemy vehicles: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE};
+                                                OPEN+"Custom string to set enemy vehicles: only valid when CUSTOM is selected in the ENEMY FACTION dropdown."+CLOSE,
+                                                OPEN+"Classname of custom CAS fixed wing aircraft: must be an exact match."+CLOSE,
+                                                OPEN+"Classname of custom CAS rotary wing aircraft: must be an exact match."+CLOSE};
 
   private static final String[] SOAP =         {OPEN+"Ambient sounds volume. (between 0 and 2)"+CLOSE,
                                                 OPEN+"Music volume. (between 0 and 2)"+CLOSE,

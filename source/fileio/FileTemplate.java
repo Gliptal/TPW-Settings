@@ -167,13 +167,15 @@ public abstract class FileTemplate
                                                   "tpw_skirmish_minspawnradius = ",
                                                   "tpw_skirmish_maxspawnradius = ",
                                                   "tpw_skirmish_support = ",
-                                                  "tpw_skirmish_friendlytype = ",
-                                                  "tpw_skirmish_enemytype = ",
+                                                  "tpw_skirmish_friendlytype[] = ",
+                                                  "tpw_skirmish_enemytype[] = ",
                                                   "tpw_skirmish_spawntime = ",
                                                   "tpw_skirmish_friendlyunitstring = ",
                                                   "tpw_skirmish_friendlyvehiclestring = ",
                                                   "tpw_skirmish_enemyunitstring = ",
-                                                  "tpw_skirmish_enemyvehiclestring = "};
+                                                  "tpw_skirmish_enemyvehiclestring = ",
+                                                  "tpw_skirmish_casstring = ",
+                                                  "tpw_skirmish_chsstring = "};
 
   protected static final String[] SOAP =         {"tpw_soap_active = ",
                                                   "tpw_soap_ambientvolume = ",

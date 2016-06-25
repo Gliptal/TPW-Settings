@@ -177,7 +177,9 @@ public abstract class ModParameters
                                                "FRIENDLY UNIT STRING",
                                                "FRIENDLY VEHICLE STRING",
                                                "ENEMY UNIT STRING",
-                                               "ENEMY VEHICLE STRING"};
+                                               "ENEMY VEHICLE STRING",
+                                               "FIXED CAS STRING",
+                                               "ROTARY CAS STRING"};
 
   public static final String[] SOAP =         {ACTIVE_PLACEHOLDER,
                                                "AMBIENT VOLUME",
@@ -215,21 +217,6 @@ public abstract class ModParameters
 
   public static final String[] EBS_SUPTYPE =        {"BULLET CENTRIC",
                                                      "ENTITY CENTRIC"};
-
-  public static final String[] SKIRMISH_FRIENDLY =  {"CUSTOM",
-                                                     "NATO",
-                                                     "FIA",
-                                                     "AAF"};
-
-  public static final String[] SKIRMISH_ENEMY =     {"CUSTOM",
-                                                     "CAF AGGRESSORS",
-                                                     "CSAT",
-                                                     "AAF",
-                                                     "CMP ARID",
-                                                     "CMP SEMIARID",
-                                                     "CMP URBAN",
-                                                     "ISIS",
-                                                     "ISIS 2035"};
 
   public static final String[] SOAP_VOLUME =        {"OFF",
                                                      "LOW",

@@ -44,27 +44,21 @@ public class SkirmishFactory extends ModFactory
   private TextFieldParameter minSpawnRadius        = new TextFieldParameter(ModParameters.SKIRMISH[5]);
   private TextFieldParameter maxSpawnRadius        = new TextFieldParameter(ModParameters.SKIRMISH[6]);
   private CheckBoxParameter  support               = new CheckBoxParameter (ModParameters.SKIRMISH[7]);
-  private ComboBoxParameter  friendlyType          = new ComboBoxParameter (ModParameters.SKIRMISH[8], ModParameters.SKIRMISH_FRIENDLY);
-  private ComboBoxParameter  enemyType             = new ComboBoxParameter (ModParameters.SKIRMISH[9], ModParameters.SKIRMISH_ENEMY);
+  private TextFieldParameter friendlyType          = new TextFieldParameter(ModParameters.SKIRMISH[8]);
+  private TextFieldParameter enemyType             = new TextFieldParameter(ModParameters.SKIRMISH[9]);
   private TextFieldParameter spawnTime             = new TextFieldParameter(ModParameters.SKIRMISH[10]);
   private TextFieldParameter friendlyUnitString    = new TextFieldParameter(ModParameters.SKIRMISH[11]);
   private TextFieldParameter friendlyVehicleString = new TextFieldParameter(ModParameters.SKIRMISH[12]);
   private TextFieldParameter enemyUnitString       = new TextFieldParameter(ModParameters.SKIRMISH[13]);
   private TextFieldParameter enemyVehicleString    = new TextFieldParameter(ModParameters.SKIRMISH[14]);
+  private TextFieldParameter casString             = new TextFieldParameter(ModParameters.SKIRMISH[15]);
+  private TextFieldParameter chsString             = new TextFieldParameter(ModParameters.SKIRMISH[16]);
 
   public SkirmishFactory(ModWindow skirmishWindow)
     {
     super(skirmishWindow);
 
-    setLinks();
-
-    parameters       = new Parameter[] {enemySquadMax, enemyVehiclesMax, friendlySquadMax, friendlyVehiclesMax, minSpawnRadius, maxSpawnRadius, support, friendlyType, enemyType, spawnTime, friendlyUnitString, friendlyVehicleString, enemyUnitString, enemyVehicleString};
-    visualParameters = new Parameter[] {minSpawnRadius, maxSpawnRadius, spawnTime, friendlySquadMax, friendlyVehiclesMax, enemySquadMax, enemyVehiclesMax, support, friendlyType, enemyType, friendlyUnitString, enemyUnitString, friendlyVehicleString, enemyVehicleString};
-    }
-
-  private void setLinks()
-    {
-    friendlyType.addActionListener(new ToggleStringState(friendlyType, friendlyUnitString, friendlyVehicleString));
-    enemyType.addActionListener(new ToggleStringState(enemyType, enemyUnitString, enemyVehicleString));
+    parameters       = new Parameter[] {enemySquadMax, enemyVehiclesMax, friendlySquadMax, friendlyVehiclesMax, minSpawnRadius, maxSpawnRadius, support, friendlyType, enemyType, spawnTime, friendlyUnitString, friendlyVehicleString, enemyUnitString, enemyVehicleString, casString, chsString};
+    visualParameters = new Parameter[] {minSpawnRadius, maxSpawnRadius, spawnTime, friendlySquadMax, friendlyVehiclesMax, enemySquadMax, enemyVehiclesMax, support, friendlyType, enemyType, friendlyUnitString, enemyUnitString, friendlyVehicleString, enemyVehicleString, casString, chsString};
     }
   }
