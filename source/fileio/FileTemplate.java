@@ -59,6 +59,14 @@ public abstract class FileTemplate
                                                   "tpw_civ_interact = ",
                                                   "tpw_civ_nocombatspawn = "};
 
+  protected static final String[] CROWD =        {"tpw_crowd_active = ",
+                                                  "tpw_crowd_max = ",
+                                                  "tpw_crowd_density = ",
+                                                  "tpw_crowd_radius = ",
+                                                  "tpw_crowd_animradius = ",
+                                                  "tpw_crowd_moveradius = ",
+                                                  "tpw_crowd_scantime = "};
+
   protected static final String[] EBS =          {"tpw_ebs_active = ",
                                                   "tpw_ebs_thresh = ",
                                                   "tpw_ebs_delay = ",
@@ -209,6 +217,7 @@ public abstract class FileTemplate
                                                      BOATS,
                                                      CARS,
                                                      CIVS,
+                                                     CROWD,
                                                      EBS,
                                                      FALL,
                                                      FOG,

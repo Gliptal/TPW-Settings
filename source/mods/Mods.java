@@ -9,6 +9,7 @@ public abstract class Mods
                                             "BOATS",
                                             "CARS",
                                             "CIVS",
+                                            "CROWD",
                                             "EBS",
                                             "FALL",
                                             "FOG",
@@ -25,8 +26,8 @@ public abstract class Mods
                                             "ANIMATIONS"};
   public static final int NUMBER_OF_MODS = MOD_NAMES.length;
 
-  public static final int HUD_ID        = 10;
-  public static final int ANIMATIONS_ID = 19;
+  public static final int HUD_ID        = 11;
+  public static final int ANIMATIONS_ID = 20;
 
   public static final int ICON_TYPES      = 10;
   public static final int ICON_VARIATIONS = 34;

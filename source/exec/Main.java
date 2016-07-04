@@ -92,20 +92,21 @@ public class Main
     modFactories[3]  = new BoatsFactory(modWindows[3]);
     modFactories[4]  = new CarsFactory(modWindows[4]);
     modFactories[5]  = new CivsFactory(modWindows[5]);
-    modFactories[6]  = new EbsFactory(modWindows[6]);
-    modFactories[7]  = new FallFactory(modWindows[7]);
-    modFactories[8]  = new FogFactory(modWindows[8]);
-    modFactories[9]  = new HouselightsFactory(modWindows[9]);
-    modFactories[10] = new HudFactory(modWindows[10]);
-    modFactories[11] = new LosFactory(modWindows[11]);
-    modFactories[12] = new ParkFactory(modWindows[12]);
-    modFactories[13] = new PuddleFactory(modWindows[13]);
-    modFactories[14] = new RadioFactory(modWindows[14]);
-    modFactories[15] = new RainFxFactory(modWindows[15]);
-    modFactories[16] = new SkirmishFactory(modWindows[16]);
-    modFactories[17] = new SoapFactory(modWindows[17]);
-    modFactories[18] = new StreetlightsFactory(modWindows[18]);
-    modFactories[19] = new AnimationsFactory(modWindows[19]);
+    modFactories[6]  = new CrowdFactory(modWindows[6]);
+    modFactories[7]  = new EbsFactory(modWindows[7]);
+    modFactories[8]  = new FallFactory(modWindows[8]);
+    modFactories[9]  = new FogFactory(modWindows[9]);
+    modFactories[10] = new HouselightsFactory(modWindows[10]);
+    modFactories[11] = new HudFactory(modWindows[11]);
+    modFactories[12] = new LosFactory(modWindows[12]);
+    modFactories[13] = new ParkFactory(modWindows[13]);
+    modFactories[14] = new PuddleFactory(modWindows[14]);
+    modFactories[15] = new RadioFactory(modWindows[15]);
+    modFactories[16] = new RainFxFactory(modWindows[16]);
+    modFactories[17] = new SkirmishFactory(modWindows[17]);
+    modFactories[18] = new SoapFactory(modWindows[18]);
+    modFactories[19] = new StreetlightsFactory(modWindows[19]);
+    modFactories[20] = new AnimationsFactory(modWindows[20]);
     }
 
   private void addParameters()

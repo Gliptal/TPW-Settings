@@ -117,6 +117,10 @@ A: Post in the [TPW MODS](http://forums.bistudio.com/showthread.php?164304-TPW-M
 CHANGELOG
 ======
 
+[2.3.0]
+
+- added CROWD [1.00]
+
 [2.2.4]
 
 - parameters matching SKIRMISH [1.26]
@@ -430,6 +434,8 @@ PROGRESS
 14/06/16 | [2.2.3](https://github.com/Gliptal/TPW-Settings/tree/2.2.3) | parameters matching SOAP [1.07]
 
 25/06/16 | [2.2.4](https://github.com/Gliptal/TPW-Settings/tree/2.2.4) | parameters matching SKIRMISH [1.26]
+
+04/07/16 | [2.3.0](https://github.com/Gliptal/TPW-Settings/tree/2.3.0) | added CROWD [1.00]
 
 NOTES
 ======

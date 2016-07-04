@@ -12,6 +12,7 @@ public abstract class ToolTips
                                                 "Ambient civilian boats.",
                                                 "Ambient civilian traffic.",
                                                 "Ambient civilian pedestrians.",
+                                                "Ambient civilian crowds.",
                                                 "Bullet-centric suppression effects.",
                                                 "Falling and bullet impacts behaviour for chatters.",
                                                 "Haze, fog and snow weather effects.",
@@ -67,6 +68,13 @@ public abstract class ToolTips
                                                 OPEN+"Maximum number of civilians to spawn regardless of DENSITY."+CLOSE,
                                                 OPEN+"Civilians closer than this distance to each other move closer and interact (0: no interaction)."+CLOSE,
                                                 OPEN+"Whether civilians are spawned during combat."+CLOSE};
+
+  private static final String[] CROWD =        {OPEN+"Maximum number of civilians to spawn."+CLOSE,
+                                                OPEN+"Number of civilians for each house."+CLOSE,
+                                                OPEN+"Civilians are spawned if houses are detected within this distance from the player."+CLOSE,
+                                                OPEN+"Civilians are animated if within this distance from the player."+CLOSE,
+                                                OPEN+"Civilians disperse if within this distance from the player."+CLOSE,
+                                                OPEN+"Time between scans for spawn and visibility checks."+CLOSE};
 
   private static final String[] EBS =          {OPEN+"The fired upon unit is suppressed if at least this amount of bullets fly close to it in a 5 second interval."+CLOSE,
                                                 OPEN+"Time delay before the module starts."+CLOSE,
@@ -205,6 +213,7 @@ public abstract class ToolTips
                                                  BOATS,
                                                  CARS,
                                                  CIVS,
+                                                 CROWD,
                                                  EBS,
                                                  FALL,
                                                  FOG,

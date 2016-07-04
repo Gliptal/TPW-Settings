@@ -54,6 +54,14 @@ tpw_civ_maxciv = 20;
 tpw_civ_interact = 15;
 tpw_civ_nocombatspawn = 1;
 //><
+tpw_crowd_active = 1;
+tpw_crowd_max = 50;
+tpw_crowd_density = 2;
+tpw_crowd_radius = 200;
+tpw_crowd_animradius = 100;
+tpw_crowd_moveradius = 50;
+tpw_crowd_scantime = 1.5;
+//><
 tpw_ebs_active = 0;
 tpw_ebs_thresh = 5;
 tpw_ebs_delay = 1;

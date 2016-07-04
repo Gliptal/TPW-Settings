@@ -13,6 +13,7 @@ public abstract class ModParameters
   private static final String NPC            = "(npc)";
   private static final String PRC_10SEC      = "(%/10sec)";
   private static final String HOUSE_NPC      = "(house/npc)";
+  private static final String NPC_HOUSE      = "(npc/house)";
   private static final String BUL_5SEC       = "(bul/5sec)";
   private static final String PRC_HOUSE      = "(%/house)";
 
@@ -50,6 +51,14 @@ public abstract class ModParameters
                                               "MAXIMUM CARS"+SEPARATOR+VEHICLES,
                                               "SPAWN RADIUS"+SEPARATOR+METERS,
                                               "NO COMBAT SPAWN"};
+
+  public static final String[] CROWD =       {ACTIVE_PLACEHOLDER,
+                                              "MAXIMUM CIVS"+SEPARATOR+NPC,
+                                              "DENSITY"+SEPARATOR+NPC_HOUSE,
+                                              "SPAWN RADIUS"+SEPARATOR+METERS,
+                                              "ANIMATE RADIUS"+SEPARATOR+METERS,
+                                              "DISPERSE RADIUS"+SEPARATOR+METERS,
+                                              "SCAN TIME"+SEPARATOR+SECONDS};
 
   public static final String[] CIVS =        {ACTIVE_PLACEHOLDER,
                                               "INITIAL DELAY"+SEPARATOR+SECONDS,
