@@ -57,7 +57,8 @@ public abstract class FileTemplate
                                                   "tpw_civ_casdisplay = ",
                                                   "tpw_civ_maxciv = ",
                                                   "tpw_civ_interact = ",
-                                                  "tpw_civ_nocombatspawn = "};
+                                                  "tpw_civ_nocombatspawn = ",
+                                                  "tpw_civ_blacklist[] = "};
 
   protected static final String[] CROWD =        {"tpw_crowd_active = ",
                                                   "tpw_crowd_max = ",

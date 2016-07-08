@@ -17,12 +17,13 @@ public class CivsFactory extends ModFactory
   private TextFieldParameter maxCiv        = new TextFieldParameter(ModParameters.CIVS[8]);
   private TextFieldParameter interact      = new TextFieldParameter(ModParameters.CIVS[9]);
   private CheckBoxParameter  noCombatSpawn = new CheckBoxParameter (ModParameters.CIVS[10]);
+  private TextFieldParameter blacklist     = new TextFieldParameter(ModParameters.CIVS[11]);
 
   public CivsFactory(ModWindow civsWindow)
     {
     super(civsWindow);
 
-    parameters       = new Parameter[] {delay, radius, waypoints, density, maxSquadCas, maxAllCas, casDisplay, maxCiv, interact, noCombatSpawn};
-    visualParameters = new Parameter[] {delay, maxCiv, density, radius, waypoints, interact, noCombatSpawn, maxAllCas, maxSquadCas, casDisplay};
+    parameters       = new Parameter[] {delay, radius, waypoints, density, maxSquadCas, maxAllCas, casDisplay, maxCiv, interact, noCombatSpawn, blacklist};
+    visualParameters = new Parameter[] {maxCiv, density, radius, interact, waypoints, delay, noCombatSpawn, blacklist, maxAllCas, maxSquadCas, casDisplay};
     }
   }

@@ -53,6 +53,7 @@ tpw_civ_casdisplay = 0;
 tpw_civ_maxciv = 20;
 tpw_civ_interact = 15;
 tpw_civ_nocombatspawn = 1;
+tpw_civ_blacklist[] = {};
 //><
 tpw_crowd_active = 1;
 tpw_crowd_max = 50;

@@ -67,7 +67,8 @@ public abstract class ToolTips
                                                 OPEN+"Event thrown in case the casualty threshold is exceeded."+CLOSE,
                                                 OPEN+"Maximum number of civilians to spawn regardless of DENSITY."+CLOSE,
                                                 OPEN+"Civilians closer than this distance to each other move closer and interact (0: no interaction)."+CLOSE,
-                                                OPEN+"Whether civilians are spawned during combat."+CLOSE};
+                                                OPEN+"Whether civilians are spawned during combat."+CLOSE,
+                                                OPEN+"Civilians with these strings in their classnames will be excluded."+CLOSE};
 
   private static final String[] CROWD =        {OPEN+"Maximum number of civilians to spawn."+CLOSE,
                                                 OPEN+"Number of civilians for each house."+CLOSE,

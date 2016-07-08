@@ -52,14 +52,6 @@ public abstract class ModParameters
                                               "SPAWN RADIUS"+SEPARATOR+METERS,
                                               "NO COMBAT SPAWN"};
 
-  public static final String[] CROWD =       {ACTIVE_PLACEHOLDER,
-                                              "MAXIMUM CIVS"+SEPARATOR+NPC,
-                                              "DENSITY"+SEPARATOR+NPC_HOUSE,
-                                              "SPAWN RADIUS"+SEPARATOR+METERS,
-                                              "ANIMATE RADIUS"+SEPARATOR+METERS,
-                                              "DISPERSE RADIUS"+SEPARATOR+METERS,
-                                              "SCAN TIME"+SEPARATOR+SECONDS};
-
   public static final String[] CIVS =        {ACTIVE_PLACEHOLDER,
                                               "INITIAL DELAY"+SEPARATOR+SECONDS,
                                               "SPAWN RADIUS"+SEPARATOR+METERS,
@@ -70,7 +62,16 @@ public abstract class ModParameters
                                               "COLLATERAL EVENT",
                                               "MAXIMUM CIVILIANS"+SEPARATOR+NPC,
                                               "INTERACT RADIUS"+SEPARATOR+METERS,
-                                              "NO COMBAT SPAWN"};
+                                              "NO COMBAT SPAWN",
+                                              "CLASSNAME EXCLUSION"};
+
+  public static final String[] CROWD =       {ACTIVE_PLACEHOLDER,
+                                              "MAXIMUM CIVS"+SEPARATOR+NPC,
+                                              "DENSITY"+SEPARATOR+NPC_HOUSE,
+                                              "SPAWN RADIUS"+SEPARATOR+METERS,
+                                              "ANIMATE RADIUS"+SEPARATOR+METERS,
+                                              "DISPERSE RADIUS"+SEPARATOR+METERS,
+                                              "SCAN TIME"+SEPARATOR+SECONDS};
 
   public static final String[] EBS =         {ACTIVE_PLACEHOLDER,
                                               "BULLET THRESHOLD"+SEPARATOR+BUL_5SEC,
