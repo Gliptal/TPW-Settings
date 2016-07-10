@@ -125,7 +125,7 @@ public abstract class FileParser
 
     do
       line = readLine();
-    while (!line.equals(SECTION_SEPARATOR));
+    while (!line.trim().equals(SECTION_SEPARATOR));
     }
 
   private static void readSection(ModFactory modFactory)
