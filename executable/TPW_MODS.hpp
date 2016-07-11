@@ -56,11 +56,11 @@ tpw_civ_nocombatspawn = 1;
 tpw_civ_blacklist[] = {};
 //><
 tpw_crowd_active = 1;
-tpw_crowd_max = 50;
+tpw_crowd_max = 20;
 tpw_crowd_density = 2;
-tpw_crowd_radius = 200;
-tpw_crowd_animradius = 100;
-tpw_crowd_moveradius = 50;
+tpw_crowd_radius = 120;
+tpw_crowd_animradius = 80;
+tpw_crowd_moveradius = 40;
 tpw_crowd_scantime = 1.5;
 //><
 tpw_ebs_active = 0;
@@ -77,7 +77,7 @@ tpw_fall_active = 1;
 tpw_fall_sensitivity = 100;
 tpw_fall_threshold = 300;
 tpw_fall_delay = 10;
-tpw_fall_ragdoll = 1;
+tpw_fall_ragdoll = 2;
 tpw_fall_falltime = 15;
 tpw_fall_player = 1;
 tpw_fall_bullet = 1;

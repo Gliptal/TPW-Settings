@@ -117,6 +117,10 @@ A: Post in the [TPW MODS](http://forums.bistudio.com/showthread.php?164304-TPW-M
 CHANGELOG
 ======
 
+[2.3.3]
+
+- parameters matching FALL [1.47]
+
 [2.3.2]
 
 - fixed parsing bug
@@ -448,6 +452,8 @@ PROGRESS
 08/07/16 | [2.3.1](https://github.com/Gliptal/TPW-Settings/tree/2.3.1) | parameters matching CORE [1.25]
 
 10/07/16 | [2.3.2](https://github.com/Gliptal/TPW-Settings/tree/2.3.2) | fixed parsing bug
+
+11/07/16 | [2.3.3](https://github.com/Gliptal/TPW-Settings/tree/2.3.3) | parameters matching FALL [1.47]
 
 NOTES
 ======

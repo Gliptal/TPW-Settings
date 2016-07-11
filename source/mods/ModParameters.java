@@ -228,6 +228,10 @@ public abstract class ModParameters
   public static final String[] EBS_SUPTYPE =        {"BULLET CENTRIC",
                                                      "ENTITY CENTRIC"};
 
+  public static final String[] FALL_RAGDOLL =       {"DISABLED",
+                                                     "PHYSX REPLACEMENT",
+                                                     "IN ENGINE"};
+
   public static final String[] SOAP_VOLUME =        {"OFF",
                                                      "LOW",
                                                      "HIGH"};

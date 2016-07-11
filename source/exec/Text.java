@@ -7,7 +7,7 @@ public abstract class Text
   public static final String COLOR_CHOOSER   = "COLOR CHOOSER";
   public static final String ICON_CHOOSER    = "ICON CHOOSER";
   public static final String HINTS           = "HINTS";
-  public static final String PROGRAM_VERSION = "2.3.2";
+  public static final String PROGRAM_VERSION = "2.3.3";
 
   public static final String COMMIT_POSITIVE = "APPLY";
   public static final String COMMIT_NEGATIVE = "REVERT";
