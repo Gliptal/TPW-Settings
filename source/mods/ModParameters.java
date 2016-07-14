@@ -50,7 +50,8 @@ public abstract class ModParameters
                                               "WAYPOINTS",
                                               "MAXIMUM CARS"+SEPARATOR+VEHICLES,
                                               "SPAWN RADIUS"+SEPARATOR+METERS,
-                                              "NO COMBAT SPAWN"};
+                                              "NO COMBAT SPAWN",
+                                              "CUSTOM CLASSNAMES"};
 
   public static final String[] CIVS =        {ACTIVE_PLACEHOLDER,
                                               "INITIAL DELAY"+SEPARATOR+SECONDS,
@@ -99,7 +100,8 @@ public abstract class ModParameters
                                                "GROUND FOG",
                                                "RAIN FOG",
                                                "HEAT HAZE",
-                                               "SNOW"};
+                                               "SNOW",
+                                               "MIST"};
 
   public static final String[] HOUSELIGHTS =  {ACTIVE_PLACEHOLDER,
                                                "INITIAL DELAY"+SEPARATOR+SECONDS};
@@ -155,7 +157,8 @@ public abstract class ModParameters
                                                "SPAWN DISTANCE"+SEPARATOR+METERS,
                                                "HIDE DISTANCE"+SEPARATOR+METERS,
                                                "SIMULATION DISTANCE"+SEPARATOR+METERS,
-                                               "MAXIMUM PARKED CARS"+SEPARATOR+VEHICLES};
+                                               "MAXIMUM PARKED CARS"+SEPARATOR+VEHICLES,
+                                               "CUSTOM CLASSNAMES"};
 
   public static final String[] PUDDLE =       {ACTIVE_PLACEHOLDER,
                                                "MAXIMUM AMOUNT",

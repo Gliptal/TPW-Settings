@@ -12,12 +12,13 @@ public class CarsFactory extends ModFactory
   private TextFieldParameter num           = new TextFieldParameter(ModParameters.CARS[3]);
   private TextFieldParameter radius        = new TextFieldParameter(ModParameters.CARS[4]);
   private CheckBoxParameter  noCombatSpawn = new CheckBoxParameter (ModParameters.CARS[5]);
+  private TextFieldParameter include       = new TextFieldParameter(ModParameters.CARS[6]);
 
   public CarsFactory(ModWindow carsWindow)
     {
     super(carsWindow);
 
-    parameters       = new Parameter[] {delay, waypoints, num, radius, noCombatSpawn};
-    visualParameters = new Parameter[] {delay, num, radius, waypoints, noCombatSpawn};
+    parameters       = new Parameter[] {delay, waypoints, num, radius, noCombatSpawn, include};
+    visualParameters = new Parameter[] {delay, num, radius, waypoints, noCombatSpawn, include};
     }
   }

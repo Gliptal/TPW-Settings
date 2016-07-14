@@ -117,6 +117,10 @@ A: Post in the [TPW MODS](http://forums.bistudio.com/showthread.php?164304-TPW-M
 CHANGELOG
 ======
 
+[2.3.4]
+
+- parameters matching CARS [1.46] PARK [1.15] FOG [1.39]
+
 [2.3.3]
 
 - parameters matching FALL [1.47]
@@ -454,6 +458,8 @@ PROGRESS
 10/07/16 | [2.3.2](https://github.com/Gliptal/TPW-Settings/tree/2.3.2) | fixed parsing bug
 
 11/07/16 | [2.3.3](https://github.com/Gliptal/TPW-Settings/tree/2.3.3) | parameters matching FALL [1.47]
+
+14/07/16 | [2.3.4](https://github.com/Gliptal/TPW-Settings/tree/2.3.4) | parameters matching CARS [1.46] PARK [1.15] FOG [1.39]
 
 NOTES
 ======

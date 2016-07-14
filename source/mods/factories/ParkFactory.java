@@ -12,12 +12,13 @@ public class ParkFactory extends ModFactory
   private TextFieldParameter hideDist   = new TextFieldParameter(ModParameters.PARK[3]);
   private TextFieldParameter simDist    = new TextFieldParameter(ModParameters.PARK[4]);
   private TextFieldParameter max        = new TextFieldParameter(ModParameters.PARK[5]);
+  private TextFieldParameter include        = new TextFieldParameter(ModParameters.PARK[6]);
 
   public ParkFactory(ModWindow parkWindow)
     {
     super(parkWindow);
 
-    parameters       = new Parameter[] {perc, createDist, hideDist, simDist, max};
-    visualParameters = new Parameter[] {max, perc, createDist, hideDist, simDist};
+    parameters       = new Parameter[] {perc, createDist, hideDist, simDist, max, include};
+    visualParameters = new Parameter[] {max, perc, createDist, hideDist, simDist, include};
     }
   }

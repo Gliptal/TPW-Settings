@@ -158,7 +158,7 @@ public abstract class FileParser
         parameter += 1;
         }
       }
-    while (!line.equals(SECTION_SEPARATOR));
+    while (!line.trim().equals(SECTION_SEPARATOR));
     }
 
   private static void separateSection()

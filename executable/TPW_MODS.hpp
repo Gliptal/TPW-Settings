@@ -41,6 +41,7 @@ tpw_car_waypoints = 15;
 tpw_car_num = 3;
 tpw_car_radius = 1000;
 tpw_car_nocombatspawn = 1;
+tpw_car_include[] = {"RDS","LOP_"};
 //><
 tpw_civ_active = 1;
 tpw_civ_delay = 5;
@@ -84,12 +85,13 @@ tpw_fall_bullet = 1;
 //><
 tpw_fog_active = 1;
 tpw_fog_radius = 250;
-tpw_fog_delay = 5;
+tpw_fog_delay = 0;
 tpw_fog_breath = 1;
 tpw_fog_groundfog = 1;
 tpw_fog_rainfog = 1;
 tpw_fog_heathaze = 1;
 tpw_fog_cansnow = 1;
+tpw_fog_mist = 0;
 //><
 tpw_houselights_active = 1;
 tpw_houselights_delay = 10;
@@ -146,28 +148,29 @@ tpw_park_createdist = 300;
 tpw_park_hidedist = 150;
 tpw_park_simdist = 20;
 tpw_park_max = 15;
+tpw_park_include[] = {"RDS","LOP_"};
 //><
 tpw_puddle_active = 1;
 tpw_puddle_max = 8;
 tpw_puddle_radius = 50;
-tpw_puddle_minradius =  10;
+tpw_puddle_minradius = 10;
 tpw_puddle_gradient = 0.1;
 tpw_puddle_time = 600;
-tpw_puddle_rainthresh =  0.2;
+tpw_puddle_rainthresh = 0.2;
 tpw_puddle_ripple = 0;
 //><
 tpw_radio_active = 1;
-tpw_radio_time = 60;
+tpw_radio_time = 90;
 tpw_radio_car = 1;
 tpw_radio_foot = 1;
 //><
 tpw_rain_active = 1;
 //><
 tpw_skirmish_active = 0;
-tpw_skirmish_enemysquad_max = 5;
-tpw_skirmish_enemyvehicles_max = 2;
-tpw_skirmish_friendlysquad_max = 5;
-tpw_skirmish_friendlyvehicles_max = 2;
+tpw_skirmish_enemysquad_max = 2;
+tpw_skirmish_enemyvehicles_max = 1;
+tpw_skirmish_friendlysquad_max = 2;
+tpw_skirmish_friendlyvehicles_max = 1;
 tpw_skirmish_minspawnradius = 500;
 tpw_skirmish_maxspawnradius = 2000;
 tpw_skirmish_support = 1;

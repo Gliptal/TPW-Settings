@@ -45,7 +45,8 @@ public abstract class FileTemplate
                                                   "tpw_car_waypoints = ",
                                                   "tpw_car_num = ",
                                                   "tpw_car_radius = ",
-                                                  "tpw_car_nocombatspawn = "};
+                                                  "tpw_car_nocombatspawn = ",
+                                                  "tpw_car_include[] = "};
 
   protected static final String[] CIVS =         {"tpw_civ_active = ",
                                                   "tpw_civ_delay = ",
@@ -94,7 +95,8 @@ public abstract class FileTemplate
                                                   "tpw_fog_groundfog = ",
                                                   "tpw_fog_rainfog = ",
                                                   "tpw_fog_heathaze = ",
-                                                  "tpw_fog_cansnow = "};
+                                                  "tpw_fog_cansnow = ",
+                                                  "tpw_fog_mist = "};
 
   protected static final String[] HOUSELIGHTS =  {"tpw_houselights_active = ",
                                                   "tpw_houselights_delay = "};
@@ -150,7 +152,8 @@ public abstract class FileTemplate
                                                   "tpw_park_createdist = ",
                                                   "tpw_park_hidedist = ",
                                                   "tpw_park_simdist = ",
-                                                  "tpw_park_max = "};
+                                                  "tpw_park_max = ",
+                                                  "tpw_park_include[] = "};
 
   protected static final String[] PUDDLE =       {"tpw_puddle_active = ",
                                                   "tpw_puddle_max = ",

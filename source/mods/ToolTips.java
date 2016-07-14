@@ -56,7 +56,8 @@ public abstract class ToolTips
                                                 OPEN+"Number of waypoints assigned to each spawned car."+CLOSE,
                                                 OPEN+"Maximum number of spawned cars present at any given time."+CLOSE,
                                                 OPEN+"Cars are spawned if roads are detected within this distance from the player."+CLOSE,
-                                                OPEN+"Whether traffic is spawned during combat."+CLOSE};
+                                                OPEN+"Whether traffic is spawned during combat."+CLOSE,
+                                                OPEN+"Classnames of custom cars, as strings."+CLOSE};
 
   private static final String[] CIVS =         {OPEN+"Time delay before the module starts."+CLOSE,
                                                 OPEN+"Civilians are spawned if houses are detected within this distance from the player."+CLOSE,
@@ -100,7 +101,8 @@ public abstract class ToolTips
                                                 OPEN+"Whether the ground fog effect is enabled."+CLOSE,
                                                 OPEN+"Whether the rain fog effect is enabled."+CLOSE,
                                                 OPEN+"Whether the heat haze effect is enabled."+CLOSE,
-                                                OPEN+"Whether the snow effect is enabled."+CLOSE};
+                                                OPEN+"Whether the snow effect is enabled."+CLOSE,
+                                                OPEN+"Ground steam/mist effect in tropical/jungle and cold environments. (0: no mist | 1: extremely thick mist | recommended: 0.05)"+CLOSE};
 
   private static final String[] HOUSELIGHTS =  {OPEN+"Time delay before the module starts."+CLOSE};
 
@@ -152,7 +154,8 @@ public abstract class ToolTips
                                                 OPEN+"Parked cars are spawned within this distance from the player and removed past it."+CLOSE,
                                                 OPEN+"Parked cars beyond this distance from the player are hidden."+CLOSE,
                                                 OPEN+"Parked cars within this distance from to the player are fully simulated."+CLOSE,
-                                                OPEN+"Maximum number of cars to spawn regardless of DENSITY."+CLOSE};
+                                                OPEN+"Maximum number of cars to spawn regardless of DENSITY."+CLOSE,
+                                                OPEN+"Classnames of custom cars, as strings."+CLOSE};
 
   private static final String[] PUDDLE =       {OPEN+"Maximum amount of puddles spawned around the player."+CLOSE,
                                                 OPEN+"Puddles are spawned within this distance from the player."+CLOSE,

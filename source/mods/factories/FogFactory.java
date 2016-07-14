@@ -14,12 +14,13 @@ public class FogFactory extends ModFactory
   private CheckBoxParameter  rainFog   = new CheckBoxParameter (ModParameters.FOG[5]);
   private CheckBoxParameter  heatHaze  = new CheckBoxParameter (ModParameters.FOG[6]);
   private CheckBoxParameter  canSnow   = new CheckBoxParameter (ModParameters.FOG[7]);
+  private TextFieldParameter  mist     = new TextFieldParameter(ModParameters.FOG[8]);
 
   public FogFactory(ModWindow fogWindow)
     {
     super(fogWindow);
 
-    parameters       = new Parameter[] {radius, delay, breath, groundFog, rainFog, heatHaze, canSnow};
-    visualParameters = new Parameter[] {delay, radius, breath, groundFog, heatHaze, rainFog, canSnow};
+    parameters       = new Parameter[] {radius, delay, breath, groundFog, rainFog, heatHaze, canSnow, mist};
+    visualParameters = new Parameter[] {delay, radius, breath, groundFog, heatHaze, rainFog, canSnow, mist};
     }
   }
